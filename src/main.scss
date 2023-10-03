@@ -1,0 +1,27 @@
+html::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border: 0.25rem solid transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  border: 0.25rem solid transparent;
+
+  border-radius: 4px;
+  background-color: #dadce0;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #3c76d2;
+}
+
+canvas {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.image-close {
+  margin-top: 5rem;
+}
+

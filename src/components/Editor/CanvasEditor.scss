@@ -1,0 +1,15 @@
+.editor > div {
+  margin: auto;
+}
+
+.canvas-editor {
+  position: relative;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  padding-top: 10px;
+}
+
+.canvas-editor-main {
+  padding: 70px 30px 80px;
+  margin: auto;
+}

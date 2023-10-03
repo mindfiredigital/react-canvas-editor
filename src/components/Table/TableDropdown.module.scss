@@ -1,0 +1,31 @@
+.activeCell {
+  border: 1px solid rgba(73, 145, 242, 0.2) !important;
+  background: rgba(73, 145, 242, 0.15) !important;
+}
+
+.tableCollapse {
+  width: 17.25rem;
+  height: 19.375;
+  background: #fff;
+  box-shadow: 0 0.125rem 0.75rem 0 rgb(56 56 56 / 20%);
+  border: 0.063rem solid #e2e6ed;
+  box-sizing: border-box;
+  border-radius: 0.125rem;
+  position: absolute;
+  z-index: 99;
+  padding: 0.875rem 1.688rem;
+  cursor: auto;
+}
+
+.tableTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e2e6ed;
+  color: black;
+}
+
+.tableContainer {
+  position: relative;
+}

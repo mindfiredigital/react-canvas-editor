@@ -1,0 +1,36 @@
+.editor {
+  max-width: 60rem !important;
+}
+.editor__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed #ccc;
+}
+
+.page-break {
+  display: flex;
+  height: 1.4rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #ccc;
+  font-size: 0.8rem;
+  page-break-after: always; /* fallback */
+  break-after: page;
+  text-transform: uppercase;
+}
+
+.jodit_sticky > .jodit-toolbar__box {
+  top: 63px;
+}
+
+@media print {
+  .page-break {
+    display: none;
+  }
+}
