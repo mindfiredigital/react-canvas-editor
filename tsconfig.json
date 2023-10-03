@@ -13,8 +13,15 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "types",
+    "sourceMap": true,
+    "outDir": "rootDir",
+    "emitDeclarationOnly": true,
+    
   },
-  "include": ["src"]
+  "declarationDir": "types",
+  "include": ["src", "src/custom.d.ts"],
+  "exclude": ["src/assets"]
 }
