@@ -26,11 +26,11 @@ const EditorMargin: React.FC = () => {
     const dispatch = useDispatch();
     const { documentId } = useParams();
 
-    const document = useSelector(
+    const document: any = useSelector(
         (state: RootState) => state.document
     ) as unknown as DocumentState;
 
-    const marginState = useDebounce(document.margins, 500);
+    const marginState: any = useDebounce(document.margins, 500);
 
     const [open, setOpen] = useState<boolean>(false);
     const [margins, setMargins] = useState<Array<Number>>([]);
@@ -39,9 +39,9 @@ const EditorMargin: React.FC = () => {
 
     const handleClose = () => setOpen(false);
 
-    const handleMarginChange = (e, position: Number) => {
+    const handleMarginChange = (e: any, position: number) => {
         const { value } = e.target;
-        let margin = [...margins];
+        let margin: any[] = [...margins];
         margin[position] = value ? parseInt(value) : "";
         setMargins(margin);
     }
@@ -51,7 +51,7 @@ const EditorMargin: React.FC = () => {
     }
 
     const updateMarginsHandler = async () => {
-        let margin = [...margins].map(ob => ob ? ob : 0);
+        let margin: any[] = [...margins].map(ob => ob ? ob : 0);
         try {
             if (documentId) {
                 dispatch(setDocumentMargins({ margins: margin }));

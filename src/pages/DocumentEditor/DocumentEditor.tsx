@@ -5,17 +5,21 @@ import EditorHeader from "../../components/EditorHeader/EditorHeader";
 import CanvasEditor from "../../components/Editor/CanvasEditor";
 import EditorToolbar from "../../components/EditorToolbar/EditorToolbar";
 import EditorFooter from "../../components/EditorFooter/EditorFooter";
-
-function DocumentEditor() {
+import { Provider } from "react-redux";
+import { store } from "../../redux/store";
+const DocumentEditor = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
   return (
+    <Provider store={store}>
     <>
-      <EditorHeader />
-      <Toolbar />
-      <EditorToolbar ref={canvasRef} />
+    {/* Hello world Document Editor */}
+      {/* <EditorHeader /> */}
+      {/* <Toolbar /> */}
+      {/* <EditorToolbar ref={canvasRef} /> */}
       <CanvasEditor ref={canvasRef} />
-      <EditorFooter />
+      {/* <EditorFooter /> */}
     </>
+    </Provider>
   );
 }
 

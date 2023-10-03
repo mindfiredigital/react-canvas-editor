@@ -13,17 +13,17 @@ import {
 export default function MarginRuler({ documentId }: { documentId: string | undefined }) {
     const dispatch = useDispatch();
 
-    const document = useSelector(
+    const document: any = useSelector(
         (state: RootState) => state.document
     ) as unknown as DocumentState;
 
-    const [verticalSlider, setVerticalSlider] = useState<Array<Number>>([]);
-    const [horizontalSlider, setHorizontalSlider] = useState<Array<Number>>([]);
+    const [verticalSlider, setVerticalSlider]: any[] = useState<Array<Number>>([]);
+    const [horizontalSlider, setHorizontalSlider]: any[] = useState<Array<Number>>([]);
 
-    const margins = useDebounce(document.margins, 500);
+    const margins: any = useDebounce(document.margins, 500);
 
     const handleChange = (e: any, value: Array<Number>) => {
-        let [bottom, top] = value;
+        let [bottom, top]: any[] = value;
         setVerticalSlider(value);
         let margin = [...margins];
         margin[0] = Math.abs(top);
@@ -33,7 +33,7 @@ export default function MarginRuler({ documentId }: { documentId: string | undef
     }
 
     const handleChangeHorizontal = (e: any, value: Array<Number>) => {
-        let [left, right] = value;
+        let [left, right]: any[] = value;
         setHorizontalSlider(value);
         let margin = [...margins];
         margin[2] = left;
@@ -75,7 +75,7 @@ export default function MarginRuler({ documentId }: { documentId: string | undef
                     min={-1056}
                     max={0}
                     marks={verticalMarks}
-                    onChange={handleChange}
+                    onChange={event => handleChange}
                     step={24}
                     track="inverted"
                     scale={x => -1056}
@@ -91,7 +91,7 @@ export default function MarginRuler({ documentId }: { documentId: string | undef
                     min={0}
                     max={816}
                     marks={horizontalMarks}
-                    onChange={handleChangeHorizontal}
+                    onChange={(event) => handleChangeHorizontal}
                     step={24}
                     size="small"
                     scale={x => 816}

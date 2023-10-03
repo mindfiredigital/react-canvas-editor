@@ -51,11 +51,12 @@ const SaveAsTemplateButton = forwardRef<HTMLDivElement>(function TemplateButton(
     const content = DOMEventHandlers.getContent();
     if (content) {
       handleScreenshot();
-      DocumentService.saveAsTemplate({
+      const data: any = {
         userId: "user1",
         title: doc.title,
         data: content.data.main,
-      }).then(
+      }
+      DocumentService.saveAsTemplate(data).then(
         (resp) => {
           setTemplateId(resp.data.data);
         },
