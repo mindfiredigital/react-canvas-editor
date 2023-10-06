@@ -1,40 +1,34 @@
 import { babel } from '@rollup/plugin-babel';
-import resolve from '@rollup/plugin-node-resolve';
+// import resolve from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
-// import commonjs from "@rollup/plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import svg from "rollup-plugin-svg";
 
+const packageJson = require("./package.json");
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 export default [
     {
-        input: './src/index.tsx',
+        input: 'component/index.ts',
+        external: [/node_module/,"react", "react-dom"],
         output: [
             {
-                file:'dist/index.js',
-                format: 'cjs',
-        },
-        {
-            file:'dist/index.es.js',
-            format: 'es',
-            exports: 'named',
-        }
+                file: packageJson.main,
+                format: 'es',
+                // sourcemap: true,
+            }
         ],
         plugins: [
-            postcss({
-                plugins:[],
-                minimize: true
-            }),
-            babel ({
-                exclude: 'node_modules/**'
-            }),
             external(),
-            resolve(),
-            typescript({ tsconfig: "./tsconfig.json" }),
-            svg()
+            nodeResolve(),
+            commonjs(),
+            typescript({ tsconfig: './tsconfig.json' }),
+            postcss(
+                {extensions: ['.css']}
+            ),
+            svg(),
+            babel()
         ],
-        external: [
-            /node_modules/
-        ]
     }
 ]
