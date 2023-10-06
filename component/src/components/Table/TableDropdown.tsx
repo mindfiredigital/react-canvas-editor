@@ -9,7 +9,7 @@ import BackupTableIcon from "@mui/icons-material/BackupTable";
 import CloseIcon from "@mui/icons-material/Close";
 import { DOMEventHandlers } from "@harshita/canvas-editor";
 import ButtonWrapper from "../ButtonWrapper/ButtonWrapper";
-import styles from "./TableDropdown.module.scss";
+import "./TableDropdown.scss";
 
 const TableComponent = () => {
   const [colIndex, setColIndex] = useState(-1);
@@ -49,7 +49,7 @@ const TableComponent = () => {
   };
 
   return (
-    <Box className={styles.tableContainer}>
+    <Box className="tableContainer">
       <ButtonWrapper
         title="Insert Table"
         handleClick={handleTableClick}
@@ -58,8 +58,8 @@ const TableComponent = () => {
         <BackupTableIcon />
       </ButtonWrapper>
       {tablePanelVisible && (
-        <Box className={styles.tableCollapse}>
-          <Box className={styles.tableTitle}>
+        <Box className="tableCollapse">
+          <Box className="tableTitle">
             <Typography sx={{ fontSize: "0.8rem" }}>{tableTitle}</Typography>
             <ButtonWrapper
               title="Close table"
@@ -87,7 +87,7 @@ const TableComponent = () => {
                       <TableCell
                         className={
                           trIndex < rowIndex && tdIndex < colIndex
-                            ? `${styles.activeCell}`
+                            ? `"activeCell"`
                             : ""
                         }
                         key={tdIndex}
