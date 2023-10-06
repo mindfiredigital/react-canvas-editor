@@ -29,3 +29,6 @@ yarn-error.log*
 /dist
 
 package-lock.json
+
+/.yalc
+yalc.lock
