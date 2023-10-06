@@ -1,6 +1,6 @@
 {
   "name": "document-editor",
-  "version": "0.1.6",
+  "version": "0.1.10",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -11,9 +11,9 @@
   "typings": "./dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
-    "storybook": "npm link @harshita/canvas-editor && storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build-lib": "rm -rf dist && npm cache clean --force && npm link @harshita/canvas-editor && rollup -c",
+    "build-lib": "rm -rf dist && npm cache clean --force && rollup -c",
     "publish-locally": "npx yalc publish"
   },
   "eslintConfig": {
@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.22.15",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.2.1",
@@ -68,18 +69,21 @@
     "prettier": "^2.8.8",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^4.0.0",
     "rollup-plugin-svg": "^2.0.0",
     "sass": "^1.68.0",
     "style-loader": "^3.3.3"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@harshita/canvas-editor": "file:.yalc/@harshita/canvas-editor"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@grammarly/editor-sdk-react": "^2.5.1",
+    "@harshita/canvas-editor": "file:.yalc/@harshita/canvas-editor",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
     "@reduxjs/toolkit": "^1.9.5",
