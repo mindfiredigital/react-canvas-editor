@@ -17,7 +17,7 @@ const DocumentEditor = () => {
       {/* <EditorHeader /> */}
       {/* <Toolbar /> */}
       <EditorToolbar ref={canvasRef} />
-      {/* <CanvasEditor ref={canvasRef} /> */}
+      <CanvasEditor ref={canvasRef} />
       {/* I am in the Lib */}
       {/* <EditorFooter /> */}
       {/* Hello world */}
