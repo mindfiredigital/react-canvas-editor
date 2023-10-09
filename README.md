@@ -33,15 +33,15 @@ The `Canvas-document-editor` npm package is a powerful tool that allows develope
 
 To install the `document-editor` npm package in your project, use the following command:
 
-bash
+```bash
 npm install document-editor
-
+```
 
 ## Getting Started
 
 1. **Initialization**: Initialize the canvas document editor in your project, specifying the container element where the editor will be embedded.
 
-javascript
+```javascript
 
 import { DocumentEditor } from 'document-editor';
 import React from "react";
@@ -54,7 +54,7 @@ function App() {
 };
 
 export default App;
-
+```
 
 2. **Customization**: Customize the editor's UI and behavior to match your application's requirements.
 
