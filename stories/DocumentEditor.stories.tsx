@@ -27,7 +27,16 @@ const toolbarClass: any = {
     bold: {
       // border: 'black solid 3px',
       // background:'blue'
-    }
+    },
+    italic: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    underline: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    
   }
 }
 

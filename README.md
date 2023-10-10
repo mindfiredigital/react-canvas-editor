@@ -46,9 +46,61 @@ npm install document-editor
 import { DocumentEditor } from 'document-editor';
 import React from "react";
 function App() {
+
+  const toolbarItem: any = {
+  bold: false,
+  italic: true,
+  underline: true
+}
+
+const toolbarClass: any = {
+  container: {
+    // backgroundColor: "red"
+  },
+  primaryToolbar: {
+    justifyContent: "center"
+  },
+  item: {
+    bold: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    italic: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    underline: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    
+  }
+}
+
+const canvasClass = {
+  editorMain: {
+    // background:'antiquewhite'
+  },
+  margin: {}
+}
+
+const handleChange = (data) => {
+  console.log(data);
+
+}
+
+const handleSelectedText = (text) => {
+  console.log(text);
+
+}
+
   return (
     <div>
-      <DocumentEditor></DocumentEditor>
+      toolbarClass={toolbarClass} 
+      canvasClass={canvasClass} 
+      onChange={handleChange} 
+      onSelect={handleSelectedText}
+      data="Hello world"
     </div>
   );
 };
