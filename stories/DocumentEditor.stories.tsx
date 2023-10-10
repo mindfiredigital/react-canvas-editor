@@ -39,7 +39,7 @@ const canvasClass = {
 }
 
 const handleChange = (data) => {
-  // console.log('test ->',data);
+  console.log('test ->',data);
 
 }
 
@@ -48,4 +48,10 @@ const handleSelectedText = (text) => {
 
 }
 
-export const test = () => <DocumentEditor toolbarClass={toolbarClass} canvasClass={canvasClass} onChange={handleChange} onSelect={handleSelectedText}/>
+export const test = () => <DocumentEditor 
+toolbarClass={toolbarClass} 
+canvasClass={canvasClass} 
+onChange={handleChange} 
+onSelect={handleSelectedText}
+data="Hello world"
+/>

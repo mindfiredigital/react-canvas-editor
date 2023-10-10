@@ -7,8 +7,6 @@ import {
 } from "@harshita/canvas-editor";
 import "./CanvasEditor.scss";
 // import { SOCKET_URL, SocketEvents } from "../../utils/constant";
-// import { Socket, io } from "socket.io-client";
-// import { DefaultEventsMap } from "@socket.io/component-emitter";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -27,7 +25,7 @@ interface content {
   style?: any,
   onChange?: any,
   onSelect?: any,
-  setData?: any
+  data?: any
 }
 
 const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
@@ -40,8 +38,7 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
     visiblity: false,
   });
   const [editorContent, setEditorContent] = useState<IElement[]>([]);
-  // const [socket, setSocket] =
-  //   useState<Socket<DefaultEventsMap, DefaultEventsMap>>();
+
   const [selectedText, setSelectedText] = useState<string>("");
 
   const { documentId } = useParams();
@@ -50,16 +47,6 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
     (state: RootState) => state.document
   ) as DocumentState;
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   // socket connection
-  //   // const s = io(SOCKET_URL);
-  //   // setSocket(s);
-
-  //   return () => {
-  //     s.disconnect();
-  //   };
-  // }, []);
 
   useEffect(() => {
     const container = document.querySelector(
@@ -80,51 +67,28 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
       _props.onSelect && _props?.onSelect(DOMEventHandlers.getSelectedText());
       // console.log('SelectText',DOMEventHandlers.getSelectedText());
     })
+
+    container.addEventListener('keydown', (e)=> {
+      const content = DOMEventHandlers.getContent();
+      setEditorContent(content.data.main);
+      const text: any = content.data.main;
+      _props?.onChange && _props?.onChange({text,editorContent});
+      })
+
     DOMEventHandlers.register(container, editorContent, editorOptions);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    // const interval = setInterval(() => {
-      window.addEventListener('keydown', (e)=> {
-        const content = DOMEventHandlers.getContent();
-        setEditorContent(content.data.main);
-        const text: any = content.data.main;
-        _props?.onChange && _props?.onChange({text,editorContent});
-        })
-      // setEditorContent((previous) => {
-      //   if()
-      //   content.data.main
-      // });
-    // }, 2000);
-
-    // return () => {
-    //   clearInterval(interval);
-    // };
-  }, []);
-
-  // useEffect(() => {
-  //   // if (!socket) return;
-  //   // dispatch(setDocumentId({ documentId }));
-  //   // socket.emit(SocketEvents.GET_DOC, documentId);
-  //   // socket.once(SocketEvents.LOAD_DOC, (document) => {
-  //   //   dispatch(setDocumentTitle({ title: document.title }));
-  //   //   dispatch(
-  //   //     setDocumentMargins({
-  //   //       margins: document?.margins?.length
-  //   //         ? document.margins
-  //   //         : [100, 100, 120, 120],
-  //   //     })
-  //   //   );
-  //     // if (document.data) {
-  //       // console.log(document.data);
+      if (_props?.data) {
+        console.log(_props?.data);
         
-  //       // setEditorContent(document.data);
-  //       // DOMEventHandlers.setContent({ main: document.data });
-  //     // }
-  //   });
-  // }, [documentId, dispatch]);
+        setEditorContent(_props?.data);
+        
+        DOMEventHandlers.setContent({ main: [{value:_props?.data}] });
+      }
+  }, [documentId, dispatch, _props?.data]);
 
   // Multi User
   // useEffect(() => {
@@ -145,15 +109,6 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
   //   //   socket.off(SocketEvents.RECEIVE_CHANGES, handler);
   //   // };
   // }, [socket, editorContent]);
-
-  // useEffect(() => {
-  //   if (!socket || !documentId) return;
-  //   socket.emit(SocketEvents.SAVE_DOC, {
-  //     id: documentId,
-  //     data: editorContent,
-  //     title: doc.title,
-  //   });
-  // }, [editorContent, documentId, doc.title, socket]);
 
   return (
     <div className="canvas-editor-main" style={_props?.style?.editorMain}>
