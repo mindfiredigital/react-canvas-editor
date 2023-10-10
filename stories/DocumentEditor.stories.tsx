@@ -10,9 +10,24 @@ export default {
 // export const Default = {
 //   args: {},
 // };
-const t: any = {
+const toolbarItem: any = {
   bold: false,
   italic: true,
   underline: true
 }
-export const test = () => <DocumentEditor toolbar={t} />
+
+const toolbarClass: any = {
+  container: {
+    backgroundColor: "red"
+  },
+  primaryToolbar: {
+    justifyContent: "center"
+  },
+  item: {
+    bold: {
+      border: 'black solid 3px',
+      background:'blue'
+    }
+  }
+}
+export const test = () => <DocumentEditor toolbarClass={toolbarClass}/>

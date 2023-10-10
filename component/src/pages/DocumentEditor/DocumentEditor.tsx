@@ -9,30 +9,57 @@ import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 
 const DocumentEditor = (
-  toolbar: any = {
-  bold: true,
-  italic: true,
-  underline:true
-},
-toolbarClass = '',
-canvasClass = '',
-onChange = ()=>{},
-onSelect= ()=> {},
-onSave = () => {},
-SetData = () => {}
+  { toolbar,
+    toolbarClass,
+    canvasClass,
+    onChange,
+    onSelect,
+    onSave,
+    SetData }: any
 ) => {
+
+  const defaultToolbarItem = {
+    bold: true,
+    italic: true,
+    underline: true
+  }
+
+  const defaultToolbarClass = {
+    container: {
+      backgroundColor: "#edf2fa",
+      border: "none",
+      minHeight: "40px",
+      boxShadow: "none",
+    },
+    primaryToolbar: {
+      display: "flex",
+      flexDirection: "row",
+      minHeight: "40px",
+      justifyContent: "left",
+      alignItems: "center"
+    }
+  }
+
+  toolbar = toolbar && Object.keys(toolbar).length ? toolbar?.toolbar : defaultToolbarItem;
+
+  toolbarClass = toolbarClass && Object.keys(toolbarClass).length ? {
+    container: {...defaultToolbarClass.container, ...toolbarClass?.container},
+    primaryToolbar: { ...defaultToolbarClass.primaryToolbar, ...toolbarClass?.primaryToolbar },
+    item: {...toolbarClass?.item}
+  } : defaultToolbarClass;
+
   const canvasRef = useRef(null);
   return (
     <Provider store={store}>
-    <>
-      {/* <h1>{name}</h1> */}
-      {/* <EditorHeader/> */}
-      <Toolbar />
-      <EditorToolbar ref={canvasRef} toolbar={toolbar?.toolbar}/>
-      <CanvasEditor ref={canvasRef} />
-      <EditorFooter />
-    </>
-     </Provider>
+      <>
+        {/* <h1>{name}</h1> */}
+        {/* <EditorHeader/> */}
+        <Toolbar />
+        <EditorToolbar ref={canvasRef} toolbar={toolbar} toolbarClass={toolbarClass} />
+        <CanvasEditor ref={canvasRef} />
+        <EditorFooter />
+      </>
+    </Provider>
   );
 }
 

@@ -39,7 +39,8 @@ import SaveAsTemplateButton from "../SaveAsTemplateButton/SaveAsTemplateButton";
 import { AnyMap } from "immer/dist/internal";
 
 interface content {
-  toolbar: any
+  toolbar: any,
+  toolbarClass: any
 }
 const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props, ref) {
   const [contentStyles, setContentStyles] = useState<IRangeStyle | undefined>();
@@ -62,43 +63,25 @@ const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
-        sx={{
-          top: 65,
-          backgroundColor: "#edf2fa",
-          border: "none",
-          minHeight: "40px",
-          boxShadow: "none",
-        }}
+        sx={_props?.toolbarClass?.container}
       >
         <Stack
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            minHeight: "40px",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
+          sx={_props?.toolbarClass?.primaryToolbar}
         >
-          {_props?.toolbar?.undo && <ButtonWrapper title="undo" handleClick={DOMEventHandlers.handleUndo}>
+          {_props?.toolbar?.undo && <ButtonWrapper sx={_props?.toolbarClass?.item?.undo} title="undo" handleClick={DOMEventHandlers.handleUndo}>
             <UndoIcon />
           </ButtonWrapper>}
 
-          {_props?.toolbar?.redo && <ButtonWrapper title="redo" handleClick={DOMEventHandlers.handleRedo}>
+          {_props?.toolbar?.redo && <ButtonWrapper sx={_props?.toolbarClass?.item?.redo} title="redo" handleClick={DOMEventHandlers.handleRedo}>
             <RedoIcon />
           </ButtonWrapper>}
-          {_props?.toolbar?.bold && <ButtonWrapper title="bold" handleClick={DOMEventHandlers.handleBold}>
+          {_props?.toolbar?.bold && <ButtonWrapper sx={_props?.toolbarClass?.item?.bold} title="bold" handleClick={DOMEventHandlers.handleBold}>
             <FormatBoldIcon />
           </ButtonWrapper>}
-          {_props?.toolbar?.italic && <ButtonWrapper
-            title="italic"
-            handleClick={DOMEventHandlers.handleItalic}
-          >
+          {_props?.toolbar?.italic && <ButtonWrapper sx={_props?.toolbarClass?.item?.italic} title="italic" handleClick={DOMEventHandlers.handleItalic}>
             <FormatItalicIcon />
           </ButtonWrapper>}
-          {_props?.toolbar?.underline && <ButtonWrapper
-            title="underline"
-            handleClick={DOMEventHandlers.handleUnderline}
-          >
+          {_props?.toolbar?.underline && <ButtonWrapper sx={_props?.toolbarClass?.item?.underline} title="underline" handleClick={DOMEventHandlers.handleUnderline} >
             <FormatUnderlinedIcon />
            </ButtonWrapper>}
           {/*<ButtonWrapper
