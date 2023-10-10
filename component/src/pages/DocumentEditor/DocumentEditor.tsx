@@ -14,7 +14,6 @@ const DocumentEditor = (
     canvasClass,
     onChange,
     onSelect,
-    onSave,
     SetData }: any
 ) => {
 
@@ -56,7 +55,7 @@ const DocumentEditor = (
         {/* <EditorHeader/> */}
         {/* <Toolbar /> */}
         <EditorToolbar ref={canvasRef} toolbar={toolbar} toolbarClass={toolbarClass} />
-        <CanvasEditor ref={canvasRef} style={canvasClass} onChange={onChange}/>
+        <CanvasEditor ref={canvasRef} style={canvasClass} onChange={onChange} onSelect={onSelect}/>
         <EditorFooter />
       </>
     </Provider>

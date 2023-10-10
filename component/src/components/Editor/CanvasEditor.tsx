@@ -76,7 +76,10 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
       minSize: 1,
       maxSize: 72,
     };
-
+    container.addEventListener('mouseup', (e) => {
+      _props.onSelect && _props?.onSelect(DOMEventHandlers.getSelectedText());
+      // console.log('SelectText',DOMEventHandlers.getSelectedText());
+    })
     DOMEventHandlers.register(container, editorContent, editorOptions);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

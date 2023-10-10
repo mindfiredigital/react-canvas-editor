@@ -1,5 +1,5 @@
 
-import {DocumentEditor} from '../component';
+import { DocumentEditor } from '../component';
 import React from 'react';
 
 export default {
@@ -35,12 +35,17 @@ const canvasClass = {
   editorMain: {
     // background:'antiquewhite'
   },
-  margin:{}
+  margin: {}
 }
 
 const handleChange = (data) => {
-  console.log('test ->',data);
-  
+  // console.log('test ->',data);
+
 }
 
-export const test = () => <DocumentEditor toolbarClass={toolbarClass} canvasClass={canvasClass} onChange={handleChange}/>
+const handleSelectedText = (text) => {
+  console.log(text);
+
+}
+
+export const test = () => <DocumentEditor toolbarClass={toolbarClass} canvasClass={canvasClass} onChange={handleChange} onSelect={handleSelectedText}/>
