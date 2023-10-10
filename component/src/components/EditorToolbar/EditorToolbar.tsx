@@ -36,8 +36,9 @@ import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import ImageUploadButton from "../ImageUploadButton/ImageUploadButton";
 import Separator from "../Separator/Separator";
 import SaveAsTemplateButton from "../SaveAsTemplateButton/SaveAsTemplateButton";
+import { AnyMap } from "immer/dist/internal";
 
-const EditorToolbar = forwardRef<HTMLDivElement>(function Toolbar(_props, ref) {
+const EditorToolbar = forwardRef<HTMLDivElement>(function Toolbar(_props:any, ref) {
   const [contentStyles, setContentStyles] = useState<IRangeStyle | undefined>();
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -81,7 +82,10 @@ const EditorToolbar = forwardRef<HTMLDivElement>(function Toolbar(_props, ref) {
           <ButtonWrapper title="redo" handleClick={DOMEventHandlers.handleRedo}>
             <RedoIcon />
           </ButtonWrapper>
-          <ButtonWrapper title="bold" handleClick={DOMEventHandlers.handleBold}>
+          <ButtonWrapper title="bold" handleClick={() => {
+            DOMEventHandlers.handleBold()
+            // DOMEventHandlers.handleBold()
+            }}>
             <FormatBoldIcon />
           </ButtonWrapper>
           <ButtonWrapper
@@ -95,8 +99,8 @@ const EditorToolbar = forwardRef<HTMLDivElement>(function Toolbar(_props, ref) {
             handleClick={DOMEventHandlers.handleUnderline}
           >
             <FormatUnderlinedIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+           </ButtonWrapper>
+          {/*<ButtonWrapper
             title="subscript"
             handleClick={DOMEventHandlers.handleSubscript}
           >
@@ -168,8 +172,8 @@ const EditorToolbar = forwardRef<HTMLDivElement>(function Toolbar(_props, ref) {
             <InsertLinkIcon />
           </ButtonWrapper>
           <ImageUploadButton />
-          <Separator />
-          <SaveAsTemplateButton ref={ref} />
+          <Separator /> */}
+          <SaveAsTemplateButton ref={ref}/>
         </Stack>
       </AppBar>
     </Box>

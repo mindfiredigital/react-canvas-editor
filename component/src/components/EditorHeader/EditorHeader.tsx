@@ -17,8 +17,8 @@ import { useDebounce } from "../../hooks/useDebounce";
 import "./EditorHeader.scss";
 
 export default function EditorHeader() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
   const { documentId } = useParams();
   const document = useSelector(
     (state: RootState) => state.document
@@ -44,72 +44,19 @@ export default function EditorHeader() {
     if (title) updateTitle();
   }, [title, documentId]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setDocumentTitle({ title: e.target.value }));
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   dispatch(setDocumentTitle({ title: e.target.value }));
+  // };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ top: 0 }}>
-        <Toolbar>
-          <Tooltip title="Home">
-            <IconButton
-              size="medium"
-              edge="start"
-              color="inherit"
-              aria-label="home"
-              sx={{ mr: 1 }}
-              onClick={() => {
-                dispatch(setDocumentTitle({ title: "" }));
-                navigate("/");
-              }}
-            >
-              <HomeSharpIcon />
-            </IconButton>
-          </Tooltip>
-
-          {!documentId ? (
-            <Typography
+          <Typography
               variant="body2"
               component="div"
               sx={{ flexGrow: 1, marginTop: "0.32rem" }}
             >
-              Document Editor
             </Typography>
-          ) : (
-            <>
-              <Input
-                className="text-input"
-                sx={{
-                  marginTop: "0.32rem",
-                  paddingLeft: "0.25rem",
-                  color: "inherit !important",
-                  borderRadius: 1,
-                  flexGrow: 1,
-                  marginRight: 12,
-                }}
-                disableUnderline
-                id="basic-input"
-                value={document.title}
-                onChange={handleChange}
-              />
-              <Tooltip title="See version history">
-                <IconButton
-                  size="medium"
-                  edge="start"
-                  color="inherit"
-                  aria-label="version"
-                  sx={{ mr: 2 }}
-                  onClick={() => {
-                    navigate("version", { replace: false });
-                  }}
-                >
-                  <AccessTimeIcon />
-                </IconButton>
-              </Tooltip>
-            </>
-          )}
-        </Toolbar>
       </AppBar>
     </Box>
   );
