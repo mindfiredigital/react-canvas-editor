@@ -10,5 +10,9 @@ export default {
 // export const Default = {
 //   args: {},
 // };
-
-export const test = () => <DocumentEditor></DocumentEditor>
+const t: any = {
+  bold: false,
+  italic: true,
+  underline: true
+}
+export const test = () => <DocumentEditor toolbar={t} />
