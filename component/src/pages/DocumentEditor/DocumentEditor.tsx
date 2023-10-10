@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Toolbar from "@mui/material/Toolbar";
+// import Toolbar from "@mui/material/Toolbar";
 // import Editor from '../../components/Editor/Editor';
 import EditorHeader from "../../components/EditorHeader/EditorHeader";
 import CanvasEditor from "../../components/Editor/CanvasEditor";
@@ -54,9 +54,9 @@ const DocumentEditor = (
       <>
         {/* <h1>{name}</h1> */}
         {/* <EditorHeader/> */}
-        <Toolbar />
+        {/* <Toolbar /> */}
         <EditorToolbar ref={canvasRef} toolbar={toolbar} toolbarClass={toolbarClass} />
-        <CanvasEditor ref={canvasRef} />
+        <CanvasEditor ref={canvasRef} style={canvasClass}/>
         <EditorFooter />
       </>
     </Provider>

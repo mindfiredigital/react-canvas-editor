@@ -30,4 +30,11 @@ const toolbarClass: any = {
     }
   }
 }
-export const test = () => <DocumentEditor toolbarClass={toolbarClass}/>
+
+const canvasClass = {
+  editorMain: {
+    background:'antiquewhite'
+  },
+  margin:{}
+}
+export const test = () => <DocumentEditor toolbarClass={toolbarClass} canvasClass={canvasClass}/>

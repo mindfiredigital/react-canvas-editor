@@ -23,7 +23,14 @@ import { SelectionRect } from "../../utils/types";
 import useSelectionPosition from "../../hooks/useSelectionPosition";
 import FloatingBox from "../FloatingBox/FloatingBox";
 
-const CanvasEditor = forwardRef<HTMLDivElement, unknown>(function Editor(
+interface content {
+  style?: any,
+  onChange?: any,
+  onSelect?: any,
+  setData?: any
+}
+
+const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
   _props,
   ref
 ) {
@@ -138,8 +145,8 @@ const CanvasEditor = forwardRef<HTMLDivElement, unknown>(function Editor(
   // }, [editorContent, documentId, doc.title, socket]);
 
   return (
-    <div className="canvas-editor-main">
-      <div className="canvas-editor editor" ref={ref}>
+    <div className="canvas-editor-main" style={_props?.style?.editorMain}>
+      <div className="canvas-editor editor" ref={ref} style={_props?.style?.margin}>
         <MarginRuler documentId={documentId} />
       </div>
       {dropdown.visiblity && (
