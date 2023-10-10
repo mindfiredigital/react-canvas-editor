@@ -7,7 +7,20 @@ import EditorToolbar from "../../components/EditorToolbar/EditorToolbar";
 import EditorFooter from "../../components/EditorFooter/EditorFooter";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
-const DocumentEditor = () => {
+
+const DocumentEditor = (
+  toolbar: any = {
+  bold: true,
+  italic: true,
+  underline:true
+},
+toolbarClass = '',
+canvasClass = '',
+onChange = ()=>{},
+onSelect= ()=> {},
+onSave = () => {},
+SetData = () => {}
+) => {
   const canvasRef = useRef(null);
   return (
     <Provider store={store}>
@@ -15,7 +28,7 @@ const DocumentEditor = () => {
       {/* <h1>{name}</h1> */}
       {/* <EditorHeader/> */}
       <Toolbar />
-      <EditorToolbar ref={canvasRef} />
+      <EditorToolbar ref={canvasRef} toolbar={toolbar?.toolbar}/>
       <CanvasEditor ref={canvasRef} />
       <EditorFooter />
     </>

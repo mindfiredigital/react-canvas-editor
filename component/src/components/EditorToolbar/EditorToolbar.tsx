@@ -38,7 +38,10 @@ import Separator from "../Separator/Separator";
 import SaveAsTemplateButton from "../SaveAsTemplateButton/SaveAsTemplateButton";
 import { AnyMap } from "immer/dist/internal";
 
-const EditorToolbar = forwardRef<HTMLDivElement>(function Toolbar(_props:any, ref) {
+interface content {
+  toolbar: any
+}
+const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props, ref) {
   const [contentStyles, setContentStyles] = useState<IRangeStyle | undefined>();
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -76,30 +79,28 @@ const EditorToolbar = forwardRef<HTMLDivElement>(function Toolbar(_props:any, re
             alignItems: "center",
           }}
         >
-          <ButtonWrapper title="undo" handleClick={DOMEventHandlers.handleUndo}>
+          {_props?.toolbar?.undo && <ButtonWrapper title="undo" handleClick={DOMEventHandlers.handleUndo}>
             <UndoIcon />
-          </ButtonWrapper>
-          <ButtonWrapper title="redo" handleClick={DOMEventHandlers.handleRedo}>
+          </ButtonWrapper>}
+
+          {_props?.toolbar?.redo && <ButtonWrapper title="redo" handleClick={DOMEventHandlers.handleRedo}>
             <RedoIcon />
-          </ButtonWrapper>
-          <ButtonWrapper title="bold" handleClick={() => {
-            DOMEventHandlers.handleBold()
-            // DOMEventHandlers.handleBold()
-            }}>
+          </ButtonWrapper>}
+          {_props?.toolbar?.bold && <ButtonWrapper title="bold" handleClick={DOMEventHandlers.handleBold}>
             <FormatBoldIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {_props?.toolbar?.italic && <ButtonWrapper
             title="italic"
             handleClick={DOMEventHandlers.handleItalic}
           >
             <FormatItalicIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {_props?.toolbar?.underline && <ButtonWrapper
             title="underline"
             handleClick={DOMEventHandlers.handleUnderline}
           >
             <FormatUnderlinedIcon />
-           </ButtonWrapper>
+           </ButtonWrapper>}
           {/*<ButtonWrapper
             title="subscript"
             handleClick={DOMEventHandlers.handleSubscript}
