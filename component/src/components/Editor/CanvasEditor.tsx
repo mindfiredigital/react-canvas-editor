@@ -83,15 +83,23 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const content = DOMEventHandlers.getContent();
-      setEditorContent(content.data.main);
-    }, 2000);
+    // const interval = setInterval(() => {
+      window.addEventListener('keydown', (e)=> {
+        const content = DOMEventHandlers.getContent();
+        setEditorContent(content.data.main);
+        const text: any = content.data.main;
+        _props?.onChange && _props?.onChange({text,editorContent});
+        })
+      // setEditorContent((previous) => {
+      //   if()
+      //   content.data.main
+      // });
+    // }, 2000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [editorContent]);
+    // return () => {
+    //   clearInterval(interval);
+    // };
+  }, []);
 
   // useEffect(() => {
   //   // if (!socket) return;

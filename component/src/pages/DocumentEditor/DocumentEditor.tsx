@@ -56,7 +56,7 @@ const DocumentEditor = (
         {/* <EditorHeader/> */}
         {/* <Toolbar /> */}
         <EditorToolbar ref={canvasRef} toolbar={toolbar} toolbarClass={toolbarClass} />
-        <CanvasEditor ref={canvasRef} style={canvasClass}/>
+        <CanvasEditor ref={canvasRef} style={canvasClass} onChange={onChange}/>
         <EditorFooter />
       </>
     </Provider>

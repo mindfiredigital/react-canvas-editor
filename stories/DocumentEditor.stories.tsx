@@ -18,23 +18,29 @@ const toolbarItem: any = {
 
 const toolbarClass: any = {
   container: {
-    backgroundColor: "red"
+    // backgroundColor: "red"
   },
   primaryToolbar: {
     justifyContent: "center"
   },
   item: {
     bold: {
-      border: 'black solid 3px',
-      background:'blue'
+      // border: 'black solid 3px',
+      // background:'blue'
     }
   }
 }
 
 const canvasClass = {
   editorMain: {
-    background:'antiquewhite'
+    // background:'antiquewhite'
   },
   margin:{}
 }
-export const test = () => <DocumentEditor toolbarClass={toolbarClass} canvasClass={canvasClass}/>
+
+const handleChange = (data) => {
+  console.log('test ->',data);
+  
+}
+
+export const test = () => <DocumentEditor toolbarClass={toolbarClass} canvasClass={canvasClass} onChange={handleChange}/>
