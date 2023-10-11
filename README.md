@@ -110,13 +110,6 @@ export default App;
 
 2. **Customization**: Customize the editor's UI and behavior to match your application's requirements.
 
-## API Reference
-
-For detailed information about using the `online-document-editor` package's API, please refer to the [API Reference](api-reference.md).
-
-## Examples
-
-Explore the [Examples](examples/) directory for sample code and demonstrations of how to use the package in different scenarios.
 
 ## Contributing
 
