@@ -54,16 +54,6 @@ export const AIPromptsOption = [
   },
 ];
 
-export const SOCKET_URL = "http://localhost:9000";
-
-export enum SocketEvents {
-  SAVE_DOC = "save-document",
-  LOAD_DOC = "load-document",
-  GET_DOC = "get-document",
-  RECEIVE_CHANGES = "receive-changes",
-  SEND_CHANGES = "send-changes",
-}
-
 export enum MSGSEVERITY {
   SUCCESS = "success",
   ERROR = "error",

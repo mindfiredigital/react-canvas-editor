@@ -1,6 +1,6 @@
 {
   "name": "document-editor",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
