@@ -13,7 +13,7 @@
   "scripts": {
     "build-lib": "rm -rf dist && npm cache clean --force && rollup -c",
     "publish-locally": "npx yalc publish",
-    "build": "npm link  @harshita/canvas-editor && npm run build-lib && npm run publish-locally",
+    "build": "npm link  @mindfire/canvas-editor && npm run build-lib && npm run publish-locally",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

@@ -10,7 +10,7 @@ import {
 import { Color, colors } from "../../utils/constant";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
 import ColorPicker from "../ColorPicker/ColorPicker";
-import { DOMEventHandlers } from "@harshita/canvas-editor";
+import { DOMEventHandlers } from "@mindfire/canvas-editor";
 import CheckIcon from "@mui/icons-material/Check";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";

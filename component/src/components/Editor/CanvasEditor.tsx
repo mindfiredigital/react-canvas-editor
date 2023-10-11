@@ -4,7 +4,7 @@ import {
   EditorMode,
   PageMode,
   IElement,
-} from "@harshita/canvas-editor";
+} from "@mindfire/canvas-editor";
 import "./CanvasEditor.scss";
 // import { SOCKET_URL, SocketEvents } from "../../utils/constant";
 import { useParams } from "react-router-dom";

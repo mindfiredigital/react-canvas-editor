@@ -8,7 +8,7 @@ import { DocumentState, setDocumentMargins } from "../../redux/documentReducer";
 import { CustomSliderVertical, CustomSliderHorizontal, MarginRightArrow, MarginDownArrow, verticalMarks, horizontalMarks } from "./CustomSliderComponents";
 import {
     DOMEventHandlers
-} from "@harshita/canvas-editor";
+} from "@mindfire/canvas-editor";
 
 export default function MarginRuler({ documentId }: { documentId: string | undefined }) {
     const dispatch = useDispatch();

@@ -3,12 +3,7 @@ import React, { forwardRef, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
-import {
-  DOMEventHandlers,
-  ListStyle,
-  ListType,
-  RowFlex,
-} from "@harshita/canvas-editor";
+import {DOMEventHandlers} from "@mindfire/canvas-editor";
 import ButtonWrapper from "../ButtonWrapper/ButtonWrapper";
 import FormatItalicIcon from "@mui/icons-material/FormatItalic";
 import { Stack } from "@mui/material";
@@ -31,7 +26,7 @@ import FontColorButton from "../FontColorButton/FontColorButton";
 import HighlightTextButton from "../HighlightTextButton/HighlightTextButton";
 import FontSizeButton from "../FontSizeButton/FontSizeButton";
 import HeadingButton from "../HeadingButton/HeadingButton";
-import { IRangeStyle } from "@harshita/canvas-editor/dist/src/editor/interface/Listener";
+import { IRangeStyle } from "@mindfire/canvas-editor/dist/src/editor/interface/Listener";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import ImageUploadButton from "../ImageUploadButton/ImageUploadButton";
 import Separator from "../Separator/Separator";
@@ -154,10 +149,10 @@ const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props
             handleClick={() => DOMEventHandlers.createHyperLink()}
           >
             <InsertLinkIcon />
-          </ButtonWrapper>
+          </ButtonWrapper>*/}
           <ImageUploadButton />
-          <Separator /> */}
-          <SaveAsTemplateButton ref={ref}/>
+          {/* <Separator />  */}
+          {/* <SaveAsTemplateButton ref={ref}/> */}
         </Stack>
       </AppBar>
     </Box>

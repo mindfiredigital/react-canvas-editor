@@ -1,4 +1,4 @@
-import { IElement } from "@harshita/canvas-editor";
+import { IElement } from "@mindfire/canvas-editor";
 import { MSGSEVERITY } from "./constant";
 
 export type RecentDocPropType = {

@@ -9,7 +9,7 @@ import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { AIPromptsOption } from "../../utils/constant";
 // import { AskAIService } from "../../services/askAIService";
-import { DOMEventHandlers } from "@harshita/canvas-editor";
+import { DOMEventHandlers } from "@mindfire/canvas-editor";
 import { SelectionRect } from "../../utils/types";
 
 export default function AskAI({

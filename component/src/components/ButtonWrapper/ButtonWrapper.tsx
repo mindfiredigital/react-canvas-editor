@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
-// import { DOMEventHandlers } from '@harshita/canvas-editor';
+// import { DOMEventHandlers } from '@mindfire/canvas-editor';
 // import { JsxElement } from 'typescript';
 
 function ButtonWrapper(props: ButtonWrapperProps) {

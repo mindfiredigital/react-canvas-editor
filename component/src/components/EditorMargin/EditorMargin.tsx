@@ -20,7 +20,7 @@ import { DocumentState, setDocumentMargins } from "../../redux/documentReducer";
 import { useParams } from "react-router-dom";
 import {
     DOMEventHandlers
-} from "@harshita/canvas-editor";
+} from "@mindfire/canvas-editor";
 
 const EditorMargin: React.FC = () => {
     const dispatch = useDispatch();
