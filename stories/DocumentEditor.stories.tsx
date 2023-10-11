@@ -27,6 +27,14 @@ const toolbarClass: any = {
     justifyContent: "center"
   },
   item: {
+    undo: {
+      // border: 'red solid 2px',
+      // background:'yellow'
+    },
+    redo: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
     bold: {
       // border: 'black solid 3px',
       // background:'blue'
