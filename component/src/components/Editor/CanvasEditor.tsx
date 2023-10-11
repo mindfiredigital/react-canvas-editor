@@ -1,7 +1,7 @@
 import {
   DOMEventHandlers,
   EditorMode, IElement, PageMode
-} from "@mindfire/canvas-editor";
+} from "@mindfiredigital/canvas-editor";
 import React, { forwardRef, useEffect, useState } from "react";
 import "./CanvasEditor.scss";
 import { useDispatch, useSelector } from "react-redux";

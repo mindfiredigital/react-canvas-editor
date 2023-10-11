@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useCallback } from "react";
 import { SelectionRect } from "../utils/types";
-import { DOMEventHandlers } from "@mindfire/canvas-editor";
+import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
 
 const useSelectionPosition = (
   setSelectedText: Dispatch<SetStateAction<string>>,

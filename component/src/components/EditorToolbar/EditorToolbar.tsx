@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useState } from "react";
 
-import { DOMEventHandlers } from "@mindfire/canvas-editor";
-import { IRangeStyle } from "@mindfire/canvas-editor/dist/src/editor/interface/Listener";
+import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
+import { IRangeStyle } from "@mindfiredigital/canvas-editor/dist/src/editor/interface/Listener";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
 import FormatItalicIcon from "@mui/icons-material/FormatItalic";
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";

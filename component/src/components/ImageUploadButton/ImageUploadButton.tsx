@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IconButton, Input, Tooltip } from "@mui/material";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
-import { DOMEventHandlers } from "@mindfire/canvas-editor";
+import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
 
 const ImageUploadButton: React.FC = (_props: any) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
