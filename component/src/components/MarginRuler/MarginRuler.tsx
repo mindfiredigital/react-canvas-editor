@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Stack from '@mui/material/Stack';
-// import { DocumentService } from "../../services/documentService";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../redux/store";
 import { useDebounce } from "../../hooks/useDebounce";
@@ -42,22 +41,8 @@ export default function MarginRuler({ documentId }: { documentId: string | undef
         dispatch(setDocumentMargins({ margins: margin }));
     }
 
-    const updateMargins = async () => {
-        // try {
-        //     if (documentId) {
-        //         await DocumentService.updateMargins({
-        //             documentId,
-        //             margins: margins,
-        //         });
-        //     }
-        // } catch (err) {
-        //     console.log(err);
-        // }
-    };
-
     useEffect(() => {
         if (margins?.length && documentId) {
-            updateMargins();
             setVerticalSlider([Math.abs(1056 - margins[1]) * -1, margins[0] * -1]);
             setHorizontalSlider([margins[2], 816 - margins[3]]);
             if (!verticalSlider.length && !horizontalSlider.length) {

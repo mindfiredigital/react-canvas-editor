@@ -12,7 +12,6 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-// import { DocumentService } from "../../services/documentService";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../redux/store";
 import { useDebounce } from "../../hooks/useDebounce";
@@ -52,19 +51,6 @@ const EditorMargin: React.FC = () => {
 
     const updateMarginsHandler = async () => {
         let margin: any[] = [...margins].map(ob => ob ? ob : 0);
-        // try {
-        //     if (documentId) {
-        //         dispatch(setDocumentMargins({ margins: margin }));
-        //         await DocumentService.updateMargins({
-        //             documentId,
-        //             margins: margin,
-        //         });
-        //         DOMEventHandlers.setPaperMargins(margin);
-        //         handleClose();
-        //     }
-        // } catch (err) {
-        //     console.log(err);
-        // }
     };
 
     useEffect(() => {

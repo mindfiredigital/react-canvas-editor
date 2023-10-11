@@ -4,21 +4,10 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
 import { useNavigate } from "react-router-dom";
-// import { DocumentService } from "../../services/documentService";
 
 function CreateDocument() {
   const navigate = useNavigate();
   const handleClick = async () => {
-    // const response = await DocumentService.createDoc({
-    //   templateId: "",
-    //   userId: "user1",
-    //   title: "Untitled",
-    //   margins: [100, 100, 120, 120]
-    // });
-    // if (response.data.success) {
-    //   const documentId = response.data.data;
-    //   if (documentId) navigate(`/documents/${documentId}`);
-    // }
   };
 
   return (

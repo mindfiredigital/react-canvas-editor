@@ -48,9 +48,6 @@ const DocumentEditor = (
   return (
     <Provider store={store}>
       <>
-        {/* <h1>{name}</h1> */}
-        {/* <EditorHeader/> */}
-        {/* <Toolbar /> */}
         <EditorToolbar ref={canvasRef} toolbar={toolbar} toolbarClass={toolbarClass} />
         <CanvasEditor ref={canvasRef} style={canvasClass} onChange={onChange} onSelect={onSelect} data={data}/>
         <EditorFooter />

@@ -1,25 +1,18 @@
-import React, { forwardRef, useEffect, useState } from "react";
 import {
   DOMEventHandlers,
-  EditorMode,
-  PageMode,
-  IElement,
+  EditorMode, IElement, PageMode
 } from "@mindfire/canvas-editor";
+import React, { forwardRef, useEffect, useState } from "react";
 import "./CanvasEditor.scss";
-// import { SOCKET_URL, SocketEvents } from "../../utils/constant";
-import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
-import {
-  DocumentState,
-  setDocumentId,
-  setDocumentTitle,
-  setDocumentMargins,
-} from "../../redux/documentReducer";
-import MarginRuler from "../MarginRuler/MarginRuler";
-import { SelectionRect } from "../../utils/types";
+import { useParams } from "react-router-dom";
 import useSelectionPosition from "../../hooks/useSelectionPosition";
-import FloatingBox from "../FloatingBox/FloatingBox";
+import {
+  DocumentState
+} from "../../redux/documentReducer";
+import { RootState } from "../../redux/store";
+import { SelectionRect } from "../../utils/types";
+import MarginRuler from "../MarginRuler/MarginRuler";
 
 interface content {
   style?: any,
@@ -65,7 +58,6 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
     };
     container.addEventListener('mouseup', (e) => {
       _props.onSelect && _props?.onSelect(DOMEventHandlers.getSelectedText());
-      // console.log('SelectText',DOMEventHandlers.getSelectedText());
     })
 
     container.addEventListener('keydown', (e)=> {
@@ -82,7 +74,6 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
 
   useEffect(() => {
       if (_props?.data) {
-        console.log(_props?.data);
         
         setEditorContent(_props?.data);
         
@@ -90,39 +81,11 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
       }
   }, [documentId, dispatch, _props?.data]);
 
-  // Multi User
-  // useEffect(() => {
-  //   if (!socket || !editorContent) return;
-  //   // send
-  //   socket.emit(SocketEvents.SEND_CHANGES, editorContent);
-  //   // receive
-  //   const handler = (data: any) => {
-  //     // console.log(`====>`, data);
-      
-  //     // setEditorContent(data);
-  //     // data = {...data, type:"control"};
-  //     DOMEventHandlers.setContent({ main: data });
-  //   };
-  //   socket.on(SocketEvents.RECEIVE_CHANGES, handler);
-
-  //   // return () => {
-  //   //   socket.off(SocketEvents.RECEIVE_CHANGES, handler);
-  //   // };
-  // }, [socket, editorContent]);
-
   return (
     <div className="canvas-editor-main" style={_props?.style?.editorMain}>
       <div className="canvas-editor editor" ref={ref} style={_props?.style?.margin}>
         <MarginRuler documentId={documentId} />
       </div>
-      {dropdown.visiblity && (
-        <FloatingBox
-          left={dropdown.left}
-          top={dropdown.top}
-          selectedText={selectedText}
-          setDropdown={setDropdown}
-        />
-      )}
     </div>
   );
 });
