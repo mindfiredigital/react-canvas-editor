@@ -17,7 +17,10 @@ const DocumentEditor = (
   const defaultToolbarItem = {
     bold: true,
     italic: true,
-    underline: true
+    underline: true,
+    undo: true,
+    redo: true,
+    image: true
   }
 
   const defaultToolbarClass = {
@@ -36,12 +39,12 @@ const DocumentEditor = (
     }
   }
 
-  toolbar = toolbar && Object.keys(toolbar).length ? toolbar?.toolbar : defaultToolbarItem;
+  toolbar = toolbar && Object.keys(toolbar).length ? toolbar : defaultToolbarItem;
 
   toolbarClass = toolbarClass && Object.keys(toolbarClass).length ? {
-    container: {...defaultToolbarClass.container, ...toolbarClass?.container},
+    container: { ...defaultToolbarClass.container, ...toolbarClass?.container },
     primaryToolbar: { ...defaultToolbarClass.primaryToolbar, ...toolbarClass?.primaryToolbar },
-    item: {...toolbarClass?.item}
+    item: { ...toolbarClass?.item }
   } : defaultToolbarClass;
 
   const canvasRef = useRef(null);
@@ -49,7 +52,7 @@ const DocumentEditor = (
     <Provider store={store}>
       <>
         <EditorToolbar ref={canvasRef} toolbar={toolbar} toolbarClass={toolbarClass} />
-        <CanvasEditor ref={canvasRef} style={canvasClass} onChange={onChange} onSelect={onSelect} data={data}/>
+        <CanvasEditor ref={canvasRef} style={canvasClass} onChange={onChange} onSelect={onSelect} data={data} />
         <EditorFooter />
       </>
     </Provider>

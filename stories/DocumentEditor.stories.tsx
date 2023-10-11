@@ -11,9 +11,12 @@ export default {
 //   args: {},
 // };
 const toolbarItem: any = {
-  bold: false,
+  bold: true,
   italic: true,
-  underline: true
+  underline: true,
+  undo: true,
+  redo: true,
+  image: true
 }
 
 const toolbarClass: any = {
@@ -36,6 +39,10 @@ const toolbarClass: any = {
       // border: 'black solid 3px',
       // background:'blue'
     },
+    image: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    }
     
   }
 }
@@ -58,6 +65,7 @@ const handleSelectedText = (text) => {
 }
 
 export const test = () => <DocumentEditor 
+toolbar={toolbarItem}
 toolbarClass={toolbarClass} 
 canvasClass={canvasClass} 
 onChange={handleChange} 

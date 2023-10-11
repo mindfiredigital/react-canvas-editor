@@ -34,6 +34,10 @@ const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props
     };
   }, []);
 
+  const imageButtonStyle: any = {
+    style: _props?.toolbarClass?.item?.image
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -59,7 +63,7 @@ const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props
           {_props?.toolbar?.underline && <ButtonWrapper sx={_props?.toolbarClass?.item?.underline} title="underline" handleClick={DOMEventHandlers.handleUnderline} >
             <FormatUnderlinedIcon />
            </ButtonWrapper>}
-          <ImageUploadButton />
+          {_props?.toolbar?.image && <ImageUploadButton {...imageButtonStyle} />}
         </Stack>
       </AppBar>
     </Box>
