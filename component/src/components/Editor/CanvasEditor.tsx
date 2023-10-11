@@ -45,6 +45,7 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
     const container = document.querySelector(
       ".canvas-editor"
     ) as HTMLDivElement;
+
     const editorOptions = {
       height: 1056,
       width: 816,
@@ -56,29 +57,27 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
       minSize: 1,
       maxSize: 72,
     };
+
     container.addEventListener('mouseup', (e) => {
       _props.onSelect && _props?.onSelect(DOMEventHandlers.getSelectedText());
     })
 
-    container.addEventListener('keydown', (e)=> {
-      const content = DOMEventHandlers.getContent();
-      setEditorContent(content.data.main);
-      const text: any = content.data.main;
-      _props?.onChange && _props?.onChange({text,editorContent});
-      })
+    container.addEventListener('keydown', (e) => {
+      const text = DOMEventHandlers.getContent()?.data?.main;
+      setEditorContent(text);
+      _props?.onChange && _props?.onChange(text[0].value);
+    })
 
     DOMEventHandlers.register(container, editorContent, editorOptions);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-      if (_props?.data) {
-        
-        setEditorContent(_props?.data);
-        
-        DOMEventHandlers.setContent({ main: [{value:_props?.data}] });
-      }
+    if (_props?.data) {
+
+      setEditorContent(_props?.data);
+
+      DOMEventHandlers.setContent({ main: [{ value: _props?.data }] });
+    }
   }, [documentId, dispatch, _props?.data]);
 
   return (
