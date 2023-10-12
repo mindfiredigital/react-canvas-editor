@@ -2,15 +2,13 @@ import React, { forwardRef, useEffect, useState } from "react";
 
 import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
 import { IRangeStyle } from "@mindfiredigital/canvas-editor/dist/src/editor/interface/Listener";
-import FormatBoldIcon from "@mui/icons-material/FormatBold";
-import FormatItalicIcon from "@mui/icons-material/FormatItalic";
-import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 import RedoIcon from "@mui/icons-material/Redo";
 import UndoIcon from "@mui/icons-material/Undo";
 import { Stack } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import ButtonWrapper from "../ButtonWrapper/ButtonWrapper";
+import { Emphasis } from "../Emphasis/Emphasis";
 import ImageUploadButton from "../ImageUploadButton/ImageUploadButton";
 
 interface content {
@@ -54,15 +52,7 @@ const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props
           {_props?.toolbar?.redo && <ButtonWrapper sx={_props?.toolbarClass?.item?.redo} title="redo" handleClick={DOMEventHandlers.handleRedo}>
             <RedoIcon />
           </ButtonWrapper>}
-          {_props?.toolbar?.bold && <ButtonWrapper sx={_props?.toolbarClass?.item?.bold} title="bold" handleClick={DOMEventHandlers.handleBold}>
-            <FormatBoldIcon />
-          </ButtonWrapper>}
-          {_props?.toolbar?.italic && <ButtonWrapper sx={_props?.toolbarClass?.item?.italic} title="italic" handleClick={DOMEventHandlers.handleItalic}>
-            <FormatItalicIcon />
-          </ButtonWrapper>}
-          {_props?.toolbar?.underline && <ButtonWrapper sx={_props?.toolbarClass?.item?.underline} title="underline" handleClick={DOMEventHandlers.handleUnderline} >
-            <FormatUnderlinedIcon />
-           </ButtonWrapper>}
+          <Emphasis {..._props}></Emphasis>
           {_props?.toolbar?.image && <ImageUploadButton {...imageButtonStyle} />}
         </Stack>
       </AppBar>
