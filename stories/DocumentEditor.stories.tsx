@@ -78,5 +78,5 @@ toolbarClass={toolbarClass}
 canvasClass={canvasClass} 
 onChange={handleChange} 
 onSelect={handleSelectedText}
-data="Hello world"
+value="Hello world"
 />
