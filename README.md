@@ -1,13 +1,12 @@
 <h1 align="center">Canvas document editor package</h1>
 
-<p align="center">
-<a href="https://www.npmjs.com/package/@mindfiredigital/canvas-editor"><img src="https://img.shields.io/npm/v/@mindfiredigital/canvas-editor.svg?sanitize=true" alt="Version"></a>
-<a href="https://www.npmjs.com/package/@mindfiredigital/canvas-editor"><img src="https://img.shields.io/npm/l/@mindfiredigital/canvas-editor.svg?sanitize=true" alt="License"></a>
-<a href="https://www.npmjs.com/package/@mindfiredigital/canvas-editor"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs"></a>
-</p>
+<!-- <p align="center"> -->
+<!-- <a href="https://www.npmjs.com/package/\react-canvas-editor"><img src="https://img.shields.io/npm/v/react-canvas-editor.svg?sanitize=true" alt="Version"></a>
+<a href="https://www.npmjs.com/package/@mindfiredigital/react-canvas-editor"><img src="https://img.shields.io/npm/l/@mindfiredigital/react-canvas-editor.svg?sanitize=true" alt="License"></a>
+<a href="https://www.npmjs.com/package/@mindfiredigital/react-canvas-editor"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs"></a>
+</p> -->
 
-<p align="center"> canvas-document-editor-package - opensource </p>
-
+<br>
 
 The `Canvas-document-editor` npm package is a powerful tool that allows developers to integrate an online document editor into their web applications.
 
