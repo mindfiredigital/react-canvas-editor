@@ -13,7 +13,7 @@ The `Canvas-document-editor` npm package is a powerful tool that allows develope
 <br>
 
 ## Table of Contents
----
+
 - [Features](#features)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
@@ -23,7 +23,7 @@ The `Canvas-document-editor` npm package is a powerful tool that allows develope
 <br>
 
 ## Features
----
+
 - **Bold**: Allows users to apply bold formatting to selected text.
 - _Italic_: Enables users to apply italic formatting to selected text.
 - **Underline**: Allows users to underline selected text.
@@ -36,7 +36,7 @@ The `Canvas-document-editor` npm package is a powerful tool that allows develope
 <br>
 
 ## Installation
----
+
 To install the `document-editor` npm package in your project, use the following command:
 
 ```bash
@@ -45,7 +45,7 @@ npm install document-editor
 <br>
 
 ## Getting Started
----
+
 - **Initialization**: Initialize the canvas document editor in your project, specifying the container element where the editor will be embedded.
 
 ```javascript
@@ -146,10 +146,10 @@ const canvasClass = {
 
 
 ## Contributing
----
+
 We welcome contributions from the community. If you'd like to contribute to the `document-editor` npm package, please follow our [Contributing Guidelines](CONTRIBUTING.md).
 <br>
 
 ## License
----
+
 This package is open-source and available under the [MIT License](LICENSE).
