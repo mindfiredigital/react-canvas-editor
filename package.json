@@ -1,5 +1,5 @@
 {
-  "name": "document-editor",
+  "name": "react-canvas-editor",
   "version": "1.0.0",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
