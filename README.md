@@ -8,7 +8,7 @@
 
 <br>
 
-The `Canvas-document-editor` npm package is a powerful tool that allows developers to integrate an online document editor into their web applications.
+The `Canvas-document-editor` npm package is a tool that allows developers to integrate multipage document editors built on top of Canvas using React.
 
 <br>
 
