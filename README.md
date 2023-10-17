@@ -37,7 +37,7 @@ The `Canvas-document-editor` npm package is a tool that allows developers to int
 
 ## Installation
 
-To install the `document-editor` npm package in your project, use the following command:
+To install the `react-canvas-editor` npm package in your project, use the following command:
 
 ```bash
 npm install react-canvas-editor
