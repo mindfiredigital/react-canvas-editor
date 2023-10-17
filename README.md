@@ -54,12 +54,11 @@ npm install react-canvas-editor
 import { DocumentEditor } from 'react-canvas-editor';
 import React from 'react';
 
-export default {
-  component: DocumentEditor,
-  title: 'DocumentEditor',
-};
 
-const toolbarItem: any = {
+
+export const test = () => {
+  
+  const toolbarItem: any = {
   bold: true,
   italic: true,
   underline: true,
@@ -78,14 +77,14 @@ const handleSelectedText = (text) => {
 
 }
 
-export const test = () => <DocumentEditor 
+return (<DocumentEditor 
 toolbar={toolbarItem}
 toolbarClass={toolbarClass} 
 canvasClass={canvasClass} 
 onChange={handleChange} 
 onSelect={handleSelectedText}
 value="Hello world"
-/>
+/>)}
 
 ```
 <br>
