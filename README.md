@@ -40,7 +40,7 @@ The `Canvas-document-editor` npm package is a tool that allows developers to int
 To install the `document-editor` npm package in your project, use the following command:
 
 ```bash
-npm install document-editor
+npm install react-canvas-editor
 ```
 <br>
 
@@ -51,7 +51,7 @@ npm install document-editor
 ```javascript
 
 
-import { DocumentEditor } from '../component';
+import { DocumentEditor } from 'react-canvas-editor';
 import React from 'react';
 
 export default {
