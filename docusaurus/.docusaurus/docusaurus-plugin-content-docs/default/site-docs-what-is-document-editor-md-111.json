@@ -6,7 +6,7 @@
   "source": "@site/docs/what-is-document-editor.md",
   "sourceDirName": ".",
   "slug": "/what-is-document-editor",
-  "permalink": "/docs/what-is-document-editor",
+  "permalink": "/react-canvas-editor/docs/what-is-document-editor",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,6 +17,6 @@
   "sidebar": "tutorialSidebar",
   "next": {
     "title": "Get Started",
-    "permalink": "/docs/category/get-started"
+    "permalink": "/react-canvas-editor/docs/category/get-started"
   }
 }

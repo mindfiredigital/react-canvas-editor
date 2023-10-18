@@ -6,7 +6,7 @@
   "source": "@site/docs/tutorial-basics/customized-style.md",
   "sourceDirName": "tutorial-basics",
   "slug": "/tutorial-basics/customized-style",
-  "permalink": "/docs/tutorial-basics/customized-style",
+  "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-style",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "How to customize toolbar",
-    "permalink": "/docs/tutorial-basics/customized-tool"
+    "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-tool"
   },
   "next": {
     "title": "How to use DOM events",
-    "permalink": "/docs/tutorial-basics/dom-handle"
+    "permalink": "/react-canvas-editor/docs/tutorial-basics/dom-handle"
   }
 }

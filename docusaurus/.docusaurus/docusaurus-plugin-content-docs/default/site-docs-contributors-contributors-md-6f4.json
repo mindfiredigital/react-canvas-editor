@@ -6,7 +6,7 @@
   "source": "@site/docs/contributors/contributors.md",
   "sourceDirName": "contributors",
   "slug": "/contributors/",
-  "permalink": "/docs/contributors/",
+  "permalink": "/react-canvas-editor/docs/contributors/",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Contribution Guide",
-    "permalink": "/docs/category/contribution-guide"
+    "permalink": "/react-canvas-editor/docs/category/contribution-guide"
   },
   "next": {
     "title": "How to contribute",
-    "permalink": "/docs/contributors/contribution"
+    "permalink": "/react-canvas-editor/docs/contributors/contribution"
   }
 }

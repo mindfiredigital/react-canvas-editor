@@ -1,0 +1,15 @@
+{
+  "title": "References",
+  "slug": "/category/references",
+  "permalink": "/react-canvas-editor/docs/category/references",
+  "navigation": {
+    "previous": {
+      "title": "How to use DOM events",
+      "permalink": "/react-canvas-editor/docs/tutorial-basics/dom-handle"
+    },
+    "next": {
+      "title": "DOM Events",
+      "permalink": "/react-canvas-editor/docs/references/dom-event"
+    }
+  }
+}

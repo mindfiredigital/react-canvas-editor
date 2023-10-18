@@ -6,7 +6,7 @@
   "source": "@site/docs/references/dom-event.md",
   "sourceDirName": "references",
   "slug": "/references/dom-event",
-  "permalink": "/docs/references/dom-event",
+  "permalink": "/react-canvas-editor/docs/references/dom-event",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "References",
-    "permalink": "/docs/category/references"
+    "permalink": "/react-canvas-editor/docs/category/references"
   },
   "next": {
     "title": "Toolbar Options",
-    "permalink": "/docs/references/toolbar-option"
+    "permalink": "/react-canvas-editor/docs/references/toolbar-option"
   }
 }

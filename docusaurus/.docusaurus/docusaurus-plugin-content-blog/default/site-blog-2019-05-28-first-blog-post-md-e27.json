@@ -1,5 +1,5 @@
 {
-  "permalink": "/blog/first-blog-post",
+  "permalink": "/react-canvas-editor/blog/first-blog-post",
   "source": "@site/blog/2019-05-28-first-blog-post.md",
   "title": "First Blog Post",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
@@ -8,11 +8,11 @@
   "tags": [
     {
       "label": "hola",
-      "permalink": "/blog/tags/hola"
+      "permalink": "/react-canvas-editor/blog/tags/hola"
     },
     {
       "label": "docusaurus",
-      "permalink": "/blog/tags/docusaurus"
+      "permalink": "/react-canvas-editor/blog/tags/docusaurus"
     }
   ],
   "readingTime": 0.12,
@@ -43,6 +43,6 @@
   },
   "prevItem": {
     "title": "Long Blog Post",
-    "permalink": "/blog/long-blog-post"
+    "permalink": "/react-canvas-editor/blog/long-blog-post"
   }
 }

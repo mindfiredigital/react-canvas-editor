@@ -1,5 +1,5 @@
 {
-  "permalink": "/blog/mdx-blog-post",
+  "permalink": "/react-canvas-editor/blog/mdx-blog-post",
   "source": "@site/blog/2021-08-01-mdx-blog-post.mdx",
   "title": "MDX Blog Post",
   "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
@@ -8,7 +8,7 @@
   "tags": [
     {
       "label": "docusaurus",
-      "permalink": "/blog/tags/docusaurus"
+      "permalink": "/react-canvas-editor/blog/tags/docusaurus"
     }
   ],
   "readingTime": 0.175,
@@ -34,10 +34,10 @@
   },
   "prevItem": {
     "title": "Welcome",
-    "permalink": "/blog/welcome"
+    "permalink": "/react-canvas-editor/blog/welcome"
   },
   "nextItem": {
     "title": "Long Blog Post",
-    "permalink": "/blog/long-blog-post"
+    "permalink": "/react-canvas-editor/blog/long-blog-post"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "/blog-233": {
+  "/react-canvas-editor/blog-695": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "79890934"
@@ -19,16 +19,16 @@
         "content": "925b3f96"
       }
     ],
-    "metadata": "b2b675dd"
+    "metadata": "1609c49d"
   },
-  "/blog/archive-548": {
+  "/react-canvas-editor/blog/archive-047": {
     "__comp": "9e4087bc",
     "__context": {
       "plugin": "79890934"
     },
-    "archive": "b2f554cd"
+    "archive": "155e8923"
   },
-  "/blog/first-blog-post-3db": {
+  "/react-canvas-editor/blog/first-blog-post-ee1": {
     "__comp": "ccc49370",
     "__context": {
       "plugin": "79890934"
@@ -36,7 +36,7 @@
     "sidebar": "814f3328",
     "content": "e273c56f"
   },
-  "/blog/long-blog-post-c9e": {
+  "/react-canvas-editor/blog/long-blog-post-b0e": {
     "__comp": "ccc49370",
     "__context": {
       "plugin": "79890934"
@@ -44,7 +44,7 @@
     "sidebar": "814f3328",
     "content": "73664a40"
   },
-  "/blog/mdx-blog-post-67a": {
+  "/react-canvas-editor/blog/mdx-blog-post-6c0": {
     "__comp": "ccc49370",
     "__context": {
       "plugin": "79890934"
@@ -52,15 +52,15 @@
     "sidebar": "814f3328",
     "content": "59362658"
   },
-  "/blog/tags-c6a": {
+  "/react-canvas-editor/blog/tags-71c": {
     "__comp": "01a85c17",
     "__context": {
       "plugin": "79890934"
     },
     "sidebar": "814f3328",
-    "tags": "a7023ddc"
+    "tags": "4e2d54cc"
   },
-  "/blog/tags/docusaurus-fbb": {
+  "/react-canvas-editor/blog/tags/docusaurus-ce0": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "79890934"
@@ -80,10 +80,10 @@
         "content": "925b3f96"
       }
     ],
-    "tag": "a80da1cf",
-    "listMetadata": "608ae6a4"
+    "tag": "4f42e84e",
+    "listMetadata": "f576946e"
   },
-  "/blog/tags/facebook-e90": {
+  "/react-canvas-editor/blog/tags/facebook-571": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "79890934"
@@ -94,10 +94,10 @@
         "content": "7661071f"
       }
     ],
-    "tag": "031793e1",
-    "listMetadata": "096bfee4"
+    "tag": "da21749d",
+    "listMetadata": "d6207b9d"
   },
-  "/blog/tags/hello-764": {
+  "/react-canvas-editor/blog/tags/hello-c39": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "79890934"
@@ -111,10 +111,10 @@
         "content": "8717b14a"
       }
     ],
-    "tag": "30a24c52",
-    "listMetadata": "66406991"
+    "tag": "2508b8d5",
+    "listMetadata": "95ba265f"
   },
-  "/blog/tags/hola-00f": {
+  "/react-canvas-editor/blog/tags/hola-03c": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "79890934"
@@ -125,10 +125,10 @@
         "content": "925b3f96"
       }
     ],
-    "tag": "e16015ca",
-    "listMetadata": "4c9e35b1"
+    "tag": "6b6e19cb",
+    "listMetadata": "bcd2f2c2"
   },
-  "/blog/welcome-4df": {
+  "/react-canvas-editor/blog/welcome-7dc": {
     "__comp": "ccc49370",
     "__context": {
       "plugin": "79890934"
@@ -136,93 +136,93 @@
     "sidebar": "814f3328",
     "content": "d9f32620"
   },
-  "/markdown-page-4ce": {
+  "/react-canvas-editor/markdown-page-506": {
     "__comp": "1f391b9e",
     "__context": {
       "plugin": "80a8ba4f"
     },
     "content": "393be207"
   },
-  "/docs-3e9": {
+  "/react-canvas-editor/docs-278": {
     "__comp": "1be78505",
     "__context": {
       "plugin": "89ac657d"
     },
     "versionMetadata": "935f2afb"
   },
-  "/docs/category/contribution-guide-efe": {
+  "/react-canvas-editor/docs/category/contribution-guide-a45": {
     "__comp": "14eb3368",
-    "categoryGeneratedIndex": "9ca10dba"
+    "categoryGeneratedIndex": "d4d638a6"
   },
-  "/docs/category/get-started-9e4": {
+  "/react-canvas-editor/docs/category/get-started-3a7": {
     "__comp": "14eb3368",
-    "categoryGeneratedIndex": "889e5bfa"
+    "categoryGeneratedIndex": "8371896d"
   },
-  "/docs/category/references-c2e": {
+  "/react-canvas-editor/docs/category/references-7c6": {
     "__comp": "14eb3368",
-    "categoryGeneratedIndex": "f4db7ebe"
+    "categoryGeneratedIndex": "03dacec9"
   },
-  "/docs/category/release-a32": {
+  "/react-canvas-editor/docs/category/release-79e": {
     "__comp": "14eb3368",
-    "categoryGeneratedIndex": "0a7f7add"
+    "categoryGeneratedIndex": "ead3bd04"
   },
-  "/docs/category/tutorials-f40": {
+  "/react-canvas-editor/docs/category/tutorials-360": {
     "__comp": "14eb3368",
-    "categoryGeneratedIndex": "4cd738bd"
+    "categoryGeneratedIndex": "7142ff00"
   },
-  "/docs/contributors/-7c4": {
+  "/react-canvas-editor/docs/contributors/-da6": {
     "__comp": "17896441",
     "content": "6f41419f"
   },
-  "/docs/contributors/code-of-conduce-817": {
+  "/react-canvas-editor/docs/contributors/code-of-conduce-669": {
     "__comp": "17896441",
     "content": "d6295447"
   },
-  "/docs/contributors/contribution-530": {
+  "/react-canvas-editor/docs/contributors/contribution-f17": {
     "__comp": "17896441",
     "content": "8de5a9e2"
   },
-  "/docs/Get-started/Installation-bac": {
+  "/react-canvas-editor/docs/Get-started/Installation-aa6": {
     "__comp": "17896441",
     "content": "8f7835a5"
   },
-  "/docs/Get-started/quickstart-f58": {
+  "/react-canvas-editor/docs/Get-started/quickstart-e3c": {
     "__comp": "17896441",
     "content": "8e62e753"
   },
-  "/docs/references/dom-event-62b": {
+  "/react-canvas-editor/docs/references/dom-event-f39": {
     "__comp": "17896441",
     "content": "bed35dad"
   },
-  "/docs/references/toolbar-option-594": {
+  "/react-canvas-editor/docs/references/toolbar-option-ffd": {
     "__comp": "17896441",
     "content": "cd7ded93"
   },
-  "/docs/release/change-logs-098": {
+  "/react-canvas-editor/docs/release/change-logs-335": {
     "__comp": "17896441",
     "content": "90d9359e"
   },
-  "/docs/release/release-notes-801": {
+  "/react-canvas-editor/docs/release/release-notes-a21": {
     "__comp": "17896441",
     "content": "5b7d4f99"
   },
-  "/docs/tutorial-basics/customized-style-700": {
+  "/react-canvas-editor/docs/tutorial-basics/customized-style-c86": {
     "__comp": "17896441",
     "content": "fc51a3c2"
   },
-  "/docs/tutorial-basics/customized-tool-0ee": {
+  "/react-canvas-editor/docs/tutorial-basics/customized-tool-bb9": {
     "__comp": "17896441",
     "content": "34897b58"
   },
-  "/docs/tutorial-basics/dom-handle-205": {
+  "/react-canvas-editor/docs/tutorial-basics/dom-handle-4e2": {
     "__comp": "17896441",
     "content": "e5701b7c"
   },
-  "/docs/what-is-document-editor-6ab": {
+  "/react-canvas-editor/docs/what-is-document-editor-cd3": {
     "__comp": "17896441",
     "content": "11191d37"
   },
-  "/-554": {
+  "/react-canvas-editor/-fae": {
     "__comp": "c4f5d8e4",
     "__context": {
       "plugin": "80a8ba4f"

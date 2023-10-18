@@ -6,7 +6,7 @@
   "source": "@site/docs/tutorial-basics/dom-handle.md",
   "sourceDirName": "tutorial-basics",
   "slug": "/tutorial-basics/dom-handle",
-  "permalink": "/docs/tutorial-basics/dom-handle",
+  "permalink": "/react-canvas-editor/docs/tutorial-basics/dom-handle",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "How to customize style",
-    "permalink": "/docs/tutorial-basics/customized-style"
+    "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-style"
   },
   "next": {
     "title": "References",
-    "permalink": "/docs/category/references"
+    "permalink": "/react-canvas-editor/docs/category/references"
   }
 }

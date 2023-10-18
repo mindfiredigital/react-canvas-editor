@@ -6,7 +6,7 @@
   "source": "@site/docs/references/toolbar-option.md",
   "sourceDirName": "references",
   "slug": "/references/toolbar-option",
-  "permalink": "/docs/references/toolbar-option",
+  "permalink": "/react-canvas-editor/docs/references/toolbar-option",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "DOM Events",
-    "permalink": "/docs/references/dom-event"
+    "permalink": "/react-canvas-editor/docs/references/dom-event"
   },
   "next": {
     "title": "Contribution Guide",
-    "permalink": "/docs/category/contribution-guide"
+    "permalink": "/react-canvas-editor/docs/category/contribution-guide"
   }
 }
