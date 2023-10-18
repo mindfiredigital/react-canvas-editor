@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocument=self.webpackChunkdocument||[]).push([[3778],{626:o=>{o.exports=JSON.parse('{"title":"Toolbar Option","slug":"/category/toolbar-option","permalink":"/docs/category/toolbar-option","navigation":{"previous":{"title":"DOM Event","permalink":"/docs/dom-event/"},"next":{"title":"Toolbar Option","permalink":"/docs/toolbar-option/"}}}')}}]);

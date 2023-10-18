@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocument=self.webpackChunkdocument||[]).push([[3251],{1725:e=>{e.exports=JSON.parse('{"title":"DOM Event","slug":"/category/dom-event","permalink":"/docs/category/dom-event","navigation":{"previous":{"title":"How to use DOM events","permalink":"/docs/tutorial-basics/dom-handle"},"next":{"title":"DOM Event","permalink":"/docs/dom-event/"}}}')}}]);
