@@ -1,0 +1,26 @@
+{
+  "unversionedId": "references/dom-event",
+  "id": "references/dom-event",
+  "title": "DOM Events",
+  "description": "| Event      |                 |",
+  "source": "@site/docs/references/dom-event.md",
+  "sourceDirName": "references",
+  "slug": "/references/dom-event",
+  "permalink": "/docs/references/dom-event",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "References",
+    "permalink": "/docs/category/references"
+  },
+  "next": {
+    "title": "Toolbar Options",
+    "permalink": "/docs/references/toolbar-option"
+  }
+}

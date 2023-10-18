@@ -1,0 +1,15 @@
+{
+  "title": "DOM Event",
+  "slug": "/category/dom-event",
+  "permalink": "/docs/category/dom-event",
+  "navigation": {
+    "previous": {
+      "title": "How to use DOM events",
+      "permalink": "/docs/tutorial-basics/dom-handle"
+    },
+    "next": {
+      "title": "DOM Events",
+      "permalink": "/docs/references/dom-event"
+    }
+  }
+}

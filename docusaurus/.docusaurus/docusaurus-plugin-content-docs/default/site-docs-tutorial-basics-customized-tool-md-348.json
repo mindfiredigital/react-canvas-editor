@@ -1,0 +1,26 @@
+{
+  "unversionedId": "tutorial-basics/customized-tool",
+  "id": "tutorial-basics/customized-tool",
+  "title": "How to customize toolbar",
+  "description": "Tailor the editor's user interface and actions to the needs of your application.",
+  "source": "@site/docs/tutorial-basics/customized-tool.md",
+  "sourceDirName": "tutorial-basics",
+  "slug": "/tutorial-basics/customized-tool",
+  "permalink": "/docs/tutorial-basics/customized-tool",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tutorials",
+    "permalink": "/docs/category/tutorials"
+  },
+  "next": {
+    "title": "How to customize style",
+    "permalink": "/docs/tutorial-basics/customized-style"
+  }
+}

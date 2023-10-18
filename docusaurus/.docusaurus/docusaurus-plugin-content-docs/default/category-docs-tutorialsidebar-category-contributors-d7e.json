@@ -1,0 +1,15 @@
+{
+  "title": "Contributors",
+  "slug": "/category/contributors",
+  "permalink": "/docs/category/contributors",
+  "navigation": {
+    "previous": {
+      "title": "Toolbar Options",
+      "permalink": "/docs/references/toolbar-option"
+    },
+    "next": {
+      "title": "Contributors",
+      "permalink": "/docs/contributors/"
+    }
+  }
+}

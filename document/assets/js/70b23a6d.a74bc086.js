@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocument=self.webpackChunkdocument||[]).push([[4535],{2776:e=>{e.exports=JSON.parse('{"title":"Change Log","slug":"/category/change-log","permalink":"/docs/category/change-log","navigation":{"previous":{"title":"Contributors","permalink":"/docs/contributors/contributor"},"next":{"title":"Change log","permalink":"/docs/change-log/version-1"}}}')}}]);

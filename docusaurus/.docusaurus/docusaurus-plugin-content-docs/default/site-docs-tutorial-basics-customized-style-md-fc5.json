@@ -1,0 +1,26 @@
+{
+  "unversionedId": "tutorial-basics/customized-style",
+  "id": "tutorial-basics/customized-style",
+  "title": "How to customize style",
+  "description": "Customize the editor's UI style to match your application's requirements.",
+  "source": "@site/docs/tutorial-basics/customized-style.md",
+  "sourceDirName": "tutorial-basics",
+  "slug": "/tutorial-basics/customized-style",
+  "permalink": "/docs/tutorial-basics/customized-style",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to customize toolbar",
+    "permalink": "/docs/tutorial-basics/customized-tool"
+  },
+  "next": {
+    "title": "How to use DOM events",
+    "permalink": "/docs/tutorial-basics/dom-handle"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Get-started/quickstart",
+  "id": "Get-started/quickstart",
+  "title": "Quick Start",
+  "description": "Let's discover Document Editor in less than 5 minutes.",
+  "source": "@site/docs/Get-started/quickstart.md",
+  "sourceDirName": "Get-started",
+  "slug": "/Get-started/quickstart",
+  "permalink": "/docs/Get-started/quickstart",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/docs/Get-started/Installation"
+  },
+  "next": {
+    "title": "Tutorials",
+    "permalink": "/docs/category/tutorials"
+  }
+}

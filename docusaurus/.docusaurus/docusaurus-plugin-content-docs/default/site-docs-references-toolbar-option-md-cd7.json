@@ -1,0 +1,26 @@
+{
+  "unversionedId": "references/toolbar-option",
+  "id": "references/toolbar-option",
+  "title": "Toolbar Options",
+  "description": "| Option     |        Purpose         |",
+  "source": "@site/docs/references/toolbar-option.md",
+  "sourceDirName": "references",
+  "slug": "/references/toolbar-option",
+  "permalink": "/docs/references/toolbar-option",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "DOM Events",
+    "permalink": "/docs/references/dom-event"
+  },
+  "next": {
+    "title": "Contribution Guide",
+    "permalink": "/docs/category/contribution-guide"
+  }
+}

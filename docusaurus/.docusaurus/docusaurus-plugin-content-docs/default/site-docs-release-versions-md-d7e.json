@@ -1,0 +1,22 @@
+{
+  "unversionedId": "release/versions",
+  "id": "release/versions",
+  "title": "Change log",
+  "description": "Version 1",
+  "source": "@site/docs/release/versions.md",
+  "sourceDirName": "release",
+  "slug": "/release/versions",
+  "permalink": "/docs/release/versions",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Release",
+    "permalink": "/docs/category/release"
+  }
+}

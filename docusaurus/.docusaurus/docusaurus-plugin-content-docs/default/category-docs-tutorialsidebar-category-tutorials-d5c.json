@@ -1,0 +1,15 @@
+{
+  "title": "Tutorials",
+  "slug": "/category/tutorials",
+  "permalink": "/docs/category/tutorials",
+  "navigation": {
+    "previous": {
+      "title": "Quick Start",
+      "permalink": "/docs/Get-started/quickstart"
+    },
+    "next": {
+      "title": "How to customize toolbar",
+      "permalink": "/docs/tutorial-basics/customized-tool"
+    }
+  }
+}

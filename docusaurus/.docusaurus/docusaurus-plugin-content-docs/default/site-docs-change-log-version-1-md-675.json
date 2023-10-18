@@ -1,0 +1,22 @@
+{
+  "unversionedId": "change-log/version-1",
+  "id": "change-log/version-1",
+  "title": "Change log",
+  "description": "Version 1",
+  "source": "@site/docs/change-log/version-1.md",
+  "sourceDirName": "change-log",
+  "slug": "/change-log/version-1",
+  "permalink": "/docs/change-log/version-1",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Release",
+    "permalink": "/docs/category/release"
+  }
+}
