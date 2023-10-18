@@ -1,0 +1,217 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "tutorialSidebar": [
+      {
+        "type": "link",
+        "label": "What is Document Editor?",
+        "href": "/docs/what-is-document-editor",
+        "docId": "what-is-document-editor"
+      },
+      {
+        "type": "category",
+        "label": "Get Started",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Installation",
+            "href": "/docs/Get-started/Installation",
+            "docId": "Get-started/Installation"
+          },
+          {
+            "type": "link",
+            "label": "Quick Start",
+            "href": "/docs/Get-started/quickstart",
+            "docId": "Get-started/quickstart"
+          }
+        ],
+        "href": "/docs/category/get-started"
+      },
+      {
+        "type": "category",
+        "label": "Tutorials",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "How to customize toolbar",
+            "href": "/docs/tutorial-basics/customized-tool",
+            "docId": "tutorial-basics/customized-tool"
+          },
+          {
+            "type": "link",
+            "label": "How to customize style",
+            "href": "/docs/tutorial-basics/customized-style",
+            "docId": "tutorial-basics/customized-style"
+          },
+          {
+            "type": "link",
+            "label": "How to use DOM events",
+            "href": "/docs/tutorial-basics/dom-handle",
+            "docId": "tutorial-basics/dom-handle"
+          }
+        ],
+        "href": "/docs/category/tutorials"
+      },
+      {
+        "type": "category",
+        "label": "References",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "DOM Events",
+            "href": "/docs/references/dom-event",
+            "docId": "references/dom-event"
+          },
+          {
+            "type": "link",
+            "label": "Toolbar Options",
+            "href": "/docs/references/toolbar-option",
+            "docId": "references/toolbar-option"
+          }
+        ],
+        "href": "/docs/category/references"
+      },
+      {
+        "type": "category",
+        "label": "Contribution Guide",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Contributors",
+            "href": "/docs/contributors/",
+            "docId": "contributors/contributors"
+          },
+          {
+            "type": "link",
+            "label": "How to contribute",
+            "href": "/docs/contributors/contribution",
+            "docId": "contributors/contribution"
+          },
+          {
+            "type": "link",
+            "label": "Code of conduct",
+            "href": "/docs/contributors/code-of-conduce",
+            "docId": "contributors/code-of-conduce"
+          }
+        ],
+        "href": "/docs/category/contribution-guide"
+      },
+      {
+        "type": "category",
+        "label": "Release",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Change logs",
+            "href": "/docs/release/change-logs",
+            "docId": "release/change-logs"
+          },
+          {
+            "type": "link",
+            "label": "Release notes",
+            "href": "/docs/release/release-notes",
+            "docId": "release/release-notes"
+          }
+        ],
+        "href": "/docs/category/release"
+      }
+    ]
+  },
+  "docs": {
+    "contributors/code-of-conduce": {
+      "id": "contributors/code-of-conduce",
+      "title": "Code of conduct",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "contributors/contribution": {
+      "id": "contributors/contribution",
+      "title": "How to contribute",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "contributors/contributors": {
+      "id": "contributors/contributors",
+      "title": "Contributors",
+      "description": "- Ashutosh Jena",
+      "sidebar": "tutorialSidebar"
+    },
+    "Get-started/Installation": {
+      "id": "Get-started/Installation",
+      "title": "Installation",
+      "description": "react-canvas-editor is essentially a set of npm packages.",
+      "sidebar": "tutorialSidebar"
+    },
+    "Get-started/quickstart": {
+      "id": "Get-started/quickstart",
+      "title": "Quick Start",
+      "description": "Let's discover Document Editor in less than 5 minutes.",
+      "sidebar": "tutorialSidebar"
+    },
+    "references/dom-event": {
+      "id": "references/dom-event",
+      "title": "DOM Events",
+      "description": "| Event      |                 |",
+      "sidebar": "tutorialSidebar"
+    },
+    "references/toolbar-option": {
+      "id": "references/toolbar-option",
+      "title": "Toolbar Options",
+      "description": "| Option     |        Purpose         |",
+      "sidebar": "tutorialSidebar"
+    },
+    "release/change-logs": {
+      "id": "release/change-logs",
+      "title": "Change logs",
+      "description": "Version 1",
+      "sidebar": "tutorialSidebar"
+    },
+    "release/release-notes": {
+      "id": "release/release-notes",
+      "title": "Release notes",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "tutorial-basics/customized-style": {
+      "id": "tutorial-basics/customized-style",
+      "title": "How to customize style",
+      "description": "Customize the editor's UI style to match your application's requirements.",
+      "sidebar": "tutorialSidebar"
+    },
+    "tutorial-basics/customized-tool": {
+      "id": "tutorial-basics/customized-tool",
+      "title": "How to customize toolbar",
+      "description": "Tailor the editor's user interface and actions to the needs of your application.",
+      "sidebar": "tutorialSidebar"
+    },
+    "tutorial-basics/dom-handle": {
+      "id": "tutorial-basics/dom-handle",
+      "title": "How to use DOM events",
+      "description": "Get value from page",
+      "sidebar": "tutorialSidebar"
+    },
+    "what-is-document-editor": {
+      "id": "what-is-document-editor",
+      "title": "What is Document Editor?",
+      "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
+      "sidebar": "tutorialSidebar"
+    }
+  }
+}

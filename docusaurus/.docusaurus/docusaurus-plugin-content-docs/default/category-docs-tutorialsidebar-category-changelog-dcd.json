@@ -1,0 +1,15 @@
+{
+  "title": "Changelog",
+  "slug": "/category/changelog",
+  "permalink": "/docs/category/changelog",
+  "navigation": {
+    "previous": {
+      "title": "contribution",
+      "permalink": "/docs/contributors/contribution"
+    },
+    "next": {
+      "title": "Change log",
+      "permalink": "/docs/change-log/version-1"
+    }
+  }
+}

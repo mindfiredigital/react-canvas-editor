@@ -1,0 +1,15 @@
+{
+  "title": "Toolbar Option",
+  "slug": "/category/toolbar-option",
+  "permalink": "/docs/category/toolbar-option",
+  "navigation": {
+    "previous": {
+      "title": "DOM Events",
+      "permalink": "/docs/references/dom-event"
+    },
+    "next": {
+      "title": "Toolbar Options",
+      "permalink": "/docs/toolbar-option/"
+    }
+  }
+}

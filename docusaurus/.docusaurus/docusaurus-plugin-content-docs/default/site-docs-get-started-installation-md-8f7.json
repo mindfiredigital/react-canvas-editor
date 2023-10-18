@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Get-started/Installation",
+  "id": "Get-started/Installation",
+  "title": "Installation",
+  "description": "react-canvas-editor is essentially a set of npm packages.",
+  "source": "@site/docs/Get-started/Installation.md",
+  "sourceDirName": "Get-started",
+  "slug": "/Get-started/Installation",
+  "permalink": "/docs/Get-started/Installation",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Get Started",
+    "permalink": "/docs/category/get-started"
+  },
+  "next": {
+    "title": "Quick Start",
+    "permalink": "/docs/Get-started/quickstart"
+  }
+}

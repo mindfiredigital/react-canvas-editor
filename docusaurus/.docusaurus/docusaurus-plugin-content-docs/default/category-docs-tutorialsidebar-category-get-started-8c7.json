@@ -1,0 +1,15 @@
+{
+  "title": "Get Started",
+  "slug": "/category/get-started",
+  "permalink": "/docs/category/get-started",
+  "navigation": {
+    "previous": {
+      "title": "What is Document Editor?",
+      "permalink": "/docs/what-is-document-editor"
+    },
+    "next": {
+      "title": "Installation",
+      "permalink": "/docs/Get-started/Installation"
+    }
+  }
+}

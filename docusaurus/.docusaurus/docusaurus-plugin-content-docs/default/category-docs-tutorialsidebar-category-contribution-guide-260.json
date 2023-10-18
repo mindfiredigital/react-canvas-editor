@@ -1,0 +1,15 @@
+{
+  "title": "Contribution Guide",
+  "slug": "/category/contribution-guide",
+  "permalink": "/docs/category/contribution-guide",
+  "navigation": {
+    "previous": {
+      "title": "Toolbar Options",
+      "permalink": "/docs/references/toolbar-option"
+    },
+    "next": {
+      "title": "Contributors",
+      "permalink": "/docs/contributors/"
+    }
+  }
+}

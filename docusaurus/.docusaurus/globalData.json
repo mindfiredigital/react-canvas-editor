@@ -1,0 +1,118 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "what-is-document-editor",
+          "docs": [
+            {
+              "id": "contributors/code-of-conduce",
+              "path": "/docs/contributors/code-of-conduce",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "contributors/contribution",
+              "path": "/docs/contributors/contribution",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "contributors/contributors",
+              "path": "/docs/contributors/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Get-started/Installation",
+              "path": "/docs/Get-started/Installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Get-started/quickstart",
+              "path": "/docs/Get-started/quickstart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "references/dom-event",
+              "path": "/docs/references/dom-event",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "references/toolbar-option",
+              "path": "/docs/references/toolbar-option",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "release/change-logs",
+              "path": "/docs/release/change-logs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "release/release-notes",
+              "path": "/docs/release/release-notes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/customized-style",
+              "path": "/docs/tutorial-basics/customized-style",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/customized-tool",
+              "path": "/docs/tutorial-basics/customized-tool",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-basics/dom-handle",
+              "path": "/docs/tutorial-basics/dom-handle",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "what-is-document-editor",
+              "path": "/docs/what-is-document-editor",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/get-started",
+              "path": "/docs/category/get-started",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/tutorials",
+              "path": "/docs/category/tutorials",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/references",
+              "path": "/docs/category/references",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/contribution-guide",
+              "path": "/docs/category/contribution-guide",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/release",
+              "path": "/docs/category/release",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/what-is-document-editor",
+                "label": "what-is-document-editor"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

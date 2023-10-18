@@ -1,0 +1,19 @@
+{
+  "unversionedId": "release/release-notes",
+  "id": "release/release-notes",
+  "title": "Release notes",
+  "description": "",
+  "source": "@site/docs/release/release-notes.md",
+  "sourceDirName": "release",
+  "slug": "/release/release-notes",
+  "permalink": "/docs/release/release-notes",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Change logs",
+    "permalink": "/docs/release/change-logs"
+  }
+}

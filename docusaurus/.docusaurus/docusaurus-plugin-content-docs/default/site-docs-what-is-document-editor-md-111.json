@@ -1,0 +1,22 @@
+{
+  "unversionedId": "what-is-document-editor",
+  "id": "what-is-document-editor",
+  "title": "What is Document Editor?",
+  "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
+  "source": "@site/docs/what-is-document-editor.md",
+  "sourceDirName": ".",
+  "slug": "/what-is-document-editor",
+  "permalink": "/docs/what-is-document-editor",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Get Started",
+    "permalink": "/docs/category/get-started"
+  }
+}

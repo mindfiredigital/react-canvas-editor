@@ -1,5 +1,5 @@
 {
-  "name": "document-editor",
+  "name": "react-canvas-editor",
   "version": "1.0.0",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -96,6 +96,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@grammarly/editor-sdk-react": "^2.5.1",
+    "@mindfiredigital/canvas-editor": "^1.0.3",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
     "@reduxjs/toolkit": "^1.9.5",
