@@ -6,7 +6,7 @@
   "source": "@site/docs/contributors/contribution.md",
   "sourceDirName": "contributors",
   "slug": "/contributors/contribution",
-  "permalink": "/docs/contributors/contribution",
+  "permalink": "/react-canvas-editor/docs/contributors/contribution",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Contributors",
-    "permalink": "/docs/contributors/"
+    "permalink": "/react-canvas-editor/docs/contributors/"
   },
   "next": {
     "title": "Code of conduct",
-    "permalink": "/docs/contributors/code-of-conduce"
+    "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
   }
 }

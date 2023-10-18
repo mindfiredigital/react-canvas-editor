@@ -6,7 +6,7 @@
   "source": "@site/docs/release/change-logs.md",
   "sourceDirName": "release",
   "slug": "/release/change-logs",
-  "permalink": "/docs/release/change-logs",
+  "permalink": "/react-canvas-editor/docs/release/change-logs",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Release",
-    "permalink": "/docs/category/release"
+    "permalink": "/react-canvas-editor/docs/category/release"
   },
   "next": {
     "title": "Release notes",
-    "permalink": "/docs/release/release-notes"
+    "permalink": "/react-canvas-editor/docs/release/release-notes"
   }
 }

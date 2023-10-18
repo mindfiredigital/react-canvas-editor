@@ -6,7 +6,7 @@
   "source": "@site/docs/tutorial-basics/customized-tool.md",
   "sourceDirName": "tutorial-basics",
   "slug": "/tutorial-basics/customized-tool",
-  "permalink": "/docs/tutorial-basics/customized-tool",
+  "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-tool",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Tutorials",
-    "permalink": "/docs/category/tutorials"
+    "permalink": "/react-canvas-editor/docs/category/tutorials"
   },
   "next": {
     "title": "How to customize style",
-    "permalink": "/docs/tutorial-basics/customized-style"
+    "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-style"
   }
 }

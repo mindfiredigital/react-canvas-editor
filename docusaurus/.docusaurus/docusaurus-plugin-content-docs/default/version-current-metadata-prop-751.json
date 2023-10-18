@@ -12,7 +12,7 @@
       {
         "type": "link",
         "label": "What is Document Editor?",
-        "href": "/docs/what-is-document-editor",
+        "href": "/react-canvas-editor/docs/what-is-document-editor",
         "docId": "what-is-document-editor"
       },
       {
@@ -24,17 +24,17 @@
           {
             "type": "link",
             "label": "Installation",
-            "href": "/docs/Get-started/Installation",
+            "href": "/react-canvas-editor/docs/Get-started/Installation",
             "docId": "Get-started/Installation"
           },
           {
             "type": "link",
             "label": "Quick Start",
-            "href": "/docs/Get-started/quickstart",
+            "href": "/react-canvas-editor/docs/Get-started/quickstart",
             "docId": "Get-started/quickstart"
           }
         ],
-        "href": "/docs/category/get-started"
+        "href": "/react-canvas-editor/docs/category/get-started"
       },
       {
         "type": "category",
@@ -45,23 +45,23 @@
           {
             "type": "link",
             "label": "How to customize toolbar",
-            "href": "/docs/tutorial-basics/customized-tool",
+            "href": "/react-canvas-editor/docs/tutorial-basics/customized-tool",
             "docId": "tutorial-basics/customized-tool"
           },
           {
             "type": "link",
             "label": "How to customize style",
-            "href": "/docs/tutorial-basics/customized-style",
+            "href": "/react-canvas-editor/docs/tutorial-basics/customized-style",
             "docId": "tutorial-basics/customized-style"
           },
           {
             "type": "link",
             "label": "How to use DOM events",
-            "href": "/docs/tutorial-basics/dom-handle",
+            "href": "/react-canvas-editor/docs/tutorial-basics/dom-handle",
             "docId": "tutorial-basics/dom-handle"
           }
         ],
-        "href": "/docs/category/tutorials"
+        "href": "/react-canvas-editor/docs/category/tutorials"
       },
       {
         "type": "category",
@@ -72,17 +72,17 @@
           {
             "type": "link",
             "label": "DOM Events",
-            "href": "/docs/references/dom-event",
+            "href": "/react-canvas-editor/docs/references/dom-event",
             "docId": "references/dom-event"
           },
           {
             "type": "link",
             "label": "Toolbar Options",
-            "href": "/docs/references/toolbar-option",
+            "href": "/react-canvas-editor/docs/references/toolbar-option",
             "docId": "references/toolbar-option"
           }
         ],
-        "href": "/docs/category/references"
+        "href": "/react-canvas-editor/docs/category/references"
       },
       {
         "type": "category",
@@ -93,23 +93,23 @@
           {
             "type": "link",
             "label": "Contributors",
-            "href": "/docs/contributors/",
+            "href": "/react-canvas-editor/docs/contributors/",
             "docId": "contributors/contributors"
           },
           {
             "type": "link",
             "label": "How to contribute",
-            "href": "/docs/contributors/contribution",
+            "href": "/react-canvas-editor/docs/contributors/contribution",
             "docId": "contributors/contribution"
           },
           {
             "type": "link",
             "label": "Code of conduct",
-            "href": "/docs/contributors/code-of-conduce",
+            "href": "/react-canvas-editor/docs/contributors/code-of-conduce",
             "docId": "contributors/code-of-conduce"
           }
         ],
-        "href": "/docs/category/contribution-guide"
+        "href": "/react-canvas-editor/docs/category/contribution-guide"
       },
       {
         "type": "category",
@@ -120,17 +120,17 @@
           {
             "type": "link",
             "label": "Change logs",
-            "href": "/docs/release/change-logs",
+            "href": "/react-canvas-editor/docs/release/change-logs",
             "docId": "release/change-logs"
           },
           {
             "type": "link",
             "label": "Release notes",
-            "href": "/docs/release/release-notes",
+            "href": "/react-canvas-editor/docs/release/release-notes",
             "docId": "release/release-notes"
           }
         ],
-        "href": "/docs/category/release"
+        "href": "/react-canvas-editor/docs/category/release"
       }
     ]
   },
