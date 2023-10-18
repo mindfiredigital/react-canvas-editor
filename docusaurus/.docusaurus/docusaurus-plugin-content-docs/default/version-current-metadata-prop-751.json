@@ -12,8 +12,8 @@
       {
         "type": "link",
         "label": "What is Document Editor?",
-        "href": "/docs/what-is-canvas-editor",
-        "docId": "what-is-canvas-editor"
+        "href": "/docs/what-is-document-editor",
+        "docId": "what-is-document-editor"
       },
       {
         "type": "category",
@@ -207,8 +207,8 @@
       "description": "Get value from page",
       "sidebar": "tutorialSidebar"
     },
-    "what-is-canvas-editor": {
-      "id": "what-is-canvas-editor",
+    "what-is-document-editor": {
+      "id": "what-is-document-editor",
       "title": "What is Document Editor?",
       "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
       "sidebar": "tutorialSidebar"

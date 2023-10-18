@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '6c7'),
+    component: ComponentCreator('/docs', '3e9'),
     routes: [
       {
         path: '/docs/category/contribution-guide',
@@ -169,8 +169,8 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/what-is-canvas-editor',
-        component: ComponentCreator('/docs/what-is-canvas-editor', '3c8'),
+        path: '/docs/what-is-document-editor',
+        component: ComponentCreator('/docs/what-is-document-editor', '6ab'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

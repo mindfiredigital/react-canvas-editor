@@ -8,7 +8,7 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "what-is-canvas-editor",
+          "mainDocId": "what-is-document-editor",
           "docs": [
             {
               "id": "contributors/code-of-conduce",
@@ -71,8 +71,8 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "what-is-canvas-editor",
-              "path": "/docs/what-is-canvas-editor",
+              "id": "what-is-document-editor",
+              "path": "/docs/what-is-document-editor",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -105,8 +105,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/what-is-canvas-editor",
-                "label": "what-is-canvas-editor"
+                "path": "/docs/what-is-document-editor",
+                "label": "what-is-document-editor"
               }
             }
           }
