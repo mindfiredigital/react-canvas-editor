@@ -16,6 +16,8 @@
     "build": "npm link  @mindfiredigital/canvas-editor && npm run build-lib && npm run publish-locally",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "lint-staged": "lint-staged",
+    "husky:provide": "npx husky add .husky/pre-commit 'npm run lint-staged'",
     "release":"release-it"
   },
   "eslintConfig": {
