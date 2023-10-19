@@ -10,7 +10,7 @@ Tailor the editor's user interface to align with the specific requirements of yo
 You can adjust the style of the toolbar to meet your design needs. Create a configuration object as follows:
 
 ```javascript
-const toolbarClass: any = {
+const toolbarClass = {
   container: {
     backgroundColor: "red"
   },
@@ -35,7 +35,7 @@ return (
 To fine-tune the style of individual toolbar components, define styles for items like undo, redo, and images. Here's an example configuration:
 
 ```javascript
-const toolbarClass: any = {
+const toolbarClass = {
   item: {
     undo: {
       border: 'red solid 2px',
