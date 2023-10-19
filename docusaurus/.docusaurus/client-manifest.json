@@ -3,246 +3,231 @@
     "main"
   ],
   "origins": {
-    "1506": [
+    "455": [
+      85,
       532,
-      2529,
-      3085,
-      3089,
-      6103,
-      7918,
-      8610,
-      1506
+      918,
+      455
     ],
-    "2529": [
-      532,
-      1506,
-      3089,
-      6103,
-      8610,
-      2529
-    ],
-    "4972": [
-      4972
+    "972": [
+      972
     ],
     "17896441": [
+      455,
       532,
-      1506,
-      7918
-    ],
-    "59362658": [
-      2267
-    ],
-    "79890934": [
-      9213
+      918
     ],
     "main": [
+      303,
       532,
-      1303,
       179
     ],
     "runtime~main": [
       179,
       532,
-      1303
-    ],
-    "01a85c17": [
-      532,
-      4013
+      303
     ],
     "03dacec9": [
       287
     ],
     "093c1dae": [
-      3882
+      882
     ],
     "11191d37": [
-      3333
+      333
     ],
     "14eb3368": [
       532,
-      9817
-    ],
-    "155e8923": [
-      408
-    ],
-    "1609c49d": [
-      8522
+      817
     ],
     "1be78505": [
       532,
-      4972
+      972
     ],
     "1f391b9e": [
+      455,
       532,
-      1506,
-      3085
-    ],
-    "2508b8d5": [
-      5144
+      85
     ],
     "34897b58": [
-      5115
+      115
     ],
     "393be207": [
-      7414
-    ],
-    "4e2d54cc": [
-      4738
-    ],
-    "4f42e84e": [
-      8027
+      414
     ],
     "5b7d4f99": [
-      5058
-    ],
-    "6875c492": [
-      532,
-      1506,
-      2529,
-      8610
-    ],
-    "6b6e19cb": [
-      8379
+      58
     ],
     "6f41419f": [
-      9909
+      909
     ],
     "7142ff00": [
-      3551
-    ],
-    "73664a40": [
-      3514
-    ],
-    "7661071f": [
-      9642
+      551
     ],
     "80a8ba4f": [
-      7431
-    ],
-    "814f3328": [
-      2535
+      431
     ],
     "8371896d": [
       947
     ],
-    "8717b14a": [
-      948
-    ],
     "89ac657d": [
-      7087
+      87
     ],
     "8e62e753": [
-      4634
+      634
     ],
     "8f7835a5": [
-      3929
+      929
     ],
     "90d9359e": [
-      4746
-    ],
-    "925b3f96": [
-      9003
+      746
     ],
     "935f2afb": [
       53
     ],
-    "95ba265f": [
-      3297
-    ],
-    "9e4087bc": [
-      3608
-    ],
-    "a6aa9e1f": [
-      532,
-      1506,
-      2529,
-      3089
-    ],
-    "bcd2f2c2": [
-      5470
-    ],
     "bed35dad": [
-      7122
+      122
     ],
     "c4f5d8e4": [
       532,
-      4195
-    ],
-    "ccc49370": [
-      532,
-      1506,
-      2529,
-      6103
+      195
     ],
     "cd7ded93": [
-      9798
+      798
     ],
     "d4d638a6": [
-      4190
-    ],
-    "d6207b9d": [
-      2707
+      190
     ],
     "d6295447": [
-      1037
-    ],
-    "d9f32620": [
-      1914
-    ],
-    "da21749d": [
-      1528
-    ],
-    "e273c56f": [
-      2362
+      37
     ],
     "e5701b7c": [
-      2934
+      934
     ],
     "ead3bd04": [
-      2151
-    ],
-    "f4f34a3a": [
-      8636
-    ],
-    "f576946e": [
-      535
+      151
     ],
     "fc51a3c2": [
-      4143
+      143
     ],
     "styles": [
+      85,
       179,
-      1303,
-      1506,
-      2529,
-      3085,
-      3089,
-      4013,
-      4195,
-      6103,
-      7918,
-      8610,
-      9514,
-      9817,
+      195,
+      303,
+      455,
+      514,
+      817,
+      918,
       532
     ]
   },
   "assets": {
+    "37": {
+      "js": [
+        {
+          "file": "assets/js/d6295447.258c7657.js",
+          "hash": "f4b9bf411b32413f",
+          "publicPath": "/react-canvas-editor/assets/js/d6295447.258c7657.js"
+        }
+      ]
+    },
     "53": {
       "js": [
         {
-          "file": "assets/js/935f2afb.d30fa9d9.js",
-          "hash": "60413fbc49d6616a",
-          "publicPath": "/react-canvas-editor/assets/js/935f2afb.d30fa9d9.js"
+          "file": "assets/js/935f2afb.5d936c8a.js",
+          "hash": "2944ef141d01d061",
+          "publicPath": "/react-canvas-editor/assets/js/935f2afb.5d936c8a.js"
+        }
+      ]
+    },
+    "58": {
+      "js": [
+        {
+          "file": "assets/js/5b7d4f99.d375e989.js",
+          "hash": "175d46f67d494eaa",
+          "publicPath": "/react-canvas-editor/assets/js/5b7d4f99.d375e989.js"
+        }
+      ]
+    },
+    "85": {
+      "js": [
+        {
+          "file": "assets/js/1f391b9e.ed95d981.js",
+          "hash": "7e5ca06d20983948",
+          "publicPath": "/react-canvas-editor/assets/js/1f391b9e.ed95d981.js"
+        }
+      ]
+    },
+    "87": {
+      "js": [
+        {
+          "file": "assets/js/89ac657d.9d215b48.js",
+          "hash": "1500a8bae0b09adc",
+          "publicPath": "/react-canvas-editor/assets/js/89ac657d.9d215b48.js"
+        }
+      ]
+    },
+    "115": {
+      "js": [
+        {
+          "file": "assets/js/34897b58.95449589.js",
+          "hash": "3fd9c600114547cd",
+          "publicPath": "/react-canvas-editor/assets/js/34897b58.95449589.js"
+        }
+      ]
+    },
+    "122": {
+      "js": [
+        {
+          "file": "assets/js/bed35dad.871afd3d.js",
+          "hash": "c6d837a0fe6ef97b",
+          "publicPath": "/react-canvas-editor/assets/js/bed35dad.871afd3d.js"
+        }
+      ]
+    },
+    "143": {
+      "js": [
+        {
+          "file": "assets/js/fc51a3c2.516514e8.js",
+          "hash": "e50d4786df806bdb",
+          "publicPath": "/react-canvas-editor/assets/js/fc51a3c2.516514e8.js"
+        }
+      ]
+    },
+    "151": {
+      "js": [
+        {
+          "file": "assets/js/ead3bd04.5093d42d.js",
+          "hash": "c6b55de70794565b",
+          "publicPath": "/react-canvas-editor/assets/js/ead3bd04.5093d42d.js"
         }
       ]
     },
     "179": {
       "js": [
         {
-          "file": "assets/js/main.7d154e42.js",
-          "hash": "1e308db135116069",
-          "publicPath": "/react-canvas-editor/assets/js/main.7d154e42.js"
+          "file": "assets/js/main.923542e8.js",
+          "hash": "f7d008dc48c426d4",
+          "publicPath": "/react-canvas-editor/assets/js/main.923542e8.js"
+        }
+      ]
+    },
+    "190": {
+      "js": [
+        {
+          "file": "assets/js/d4d638a6.5f543d85.js",
+          "hash": "95e311a298c5bdb0",
+          "publicPath": "/react-canvas-editor/assets/js/d4d638a6.5f543d85.js"
+        }
+      ]
+    },
+    "195": {
+      "js": [
+        {
+          "file": "assets/js/c4f5d8e4.6e4f8d44.js",
+          "hash": "5593dfe54698a502",
+          "publicPath": "/react-canvas-editor/assets/js/c4f5d8e4.6e4f8d44.js"
         }
       ]
     },
@@ -255,30 +240,147 @@
         }
       ]
     },
-    "408": {
+    "303": {
       "js": [
         {
-          "file": "assets/js/155e8923.8053df62.js",
-          "hash": "eb99b638301b7cf5",
-          "publicPath": "/react-canvas-editor/assets/js/155e8923.8053df62.js"
+          "file": "assets/js/runtime~main.7d0c95b1.js",
+          "hash": "8c34a4b70800e174",
+          "publicPath": "/react-canvas-editor/assets/js/runtime~main.7d0c95b1.js"
+        }
+      ]
+    },
+    "333": {
+      "js": [
+        {
+          "file": "assets/js/11191d37.a97a307e.js",
+          "hash": "46ff7b805cab257a",
+          "publicPath": "/react-canvas-editor/assets/js/11191d37.a97a307e.js"
+        }
+      ]
+    },
+    "414": {
+      "js": [
+        {
+          "file": "assets/js/393be207.feba28c4.js",
+          "hash": "7e9df30b01956d7f",
+          "publicPath": "/react-canvas-editor/assets/js/393be207.feba28c4.js"
+        }
+      ]
+    },
+    "431": {
+      "js": [
+        {
+          "file": "assets/js/80a8ba4f.2269be2b.js",
+          "hash": "14ad39b5713cb475",
+          "publicPath": "/react-canvas-editor/assets/js/80a8ba4f.2269be2b.js"
+        }
+      ]
+    },
+    "455": {
+      "js": [
+        {
+          "file": "assets/js/455.47232a82.js",
+          "hash": "1dde256db1f1e2d8",
+          "publicPath": "/react-canvas-editor/assets/js/455.47232a82.js"
         }
       ]
     },
     "532": {
       "css": [
         {
-          "file": "assets/css/styles.c849e0a5.css",
-          "hash": "95b0cba67261b057",
-          "publicPath": "/react-canvas-editor/assets/css/styles.c849e0a5.css"
+          "file": "assets/css/styles.ac2da2f5.css",
+          "hash": "81ddfbd75ca30421",
+          "publicPath": "/react-canvas-editor/assets/css/styles.ac2da2f5.css"
         }
       ]
     },
-    "535": {
+    "551": {
       "js": [
         {
-          "file": "assets/js/f576946e.c9fdaa45.js",
-          "hash": "539ef79f25795de2",
-          "publicPath": "/react-canvas-editor/assets/js/f576946e.c9fdaa45.js"
+          "file": "assets/js/7142ff00.fa06bdc1.js",
+          "hash": "94588de3027c56aa",
+          "publicPath": "/react-canvas-editor/assets/js/7142ff00.fa06bdc1.js"
+        }
+      ]
+    },
+    "634": {
+      "js": [
+        {
+          "file": "assets/js/8e62e753.ac7e0a1a.js",
+          "hash": "5eba1a9e8d8a0660",
+          "publicPath": "/react-canvas-editor/assets/js/8e62e753.ac7e0a1a.js"
+        }
+      ]
+    },
+    "746": {
+      "js": [
+        {
+          "file": "assets/js/90d9359e.7474be60.js",
+          "hash": "932f0cb5e3f04987",
+          "publicPath": "/react-canvas-editor/assets/js/90d9359e.7474be60.js"
+        }
+      ]
+    },
+    "798": {
+      "js": [
+        {
+          "file": "assets/js/cd7ded93.83b5f491.js",
+          "hash": "79dd8de6aad42bd9",
+          "publicPath": "/react-canvas-editor/assets/js/cd7ded93.83b5f491.js"
+        }
+      ]
+    },
+    "817": {
+      "js": [
+        {
+          "file": "assets/js/14eb3368.ede34e6d.js",
+          "hash": "ee0af35a0bb8a49e",
+          "publicPath": "/react-canvas-editor/assets/js/14eb3368.ede34e6d.js"
+        }
+      ]
+    },
+    "882": {
+      "js": [
+        {
+          "file": "assets/js/093c1dae.ee6195a3.js",
+          "hash": "44e01bf0b9bd5014",
+          "publicPath": "/react-canvas-editor/assets/js/093c1dae.ee6195a3.js"
+        }
+      ]
+    },
+    "909": {
+      "js": [
+        {
+          "file": "assets/js/6f41419f.4e223a8b.js",
+          "hash": "b4203ceb803a9bf5",
+          "publicPath": "/react-canvas-editor/assets/js/6f41419f.4e223a8b.js"
+        }
+      ]
+    },
+    "918": {
+      "js": [
+        {
+          "file": "assets/js/17896441.61283b65.js",
+          "hash": "31147c8d25a20992",
+          "publicPath": "/react-canvas-editor/assets/js/17896441.61283b65.js"
+        }
+      ]
+    },
+    "929": {
+      "js": [
+        {
+          "file": "assets/js/8f7835a5.c8aad709.js",
+          "hash": "dd86e09338e085d6",
+          "publicPath": "/react-canvas-editor/assets/js/8f7835a5.c8aad709.js"
+        }
+      ]
+    },
+    "934": {
+      "js": [
+        {
+          "file": "assets/js/e5701b7c.f79358f8.js",
+          "hash": "f51ecfa6d3768e68",
+          "publicPath": "/react-canvas-editor/assets/js/e5701b7c.f79358f8.js"
         }
       ]
     },
@@ -291,467 +393,17 @@
         }
       ]
     },
-    "948": {
+    "972": {
       "js": [
         {
-          "file": "assets/js/8717b14a.1a19c545.js",
-          "hash": "1029d8cc9aa2d6ca",
-          "publicPath": "/react-canvas-editor/assets/js/8717b14a.1a19c545.js"
-        }
-      ]
-    },
-    "1037": {
-      "js": [
-        {
-          "file": "assets/js/d6295447.7e27edf1.js",
-          "hash": "ce46bcfceaa6b4e4",
-          "publicPath": "/react-canvas-editor/assets/js/d6295447.7e27edf1.js"
-        }
-      ]
-    },
-    "1303": {
-      "js": [
-        {
-          "file": "assets/js/runtime~main.f28550c4.js",
-          "hash": "3c5e3f5263703ce0",
-          "publicPath": "/react-canvas-editor/assets/js/runtime~main.f28550c4.js"
-        }
-      ]
-    },
-    "1506": {
-      "js": [
-        {
-          "file": "assets/js/1506.66ca0bd0.js",
-          "hash": "15569d331b6b739d",
-          "publicPath": "/react-canvas-editor/assets/js/1506.66ca0bd0.js"
-        }
-      ]
-    },
-    "1528": {
-      "js": [
-        {
-          "file": "assets/js/da21749d.0a77248c.js",
-          "hash": "51f9761cea400c2b",
-          "publicPath": "/react-canvas-editor/assets/js/da21749d.0a77248c.js"
-        }
-      ]
-    },
-    "1914": {
-      "js": [
-        {
-          "file": "assets/js/d9f32620.df6d33fc.js",
-          "hash": "299a8b926385ebd4",
-          "publicPath": "/react-canvas-editor/assets/js/d9f32620.df6d33fc.js"
-        }
-      ]
-    },
-    "2151": {
-      "js": [
-        {
-          "file": "assets/js/ead3bd04.64c7f2c6.js",
-          "hash": "ba1fbbd0382f2a3e",
-          "publicPath": "/react-canvas-editor/assets/js/ead3bd04.64c7f2c6.js"
-        }
-      ]
-    },
-    "2267": {
-      "js": [
-        {
-          "file": "assets/js/59362658.b1567233.js",
-          "hash": "c121d2012e153bb7",
-          "publicPath": "/react-canvas-editor/assets/js/59362658.b1567233.js"
-        }
-      ]
-    },
-    "2362": {
-      "js": [
-        {
-          "file": "assets/js/e273c56f.7639c369.js",
-          "hash": "c0915141b7599eb2",
-          "publicPath": "/react-canvas-editor/assets/js/e273c56f.7639c369.js"
-        }
-      ]
-    },
-    "2529": {
-      "js": [
-        {
-          "file": "assets/js/2529.5ce40f31.js",
-          "hash": "6bd1e729cbe58039",
-          "publicPath": "/react-canvas-editor/assets/js/2529.5ce40f31.js"
-        }
-      ]
-    },
-    "2535": {
-      "js": [
-        {
-          "file": "assets/js/814f3328.63dc30fe.js",
-          "hash": "5f7700d5da8e8c63",
-          "publicPath": "/react-canvas-editor/assets/js/814f3328.63dc30fe.js"
-        }
-      ]
-    },
-    "2707": {
-      "js": [
-        {
-          "file": "assets/js/d6207b9d.d6678fae.js",
-          "hash": "054227a066b8e6d0",
-          "publicPath": "/react-canvas-editor/assets/js/d6207b9d.d6678fae.js"
-        }
-      ]
-    },
-    "2934": {
-      "js": [
-        {
-          "file": "assets/js/e5701b7c.a61f23cb.js",
-          "hash": "a64c27ecacbd35cb",
-          "publicPath": "/react-canvas-editor/assets/js/e5701b7c.a61f23cb.js"
-        }
-      ]
-    },
-    "3085": {
-      "js": [
-        {
-          "file": "assets/js/1f391b9e.ac46b005.js",
-          "hash": "8015c44790c70968",
-          "publicPath": "/react-canvas-editor/assets/js/1f391b9e.ac46b005.js"
-        }
-      ]
-    },
-    "3089": {
-      "js": [
-        {
-          "file": "assets/js/a6aa9e1f.a71457ce.js",
-          "hash": "603aa2a4eaff7c4c",
-          "publicPath": "/react-canvas-editor/assets/js/a6aa9e1f.a71457ce.js"
-        }
-      ]
-    },
-    "3297": {
-      "js": [
-        {
-          "file": "assets/js/95ba265f.e64202f3.js",
-          "hash": "f1b970e4854ec465",
-          "publicPath": "/react-canvas-editor/assets/js/95ba265f.e64202f3.js"
-        }
-      ]
-    },
-    "3333": {
-      "js": [
-        {
-          "file": "assets/js/11191d37.129708ae.js",
-          "hash": "935958bcde579d11",
-          "publicPath": "/react-canvas-editor/assets/js/11191d37.129708ae.js"
-        }
-      ]
-    },
-    "3514": {
-      "js": [
-        {
-          "file": "assets/js/73664a40.34427024.js",
-          "hash": "2e60775d05791e9a",
-          "publicPath": "/react-canvas-editor/assets/js/73664a40.34427024.js"
-        }
-      ]
-    },
-    "3551": {
-      "js": [
-        {
-          "file": "assets/js/7142ff00.43e6eec4.js",
-          "hash": "d897f3135d416acf",
-          "publicPath": "/react-canvas-editor/assets/js/7142ff00.43e6eec4.js"
-        }
-      ]
-    },
-    "3608": {
-      "js": [
-        {
-          "file": "assets/js/9e4087bc.ae8e7dba.js",
-          "hash": "31be19e43135ca36",
-          "publicPath": "/react-canvas-editor/assets/js/9e4087bc.ae8e7dba.js"
-        }
-      ]
-    },
-    "3882": {
-      "js": [
-        {
-          "file": "assets/js/093c1dae.085850e3.js",
-          "hash": "bd1601a33ae5ede7",
-          "publicPath": "/react-canvas-editor/assets/js/093c1dae.085850e3.js"
-        }
-      ]
-    },
-    "3929": {
-      "js": [
-        {
-          "file": "assets/js/8f7835a5.1a29a849.js",
-          "hash": "059b56d4f4151805",
-          "publicPath": "/react-canvas-editor/assets/js/8f7835a5.1a29a849.js"
-        }
-      ]
-    },
-    "4013": {
-      "js": [
-        {
-          "file": "assets/js/01a85c17.1bd1eb1f.js",
-          "hash": "da73f4e26f04455d",
-          "publicPath": "/react-canvas-editor/assets/js/01a85c17.1bd1eb1f.js"
-        }
-      ]
-    },
-    "4143": {
-      "js": [
-        {
-          "file": "assets/js/fc51a3c2.c02e0bc4.js",
-          "hash": "11b931993e230930",
-          "publicPath": "/react-canvas-editor/assets/js/fc51a3c2.c02e0bc4.js"
-        }
-      ]
-    },
-    "4190": {
-      "js": [
-        {
-          "file": "assets/js/d4d638a6.05115c47.js",
-          "hash": "dc2836e8ae523557",
-          "publicPath": "/react-canvas-editor/assets/js/d4d638a6.05115c47.js"
-        }
-      ]
-    },
-    "4195": {
-      "js": [
-        {
-          "file": "assets/js/c4f5d8e4.72da0cf6.js",
-          "hash": "b2d17f2eeb4d98e2",
-          "publicPath": "/react-canvas-editor/assets/js/c4f5d8e4.72da0cf6.js"
-        }
-      ]
-    },
-    "4634": {
-      "js": [
-        {
-          "file": "assets/js/8e62e753.2a91236a.js",
-          "hash": "a479bc1ee3dd5c72",
-          "publicPath": "/react-canvas-editor/assets/js/8e62e753.2a91236a.js"
-        }
-      ]
-    },
-    "4738": {
-      "js": [
-        {
-          "file": "assets/js/4e2d54cc.93ffbd47.js",
-          "hash": "2a67dcb5094c6e9d",
-          "publicPath": "/react-canvas-editor/assets/js/4e2d54cc.93ffbd47.js"
-        }
-      ]
-    },
-    "4746": {
-      "js": [
-        {
-          "file": "assets/js/90d9359e.d47c4996.js",
-          "hash": "b00bd659e7d0f8b7",
-          "publicPath": "/react-canvas-editor/assets/js/90d9359e.d47c4996.js"
-        }
-      ]
-    },
-    "4972": {
-      "js": [
-        {
-          "file": "assets/js/4972.141bf14f.js",
-          "hash": "82a18fe0cfb33b73",
-          "publicPath": "/react-canvas-editor/assets/js/4972.141bf14f.js"
+          "file": "assets/js/972.b63b2b09.js",
+          "hash": "ba9d2f2d3210f0a3",
+          "publicPath": "/react-canvas-editor/assets/js/972.b63b2b09.js"
         },
         {
-          "file": "assets/js/1be78505.3d67d8fb.js",
-          "hash": "4f148cd39e7dd193",
-          "publicPath": "/react-canvas-editor/assets/js/1be78505.3d67d8fb.js"
-        }
-      ]
-    },
-    "5058": {
-      "js": [
-        {
-          "file": "assets/js/5b7d4f99.f7796992.js",
-          "hash": "d9e34194bed023c3",
-          "publicPath": "/react-canvas-editor/assets/js/5b7d4f99.f7796992.js"
-        }
-      ]
-    },
-    "5115": {
-      "js": [
-        {
-          "file": "assets/js/34897b58.fbcf6056.js",
-          "hash": "2cb7525a62c8ca9d",
-          "publicPath": "/react-canvas-editor/assets/js/34897b58.fbcf6056.js"
-        }
-      ]
-    },
-    "5144": {
-      "js": [
-        {
-          "file": "assets/js/2508b8d5.6e00b696.js",
-          "hash": "fde7b692e6f36073",
-          "publicPath": "/react-canvas-editor/assets/js/2508b8d5.6e00b696.js"
-        }
-      ]
-    },
-    "5470": {
-      "js": [
-        {
-          "file": "assets/js/bcd2f2c2.cb40aa72.js",
-          "hash": "40e0de5ca9e8174d",
-          "publicPath": "/react-canvas-editor/assets/js/bcd2f2c2.cb40aa72.js"
-        }
-      ]
-    },
-    "6103": {
-      "js": [
-        {
-          "file": "assets/js/ccc49370.ef993522.js",
-          "hash": "53de258e113dc352",
-          "publicPath": "/react-canvas-editor/assets/js/ccc49370.ef993522.js"
-        }
-      ]
-    },
-    "7087": {
-      "js": [
-        {
-          "file": "assets/js/89ac657d.f3707f62.js",
-          "hash": "942fbefcc058b25a",
-          "publicPath": "/react-canvas-editor/assets/js/89ac657d.f3707f62.js"
-        }
-      ]
-    },
-    "7122": {
-      "js": [
-        {
-          "file": "assets/js/bed35dad.7c3aa9cf.js",
-          "hash": "dafda1532e91e426",
-          "publicPath": "/react-canvas-editor/assets/js/bed35dad.7c3aa9cf.js"
-        }
-      ]
-    },
-    "7414": {
-      "js": [
-        {
-          "file": "assets/js/393be207.4d87253a.js",
-          "hash": "0dd15861c74f6a4a",
-          "publicPath": "/react-canvas-editor/assets/js/393be207.4d87253a.js"
-        }
-      ]
-    },
-    "7431": {
-      "js": [
-        {
-          "file": "assets/js/80a8ba4f.aecf4665.js",
-          "hash": "d228c72c0c6beee2",
-          "publicPath": "/react-canvas-editor/assets/js/80a8ba4f.aecf4665.js"
-        }
-      ]
-    },
-    "7918": {
-      "js": [
-        {
-          "file": "assets/js/17896441.ff830565.js",
-          "hash": "6177efe7cd6f980a",
-          "publicPath": "/react-canvas-editor/assets/js/17896441.ff830565.js"
-        }
-      ]
-    },
-    "8027": {
-      "js": [
-        {
-          "file": "assets/js/4f42e84e.3d4c385c.js",
-          "hash": "a36b6644daf7cfbc",
-          "publicPath": "/react-canvas-editor/assets/js/4f42e84e.3d4c385c.js"
-        }
-      ]
-    },
-    "8379": {
-      "js": [
-        {
-          "file": "assets/js/6b6e19cb.c7dbc5b0.js",
-          "hash": "9e679d90ae81ed37",
-          "publicPath": "/react-canvas-editor/assets/js/6b6e19cb.c7dbc5b0.js"
-        }
-      ]
-    },
-    "8522": {
-      "js": [
-        {
-          "file": "assets/js/1609c49d.0cbcd580.js",
-          "hash": "73ec0f4bf35ed54a",
-          "publicPath": "/react-canvas-editor/assets/js/1609c49d.0cbcd580.js"
-        }
-      ]
-    },
-    "8610": {
-      "js": [
-        {
-          "file": "assets/js/6875c492.395d8162.js",
-          "hash": "df11c76784e54c2d",
-          "publicPath": "/react-canvas-editor/assets/js/6875c492.395d8162.js"
-        }
-      ]
-    },
-    "8636": {
-      "js": [
-        {
-          "file": "assets/js/f4f34a3a.1e1484a4.js",
-          "hash": "184c1883c88903e1",
-          "publicPath": "/react-canvas-editor/assets/js/f4f34a3a.1e1484a4.js"
-        }
-      ]
-    },
-    "9003": {
-      "js": [
-        {
-          "file": "assets/js/925b3f96.2cbaa392.js",
-          "hash": "29e1ccaaa143626d",
-          "publicPath": "/react-canvas-editor/assets/js/925b3f96.2cbaa392.js"
-        }
-      ]
-    },
-    "9213": {
-      "js": [
-        {
-          "file": "assets/js/79890934.0360931a.js",
-          "hash": "11295d1b05db870e",
-          "publicPath": "/react-canvas-editor/assets/js/79890934.0360931a.js"
-        }
-      ]
-    },
-    "9642": {
-      "js": [
-        {
-          "file": "assets/js/7661071f.f853b90e.js",
-          "hash": "6453f949a4d7d7ee",
-          "publicPath": "/react-canvas-editor/assets/js/7661071f.f853b90e.js"
-        }
-      ]
-    },
-    "9798": {
-      "js": [
-        {
-          "file": "assets/js/cd7ded93.1c994d51.js",
-          "hash": "84722722a98f35ed",
-          "publicPath": "/react-canvas-editor/assets/js/cd7ded93.1c994d51.js"
-        }
-      ]
-    },
-    "9817": {
-      "js": [
-        {
-          "file": "assets/js/14eb3368.348dac37.js",
-          "hash": "8d9e5f812a63896d",
-          "publicPath": "/react-canvas-editor/assets/js/14eb3368.348dac37.js"
-        }
-      ]
-    },
-    "9909": {
-      "js": [
-        {
-          "file": "assets/js/6f41419f.5ee266b8.js",
-          "hash": "003c29e4bce9bd1d",
-          "publicPath": "/react-canvas-editor/assets/js/6f41419f.5ee266b8.js"
+          "file": "assets/js/1be78505.1c3b27cc.js",
+          "hash": "9de496f1091f2e99",
+          "publicPath": "/react-canvas-editor/assets/js/1be78505.1c3b27cc.js"
         }
       ]
     }
