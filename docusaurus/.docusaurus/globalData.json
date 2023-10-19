@@ -16,13 +16,13 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "contributors/contribution",
-              "path": "/react-canvas-editor/docs/contributors/contribution",
+              "id": "contributors/contributors",
+              "path": "/react-canvas-editor/docs/contributors/",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "contributors/contributors",
-              "path": "/react-canvas-editor/docs/contributors/",
+              "id": "contributors/how-to-cotribute",
+              "path": "/react-canvas-editor/docs/contributors/how-to-cotribute",
               "sidebar": "tutorialSidebar"
             },
             {

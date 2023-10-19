@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/react-canvas-editor/docs',
-    component: ComponentCreator('/react-canvas-editor/docs', '278'),
+    component: ComponentCreator('/react-canvas-editor/docs', '14f'),
     routes: [
       {
         path: '/react-canvas-editor/docs/category/contribution-guide',
@@ -109,8 +109,8 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/react-canvas-editor/docs/contributors/contribution',
-        component: ComponentCreator('/react-canvas-editor/docs/contributors/contribution', 'f17'),
+        path: '/react-canvas-editor/docs/contributors/how-to-cotribute',
+        component: ComponentCreator('/react-canvas-editor/docs/contributors/how-to-cotribute', '410'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

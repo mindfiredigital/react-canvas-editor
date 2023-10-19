@@ -4,9 +4,10 @@ sidebar_position: 3
 
 # How to use DOM events
 
-## Get value from page
+Mastering the handling of DOM events is crucial for effective React development. Below are key events and how to use them:
+## Retrieving Page Value
 
-**onChange**: The onchange event occurs when the value of an page is changed.
+**onChange**: This event triggers when the value of an input page changes.
 
 ```javascript
 export const test = () =>{
@@ -24,9 +25,9 @@ return (
 }
 ```
 ![Get value from page](../../static/img/onChange.png)
-## Get select text from page
+## Capturing Selected Text
 
-**onSelect**: The onchange event occurs when the value of an page is selected.
+**onSelect**: This event activates when text on the page is selected.
 
 ```javascript
 export const test = () =>{
@@ -43,8 +44,8 @@ const handleSelectedText = (text) => {
 }
 ```
 ![Get select text from page](../../static/img/onSelect.png)
-## Set page value
-**value**: The value attribute on an tag sets the value of the page.
+## Setting Page Value
+**value**: To assign a value to an input page, use the value attribute.
 ```javascript
 export const test = () =>{
         return ( 
@@ -56,3 +57,5 @@ export const test = () =>{
 ```
 
 ![value](../../static/img/setValue.png)
+
+By following these steps, you can proficiently work with DOM events in React, enhancing your application's functionality.

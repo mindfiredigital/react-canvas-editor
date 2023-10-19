@@ -51,6 +51,24 @@ const toolbarClass: any = {
       // border: 'black solid 3px',
       // background:'blue'
     }
+    ,fontType:{
+      // background:'green'
+    }
+    ,table:{
+      // background:'green'
+    }
+   ,fontColor:{
+    // background:'green'
+   }
+,highlight:{
+  // background:'green'
+}
+,fontSize:{
+  // background:'green'
+}
+,heading:{
+  // background:'green'
+}
     
   }
 }
@@ -73,7 +91,7 @@ const handleSelectedText = (text) => {
 }
 
 export const test = () => <DocumentEditor 
-toolbar={toolbarItem}
+// toolbar={toolbarItem}
 toolbarClass={toolbarClass} 
 canvasClass={canvasClass} 
 onChange={handleChange} 

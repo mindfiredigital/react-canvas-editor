@@ -98,15 +98,15 @@
           },
           {
             "type": "link",
-            "label": "How to contribute",
-            "href": "/react-canvas-editor/docs/contributors/contribution",
-            "docId": "contributors/contribution"
-          },
-          {
-            "type": "link",
             "label": "Code of conduct",
             "href": "/react-canvas-editor/docs/contributors/code-of-conduce",
             "docId": "contributors/code-of-conduce"
+          },
+          {
+            "type": "link",
+            "label": "how-to-cotribute",
+            "href": "/react-canvas-editor/docs/contributors/how-to-cotribute",
+            "docId": "contributors/how-to-cotribute"
           }
         ],
         "href": "/react-canvas-editor/docs/category/contribution-guide"
@@ -138,13 +138,7 @@
     "contributors/code-of-conduce": {
       "id": "contributors/code-of-conduce",
       "title": "Code of conduct",
-      "description": "",
-      "sidebar": "tutorialSidebar"
-    },
-    "contributors/contribution": {
-      "id": "contributors/contribution",
-      "title": "How to contribute",
-      "description": "",
+      "description": "As contributors and maintainers of the React Canvas Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
       "sidebar": "tutorialSidebar"
     },
     "contributors/contributors": {
@@ -153,10 +147,16 @@
       "description": "- Ashutosh Jena",
       "sidebar": "tutorialSidebar"
     },
+    "contributors/how-to-cotribute": {
+      "id": "contributors/how-to-cotribute",
+      "title": "how-to-cotribute",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
     "Get-started/Installation": {
       "id": "Get-started/Installation",
       "title": "Installation",
-      "description": "react-canvas-editor is essentially a set of npm packages.",
+      "description": "The React Canvas Editor is a collection of npm packages, which can be found on GitHub.",
       "sidebar": "tutorialSidebar"
     },
     "Get-started/quickstart": {
@@ -192,19 +192,19 @@
     "tutorial-basics/customized-style": {
       "id": "tutorial-basics/customized-style",
       "title": "How to customize style",
-      "description": "Customize the editor's UI style to match your application's requirements.",
+      "description": "Tailor the editor's user interface to align with the specific requirements of your application.",
       "sidebar": "tutorialSidebar"
     },
     "tutorial-basics/customized-tool": {
       "id": "tutorial-basics/customized-tool",
       "title": "How to customize toolbar",
-      "description": "Tailor the editor's user interface and actions to the needs of your application.",
+      "description": "Customizing the user interface and actions of the editor to align with your application's requirements is essential.",
       "sidebar": "tutorialSidebar"
     },
     "tutorial-basics/dom-handle": {
       "id": "tutorial-basics/dom-handle",
       "title": "How to use DOM events",
-      "description": "Get value from page",
+      "description": "Mastering the handling of DOM events is crucial for effective React development. Below are key events and how to use them:",
       "sidebar": "tutorialSidebar"
     },
     "what-is-document-editor": {

@@ -9,8 +9,8 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/docs",
-          "tagsPath": "/docs/tags",
+          "path": "/react-canvas-editor/docs",
+          "tagsPath": "/react-canvas-editor/docs/tags",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/ashutoshjena/Desktop/project/canvas-document-editor-package/canvas-document-package/react-canvas-editor/docusaurus/sidebars.js",
@@ -21,11 +21,11 @@
               "unversionedId": "contributors/code-of-conduce",
               "id": "contributors/code-of-conduce",
               "title": "Code of conduct",
-              "description": "",
+              "description": "As contributors and maintainers of the React Canvas Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
               "source": "@site/docs/contributors/code-of-conduce.md",
               "sourceDirName": "contributors",
               "slug": "/contributors/code-of-conduce",
-              "permalink": "/docs/contributors/code-of-conduce",
+              "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -35,38 +35,12 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "How to contribute",
-                "permalink": "/docs/contributors/contribution"
-              },
-              "next": {
-                "title": "Release",
-                "permalink": "/docs/category/release"
-              }
-            },
-            {
-              "unversionedId": "contributors/contribution",
-              "id": "contributors/contribution",
-              "title": "How to contribute",
-              "description": "",
-              "source": "@site/docs/contributors/contribution.md",
-              "sourceDirName": "contributors",
-              "slug": "/contributors/contribution",
-              "permalink": "/docs/contributors/contribution",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
                 "title": "Contributors",
-                "permalink": "/docs/contributors/"
+                "permalink": "/react-canvas-editor/docs/contributors/"
               },
               "next": {
-                "title": "Code of conduct",
-                "permalink": "/docs/contributors/code-of-conduce"
+                "title": "how-to-cotribute",
+                "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
               }
             },
             {
@@ -77,7 +51,7 @@
               "source": "@site/docs/contributors/contributors.md",
               "sourceDirName": "contributors",
               "slug": "/contributors/",
-              "permalink": "/docs/contributors/",
+              "permalink": "/react-canvas-editor/docs/contributors/",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -88,22 +62,45 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Contribution Guide",
-                "permalink": "/docs/category/contribution-guide"
+                "permalink": "/react-canvas-editor/docs/category/contribution-guide"
               },
               "next": {
-                "title": "How to contribute",
-                "permalink": "/docs/contributors/contribution"
+                "title": "Code of conduct",
+                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+              }
+            },
+            {
+              "unversionedId": "contributors/how-to-cotribute",
+              "id": "contributors/how-to-cotribute",
+              "title": "how-to-cotribute",
+              "description": "",
+              "source": "@site/docs/contributors/how-to-cotribute.md",
+              "sourceDirName": "contributors",
+              "slug": "/contributors/how-to-cotribute",
+              "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Code of conduct",
+                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+              },
+              "next": {
+                "title": "Release",
+                "permalink": "/react-canvas-editor/docs/category/release"
               }
             },
             {
               "unversionedId": "Get-started/Installation",
               "id": "Get-started/Installation",
               "title": "Installation",
-              "description": "react-canvas-editor is essentially a set of npm packages.",
+              "description": "The React Canvas Editor is a collection of npm packages, which can be found on GitHub.",
               "source": "@site/docs/Get-started/Installation.md",
               "sourceDirName": "Get-started",
               "slug": "/Get-started/Installation",
-              "permalink": "/docs/Get-started/Installation",
+              "permalink": "/react-canvas-editor/docs/Get-started/Installation",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -114,11 +111,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Get Started",
-                "permalink": "/docs/category/get-started"
+                "permalink": "/react-canvas-editor/docs/category/get-started"
               },
               "next": {
                 "title": "Quick Start",
-                "permalink": "/docs/Get-started/quickstart"
+                "permalink": "/react-canvas-editor/docs/Get-started/quickstart"
               }
             },
             {
@@ -129,7 +126,7 @@
               "source": "@site/docs/Get-started/quickstart.md",
               "sourceDirName": "Get-started",
               "slug": "/Get-started/quickstart",
-              "permalink": "/docs/Get-started/quickstart",
+              "permalink": "/react-canvas-editor/docs/Get-started/quickstart",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -140,11 +137,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Installation",
-                "permalink": "/docs/Get-started/Installation"
+                "permalink": "/react-canvas-editor/docs/Get-started/Installation"
               },
               "next": {
                 "title": "Tutorials",
-                "permalink": "/docs/category/tutorials"
+                "permalink": "/react-canvas-editor/docs/category/tutorials"
               }
             },
             {
@@ -155,7 +152,7 @@
               "source": "@site/docs/references/dom-event.md",
               "sourceDirName": "references",
               "slug": "/references/dom-event",
-              "permalink": "/docs/references/dom-event",
+              "permalink": "/react-canvas-editor/docs/references/dom-event",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -166,11 +163,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "References",
-                "permalink": "/docs/category/references"
+                "permalink": "/react-canvas-editor/docs/category/references"
               },
               "next": {
                 "title": "Toolbar Options",
-                "permalink": "/docs/references/toolbar-option"
+                "permalink": "/react-canvas-editor/docs/references/toolbar-option"
               }
             },
             {
@@ -181,7 +178,7 @@
               "source": "@site/docs/references/toolbar-option.md",
               "sourceDirName": "references",
               "slug": "/references/toolbar-option",
-              "permalink": "/docs/references/toolbar-option",
+              "permalink": "/react-canvas-editor/docs/references/toolbar-option",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -192,11 +189,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "DOM Events",
-                "permalink": "/docs/references/dom-event"
+                "permalink": "/react-canvas-editor/docs/references/dom-event"
               },
               "next": {
                 "title": "Contribution Guide",
-                "permalink": "/docs/category/contribution-guide"
+                "permalink": "/react-canvas-editor/docs/category/contribution-guide"
               }
             },
             {
@@ -207,7 +204,7 @@
               "source": "@site/docs/release/change-logs.md",
               "sourceDirName": "release",
               "slug": "/release/change-logs",
-              "permalink": "/docs/release/change-logs",
+              "permalink": "/react-canvas-editor/docs/release/change-logs",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -218,11 +215,11 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Release",
-                "permalink": "/docs/category/release"
+                "permalink": "/react-canvas-editor/docs/category/release"
               },
               "next": {
                 "title": "Release notes",
-                "permalink": "/docs/release/release-notes"
+                "permalink": "/react-canvas-editor/docs/release/release-notes"
               }
             },
             {
@@ -233,7 +230,7 @@
               "source": "@site/docs/release/release-notes.md",
               "sourceDirName": "release",
               "slug": "/release/release-notes",
-              "permalink": "/docs/release/release-notes",
+              "permalink": "/react-canvas-editor/docs/release/release-notes",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -241,18 +238,18 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Change logs",
-                "permalink": "/docs/release/change-logs"
+                "permalink": "/react-canvas-editor/docs/release/change-logs"
               }
             },
             {
               "unversionedId": "tutorial-basics/customized-style",
               "id": "tutorial-basics/customized-style",
               "title": "How to customize style",
-              "description": "Customize the editor's UI style to match your application's requirements.",
+              "description": "Tailor the editor's user interface to align with the specific requirements of your application.",
               "source": "@site/docs/tutorial-basics/customized-style.md",
               "sourceDirName": "tutorial-basics",
               "slug": "/tutorial-basics/customized-style",
-              "permalink": "/docs/tutorial-basics/customized-style",
+              "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-style",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -263,22 +260,22 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "How to customize toolbar",
-                "permalink": "/docs/tutorial-basics/customized-tool"
+                "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-tool"
               },
               "next": {
                 "title": "How to use DOM events",
-                "permalink": "/docs/tutorial-basics/dom-handle"
+                "permalink": "/react-canvas-editor/docs/tutorial-basics/dom-handle"
               }
             },
             {
               "unversionedId": "tutorial-basics/customized-tool",
               "id": "tutorial-basics/customized-tool",
               "title": "How to customize toolbar",
-              "description": "Tailor the editor's user interface and actions to the needs of your application.",
+              "description": "Customizing the user interface and actions of the editor to align with your application's requirements is essential.",
               "source": "@site/docs/tutorial-basics/customized-tool.md",
               "sourceDirName": "tutorial-basics",
               "slug": "/tutorial-basics/customized-tool",
-              "permalink": "/docs/tutorial-basics/customized-tool",
+              "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-tool",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -289,22 +286,22 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "Tutorials",
-                "permalink": "/docs/category/tutorials"
+                "permalink": "/react-canvas-editor/docs/category/tutorials"
               },
               "next": {
                 "title": "How to customize style",
-                "permalink": "/docs/tutorial-basics/customized-style"
+                "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-style"
               }
             },
             {
               "unversionedId": "tutorial-basics/dom-handle",
               "id": "tutorial-basics/dom-handle",
               "title": "How to use DOM events",
-              "description": "Get value from page",
+              "description": "Mastering the handling of DOM events is crucial for effective React development. Below are key events and how to use them:",
               "source": "@site/docs/tutorial-basics/dom-handle.md",
               "sourceDirName": "tutorial-basics",
               "slug": "/tutorial-basics/dom-handle",
-              "permalink": "/docs/tutorial-basics/dom-handle",
+              "permalink": "/react-canvas-editor/docs/tutorial-basics/dom-handle",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -315,22 +312,22 @@
               "sidebar": "tutorialSidebar",
               "previous": {
                 "title": "How to customize style",
-                "permalink": "/docs/tutorial-basics/customized-style"
+                "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-style"
               },
               "next": {
                 "title": "References",
-                "permalink": "/docs/category/references"
+                "permalink": "/react-canvas-editor/docs/category/references"
               }
             },
             {
-              "unversionedId": "what-is-canvas-editor",
-              "id": "what-is-canvas-editor",
+              "unversionedId": "what-is-document-editor",
+              "id": "what-is-document-editor",
               "title": "What is Document Editor?",
               "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
-              "source": "@site/docs/what-is-canvas-editor.md",
+              "source": "@site/docs/what-is-document-editor.md",
               "sourceDirName": ".",
-              "slug": "/what-is-canvas-editor",
-              "permalink": "/docs/what-is-canvas-editor",
+              "slug": "/what-is-document-editor",
+              "permalink": "/react-canvas-editor/docs/what-is-document-editor",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -341,7 +338,7 @@
               "sidebar": "tutorialSidebar",
               "next": {
                 "title": "Get Started",
-                "permalink": "/docs/category/get-started"
+                "permalink": "/react-canvas-editor/docs/category/get-started"
               }
             }
           ],
@@ -350,7 +347,7 @@
             "tutorialSidebar": [
               {
                 "type": "doc",
-                "id": "what-is-canvas-editor"
+                "id": "what-is-document-editor"
               },
               {
                 "type": "category",
@@ -370,7 +367,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/get-started",
-                  "permalink": "/docs/category/get-started"
+                  "permalink": "/react-canvas-editor/docs/category/get-started"
                 }
               },
               {
@@ -395,7 +392,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/tutorials",
-                  "permalink": "/docs/category/tutorials"
+                  "permalink": "/react-canvas-editor/docs/category/tutorials"
                 }
               },
               {
@@ -416,7 +413,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/references",
-                  "permalink": "/docs/category/references"
+                  "permalink": "/react-canvas-editor/docs/category/references"
                 }
               },
               {
@@ -431,17 +428,17 @@
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/contribution"
+                    "id": "contributors/code-of-conduce"
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/code-of-conduce"
+                    "id": "contributors/how-to-cotribute"
                   }
                 ],
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/contribution-guide",
-                  "permalink": "/docs/category/contribution-guide"
+                  "permalink": "/react-canvas-editor/docs/category/contribution-guide"
                 }
               },
               {
@@ -462,7 +459,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/release",
-                  "permalink": "/docs/category/release"
+                  "permalink": "/react-canvas-editor/docs/category/release"
                 }
               }
             ]
@@ -478,7 +475,7 @@
         {
           "id": "welcome",
           "metadata": {
-            "permalink": "/blog/welcome",
+            "permalink": "/react-canvas-editor/blog/welcome",
             "source": "@site/blog/2021-08-26-welcome/index.md",
             "title": "Welcome",
             "description": "Docusaurus blogging features are powered by the blog plugin.",
@@ -487,15 +484,15 @@
             "tags": [
               {
                 "label": "facebook",
-                "permalink": "/blog/tags/facebook"
+                "permalink": "/react-canvas-editor/blog/tags/facebook"
               },
               {
                 "label": "hello",
-                "permalink": "/blog/tags/hello"
+                "permalink": "/react-canvas-editor/blog/tags/hello"
               },
               {
                 "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
+                "permalink": "/react-canvas-editor/blog/tags/docusaurus"
               }
             ],
             "readingTime": 0.405,
@@ -531,7 +528,7 @@
             },
             "nextItem": {
               "title": "MDX Blog Post",
-              "permalink": "/blog/mdx-blog-post"
+              "permalink": "/react-canvas-editor/blog/mdx-blog-post"
             }
           },
           "content": "[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).\n\nSimply add Markdown files (or folders) to the `blog` directory.\n\nRegular blog authors can be added to `authors.yml`.\n\nThe blog post date can be extracted from filenames, such as:\n\n- `2019-05-30-welcome.md`\n- `2019-05-30-welcome/index.md`\n\nA blog post folder can be convenient to co-locate blog post images:\n\n![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)\n\nThe blog supports tags as well!\n\n**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config."
@@ -539,7 +536,7 @@
         {
           "id": "mdx-blog-post",
           "metadata": {
-            "permalink": "/blog/mdx-blog-post",
+            "permalink": "/react-canvas-editor/blog/mdx-blog-post",
             "source": "@site/blog/2021-08-01-mdx-blog-post.mdx",
             "title": "MDX Blog Post",
             "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
@@ -548,7 +545,7 @@
             "tags": [
               {
                 "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
+                "permalink": "/react-canvas-editor/blog/tags/docusaurus"
               }
             ],
             "readingTime": 0.175,
@@ -574,11 +571,11 @@
             },
             "prevItem": {
               "title": "Welcome",
-              "permalink": "/blog/welcome"
+              "permalink": "/react-canvas-editor/blog/welcome"
             },
             "nextItem": {
               "title": "Long Blog Post",
-              "permalink": "/blog/long-blog-post"
+              "permalink": "/react-canvas-editor/blog/long-blog-post"
             }
           },
           "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\n\n:::tip\n\nUse the power of React to create interactive blog posts.\n\n```js\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n```\n\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n\n:::"
@@ -586,7 +583,7 @@
         {
           "id": "long-blog-post",
           "metadata": {
-            "permalink": "/blog/long-blog-post",
+            "permalink": "/react-canvas-editor/blog/long-blog-post",
             "source": "@site/blog/2019-05-29-long-blog-post.md",
             "title": "Long Blog Post",
             "description": "This is the summary of a very long blog post,",
@@ -595,11 +592,11 @@
             "tags": [
               {
                 "label": "hello",
-                "permalink": "/blog/tags/hello"
+                "permalink": "/react-canvas-editor/blog/tags/hello"
               },
               {
                 "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
+                "permalink": "/react-canvas-editor/blog/tags/docusaurus"
               }
             ],
             "readingTime": 2.05,
@@ -624,11 +621,11 @@
             },
             "prevItem": {
               "title": "MDX Blog Post",
-              "permalink": "/blog/mdx-blog-post"
+              "permalink": "/react-canvas-editor/blog/mdx-blog-post"
             },
             "nextItem": {
               "title": "First Blog Post",
-              "permalink": "/blog/first-blog-post"
+              "permalink": "/react-canvas-editor/blog/first-blog-post"
             }
           },
           "content": "This is the summary of a very long blog post,\n\nUse a `<!--` `truncate` `-->` comment to limit blog post size in the list view.\n\n<!--truncate-->\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
@@ -636,7 +633,7 @@
         {
           "id": "first-blog-post",
           "metadata": {
-            "permalink": "/blog/first-blog-post",
+            "permalink": "/react-canvas-editor/blog/first-blog-post",
             "source": "@site/blog/2019-05-28-first-blog-post.md",
             "title": "First Blog Post",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
@@ -645,11 +642,11 @@
             "tags": [
               {
                 "label": "hola",
-                "permalink": "/blog/tags/hola"
+                "permalink": "/react-canvas-editor/blog/tags/hola"
               },
               {
                 "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
+                "permalink": "/react-canvas-editor/blog/tags/docusaurus"
               }
             ],
             "readingTime": 0.12,
@@ -680,7 +677,7 @@
             },
             "prevItem": {
               "title": "Long Blog Post",
-              "permalink": "/blog/long-blog-post"
+              "permalink": "/react-canvas-editor/blog/long-blog-post"
             }
           },
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
@@ -695,7 +692,7 @@
             "first-blog-post"
           ],
           "metadata": {
-            "permalink": "/blog",
+            "permalink": "/react-canvas-editor/blog",
             "page": 1,
             "postsPerPage": 10,
             "totalPages": 1,
@@ -706,19 +703,19 @@
         }
       ],
       "blogTags": {
-        "/blog/tags/facebook": {
+        "/react-canvas-editor/blog/tags/facebook": {
           "label": "facebook",
           "items": [
             "welcome"
           ],
-          "permalink": "/blog/tags/facebook",
+          "permalink": "/react-canvas-editor/blog/tags/facebook",
           "pages": [
             {
               "items": [
                 "welcome"
               ],
               "metadata": {
-                "permalink": "/blog/tags/facebook",
+                "permalink": "/react-canvas-editor/blog/tags/facebook",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,
@@ -729,13 +726,13 @@
             }
           ]
         },
-        "/blog/tags/hello": {
+        "/react-canvas-editor/blog/tags/hello": {
           "label": "hello",
           "items": [
             "welcome",
             "long-blog-post"
           ],
-          "permalink": "/blog/tags/hello",
+          "permalink": "/react-canvas-editor/blog/tags/hello",
           "pages": [
             {
               "items": [
@@ -743,7 +740,7 @@
                 "long-blog-post"
               ],
               "metadata": {
-                "permalink": "/blog/tags/hello",
+                "permalink": "/react-canvas-editor/blog/tags/hello",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,
@@ -754,7 +751,7 @@
             }
           ]
         },
-        "/blog/tags/docusaurus": {
+        "/react-canvas-editor/blog/tags/docusaurus": {
           "label": "docusaurus",
           "items": [
             "welcome",
@@ -762,7 +759,7 @@
             "long-blog-post",
             "first-blog-post"
           ],
-          "permalink": "/blog/tags/docusaurus",
+          "permalink": "/react-canvas-editor/blog/tags/docusaurus",
           "pages": [
             {
               "items": [
@@ -772,7 +769,7 @@
                 "first-blog-post"
               ],
               "metadata": {
-                "permalink": "/blog/tags/docusaurus",
+                "permalink": "/react-canvas-editor/blog/tags/docusaurus",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,
@@ -783,19 +780,19 @@
             }
           ]
         },
-        "/blog/tags/hola": {
+        "/react-canvas-editor/blog/tags/hola": {
           "label": "hola",
           "items": [
             "first-blog-post"
           ],
-          "permalink": "/blog/tags/hola",
+          "permalink": "/react-canvas-editor/blog/tags/hola",
           "pages": [
             {
               "items": [
                 "first-blog-post"
               ],
               "metadata": {
-                "permalink": "/blog/tags/hola",
+                "permalink": "/react-canvas-editor/blog/tags/hola",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,
@@ -807,19 +804,19 @@
           ]
         }
       },
-      "blogTagsListPath": "/blog/tags"
+      "blogTagsListPath": "/react-canvas-editor/blog/tags"
     }
   },
   "docusaurus-plugin-content-pages": {
     "default": [
       {
         "type": "jsx",
-        "permalink": "/",
+        "permalink": "/react-canvas-editor/",
         "source": "@site/src/pages/index.js"
       },
       {
         "type": "mdx",
-        "permalink": "/markdown-page",
+        "permalink": "/react-canvas-editor/markdown-page",
         "source": "@site/src/pages/markdown-page.md",
         "title": "Markdown page example",
         "description": "You don't need React to write simple standalone pages.",

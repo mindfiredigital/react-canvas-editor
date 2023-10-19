@@ -14,14 +14,14 @@ const DocumentEditor = (
     value }: any
 ) => {
 
-  const defaultToolbarItem = {
-    bold: true,
-    italic: true,
-    underline: true,
-    undo: true,
-    redo: true,
-    image: true
-  }
+  // const defaultToolbarItem = {
+  //   bold: true,
+  //   italic: true,
+  //   underline: true,
+  //   undo: true,
+  //   redo: true,
+  //   image: true
+  // }
 
   const defaultToolbarClass = {
     container: {
@@ -39,7 +39,7 @@ const DocumentEditor = (
     }
   }
 
-  toolbar = toolbar && Object.keys(toolbar).length ? toolbar : defaultToolbarItem;
+  // toolbar = toolbar && Object.keys(toolbar).length ? toolbar : defaultToolbarItem;
 
   toolbarClass = toolbarClass && Object.keys(toolbarClass).length ? {
     container: { ...defaultToolbarClass.container, ...toolbarClass?.container },

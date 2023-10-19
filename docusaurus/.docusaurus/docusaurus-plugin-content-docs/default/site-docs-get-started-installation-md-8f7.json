@@ -2,7 +2,7 @@
   "unversionedId": "Get-started/Installation",
   "id": "Get-started/Installation",
   "title": "Installation",
-  "description": "react-canvas-editor is essentially a set of npm packages.",
+  "description": "The React Canvas Editor is a collection of npm packages, which can be found on GitHub.",
   "source": "@site/docs/Get-started/Installation.md",
   "sourceDirName": "Get-started",
   "slug": "/Get-started/Installation",
