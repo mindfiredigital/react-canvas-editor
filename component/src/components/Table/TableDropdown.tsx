@@ -11,7 +11,7 @@ import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
 import ButtonWrapper from "../ButtonWrapper/ButtonWrapper";
 import styles from "./TableDropdown.module.scss";
 
-const TableComponent = () => {
+const TableComponent = (_props: any) => {
   const [colIndex, setColIndex] = useState(-1);
   const [rowIndex, setRowIndex] = useState(-1);
   const [tablePanelVisible, setTablePanelVisible] = useState(false);
@@ -53,7 +53,7 @@ const TableComponent = () => {
       <ButtonWrapper
         title="Insert Table"
         handleClick={handleTableClick}
-        sx={{ height: "100%" }}
+        sx={Object.assign({ height: "100%" },_props.style)}
       >
         <BackupTableIcon />
       </ButtonWrapper>

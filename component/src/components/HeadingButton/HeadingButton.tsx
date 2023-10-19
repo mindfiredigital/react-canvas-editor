@@ -6,7 +6,7 @@ import { HeadingLevel } from "../../utils/constant";
 import Select from '@mui/material/Select';
 import FormControl from "@mui/material/FormControl";
 
-const HeadingDropdownButton: React.FC = () => {
+const HeadingDropdownButton: React.FC = (_props: any) => {
   const [selectedHeading, setSelectedHeading] = useState<string | null>(null);
 
   const handleHeadingSelect = (headingLevel: string | null) => {
@@ -19,12 +19,12 @@ const HeadingDropdownButton: React.FC = () => {
 
   return (
     <Box
-      sx={{
+      sx={Object.assign({
         display: "flex",
         justifyContentt: "center",
         alignItems: "center",
         margin: "0 0.5rem"
-      }}
+      }, _props.style)}
     >
       <FormControl
         sx={{ m: 1, minWidth: 80, width: 120 }}

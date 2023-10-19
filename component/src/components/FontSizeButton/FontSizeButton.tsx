@@ -46,8 +46,9 @@ const MenuItem: React.FC<{ onClick: () => void; children: number }> = ({
   );
 };
 
-const FontSizeButton: React.FC<{ size: number | undefined }> = ({
+const FontSizeButton: React.FC<{ size: number | undefined, style: any }> = ({
   size = 16,
+  style
 }) => {
   const [fontSize, setFontSize] = useState<number>(size);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
@@ -89,10 +90,10 @@ const FontSizeButton: React.FC<{ size: number | undefined }> = ({
   };
 
   return (
-    <Box>
+    <Box sx={style}>
       <IconButton
         onClick={handleDecreaseFont}
-        sx={{ padding: "1px", margin: "8px 0" }}
+        sx={style}
       >
         <Tooltip title="Increase font size">
           <Remove />

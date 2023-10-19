@@ -5,7 +5,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
 import { FONTS } from "../../utils/constant";
 
-export default function FontDropdown() {
+export default function FontDropdown(_props: any) {
   const [font, setFont] = useState("Arial");
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -21,7 +21,7 @@ export default function FontDropdown() {
         variant="standard"
       >
         <Select
-          sx={{ fontSize: "0.9rem" }}
+          sx={Object.assign({ fontSize: "0.9rem" },_props.style)}
           value={font}
           onChange={handleChange}
           inputProps={{ "aria-label": "font family" }}
