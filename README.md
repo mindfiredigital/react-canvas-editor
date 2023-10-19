@@ -152,8 +152,8 @@ const canvasClass = {
 <br>
 
 - **DOM handlers**: 
-  - **onChange**: The onchange event occurs when the value of an page is changed.
-  - **onSelect**: The onchange event occurs when the value of an page is selected.
+  - **onChange**: The onchange event occurs when the value is changed.
+  - **onSelect**: The onSelect event occurs when the value is selected.
   - **value**: The value attribute on an tag sets the value of the page.
 
 <br>

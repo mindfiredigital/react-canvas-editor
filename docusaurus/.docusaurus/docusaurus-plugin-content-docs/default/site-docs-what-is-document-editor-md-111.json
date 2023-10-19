@@ -1,7 +1,7 @@
 {
   "unversionedId": "what-is-document-editor",
   "id": "what-is-document-editor",
-  "title": "What is Document Editor?",
+  "title": "What is React Document Editor?",
   "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
   "source": "@site/docs/what-is-document-editor.md",
   "sourceDirName": ".",

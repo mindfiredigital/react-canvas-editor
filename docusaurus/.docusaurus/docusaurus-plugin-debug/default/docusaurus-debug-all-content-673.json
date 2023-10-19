@@ -21,7 +21,7 @@
               "unversionedId": "contributors/code-of-conduce",
               "id": "contributors/code-of-conduce",
               "title": "Code of conduct",
-              "description": "As contributors and maintainers of the React Canvas Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
+              "description": "As contributors and maintainers of the React Document Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
               "source": "@site/docs/contributors/code-of-conduce.md",
               "sourceDirName": "contributors",
               "slug": "/contributors/code-of-conduce",
@@ -29,18 +29,18 @@
               "draft": false,
               "tags": [],
               "version": "current",
-              "sidebarPosition": 3,
+              "sidebarPosition": 2,
               "frontMatter": {
-                "sidebar_position": 3
+                "sidebar_position": 2
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Contributors",
-                "permalink": "/react-canvas-editor/docs/contributors/"
+                "title": "How to contribute",
+                "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
               },
               "next": {
-                "title": "how-to-cotribute",
-                "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
+                "title": "Release",
+                "permalink": "/react-canvas-editor/docs/category/release"
               }
             },
             {
@@ -65,14 +65,14 @@
                 "permalink": "/react-canvas-editor/docs/category/contribution-guide"
               },
               "next": {
-                "title": "Code of conduct",
-                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+                "title": "How to contribute",
+                "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
               }
             },
             {
               "unversionedId": "contributors/how-to-cotribute",
               "id": "contributors/how-to-cotribute",
-              "title": "how-to-cotribute",
+              "title": "How to contribute",
               "description": "",
               "source": "@site/docs/contributors/how-to-cotribute.md",
               "sourceDirName": "contributors",
@@ -81,22 +81,25 @@
               "draft": false,
               "tags": [],
               "version": "current",
-              "frontMatter": {},
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Code of conduct",
-                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+                "title": "Contributors",
+                "permalink": "/react-canvas-editor/docs/contributors/"
               },
               "next": {
-                "title": "Release",
-                "permalink": "/react-canvas-editor/docs/category/release"
+                "title": "Code of conduct",
+                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
               }
             },
             {
               "unversionedId": "Get-started/Installation",
               "id": "Get-started/Installation",
               "title": "Installation",
-              "description": "The React Canvas Editor is a collection of npm packages, which can be found on GitHub.",
+              "description": "The React Document Editor is a collection of npm packages, which can be found on GitHub.",
               "source": "@site/docs/Get-started/Installation.md",
               "sourceDirName": "Get-started",
               "slug": "/Get-started/Installation",
@@ -322,7 +325,7 @@
             {
               "unversionedId": "what-is-document-editor",
               "id": "what-is-document-editor",
-              "title": "What is Document Editor?",
+              "title": "What is React Document Editor?",
               "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
               "source": "@site/docs/what-is-document-editor.md",
               "sourceDirName": ".",
@@ -428,11 +431,11 @@
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/code-of-conduce"
+                    "id": "contributors/how-to-cotribute"
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/how-to-cotribute"
+                    "id": "contributors/code-of-conduce"
                   }
                 ],
                 "link": {

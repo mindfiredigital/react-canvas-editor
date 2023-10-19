@@ -1,7 +1,7 @@
 {
   "unversionedId": "contributors/how-to-cotribute",
   "id": "contributors/how-to-cotribute",
-  "title": "how-to-cotribute",
+  "title": "How to contribute",
   "description": "",
   "source": "@site/docs/contributors/how-to-cotribute.md",
   "sourceDirName": "contributors",
@@ -10,14 +10,17 @@
   "draft": false,
   "tags": [],
   "version": "current",
-  "frontMatter": {},
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Code of conduct",
-    "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+    "title": "Contributors",
+    "permalink": "/react-canvas-editor/docs/contributors/"
   },
   "next": {
-    "title": "Release",
-    "permalink": "/react-canvas-editor/docs/category/release"
+    "title": "Code of conduct",
+    "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
   }
 }

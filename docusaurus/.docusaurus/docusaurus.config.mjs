@@ -4,9 +4,9 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "Document Editor",
-  "tagline": "Create and collaborate on documents with ease",
-  "favicon": "img/favicon.ico",
+  "title": "React Document Editor",
+  "tagline": "Experience powerful document creation with our React-based editor. Craft and manage multi-page documents effortlessly",
+  "favicon": "img/mindfire.ico",
   "url": "https://mindfiredigital.github.io",
   "baseUrl": "/react-canvas-editor/",
   "organizationName": "mindfiredigital",
