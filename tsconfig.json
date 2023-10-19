@@ -13,6 +13,6 @@
     "declarationDir": "dist"
 
   },
-  "include": ["component"],
+  "include": ["component","./component/src/declaration.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

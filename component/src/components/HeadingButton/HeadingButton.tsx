@@ -11,10 +11,10 @@ const HeadingDropdownButton: React.FC = (_props: any) => {
 
   const handleHeadingSelect = (headingLevel: string | null) => {
     setSelectedHeading(headingLevel);
-    const level = headingLevel
+    const level: any = headingLevel
       ? HeadingLevel[headingLevel as keyof typeof HeadingLevel]
       : null;
-    DOMEventHandlers.setTitle(level as TitleLevel | null);
+    DOMEventHandlers.setTitle(level);
   };
 
   return (
