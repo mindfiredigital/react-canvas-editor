@@ -4,23 +4,25 @@ sidebar_position: 1
 
 # Installation
 
-react-canvas-editor is essentially a set of npm [packages](https://github.com/mindfiredigital/react-canvas-editor).
+The React Canvas Editor is a collection of npm packages, which can be found on [GitHub](https://github.com/mindfiredigital/react-canvas-editor).
 
-## Requirements
+## System Requirements
+To ensure a smooth installation and operation, please make sure your system meets the following requirements:
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- Node.js: Version 12.0 or above is required. When installing Node.js, it is recommended to select all checkboxes related to dependencies.
 
 ## Installation
 
-To install the `react-canvas-editor` npm package in your project
+To add the `react-canvas-editor` npm package to your project, follow these steps:
 
-The `react-canvas-editor` will automatically be added to your project after you run the command:
+1. Open a terminal or integrated terminal within your code editor.
+
+2. Run the following command to install the react-canvas-editor package:
 
 ```bash
 npm install react-canvas-editor
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+3. This command will automatically add the necessary dependencies to your project, enabling you to run the Document Editor smoothly.
 
-The command also installs all necessary dependencies you need to run Document Editor.
+Please ensure that your Node.js version meets the specified requirements before proceeding with the installation.

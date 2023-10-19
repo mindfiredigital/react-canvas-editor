@@ -3,41 +3,6 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/react-canvas-editor/__docusaurus/debug',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug', '260'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/config',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/config', '464'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/content',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/content', 'de0'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/globalData',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/globalData', '74a'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/metadata',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/metadata', '629'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/registry',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/registry', 'bef'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/routes',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/routes', '1d8'),
-    exact: true
-  },
-  {
     path: '/react-canvas-editor/blog',
     component: ComponentCreator('/react-canvas-editor/blog', '695'),
     exact: true
@@ -99,7 +64,7 @@ export default [
   },
   {
     path: '/react-canvas-editor/docs',
-    component: ComponentCreator('/react-canvas-editor/docs', '278'),
+    component: ComponentCreator('/react-canvas-editor/docs', '14f'),
     routes: [
       {
         path: '/react-canvas-editor/docs/category/contribution-guide',
@@ -144,8 +109,8 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/react-canvas-editor/docs/contributors/contribution',
-        component: ComponentCreator('/react-canvas-editor/docs/contributors/contribution', 'f17'),
+        path: '/react-canvas-editor/docs/contributors/how-to-cotribute',
+        component: ComponentCreator('/react-canvas-editor/docs/contributors/how-to-cotribute', '410'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

@@ -2,7 +2,7 @@
   "unversionedId": "tutorial-basics/customized-style",
   "id": "tutorial-basics/customized-style",
   "title": "How to customize style",
-  "description": "Customize the editor's UI style to match your application's requirements.",
+  "description": "Tailor the editor's user interface to align with the specific requirements of your application.",
   "source": "@site/docs/tutorial-basics/customized-style.md",
   "sourceDirName": "tutorial-basics",
   "slug": "/tutorial-basics/customized-style",

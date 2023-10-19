@@ -2,7 +2,7 @@
   "unversionedId": "tutorial-basics/customized-tool",
   "id": "tutorial-basics/customized-tool",
   "title": "How to customize toolbar",
-  "description": "Tailor the editor's user interface and actions to the needs of your application.",
+  "description": "Customizing the user interface and actions of the editor to align with your application's requirements is essential.",
   "source": "@site/docs/tutorial-basics/customized-tool.md",
   "sourceDirName": "tutorial-basics",
   "slug": "/tutorial-basics/customized-tool",

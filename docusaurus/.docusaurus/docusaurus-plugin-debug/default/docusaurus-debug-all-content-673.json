@@ -21,7 +21,7 @@
               "unversionedId": "contributors/code-of-conduce",
               "id": "contributors/code-of-conduce",
               "title": "Code of conduct",
-              "description": "",
+              "description": "As contributors and maintainers of the React Canvas Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
               "source": "@site/docs/contributors/code-of-conduce.md",
               "sourceDirName": "contributors",
               "slug": "/contributors/code-of-conduce",
@@ -35,38 +35,12 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "How to contribute",
-                "permalink": "/react-canvas-editor/docs/contributors/contribution"
-              },
-              "next": {
-                "title": "Release",
-                "permalink": "/react-canvas-editor/docs/category/release"
-              }
-            },
-            {
-              "unversionedId": "contributors/contribution",
-              "id": "contributors/contribution",
-              "title": "How to contribute",
-              "description": "",
-              "source": "@site/docs/contributors/contribution.md",
-              "sourceDirName": "contributors",
-              "slug": "/contributors/contribution",
-              "permalink": "/react-canvas-editor/docs/contributors/contribution",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
                 "title": "Contributors",
                 "permalink": "/react-canvas-editor/docs/contributors/"
               },
               "next": {
-                "title": "Code of conduct",
-                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+                "title": "how-to-cotribute",
+                "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
               }
             },
             {
@@ -91,15 +65,38 @@
                 "permalink": "/react-canvas-editor/docs/category/contribution-guide"
               },
               "next": {
-                "title": "How to contribute",
-                "permalink": "/react-canvas-editor/docs/contributors/contribution"
+                "title": "Code of conduct",
+                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+              }
+            },
+            {
+              "unversionedId": "contributors/how-to-cotribute",
+              "id": "contributors/how-to-cotribute",
+              "title": "how-to-cotribute",
+              "description": "",
+              "source": "@site/docs/contributors/how-to-cotribute.md",
+              "sourceDirName": "contributors",
+              "slug": "/contributors/how-to-cotribute",
+              "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Code of conduct",
+                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+              },
+              "next": {
+                "title": "Release",
+                "permalink": "/react-canvas-editor/docs/category/release"
               }
             },
             {
               "unversionedId": "Get-started/Installation",
               "id": "Get-started/Installation",
               "title": "Installation",
-              "description": "react-canvas-editor is essentially a set of npm packages.",
+              "description": "The React Canvas Editor is a collection of npm packages, which can be found on GitHub.",
               "source": "@site/docs/Get-started/Installation.md",
               "sourceDirName": "Get-started",
               "slug": "/Get-started/Installation",
@@ -248,7 +245,7 @@
               "unversionedId": "tutorial-basics/customized-style",
               "id": "tutorial-basics/customized-style",
               "title": "How to customize style",
-              "description": "Customize the editor's UI style to match your application's requirements.",
+              "description": "Tailor the editor's user interface to align with the specific requirements of your application.",
               "source": "@site/docs/tutorial-basics/customized-style.md",
               "sourceDirName": "tutorial-basics",
               "slug": "/tutorial-basics/customized-style",
@@ -274,7 +271,7 @@
               "unversionedId": "tutorial-basics/customized-tool",
               "id": "tutorial-basics/customized-tool",
               "title": "How to customize toolbar",
-              "description": "Tailor the editor's user interface and actions to the needs of your application.",
+              "description": "Customizing the user interface and actions of the editor to align with your application's requirements is essential.",
               "source": "@site/docs/tutorial-basics/customized-tool.md",
               "sourceDirName": "tutorial-basics",
               "slug": "/tutorial-basics/customized-tool",
@@ -300,7 +297,7 @@
               "unversionedId": "tutorial-basics/dom-handle",
               "id": "tutorial-basics/dom-handle",
               "title": "How to use DOM events",
-              "description": "Get value from page",
+              "description": "Mastering the handling of DOM events is crucial for effective React development. Below are key events and how to use them:",
               "source": "@site/docs/tutorial-basics/dom-handle.md",
               "sourceDirName": "tutorial-basics",
               "slug": "/tutorial-basics/dom-handle",
@@ -431,11 +428,11 @@
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/contribution"
+                    "id": "contributors/code-of-conduce"
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/code-of-conduce"
+                    "id": "contributors/how-to-cotribute"
                   }
                 ],
                 "link": {

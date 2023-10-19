@@ -2,7 +2,7 @@
   "unversionedId": "tutorial-basics/dom-handle",
   "id": "tutorial-basics/dom-handle",
   "title": "How to use DOM events",
-  "description": "Get value from page",
+  "description": "Mastering the handling of DOM events is crucial for effective React development. Below are key events and how to use them:",
   "source": "@site/docs/tutorial-basics/dom-handle.md",
   "sourceDirName": "tutorial-basics",
   "slug": "/tutorial-basics/dom-handle",
