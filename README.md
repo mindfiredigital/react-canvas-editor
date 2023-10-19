@@ -47,7 +47,7 @@ The `Canvas-document-editor` npm package is a tool that allows developers to int
 - **Hyperlink**: A hyperlink is a clickable link that connects to a webpage or another location within the document.
 - **Image**: This feature allows you to insert images or graphics into your document to enhance its visual appeal or convey additional information.
 
-- **Customizable UI****: Easily customize the document editor's user interface to match your application's branding.
+- **Customizable UI**: Easily customize the document editor's user interface to match your application's branding.
 
 <br>
 
