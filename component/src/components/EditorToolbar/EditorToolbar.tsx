@@ -68,99 +68,99 @@ const EditorToolbar = forwardRef<HTMLDivElement,content>(function Toolbar(_props
         <Stack
           sx={_props?.toolbarClass?.primaryToolbar}
         >
-          {_props?.toolbar?.undo && <ButtonWrapper sx={_props?.toolbarClass?.item?.undo} title="undo" handleClick={DOMEventHandlers.handleUndo}>
+          {(!_props?.toolbar || _props?.toolbar?.undo) && <ButtonWrapper sx={_props?.toolbarClass?.item?.undo} title="undo" handleClick={DOMEventHandlers.handleUndo}>
             <UndoIcon />
           </ButtonWrapper>}
 
-          {_props?.toolbar?.redo && <ButtonWrapper sx={_props?.toolbarClass?.item?.redo} title="redo" handleClick={DOMEventHandlers.handleRedo}>
+          {(!_props?.toolbar || _props?.toolbar?.redo) && <ButtonWrapper sx={_props?.toolbarClass?.item?.redo} title="redo" handleClick={DOMEventHandlers.handleRedo}>
             <RedoIcon />
           </ButtonWrapper>}
-          <ButtonWrapper title="bold" handleClick={DOMEventHandlers.handleBold}>
+          {(!_props?.toolbar || _props?.toolbar?.bold) && <ButtonWrapper title="bold" handleClick={DOMEventHandlers.handleBold}>
             <FormatBoldIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.italic) && <ButtonWrapper
             title="italic"
             handleClick={DOMEventHandlers.handleItalic}
           >
             <FormatItalicIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.underline) && <ButtonWrapper
             title="underline"
             handleClick={DOMEventHandlers.handleUnderline}
           >
             <FormatUnderlinedIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.subscript) && <ButtonWrapper
             title="subscript"
             handleClick={DOMEventHandlers.handleSubscript}
           >
             <SubscriptIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.superscript) && <ButtonWrapper
             title="superscript"
             handleClick={DOMEventHandlers.handleSuperscript}
           >
             <SuperscriptIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.strikethrough) && <ButtonWrapper
             title="strikethrough"
             handleClick={DOMEventHandlers.handleStrikeout}
           >
             <StrikethroughSIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.leftAlign) && <ButtonWrapper
             title="left align"
             handleClick={() => DOMEventHandlers.handleAlign(RowFlex.LEFT)}
           >
             <FormatAlignLeftIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.centerAlign) && <ButtonWrapper
             title="center align"
             handleClick={() => DOMEventHandlers.handleAlign(RowFlex.CENTER)}
           >
             <FormatAlignCenterIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.rightAlign) && <ButtonWrapper
             title="right align"
             handleClick={() => DOMEventHandlers.handleAlign(RowFlex.RIGHT)}
           >
             <FormatAlignRightIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.justify) && <ButtonWrapper
             title="justify"
             handleClick={() => DOMEventHandlers.handleAlign(RowFlex.ALIGNMENT)}
           >
             <FormatAlignJustifyIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.bulletList) && <ButtonWrapper
             title="bullet list"
             handleClick={() =>
               DOMEventHandlers.handleList(ListType.UL, ListStyle.DECIMAL)
             }
           >
             <FormatListBulletedIcon />
-          </ButtonWrapper>
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.numberedList) && <ButtonWrapper
             title="numbered list"
             handleClick={() =>
               DOMEventHandlers.handleList(ListType.OL, ListStyle.DECIMAL)
             }
           >
             <FormatListNumberedIcon />
-          </ButtonWrapper>
-          <FontDropdown />
-          <TableDropdown />
-          <FontColorButton textColor={contentStyles?.color} />
-          <HighlightTextButton color={contentStyles?.highlight} />
-          <FontSizeButton size={contentStyles?.size} />
-          <HeadingButton />
-          <ButtonWrapper
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.fontType) && <FontDropdown />}
+          {(!_props?.toolbar || _props?.toolbar?.table) && <TableDropdown />}
+          {(!_props?.toolbar || _props?.toolbar?.fontColor) && <FontColorButton textColor={contentStyles?.color} />}
+          {(!_props?.toolbar || _props?.toolbar?.highlight) && <HighlightTextButton color={contentStyles?.highlight} />}
+          {(!_props?.toolbar || _props?.toolbar?.fontSize) && <FontSizeButton size={contentStyles?.size} />}
+          {(!_props?.toolbar || _props?.toolbar?.heading) && <HeadingButton />}
+          {(!_props?.toolbar || _props?.toolbar?.hyperlink) && <ButtonWrapper
             title="hyperlink"
             handleClick={() => DOMEventHandlers.createHyperLink()}
           >
             <InsertLinkIcon />
-          </ButtonWrapper>
-          <ImageUploadButton />
+          </ButtonWrapper>}
+          {(!_props?.toolbar || _props?.toolbar?.image) && <ImageUploadButton />}
         </Stack>
       </AppBar>
     </Box>
