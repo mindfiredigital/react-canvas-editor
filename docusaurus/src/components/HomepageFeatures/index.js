@@ -8,7 +8,7 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Unlock extensive document editing capabilities with our Canvas document editor. Ideal for developers seeking versatile document editing features.
+        React document editor offers versatile editing features.
       </>
     ),
   },
@@ -17,7 +17,7 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Easily customize the UI and functionality to match your application's unique needs. Seamlessly integrate this package into diverse projects.
+        Customize UI and functionality for unique applications.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Built on Canvas and React, our document editor ensures a smooth and intuitive user experience. Perfect for effortless integration into React applications.
+        Integrates smoothly with React for a user-friendly experience.
       </>
     ),
   },
@@ -35,7 +35,7 @@ const FeatureList = [
     // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Create and manage multi-page documents with ease, just like in Google Docs. Enjoy a seamless and efficient document editing experience.
+        Easily create and manage multi-page documents, similar to Google Docs.
       </>
     ),
   },
