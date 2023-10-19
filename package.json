@@ -15,7 +15,8 @@
     "publish-locally": "npx yalc publish",
     "build": "npm link  @mindfiredigital/canvas-editor && npm run build-lib && npm run publish-locally",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "release":"release-it"
   },
   "eslintConfig": {
     "extends": [
@@ -116,5 +117,34 @@
   },
   "engines": {
     "node": ">=12.0.0"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release":true
+    },
+    "npm": {
+      "public": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset":{
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            }
+          ]
+        }
+      }
+    }
   }
 }
