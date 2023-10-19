@@ -4,31 +4,38 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Robust Feature Set',
+    title: 'Comprehensive Document Editing',
     // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        The Canvas document editor provides extensive document editing features. It's a versatile choice for developers seeking document editing capabilities in their applications.
+        Unlock extensive document editing capabilities with our Canvas document editor. Ideal for developers seeking versatile document editing features.
       </>
     ),
   },
   {
-    title: 'Customizability',
+    title: 'Tailored Customization',
     // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        This package offers easy customization of the user interface and functionality to align with your application's requirements, 
-        enabling seamless integration into different projects.
+        Easily customize the UI and functionality to match your application's unique needs. Seamlessly integrate this package into diverse projects.
       </>
     ),
   },
   {
-    title: 'React Integration',
+    title: 'Seamless React Integration',
     // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        The Canvas-document-editor is based on Canvas and React, 
-        ensuring a smooth user experience with a familiar and popular framework for easy integration into React applications.
+        Built on Canvas and React, our document editor ensures a smooth and intuitive user experience. Perfect for effortless integration into React applications.
+      </>
+    ),
+  },
+  {
+    title: 'Multi-Page Documents Like Google Docs',
+    // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Create and manage multi-page documents with ease, just like in Google Docs. Enjoy a seamless and efficient document editing experience.
       </>
     ),
   },
@@ -36,7 +43,7 @@ const FeatureList = [
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col')}>
       {/* <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div> */}

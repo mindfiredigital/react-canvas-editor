@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# What is Document Editor?
+# What is React Document Editor?
 `react-document-editor` is a tool that allows developers to integrate multipage document editor inside react application.
 
 ## Key features

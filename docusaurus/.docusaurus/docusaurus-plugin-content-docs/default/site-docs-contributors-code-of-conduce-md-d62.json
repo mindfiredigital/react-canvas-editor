@@ -2,7 +2,7 @@
   "unversionedId": "contributors/code-of-conduce",
   "id": "contributors/code-of-conduce",
   "title": "Code of conduct",
-  "description": "As contributors and maintainers of the React Canvas Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
+  "description": "As contributors and maintainers of the React Document Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
   "source": "@site/docs/contributors/code-of-conduce.md",
   "sourceDirName": "contributors",
   "slug": "/contributors/code-of-conduce",
@@ -10,17 +10,17 @@
   "draft": false,
   "tags": [],
   "version": "current",
-  "sidebarPosition": 3,
+  "sidebarPosition": 2,
   "frontMatter": {
-    "sidebar_position": 3
+    "sidebar_position": 2
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Contributors",
-    "permalink": "/react-canvas-editor/docs/contributors/"
+    "title": "How to contribute",
+    "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
   },
   "next": {
-    "title": "how-to-cotribute",
-    "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
+    "title": "Release",
+    "permalink": "/react-canvas-editor/docs/category/release"
   }
 }

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocument=self.webpackChunkdocument||[]).push([[8379],{4:a=>{a.exports=JSON.parse('{"label":"hola","permalink":"/react-canvas-editor/blog/tags/hola","allTagsPath":"/react-canvas-editor/blog/tags","count":1}')}}]);

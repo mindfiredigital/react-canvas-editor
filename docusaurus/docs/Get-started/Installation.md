@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Installation
 
-The React Canvas Editor is a collection of npm packages, which can be found on [GitHub](https://github.com/mindfiredigital/react-canvas-editor).
+The React Document Editor is a collection of npm packages, which can be found on [GitHub](https://github.com/mindfiredigital/react-canvas-editor).
 
 ## System Requirements
 To ensure a smooth installation and operation, please make sure your system meets the following requirements:

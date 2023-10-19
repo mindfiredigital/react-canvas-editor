@@ -11,7 +11,7 @@
     "tutorialSidebar": [
       {
         "type": "link",
-        "label": "What is Document Editor?",
+        "label": "What is React Document Editor?",
         "href": "/react-canvas-editor/docs/what-is-document-editor",
         "docId": "what-is-document-editor"
       },
@@ -98,15 +98,15 @@
           },
           {
             "type": "link",
-            "label": "Code of conduct",
-            "href": "/react-canvas-editor/docs/contributors/code-of-conduce",
-            "docId": "contributors/code-of-conduce"
+            "label": "How to contribute",
+            "href": "/react-canvas-editor/docs/contributors/how-to-cotribute",
+            "docId": "contributors/how-to-cotribute"
           },
           {
             "type": "link",
-            "label": "how-to-cotribute",
-            "href": "/react-canvas-editor/docs/contributors/how-to-cotribute",
-            "docId": "contributors/how-to-cotribute"
+            "label": "Code of conduct",
+            "href": "/react-canvas-editor/docs/contributors/code-of-conduce",
+            "docId": "contributors/code-of-conduce"
           }
         ],
         "href": "/react-canvas-editor/docs/category/contribution-guide"
@@ -138,7 +138,7 @@
     "contributors/code-of-conduce": {
       "id": "contributors/code-of-conduce",
       "title": "Code of conduct",
-      "description": "As contributors and maintainers of the React Canvas Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
+      "description": "As contributors and maintainers of the React Document Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
       "sidebar": "tutorialSidebar"
     },
     "contributors/contributors": {
@@ -149,14 +149,14 @@
     },
     "contributors/how-to-cotribute": {
       "id": "contributors/how-to-cotribute",
-      "title": "how-to-cotribute",
-      "description": "",
+      "title": "How to contribute",
+      "description": "We deeply appreciate your interest in contributing to the React Document Editor project. Your valuable contributions play a pivotal role in enhancing this project. Before you begin, please take a moment to review the following guidelines.",
       "sidebar": "tutorialSidebar"
     },
     "Get-started/Installation": {
       "id": "Get-started/Installation",
       "title": "Installation",
-      "description": "The React Canvas Editor is a collection of npm packages, which can be found on GitHub.",
+      "description": "The React Document Editor is a collection of npm packages, which can be found on GitHub.",
       "sidebar": "tutorialSidebar"
     },
     "Get-started/quickstart": {
@@ -209,7 +209,7 @@
     },
     "what-is-document-editor": {
       "id": "what-is-document-editor",
-      "title": "What is Document Editor?",
+      "title": "What is React Document Editor?",
       "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
       "sidebar": "tutorialSidebar"
     }

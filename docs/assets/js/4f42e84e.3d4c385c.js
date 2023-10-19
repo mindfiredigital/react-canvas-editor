@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocument=self.webpackChunkdocument||[]).push([[8027],{4541:a=>{a.exports=JSON.parse('{"label":"docusaurus","permalink":"/react-canvas-editor/blog/tags/docusaurus","allTagsPath":"/react-canvas-editor/blog/tags","count":4}')}}]);

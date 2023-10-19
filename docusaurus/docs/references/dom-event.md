@@ -6,6 +6,6 @@ sidebar_position: 1
 
 | Event      |                 |
 | ------------- |:-------------|
-| **onChange**     | The onchange event occurs when the value of an page is changed       |
-| **onSelect**     | The onchange event occurs when the value of an page is selected      |
-| **value**        | The value attribute on an tag sets the value of the page             |s
+| **onChange**     | The onchange event occurs when the text of the page is changed       |
+| **onSelect**     | The onSelect event occurs when user selects or highlights the text of the page|
+| **value**        | To assign a text to a page|

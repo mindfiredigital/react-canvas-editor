@@ -35,7 +35,7 @@ import React from 'react';
 
 export const test = () => {
   
-  const toolbarItem: any = {
+  const toolbarItem = {
   bold: true,
   italic: true,
   underline: true,

@@ -1,21 +1,4 @@
 {
   "title": "Recent posts",
-  "items": [
-    {
-      "title": "Welcome",
-      "permalink": "/react-canvas-editor/blog/welcome"
-    },
-    {
-      "title": "MDX Blog Post",
-      "permalink": "/react-canvas-editor/blog/mdx-blog-post"
-    },
-    {
-      "title": "Long Blog Post",
-      "permalink": "/react-canvas-editor/blog/long-blog-post"
-    },
-    {
-      "title": "First Blog Post",
-      "permalink": "/react-canvas-editor/blog/first-blog-post"
-    }
-  ]
+  "items": []
 }

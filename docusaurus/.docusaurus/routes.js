@@ -3,61 +3,6 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/react-canvas-editor/blog',
-    component: ComponentCreator('/react-canvas-editor/blog', '695'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/archive',
-    component: ComponentCreator('/react-canvas-editor/blog/archive', '047'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/first-blog-post',
-    component: ComponentCreator('/react-canvas-editor/blog/first-blog-post', 'ee1'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/long-blog-post',
-    component: ComponentCreator('/react-canvas-editor/blog/long-blog-post', 'b0e'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/mdx-blog-post',
-    component: ComponentCreator('/react-canvas-editor/blog/mdx-blog-post', '6c0'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/tags',
-    component: ComponentCreator('/react-canvas-editor/blog/tags', '71c'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/tags/docusaurus',
-    component: ComponentCreator('/react-canvas-editor/blog/tags/docusaurus', 'ce0'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/tags/facebook',
-    component: ComponentCreator('/react-canvas-editor/blog/tags/facebook', '571'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/tags/hello',
-    component: ComponentCreator('/react-canvas-editor/blog/tags/hello', 'c39'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/tags/hola',
-    component: ComponentCreator('/react-canvas-editor/blog/tags/hola', '03c'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/blog/welcome',
-    component: ComponentCreator('/react-canvas-editor/blog/welcome', '7dc'),
-    exact: true
-  },
-  {
     path: '/react-canvas-editor/markdown-page',
     component: ComponentCreator('/react-canvas-editor/markdown-page', '506'),
     exact: true
