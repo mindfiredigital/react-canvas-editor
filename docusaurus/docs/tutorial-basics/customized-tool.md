@@ -28,7 +28,7 @@ const toolbarItem = {
 Here's an example of how to implement this in your code:
 
 ```javascript
-import { DocumentEditor } from 'react-canvas-editor';
+import { DocumentEditor } from '@mindfiredigital/react-canvas-editor';
 import React from 'react';
 
 

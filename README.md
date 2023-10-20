@@ -8,7 +8,7 @@
 
 <br>
 
-The `Canvas-document-editor` npm package is a tool that allows developers to integrate multipage document editors built on top of Canvas using React.
+The `@mindfiredigital/react-canvas-editor` npm package is a tool that allows developers to integrate multipage document editors built on top of Canvas using React.
 
 <br>
 
@@ -52,10 +52,10 @@ The `Canvas-document-editor` npm package is a tool that allows developers to int
 
 ## Installation
 
-To install the `react-canvas-editor` npm package in your project, use the following command:
+To install the `@mindfiredigital/react-canvas-editor` npm package in your project, use the following command:
 
 ```bash
-npm install react-canvas-editor
+npm install @mindfiredigital/react-canvas-editor
 ```
 <br>
 
@@ -66,7 +66,7 @@ npm install react-canvas-editor
 ```javascript
 
 
-import { DocumentEditor } from 'react-canvas-editor';
+import { DocumentEditor } from '@mindfiredigital/react-canvas-editor';
 import React from 'react';
 
 

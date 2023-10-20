@@ -13,14 +13,14 @@ To ensure a smooth installation and operation, please make sure your system meet
 
 ## Installation
 
-To add the `react-canvas-editor` npm package to your project, follow these steps:
+To add the `@mindfiredigital/react-canvas-editor` npm package to your project, follow these steps:
 
 1. Open a terminal or integrated terminal within your code editor.
 
-2. Run the following command to install the react-canvas-editor package:
+2. Run the following command to install the @mindfiredigital/react-canvas-editor package:
 
 ```bash
-npm install react-canvas-editor
+npm install @mindfiredigital/react-canvas-editor
 ```
 
 3. This command will automatically add the necessary dependencies to your project, enabling you to run the Document Editor smoothly.
