@@ -13,7 +13,7 @@ Let's discover **Document Editor in less than 5 minutes**.
 ```javascript
 
 
-import { DocumentEditor } from 'react-canvas-editor';
+import { DocumentEditor } from '@mindfiredigital/react-canvas-editor';
 import React from 'react';
 
 export const test = () => <DocumentEditor/>
