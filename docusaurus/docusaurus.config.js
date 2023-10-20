@@ -55,19 +55,19 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Document Editor',
+        title: '',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.webp',
         },
         items: [
+          {to: '/', label: 'Home', position: 'right'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'left',
+            position: 'right',
             label: 'Tutorials',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/mindfiredigital/react-canvas-editor.git',
             label: 'GitHub',
