@@ -1,138 +1,95 @@
 {
-  "/react-canvas-editor/__docusaurus/debug-6ef": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
-    }
-  },
-  "/react-canvas-editor/__docusaurus/debug/config-8e8": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
-    }
-  },
-  "/react-canvas-editor/__docusaurus/debug/content-634": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
-    },
-    "allContent": "allContent---react-canvas-editor-docusaurus-debug-content-246-21b"
-  },
-  "/react-canvas-editor/__docusaurus/debug/globalData-f9a": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
-    "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
-    }
-  },
-  "/react-canvas-editor/__docusaurus/debug/metadata-308": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
-    }
-  },
-  "/react-canvas-editor/__docusaurus/debug/registry-a19": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
-    }
-  },
-  "/react-canvas-editor/__docusaurus/debug/routes-5f3": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
-    }
-  },
   "/react-canvas-editor/markdown-page-998": {
-    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__comp": "1f391b9e",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-markdown-page-808-9e8"
+      "plugin": "80881443"
     },
-    "content": "content---react-canvas-editor-markdown-page-393-f21"
+    "content": "393be207"
   },
   "/react-canvas-editor/docs-4a0": {
-    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__comp": "1be78505",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docse-7-a-811"
+      "plugin": "e7a17549"
     },
-    "versionMetadata": "versionMetadata---react-canvas-editor-docs-935-35e"
+    "versionMetadata": "935f2afb"
   },
   "/react-canvas-editor/docs/category/contribution-guide-a45": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---react-canvas-editor-docs-category-contribution-guided-4-d-c33"
+    "__comp": "14eb3368",
+    "categoryGeneratedIndex": "d4d638a6"
   },
   "/react-canvas-editor/docs/category/get-started-3a7": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---react-canvas-editor-docs-category-get-started-837-d4a"
+    "__comp": "14eb3368",
+    "categoryGeneratedIndex": "8371896d"
   },
   "/react-canvas-editor/docs/category/references-7c6": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---react-canvas-editor-docs-category-references-03-d-28d"
+    "__comp": "14eb3368",
+    "categoryGeneratedIndex": "03dacec9"
   },
   "/react-canvas-editor/docs/category/release-79e": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---react-canvas-editor-docs-category-releaseead-e38"
+    "__comp": "14eb3368",
+    "categoryGeneratedIndex": "ead3bd04"
   },
   "/react-canvas-editor/docs/category/tutorials-360": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---react-canvas-editor-docs-category-tutorials-714-6aa"
+    "__comp": "14eb3368",
+    "categoryGeneratedIndex": "7142ff00"
   },
   "/react-canvas-editor/docs/contributors/-da6": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-contributors-6-f-4-1dc"
+    "__comp": "17896441",
+    "content": "6f41419f"
   },
   "/react-canvas-editor/docs/contributors/code-of-conduce-669": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-contributors-code-of-conduced-62-d52"
+    "__comp": "17896441",
+    "content": "d6295447"
   },
   "/react-canvas-editor/docs/contributors/how-to-cotribute-410": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-contributors-how-to-cotribute-093-040"
+    "__comp": "17896441",
+    "content": "093c1dae"
   },
   "/react-canvas-editor/docs/Get-started/Installation-aa6": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-get-started-installation-8-f-7-921"
+    "__comp": "17896441",
+    "content": "8f7835a5"
   },
   "/react-canvas-editor/docs/Get-started/quickstart-e3c": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-get-started-quickstart-8-e-6-129"
+    "__comp": "17896441",
+    "content": "8e62e753"
   },
   "/react-canvas-editor/docs/references/dom-event-f39": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-references-dom-eventbed-00b"
+    "__comp": "17896441",
+    "content": "bed35dad"
   },
   "/react-canvas-editor/docs/references/toolbar-option-ffd": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-references-toolbar-optioncd-7-808"
+    "__comp": "17896441",
+    "content": "cd7ded93"
   },
   "/react-canvas-editor/docs/release/change-logs-335": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-release-change-logs-90-d-f3c"
+    "__comp": "17896441",
+    "content": "90d9359e"
   },
   "/react-canvas-editor/docs/release/release-notes-a21": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-release-release-notes-5-b-7-dcd"
+    "__comp": "17896441",
+    "content": "5b7d4f99"
   },
   "/react-canvas-editor/docs/tutorial-basics/customized-style-c86": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-tutorial-basics-customized-stylefc-5-52e"
+    "__comp": "17896441",
+    "content": "fc51a3c2"
   },
   "/react-canvas-editor/docs/tutorial-basics/customized-tool-bb9": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-tutorial-basics-customized-tool-348-d18"
+    "__comp": "17896441",
+    "content": "34897b58"
   },
   "/react-canvas-editor/docs/tutorial-basics/dom-handle-4e2": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-tutorial-basics-dom-handlee-57-a29"
+    "__comp": "17896441",
+    "content": "e5701b7c"
   },
   "/react-canvas-editor/docs/what-is-document-editor-cd3": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---react-canvas-editor-docs-what-is-document-editor-111-191"
+    "__comp": "17896441",
+    "content": "11191d37"
   },
   "/react-canvas-editor/-073": {
-    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__comp": "c4f5d8e4",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-markdown-page-808-9e8"
+      "plugin": "80881443"
     },
-    "config": "config---react-canvas-editor-5-e-9-3b9"
+    "config": "5e9f5e1a"
   }
 }
