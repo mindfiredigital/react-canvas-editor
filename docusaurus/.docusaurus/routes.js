@@ -4,47 +4,47 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/react-canvas-editor/__docusaurus/debug',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug', '260'),
+    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug', '6ef'),
     exact: true
   },
   {
     path: '/react-canvas-editor/__docusaurus/debug/config',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/config', '464'),
+    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/config', '8e8'),
     exact: true
   },
   {
     path: '/react-canvas-editor/__docusaurus/debug/content',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/content', 'de0'),
+    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/content', '634'),
     exact: true
   },
   {
     path: '/react-canvas-editor/__docusaurus/debug/globalData',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/globalData', '74a'),
+    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/globalData', 'f9a'),
     exact: true
   },
   {
     path: '/react-canvas-editor/__docusaurus/debug/metadata',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/metadata', '629'),
+    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/metadata', '308'),
     exact: true
   },
   {
     path: '/react-canvas-editor/__docusaurus/debug/registry',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/registry', 'bef'),
+    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/registry', 'a19'),
     exact: true
   },
   {
     path: '/react-canvas-editor/__docusaurus/debug/routes',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/routes', '1d8'),
+    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/routes', '5f3'),
     exact: true
   },
   {
     path: '/react-canvas-editor/markdown-page',
-    component: ComponentCreator('/react-canvas-editor/markdown-page', '506'),
+    component: ComponentCreator('/react-canvas-editor/markdown-page', '998'),
     exact: true
   },
   {
     path: '/react-canvas-editor/docs',
-    component: ComponentCreator('/react-canvas-editor/docs', '14f'),
+    component: ComponentCreator('/react-canvas-editor/docs', '4a0'),
     routes: [
       {
         path: '/react-canvas-editor/docs/category/contribution-guide',
@@ -158,7 +158,7 @@ export default [
   },
   {
     path: '/react-canvas-editor/',
-    component: ComponentCreator('/react-canvas-editor/', 'fae'),
+    component: ComponentCreator('/react-canvas-editor/', '073'),
     exact: true
   },
   {

@@ -1,58 +1,58 @@
 {
-  "/react-canvas-editor/__docusaurus/debug-260": {
+  "/react-canvas-editor/__docusaurus/debug-6ef": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debugbd-1-9a3"
+      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
     }
   },
-  "/react-canvas-editor/__docusaurus/debug/config-464": {
+  "/react-canvas-editor/__docusaurus/debug/config-8e8": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debugbd-1-9a3"
+      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
     }
   },
-  "/react-canvas-editor/__docusaurus/debug/content-de0": {
+  "/react-canvas-editor/__docusaurus/debug/content-634": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debugbd-1-9a3"
+      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
     },
     "allContent": "allContent---react-canvas-editor-docusaurus-debug-content-246-21b"
   },
-  "/react-canvas-editor/__docusaurus/debug/globalData-74a": {
+  "/react-canvas-editor/__docusaurus/debug/globalData-f9a": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debugbd-1-9a3"
+      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
     }
   },
-  "/react-canvas-editor/__docusaurus/debug/metadata-629": {
+  "/react-canvas-editor/__docusaurus/debug/metadata-308": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debugbd-1-9a3"
+      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
     }
   },
-  "/react-canvas-editor/__docusaurus/debug/registry-bef": {
+  "/react-canvas-editor/__docusaurus/debug/registry-a19": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debugbd-1-9a3"
+      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
     }
   },
-  "/react-canvas-editor/__docusaurus/debug/routes-1d8": {
+  "/react-canvas-editor/__docusaurus/debug/routes-5f3": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docusaurus-debugbd-1-9a3"
+      "plugin": "plugin---react-canvas-editor-docusaurus-debug-9-e-0-447"
     }
   },
-  "/react-canvas-editor/markdown-page-506": {
+  "/react-canvas-editor/markdown-page-998": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-markdown-page-80-a-2a5"
+      "plugin": "plugin---react-canvas-editor-markdown-page-808-9e8"
     },
     "content": "content---react-canvas-editor-markdown-page-393-f21"
   },
-  "/react-canvas-editor/docs-14f": {
+  "/react-canvas-editor/docs-4a0": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-docs-89-a-e75"
+      "plugin": "plugin---react-canvas-editor-docse-7-a-811"
     },
     "versionMetadata": "versionMetadata---react-canvas-editor-docs-935-35e"
   },
@@ -128,10 +128,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---react-canvas-editor-docs-what-is-document-editor-111-191"
   },
-  "/react-canvas-editor/-fae": {
+  "/react-canvas-editor/-073": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "plugin---react-canvas-editor-markdown-page-80-a-2a5"
+      "plugin": "plugin---react-canvas-editor-markdown-page-808-9e8"
     },
     "config": "config---react-canvas-editor-5-e-9-3b9"
   }

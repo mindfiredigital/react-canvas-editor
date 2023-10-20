@@ -26,10 +26,10 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/ashutoshjena/Desktop/project/canvas-document-editor-package/canvas-document-package/react-canvas-editor/docusaurus/sidebars.js"
+          "sidebarPath": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/sidebars.js"
         },
         "theme": {
-          "customCss": "/Users/ashutoshjena/Desktop/project/canvas-document-editor-package/canvas-document-package/react-canvas-editor/docusaurus/src/css/custom.css"
+          "customCss": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/src/css/custom.css"
         }
       }
     ]
@@ -37,16 +37,21 @@ export default {
   "themeConfig": {
     "image": "img/docusaurus-social-card.jpg",
     "navbar": {
-      "title": "Document Editor",
+      "title": "",
       "logo": {
         "alt": "My Site Logo",
         "src": "img/logo.webp"
       },
       "items": [
         {
+          "to": "/",
+          "label": "Home",
+          "position": "right"
+        },
+        {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "position": "left",
+          "position": "right",
           "label": "Tutorials"
         },
         {

@@ -13,9 +13,9 @@
           "tagsPath": "/react-canvas-editor/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/ashutoshjena/Desktop/project/canvas-document-editor-package/canvas-document-package/react-canvas-editor/docusaurus/sidebars.js",
-          "contentPath": "/Users/ashutoshjena/Desktop/project/canvas-document-editor-package/canvas-document-package/react-canvas-editor/docusaurus/docs",
-          "contentPathLocalized": "/Users/ashutoshjena/Desktop/project/canvas-document-editor-package/canvas-document-package/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/sidebars.js",
+          "contentPath": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/docs",
+          "contentPathLocalized": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "contributors/code-of-conduce",
