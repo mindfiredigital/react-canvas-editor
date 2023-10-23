@@ -36,9 +36,6 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
 
   const { documentId } = useParams();
   useSelectionPosition(setSelectedText, setDropdown);
-  const doc = useSelector(
-    (state: RootState) => state.document
-  ) as DocumentState;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -46,6 +43,10 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
       ".canvas-editor"
     ) as HTMLDivElement;
 
+    if(container.querySelector('[editor-component="main"]')) {
+      return 
+    }
+    
     const editorOptions = {
       height: 1056,
       width: 816,
