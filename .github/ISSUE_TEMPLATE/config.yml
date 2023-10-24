@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: React Document Editor
+    url: https://mindfiredigital.github.io/react-canvas-editor/
+    about: react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.
