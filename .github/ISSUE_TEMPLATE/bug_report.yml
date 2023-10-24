@@ -1,9 +1,8 @@
-name: "\U0001F41E Bug report"
+name: "Bug report"
 description: Create a report to help us improve
-title: "[BUG]"
-labels: bug
+title: "[BUG]: "
 body:
-    - type: textarea
+  - type: textarea
     id: Describe the bug
     attributes:
       label: Describe the bug
@@ -17,8 +16,6 @@ body:
       description: |
         What do we need to do after opening your repro in order to make the bug happen? Clear and concise reproduction instructions are important for us to be able to triage your issue in a timely manner. Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
       placeholder: Steps to reproduce
-    validations:
-      required: true
   - type: textarea
     id: expected
     attributes:
@@ -35,9 +32,9 @@ body:
     id: Screenshots
     attributes:
       label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
+      placeholder: If applicable, add screenshots to help explain your problem.
   - type: textarea
     id: additional-comments
     attributes:
       label: Any additional comments?
-      description: e.g. some background/context of how you ran into this bug.
+      placeholder: e.g. some background/context of how you ran into this bug.
