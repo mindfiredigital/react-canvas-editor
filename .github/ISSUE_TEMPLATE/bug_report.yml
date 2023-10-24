@@ -3,9 +3,10 @@ description: Create a report to help us improve
 title: "[BUG]: "
 body:
   - type: textarea
-    id: Describe the bug
+    id: describe-the-bug
     attributes:
       label: Describe the bug
+      value: 
       placeholder: A clear and concise description of the bug.
     validations:
       required: true
@@ -13,6 +14,7 @@ body:
     id: steps-to-reproduce
     attributes:
       label: Steps to reproduce
+      value: 
       description: |
         What do we need to do after opening your repro in order to make the bug happen? Clear and concise reproduction instructions are important for us to be able to triage your issue in a timely manner. Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
       placeholder: Steps to reproduce
@@ -20,21 +22,25 @@ body:
     id: expected
     attributes:
       label: Expected behavior
+      value: 
     validations:
       required: true
   - type: textarea
     id: actually-happening
     attributes:
       label: What is actually happening?
+      value: 
     validations:
       required: true
-  - type: markdown
+  - type: textarea
     id: Screenshots
     attributes:
       label: Screenshots
+      value: 
       placeholder: If applicable, add screenshots to help explain your problem.
   - type: textarea
     id: additional-comments
     attributes:
       label: Any additional comments?
+      value: 
       placeholder: e.g. some background/context of how you ran into this bug.
