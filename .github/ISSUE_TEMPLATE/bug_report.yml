@@ -1,29 +1,41 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: "[BUG]"
-labels: bug
-assignees: ''
-
----
-
-**Describe the bug**
-A clear and concise description of the bug.
-
-**How To Reproduce the bug**
-Steps to reproduce the behavior, how frequent can you experience the bug:
-1.
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Running Information(please complete the following information):**
- - Promptflow Package Version using `pf -v`: [e.g. 0.0.102309906]
- - Operating System: [e.g. Ubuntu 20.04, Windows 11]
- - Python Version using `python --version`: [e.g. python==3.10.12]
-
-**Additional context**
-Add any other context about the problem here.
+name: "\U0001F41E Bug report"
+description: Create a report to help us improve
+body:
+    - type: textarea
+    id: Describe the bug
+    attributes:
+      label: Describe the bug
+      placeholder: A clear and concise description of the bug.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: |
+        What do we need to do after opening your repro in order to make the bug happen? Clear and concise reproduction instructions are important for us to be able to triage your issue in a timely manner. Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
+      placeholder: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actually-happening
+    attributes:
+      label: What is actually happening?
+    validations:
+      required: true
+  - type: markdown
+    id: Screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+  - type: textarea
+    id: additional-comments
+    attributes:
+      label: Any additional comments?
+      description: e.g. some background/context of how you ran into this bug.
