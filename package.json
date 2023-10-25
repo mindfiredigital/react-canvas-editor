@@ -1,6 +1,6 @@
 {
   "name": "@mindfiredigital/react-canvas-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -97,10 +97,10 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@mindfiredigital/canvas-editor": "^1.0.4",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@grammarly/editor-sdk-react": "^2.5.1",
+    "@mindfiredigital/canvas-editor": "^1.0.5",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
     "@reduxjs/toolkit": "^1.9.5",
@@ -126,7 +126,7 @@
       "commitMessage": "chore: release v${version}"
     },
     "github": {
-      "release":true
+      "release": true
     },
     "npm": {
       "public": false
@@ -134,7 +134,7 @@
     "plugins": {
       "@release-it/conventional-changelog": {
         "infile": "CHANGELOG.md",
-        "preset":{
+        "preset": {
           "name": "conventionalcommits",
           "types": [
             {
