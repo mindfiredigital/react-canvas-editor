@@ -15,7 +15,6 @@ export default [
             {
                 file: 'dist/index.js',
                 format: 'es',
-                sourcemap: true
             }
         ],
         plugins: [
@@ -27,11 +26,11 @@ export default [
             }),
             typescript({ tsconfig: './tsconfig.json' }),
             commonjs(),
-            terser(),
             scss({
                 insert: true
-              }),
+            }),
             svg(),
+            terser(),
         ],
     }
 ]
