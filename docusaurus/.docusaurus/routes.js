@@ -4,12 +4,12 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/react-canvas-editor/markdown-page',
-    component: ComponentCreator('/react-canvas-editor/markdown-page', '998'),
+    component: ComponentCreator('/react-canvas-editor/markdown-page', '0df'),
     exact: true
   },
   {
     path: '/react-canvas-editor/docs',
-    component: ComponentCreator('/react-canvas-editor/docs', '4a0'),
+    component: ComponentCreator('/react-canvas-editor/docs', '4fa'),
     routes: [
       {
         path: '/react-canvas-editor/docs/category/contribution-guide',
@@ -48,14 +48,14 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/react-canvas-editor/docs/contributors/code-of-conduce',
-        component: ComponentCreator('/react-canvas-editor/docs/contributors/code-of-conduce', '669'),
+        path: '/react-canvas-editor/docs/contributors/code-of-conduct',
+        component: ComponentCreator('/react-canvas-editor/docs/contributors/code-of-conduct', '34b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/react-canvas-editor/docs/contributors/how-to-cotribute',
-        component: ComponentCreator('/react-canvas-editor/docs/contributors/how-to-cotribute', '410'),
+        path: '/react-canvas-editor/docs/contributors/how-to-contribute',
+        component: ComponentCreator('/react-canvas-editor/docs/contributors/how-to-contribute', 'a7b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -123,7 +123,7 @@ export default [
   },
   {
     path: '/react-canvas-editor/',
-    component: ComponentCreator('/react-canvas-editor/', '073'),
+    component: ComponentCreator('/react-canvas-editor/', '1b1'),
     exact: true
   },
   {

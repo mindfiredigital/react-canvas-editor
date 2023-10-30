@@ -5,6 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 import scss from "rollup-plugin-scss";
 import svg from "rollup-plugin-svg";
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
 
 export default [
     {
@@ -14,7 +15,6 @@ export default [
             {
                 file: 'dist/index.js',
                 format: 'es',
-                sourcemap: true
             }
         ],
         plugins: [
@@ -28,8 +28,9 @@ export default [
             commonjs(),
             scss({
                 insert: true
-              }),
-            svg()
+            }),
+            svg(),
+            terser(),
         ],
     }
 ]

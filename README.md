@@ -1,14 +1,14 @@
-<h1 align="center">Canvas document editor package</h1>
-
-<!-- <p align="center"> -->
-<!-- <a href="https://www.npmjs.com/package/\react-canvas-editor"><img src="https://img.shields.io/npm/v/react-canvas-editor.svg?sanitize=true" alt="Version"></a>
-<a href="https://www.npmjs.com/package/@mindfiredigital/react-canvas-editor"><img src="https://img.shields.io/npm/l/@mindfiredigital/react-canvas-editor.svg?sanitize=true" alt="License"></a>
+<h1 align="center">React Document Editor </h1><br><br>
+<p align="center">
+<a href="https://www.npmjs.com/package/@mindfiredigital/react-canvas-editor"><img src="https://img.shields.io/npm/v/@mindfiredigital/react-canvas-editor.svg?sanitize=true" alt="Version"></a>
 <a href="https://www.npmjs.com/package/@mindfiredigital/react-canvas-editor"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs"></a>
-</p> -->
+</p>
 
 <br>
 
-The `@mindfiredigital/react-canvas-editor` npm package is a tool that allows developers to integrate multipage document editors built on top of Canvas using React.
+<p align="center"> Experience powerful document creation with our React-based editor. Craft and manage multi-page documents effortlessly </p>
+
+The `@mindfiredigital/react-canvas-editor` is a tool that allows developers to integrate multi page document editors built on top of Canvas using React.
 
 <br>
 
@@ -94,7 +94,6 @@ const handleSelectedText = (text) => {
 
 return (<DocumentEditor 
 toolbar={toolbarItem}
-toolbarClass={toolbarClass} 
 canvasClass={canvasClass} 
 onChange={handleChange} 
 onSelect={handleSelectedText}
@@ -106,6 +105,14 @@ value="Hello world"
 
 - **Customization**: Customize the editor's UI and behavior to match your application's requirements.
 ```javascript
+
+import { DocumentEditor } from '@mindfiredigital/react-canvas-editor';
+import React from 'react';
+
+
+
+export const test = () => {
+
 const toolbarClass: any = {
   container: {
     // backgroundColor: "red"
@@ -148,6 +155,10 @@ const canvasClass = {
   },
   margin: {}
 }
+
+return (<DocumentEditor 
+canvasClass={canvasClass} 
+/>)}
 ```
 <br>
 
@@ -161,9 +172,11 @@ const canvasClass = {
 
 ## Contributing
 
-We welcome contributions from the community. If you'd like to contribute to the `document-editor` npm package, please follow our [Contributing Guidelines](CONTRIBUTING.md).
+We welcome contributions from the community. If you'd like to contribute to the `react-document-editor` npm package, please follow our [Contributing Guidelines](CONTRIBUTING.md).
 <br>
 
 ## License
 
-This package is open-source and available under the [MIT License](LICENSE).
+Copyright (c) Mindfire Digital llp. All rights reserved.
+
+Licensed under the MIT license.

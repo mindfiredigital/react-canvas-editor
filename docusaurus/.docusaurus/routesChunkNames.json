@@ -1,15 +1,15 @@
 {
-  "/react-canvas-editor/markdown-page-998": {
+  "/react-canvas-editor/markdown-page-0df": {
     "__comp": "1f391b9e",
     "__context": {
-      "plugin": "80881443"
+      "plugin": "eefe7652"
     },
     "content": "393be207"
   },
-  "/react-canvas-editor/docs-4a0": {
+  "/react-canvas-editor/docs-4fa": {
     "__comp": "1be78505",
     "__context": {
-      "plugin": "e7a17549"
+      "plugin": "d882bb8f"
     },
     "versionMetadata": "935f2afb"
   },
@@ -37,13 +37,13 @@
     "__comp": "17896441",
     "content": "6f41419f"
   },
-  "/react-canvas-editor/docs/contributors/code-of-conduce-669": {
+  "/react-canvas-editor/docs/contributors/code-of-conduct-34b": {
     "__comp": "17896441",
-    "content": "d6295447"
+    "content": "f3ee8136"
   },
-  "/react-canvas-editor/docs/contributors/how-to-cotribute-410": {
+  "/react-canvas-editor/docs/contributors/how-to-contribute-a7b": {
     "__comp": "17896441",
-    "content": "093c1dae"
+    "content": "42f26196"
   },
   "/react-canvas-editor/docs/Get-started/Installation-aa6": {
     "__comp": "17896441",
@@ -85,10 +85,10 @@
     "__comp": "17896441",
     "content": "11191d37"
   },
-  "/react-canvas-editor/-073": {
+  "/react-canvas-editor/-1b1": {
     "__comp": "c4f5d8e4",
     "__context": {
-      "plugin": "80881443"
+      "plugin": "eefe7652"
     },
     "config": "5e9f5e1a"
   }

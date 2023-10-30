@@ -11,8 +11,8 @@
           "mainDocId": "what-is-document-editor",
           "docs": [
             {
-              "id": "contributors/code-of-conduce",
-              "path": "/react-canvas-editor/docs/contributors/code-of-conduce",
+              "id": "contributors/code-of-conduct",
+              "path": "/react-canvas-editor/docs/contributors/code-of-conduct",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -21,8 +21,8 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "contributors/how-to-cotribute",
-              "path": "/react-canvas-editor/docs/contributors/how-to-cotribute",
+              "id": "contributors/how-to-contribute",
+              "path": "/react-canvas-editor/docs/contributors/how-to-contribute",
               "sidebar": "tutorialSidebar"
             },
             {
