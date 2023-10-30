@@ -1,0 +1,26 @@
+{
+  "unversionedId": "contributors/code-of-conduct",
+  "id": "contributors/code-of-conduct",
+  "title": "Code of conduct",
+  "description": "As contributors and maintainers of the React Document Editor package, we are dedicated to demonstrating respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
+  "source": "@site/docs/contributors/code-of-conduct.md",
+  "sourceDirName": "contributors",
+  "slug": "/contributors/code-of-conduct",
+  "permalink": "/react-canvas-editor/docs/contributors/code-of-conduct",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "How to Contribute",
+    "permalink": "/react-canvas-editor/docs/contributors/how-to-contribute"
+  },
+  "next": {
+    "title": "Release",
+    "permalink": "/react-canvas-editor/docs/category/release"
+  }
+}

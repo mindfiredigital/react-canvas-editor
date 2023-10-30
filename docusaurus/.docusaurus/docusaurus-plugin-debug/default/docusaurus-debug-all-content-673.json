@@ -13,19 +13,19 @@
           "tagsPath": "/react-canvas-editor/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/sidebars.js",
-          "contentPath": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/docs",
-          "contentPathLocalized": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/sidebars.js",
+          "contentPath": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/docs",
+          "contentPathLocalized": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
-              "unversionedId": "contributors/code-of-conduce",
-              "id": "contributors/code-of-conduce",
+              "unversionedId": "contributors/code-of-conduct",
+              "id": "contributors/code-of-conduct",
               "title": "Code of conduct",
-              "description": "As contributors and maintainers of the React Document Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
-              "source": "@site/docs/contributors/code-of-conduce.md",
+              "description": "As contributors and maintainers of the React Document Editor package, we are dedicated to demonstrating respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
+              "source": "@site/docs/contributors/code-of-conduct.md",
               "sourceDirName": "contributors",
-              "slug": "/contributors/code-of-conduce",
-              "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce",
+              "slug": "/contributors/code-of-conduct",
+              "permalink": "/react-canvas-editor/docs/contributors/code-of-conduct",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -35,8 +35,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "How to contribute",
-                "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
+                "title": "How to Contribute",
+                "permalink": "/react-canvas-editor/docs/contributors/how-to-contribute"
               },
               "next": {
                 "title": "Release",
@@ -65,19 +65,19 @@
                 "permalink": "/react-canvas-editor/docs/category/contribution-guide"
               },
               "next": {
-                "title": "How to contribute",
-                "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute"
+                "title": "How to Contribute",
+                "permalink": "/react-canvas-editor/docs/contributors/how-to-contribute"
               }
             },
             {
-              "unversionedId": "contributors/how-to-cotribute",
-              "id": "contributors/how-to-cotribute",
-              "title": "How to contribute",
-              "description": "We deeply appreciate your interest in contributing to the React Document Editor project. Your valuable contributions play a pivotal role in enhancing this project. Before you begin, please take a moment to review the following guidelines.",
-              "source": "@site/docs/contributors/how-to-cotribute.md",
+              "unversionedId": "contributors/how-to-contribute",
+              "id": "contributors/how-to-contribute",
+              "title": "How to Contribute",
+              "description": "We genuinely appreciate your interest in contributing to the React Document Editor project. Your invaluable contributions play a pivotal role in enhancing this project. Before you embark on your journey, please take a moment to familiarize yourself with the following guidelines:",
+              "source": "@site/docs/contributors/how-to-contribute.md",
               "sourceDirName": "contributors",
-              "slug": "/contributors/how-to-cotribute",
-              "permalink": "/react-canvas-editor/docs/contributors/how-to-cotribute",
+              "slug": "/contributors/how-to-contribute",
+              "permalink": "/react-canvas-editor/docs/contributors/how-to-contribute",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -92,7 +92,7 @@
               },
               "next": {
                 "title": "Code of conduct",
-                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduce"
+                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduct"
               }
             },
             {
@@ -125,7 +125,7 @@
               "unversionedId": "Get-started/quickstart",
               "id": "Get-started/quickstart",
               "title": "Quick Start",
-              "description": "Let's discover Document Editor in less than 5 minutes.",
+              "description": "Let's explore the Document Editor in less than 5 minutes.",
               "source": "@site/docs/Get-started/quickstart.md",
               "sourceDirName": "Get-started",
               "slug": "/Get-started/quickstart",
@@ -431,11 +431,11 @@
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/how-to-cotribute"
+                    "id": "contributors/how-to-contribute"
                   },
                   {
                     "type": "doc",
-                    "id": "contributors/code-of-conduce"
+                    "id": "contributors/code-of-conduct"
                   }
                 ],
                 "link": {

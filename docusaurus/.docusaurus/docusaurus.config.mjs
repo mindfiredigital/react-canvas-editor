@@ -26,10 +26,10 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/sidebars.js"
+          "sidebarPath": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/sidebars.js"
         },
         "theme": {
-          "customCss": "/Users/ashutoshjena/Desktop/package/react-canvas-editor/docusaurus/src/css/custom.css"
+          "customCss": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/src/css/custom.css"
         }
       }
     ]

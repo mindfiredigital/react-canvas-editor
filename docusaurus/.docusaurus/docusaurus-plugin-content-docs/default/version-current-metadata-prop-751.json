@@ -98,15 +98,15 @@
           },
           {
             "type": "link",
-            "label": "How to contribute",
-            "href": "/react-canvas-editor/docs/contributors/how-to-cotribute",
-            "docId": "contributors/how-to-cotribute"
+            "label": "How to Contribute",
+            "href": "/react-canvas-editor/docs/contributors/how-to-contribute",
+            "docId": "contributors/how-to-contribute"
           },
           {
             "type": "link",
             "label": "Code of conduct",
-            "href": "/react-canvas-editor/docs/contributors/code-of-conduce",
-            "docId": "contributors/code-of-conduce"
+            "href": "/react-canvas-editor/docs/contributors/code-of-conduct",
+            "docId": "contributors/code-of-conduct"
           }
         ],
         "href": "/react-canvas-editor/docs/category/contribution-guide"
@@ -135,10 +135,10 @@
     ]
   },
   "docs": {
-    "contributors/code-of-conduce": {
-      "id": "contributors/code-of-conduce",
+    "contributors/code-of-conduct": {
+      "id": "contributors/code-of-conduct",
       "title": "Code of conduct",
-      "description": "As contributors and maintainers of the React Document Editor package, we are committed to showing respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
+      "description": "As contributors and maintainers of the React Document Editor package, we are dedicated to demonstrating respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
       "sidebar": "tutorialSidebar"
     },
     "contributors/contributors": {
@@ -147,10 +147,10 @@
       "description": "- Ashutosh Jena",
       "sidebar": "tutorialSidebar"
     },
-    "contributors/how-to-cotribute": {
-      "id": "contributors/how-to-cotribute",
-      "title": "How to contribute",
-      "description": "We deeply appreciate your interest in contributing to the React Document Editor project. Your valuable contributions play a pivotal role in enhancing this project. Before you begin, please take a moment to review the following guidelines.",
+    "contributors/how-to-contribute": {
+      "id": "contributors/how-to-contribute",
+      "title": "How to Contribute",
+      "description": "We genuinely appreciate your interest in contributing to the React Document Editor project. Your invaluable contributions play a pivotal role in enhancing this project. Before you embark on your journey, please take a moment to familiarize yourself with the following guidelines:",
       "sidebar": "tutorialSidebar"
     },
     "Get-started/Installation": {
@@ -162,7 +162,7 @@
     "Get-started/quickstart": {
       "id": "Get-started/quickstart",
       "title": "Quick Start",
-      "description": "Let's discover Document Editor in less than 5 minutes.",
+      "description": "Let's explore the Document Editor in less than 5 minutes.",
       "sidebar": "tutorialSidebar"
     },
     "references/dom-event": {
