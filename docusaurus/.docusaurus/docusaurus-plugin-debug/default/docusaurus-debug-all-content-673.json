@@ -13,9 +13,9 @@
           "tagsPath": "/react-canvas-editor/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/sidebars.js",
-          "contentPath": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/docs",
-          "contentPathLocalized": "/Users/ashutoshjena/Desktop/mindfire/Opensource/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/sidebars.js",
+          "contentPath": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/docs",
+          "contentPathLocalized": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "contributors/code-of-conduct",
@@ -340,6 +340,32 @@
               },
               "sidebar": "tutorialSidebar",
               "next": {
+                "title": "Why we use Canvas",
+                "permalink": "/react-canvas-editor/docs/category/why-we-use-canvas"
+              }
+            },
+            {
+              "unversionedId": "Why-we-use-canvas/Why-we-use-canvas",
+              "id": "Why-we-use-canvas/Why-we-use-canvas",
+              "title": "Canvas vs HTML Editor",
+              "description": "Canvas is better suited for projects that require high levels of customization, interactivity, and performance, especially when developed by individuals with programming skills.",
+              "source": "@site/docs/Why-we-use-canvas/Why-we-use-canvas.md",
+              "sourceDirName": "Why-we-use-canvas",
+              "slug": "/Why-we-use-canvas/",
+              "permalink": "/react-canvas-editor/docs/Why-we-use-canvas/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Why we use Canvas",
+                "permalink": "/react-canvas-editor/docs/category/why-we-use-canvas"
+              },
+              "next": {
                 "title": "Get Started",
                 "permalink": "/react-canvas-editor/docs/category/get-started"
               }
@@ -351,6 +377,23 @@
               {
                 "type": "doc",
                 "id": "what-is-document-editor"
+              },
+              {
+                "type": "category",
+                "label": "Why we use Canvas",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "Why-we-use-canvas/Why-we-use-canvas"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/why-we-use-canvas",
+                  "permalink": "/react-canvas-editor/docs/category/why-we-use-canvas"
+                }
               },
               {
                 "type": "category",

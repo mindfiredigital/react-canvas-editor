@@ -4,12 +4,12 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/react-canvas-editor/markdown-page',
-    component: ComponentCreator('/react-canvas-editor/markdown-page', '0df'),
+    component: ComponentCreator('/react-canvas-editor/markdown-page', 'ef3'),
     exact: true
   },
   {
     path: '/react-canvas-editor/docs',
-    component: ComponentCreator('/react-canvas-editor/docs', '4fa'),
+    component: ComponentCreator('/react-canvas-editor/docs', 'd63'),
     routes: [
       {
         path: '/react-canvas-editor/docs/category/contribution-guide',
@@ -38,6 +38,12 @@ export default [
       {
         path: '/react-canvas-editor/docs/category/tutorials',
         component: ComponentCreator('/react-canvas-editor/docs/category/tutorials', '360'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/react-canvas-editor/docs/category/why-we-use-canvas',
+        component: ComponentCreator('/react-canvas-editor/docs/category/why-we-use-canvas', 'c4b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -118,12 +124,18 @@ export default [
         component: ComponentCreator('/react-canvas-editor/docs/what-is-document-editor', 'cd3'),
         exact: true,
         sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/react-canvas-editor/docs/Why-we-use-canvas/',
+        component: ComponentCreator('/react-canvas-editor/docs/Why-we-use-canvas/', 'ffd'),
+        exact: true,
+        sidebar: "tutorialSidebar"
       }
     ]
   },
   {
     path: '/react-canvas-editor/',
-    component: ComponentCreator('/react-canvas-editor/', '1b1'),
+    component: ComponentCreator('/react-canvas-editor/', '600'),
     exact: true
   },
   {

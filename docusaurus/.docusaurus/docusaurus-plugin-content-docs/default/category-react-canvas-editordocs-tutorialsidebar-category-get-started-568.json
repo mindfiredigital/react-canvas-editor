@@ -4,8 +4,8 @@
   "permalink": "/react-canvas-editor/docs/category/get-started",
   "navigation": {
     "previous": {
-      "title": "What is React Document Editor?",
-      "permalink": "/react-canvas-editor/docs/what-is-document-editor"
+      "title": "Canvas vs HTML Editor",
+      "permalink": "/react-canvas-editor/docs/Why-we-use-canvas/"
     },
     "next": {
       "title": "Installation",

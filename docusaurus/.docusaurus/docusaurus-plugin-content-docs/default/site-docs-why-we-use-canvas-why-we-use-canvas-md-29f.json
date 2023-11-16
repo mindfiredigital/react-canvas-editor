@@ -1,0 +1,26 @@
+{
+  "unversionedId": "Why-we-use-canvas/Why-we-use-canvas",
+  "id": "Why-we-use-canvas/Why-we-use-canvas",
+  "title": "Canvas vs HTML Editor",
+  "description": "Canvas is better suited for projects that require high levels of customization, interactivity, and performance, especially when developed by individuals with programming skills.",
+  "source": "@site/docs/Why-we-use-canvas/Why-we-use-canvas.md",
+  "sourceDirName": "Why-we-use-canvas",
+  "slug": "/Why-we-use-canvas/",
+  "permalink": "/react-canvas-editor/docs/Why-we-use-canvas/",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Why we use Canvas",
+    "permalink": "/react-canvas-editor/docs/category/why-we-use-canvas"
+  },
+  "next": {
+    "title": "Get Started",
+    "permalink": "/react-canvas-editor/docs/category/get-started"
+  }
+}
