@@ -16,7 +16,7 @@
   },
   "sidebar": "tutorialSidebar",
   "next": {
-    "title": "Get Started",
-    "permalink": "/react-canvas-editor/docs/category/get-started"
+    "title": "Why we use Canvas",
+    "permalink": "/react-canvas-editor/docs/category/why-we-use-canvas"
   }
 }

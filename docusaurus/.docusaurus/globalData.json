@@ -76,6 +76,16 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "Why-we-use-canvas/Why-we-use-canvas",
+              "path": "/react-canvas-editor/docs/Why-we-use-canvas/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/why-we-use-canvas",
+              "path": "/react-canvas-editor/docs/category/why-we-use-canvas",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "/category/get-started",
               "path": "/react-canvas-editor/docs/category/get-started",
               "sidebar": "tutorialSidebar"

@@ -49,25 +49,23 @@ const TableComponent = (_props: any) => {
   };
 
   return (
-    <Box className="tableContainer">
+    <Box className='tableContainer'>
       <ButtonWrapper
-        title="Insert Table"
+        title='Insert table'
         handleClick={handleTableClick}
-        sx={Object.assign({ height: "100%" },_props.style)}
-      >
-        <BackupTableIcon />
+        sx={Object.assign({ height: "100%" }, _props.style)}>
+        <BackupTableIcon style={{ fontSize: "large" }} />
       </ButtonWrapper>
       {tablePanelVisible && (
-        <Box className="tableCollapse">
-          <Box className="ableTitle">
+        <Box className='tableCollapse'>
+          <Box className='ableTitle'>
             <Typography sx={{ fontSize: "0.8rem" }}>{tableTitle}</Typography>
             <ButtonWrapper
-              title="Close table"
+              title='Close table'
               sx={{
                 cursor: "pointer",
               }}
-              handleClick={handleCloseTable}
-            >
+              handleClick={handleCloseTable}>
               <CloseIcon sx={{ width: "0.8rem", height: "0.8rem" }} />
             </ButtonWrapper>
           </Box>
@@ -77,8 +75,7 @@ const TableComponent = (_props: any) => {
             sx={{
               borderCollapse: "separate",
               borderSpacing: "0.25rem",
-            }}
-          >
+            }}>
             <TableBody>
               {[...Array(10)].map((_, trIndex) => (
                 <TableRow key={trIndex}>

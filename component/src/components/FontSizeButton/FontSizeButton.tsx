@@ -23,8 +23,7 @@ const FontSizeDropdown: React.FC<FontSizeDropdownProps> = ({
           position: "absolute",
           zIndex: 9999,
           margin: "0 37px",
-        }}
-      >
+        }}>
         {fontSizes.map((size, index) => (
           <MenuItem key={index} onClick={() => onChange(size)}>
             {size}
@@ -46,9 +45,9 @@ const MenuItem: React.FC<{ onClick: () => void; children: number }> = ({
   );
 };
 
-const FontSizeButton: React.FC<{ size: number | undefined, style: any }> = ({
+const FontSizeButton: React.FC<{ size: number | undefined; style: any }> = ({
   size = 16,
-  style
+  style,
 }) => {
   const [fontSize, setFontSize] = useState<number>(size);
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
@@ -93,21 +92,23 @@ const FontSizeButton: React.FC<{ size: number | undefined, style: any }> = ({
     <Box sx={style}>
       <IconButton
         onClick={handleDecreaseFont}
-        sx={style}
-      >
-        <Tooltip title="Increase font size">
-          <Remove />
+        sx={[
+          Object.assign({ mr: 1, borderRadius: 0 }, style),
+          { padding: "1px", margin: "8px 0" },
+        ]}>
+        <Tooltip title='Decrease font size'>
+          <Remove style={{ fontSize: "large" }} />
         </Tooltip>
       </IconButton>
-      <Tooltip title="Font size">
+      <Tooltip title='Font size'>
         <TextField
-          type="text"
+          type='text'
           value={fontSize}
           onClick={handleTextFieldClick}
           onChange={handleOnChange}
-          style={{ width: "50px", margin: "8px 0", cursor: "pointer" }}
+          style={{ width: "50px", margin: "7px 0", cursor: "pointer" }}
           inputProps={{
-            style: { textAlign: "center", padding: "1px 1px" },
+            style: { textAlign: "center", padding: "1px 1px", fontSize: 14 },
           }}
         />
       </Tooltip>
@@ -119,10 +120,12 @@ const FontSizeButton: React.FC<{ size: number | undefined, style: any }> = ({
       )}
       <IconButton
         onClick={handleIncreaseFont}
-        sx={{ padding: "1px", margin: "8px 0" }}
-      >
-        <Tooltip title="Decrease font size">
-          <Add />
+        sx={[
+          Object.assign({ mr: 1, borderRadius: 0 }, style),
+          { padding: "1px", margin: "8px 0" },
+        ]}>
+        <Tooltip title='Increase font size'>
+          <Add style={{ fontSize: "large" }} />
         </Tooltip>
       </IconButton>
     </Box>

@@ -52,15 +52,18 @@ const ImageUploadButton: React.FC = (_props: any) => {
   return (
     <>
       <Input
-        type="file"
+        type='file'
         inputRef={fileInputRef}
-        style={{ display: "none" ,}}
+        style={{ display: "none" }}
         inputProps={{ accept: "image/*" }}
         onChange={handleFileInputChange}
       />
-      <IconButton onClick={handleButtonClick}>
-        <Tooltip title="Image" style={_props.style}>
-          <InsertPhotoIcon />
+      <IconButton
+        size='small'
+        sx={Object.assign({ mr: 1, borderRadius: 0 }, _props.style)}
+        onClick={handleButtonClick}>
+        <Tooltip title='Image' style={_props.style}>
+          <InsertPhotoIcon style={{ fontSize: "large" }} />
         </Tooltip>
       </IconButton>
     </>
