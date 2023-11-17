@@ -6,10 +6,10 @@ import { Box } from "@mui/material";
 import ColorPalettes from "../ColorPalettes/ColorPalettes";
 import { Color } from "../../utils/constant";
 
-const HighlightTextButton: React.FC<{ color: string | null | undefined, style: any }> = ({
-  color,
-  style
-}) => {
+const HighlightTextButton: React.FC<{
+  color: string | null | undefined;
+  style: any;
+}> = ({ color, style }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -25,13 +25,13 @@ const HighlightTextButton: React.FC<{ color: string | null | undefined, style: a
 
   return (
     <Box>
-      <Tooltip title="Highlight color">
+      <Tooltip title='Highlight color'>
         <IconButton
+          size='small'
           aria-describedby={id}
           sx={Object.assign({ mr: 1, borderRadius: 0 }, style)}
-          onClick={handleClick}
-        >
-          <ColorizeIcon fontSize="medium" />
+          onClick={handleClick}>
+          <ColorizeIcon style={{ fontSize: "large" }} />
         </IconButton>
       </Tooltip>
       <ColorPalettes

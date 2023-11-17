@@ -15,6 +15,7 @@ The `@mindfiredigital/react-canvas-editor` is a tool that allows developers to i
 ## Table of Contents
 
 - [Features](#features)
+- [Canvas vs HTML Editor](#canvas-vs-html-editor)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
@@ -50,6 +51,36 @@ The `@mindfiredigital/react-canvas-editor` is a tool that allows developers to i
 
 <br>
 
+# Canvas vs HTML Editor
+
+Canvas is better suited for projects that require high levels of customization, interactivity, and performance, especially when developed by individuals with programming skills.
+
+- Dynamic Content and Interactivity
+
+  - Canvas is particularly powerful for creating dynamic and interactive content, such as animations, games, and data visualizations. It provides a drawing API that allows you to manipulate pixels directly, offering fine-grained control over the visual elements.
+  - HTML editors are generally designed for static content creation, and while they may offer some interactivity features, they might not provide the same level of control as Canvas when it comes to dynamic and custom interactions.
+
+- Customization and Flexibility
+
+  - Canvas allows developers to create highly customized and unique visual elements. It provides a blank canvas where you have complete control over the rendering process. This makes it suitable for projects that require a high degree of customization.
+  - HTML editors often come with predefined templates and styles, which can limit the level of customization. While they are great for quick and easy content creation, they may not be as flexible for highly tailored or specialized designs.
+
+- Performance
+
+  - Canvas can be more performant for certain graphics-intensive tasks, especially when dealing with a large number of elements or complex animations. This is because it allows for direct manipulation of pixels and can leverage hardware acceleration.
+  - HTML editors might introduce some overhead, as they often generate complex HTML and CSS structures to represent the content, which can impact performance, especially in resource-intensive applications.
+
+- Programmatic Control
+
+  - Canvas is manipulated through JavaScript, giving developers programmatic control over every aspect of the canvas. This enables the creation of complex graphics and animations using code.
+  - HTML editors are typically designed for users who prefer a visual interface over coding. While they might provide some level of scripting or automation, they may not offer the same level of programmatic control as Canvas.
+
+- Learning and Development
+  - Canvas is a good choice for developers who are comfortable with programming and want to create graphics and visualizations using code. It requires a solid understanding of JavaScript and the Canvas API.
+  - HTML editors are generally more user-friendly for non-programmers and can be a quicker way to create visually appealing content without the need for coding skills.
+
+<br>
+
 ## Installation
 
 To install the `@mindfiredigital/react-canvas-editor` npm package in your project, use the following command:
@@ -57,6 +88,7 @@ To install the `@mindfiredigital/react-canvas-editor` npm package in your projec
 ```bash
 npm install @mindfiredigital/react-canvas-editor
 ```
+
 <br>
 
 ## Getting Started
@@ -64,111 +96,102 @@ npm install @mindfiredigital/react-canvas-editor
 - **Initialization**: Initialize the canvas document editor in your project, specifying the container element where the editor will be embedded.
 
 ```javascript
-
-
-import { DocumentEditor } from '@mindfiredigital/react-canvas-editor';
-import React from 'react';
-
-
+import { DocumentEditor } from "@mindfiredigital/react-canvas-editor";
+import React from "react";
 
 export const test = () => {
-  
   const toolbarItem: any = {
-  bold: true,
-  italic: true,
-  underline: true,
-  undo: true,
-  redo: true,
-  image: true
-}
+    bold: true,
+    italic: true,
+    underline: true,
+    undo: true,
+    redo: true,
+    image: true,
+  };
 
-const handleChange = (data) => {
-  console.log('test ->',data);
+  const handleChange = (data) => {
+    console.log("test ->", data);
+  };
 
-}
+  const handleSelectedText = (text) => {
+    console.log(text);
+  };
 
-const handleSelectedText = (text) => {
-  console.log(text);
-
-}
-
-return (<DocumentEditor 
-toolbar={toolbarItem}
-canvasClass={canvasClass} 
-onChange={handleChange} 
-onSelect={handleSelectedText}
-value="Hello world"
-/>)}
-
+  return (
+    <DocumentEditor
+      toolbar={toolbarItem}
+      canvasClass={canvasClass}
+      onChange={handleChange}
+      onSelect={handleSelectedText}
+      value='Hello world'
+    />
+  );
+};
 ```
+
 <br>
 
 - **Customization**: Customize the editor's UI and behavior to match your application's requirements.
+
 ```javascript
-
-import { DocumentEditor } from '@mindfiredigital/react-canvas-editor';
-import React from 'react';
-
-
+import { DocumentEditor } from "@mindfiredigital/react-canvas-editor";
+import React from "react";
 
 export const test = () => {
+  const toolbarClass: any = {
+    container: {
+      // backgroundColor: "red"
+    },
+    primaryToolbar: {
+      justifyContent: "center",
+    },
+    item: {
+      undo: {
+        // border: 'red solid 2px',
+        // background:'yellow'
+      },
+      redo: {
+        // border: 'black solid 3px',
+        // background:'blue'
+      },
+      bold: {
+        // border: 'black solid 3px',
+        // background:'blue'
+      },
+      italic: {
+        // border: 'black solid 3px',
+        // background:'blue'
+      },
+      underline: {
+        // border: 'black solid 3px',
+        // background:'blue'
+      },
+      image: {
+        // border: 'black solid 3px',
+        // background:'blue'
+      },
+    },
+  };
 
-const toolbarClass: any = {
-  container: {
-    // backgroundColor: "red"
-  },
-  primaryToolbar: {
-    justifyContent: "center"
-  },
-  item: {
-    undo: {
-      // border: 'red solid 2px',
-      // background:'yellow'
+  const canvasClass = {
+    editorMain: {
+      // background:'antiquewhite'
     },
-    redo: {
-      // border: 'black solid 3px',
-      // background:'blue'
-    },
-    bold: {
-      // border: 'black solid 3px',
-      // background:'blue'
-    },
-    italic: {
-      // border: 'black solid 3px',
-      // background:'blue'
-    },
-    underline: {
-      // border: 'black solid 3px',
-      // background:'blue'
-    },
-    image: {
-      // border: 'black solid 3px',
-      // background:'blue'
-    }
-    
-  }
-}
+    margin: {},
+  };
 
-const canvasClass = {
-  editorMain: {
-    // background:'antiquewhite'
-  },
-  margin: {}
-}
-
-return (<DocumentEditor 
-canvasClass={canvasClass} 
-/>)}
+  return <DocumentEditor canvasClass={canvasClass} />;
+};
 ```
+
 <br>
 
-- **DOM handlers**: 
+- **DOM handlers**:
   - **onChange**: The onchange event occurs when the value is changed.
   - **onSelect**: The onSelect event occurs when the value is selected.
   - **value**: The value attribute on an tag sets the value of the page.
 
 <br>
-
 
 ## Contributing
 

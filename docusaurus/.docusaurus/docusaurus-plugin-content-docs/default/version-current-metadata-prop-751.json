@@ -17,6 +17,21 @@
       },
       {
         "type": "category",
+        "label": "Why we use Canvas",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Canvas vs HTML Editor",
+            "href": "/react-canvas-editor/docs/Why-we-use-canvas/",
+            "docId": "Why-we-use-canvas/Why-we-use-canvas"
+          }
+        ],
+        "href": "/react-canvas-editor/docs/category/why-we-use-canvas"
+      },
+      {
+        "type": "category",
         "label": "Get Started",
         "collapsible": true,
         "collapsed": true,
@@ -211,6 +226,12 @@
       "id": "what-is-document-editor",
       "title": "What is React Document Editor?",
       "description": "react-document-editor is a tool that allows developers to integrate multipage document editor inside react application.",
+      "sidebar": "tutorialSidebar"
+    },
+    "Why-we-use-canvas/Why-we-use-canvas": {
+      "id": "Why-we-use-canvas/Why-we-use-canvas",
+      "title": "Canvas vs HTML Editor",
+      "description": "Canvas is better suited for projects that require high levels of customization, interactivity, and performance, especially when developed by individuals with programming skills.",
       "sidebar": "tutorialSidebar"
     }
   }
