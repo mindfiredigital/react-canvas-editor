@@ -170,6 +170,27 @@ export const test = () => {
         // border: 'black solid 3px',
         // background:'blue'
       },
+      fontType: {
+        // background:'green'
+      },
+      table: {
+        // background:'green'
+      },
+      fontColor: {
+        // background:'green'
+      },
+      highlight: {
+        // background:'green'
+      },
+      fontSize: {
+        // background:'green'
+      },
+      heading: {
+        // background:'green'
+      },
+      selectedToolbarItemColor: {
+        // color: "#1a73e8",
+      },
     },
   };
 
