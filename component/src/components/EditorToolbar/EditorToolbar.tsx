@@ -39,11 +39,32 @@ interface content {
   toolbar: any;
   toolbarClass: any;
 }
+
 const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
   _props,
   ref
 ) {
   const [contentStyles, setContentStyles] = useState<IRangeStyle | undefined>();
+  const [alignment, setAlignment] = useState<string>(RowFlex.LEFT);
+  const [listType, setListType] = useState<string>("");
+  const [formats, setFormats] = useState<string[]>([]);
+
+  const selectedItemStyle = {
+    color: _props.toolbarClass.selectedToolbarItemColor
+      ? _props.toolbarClass.selectedToolbarItemColor
+      : "#1a73e8",
+  };
+
+  const addFormat = (format) => {
+    let selectedFormats;
+    if (formats.indexOf(format) === -1) {
+      selectedFormats = [...formats, format];
+    } else {
+      selectedFormats = formats.filter((item) => item !== format);
+    }
+    setFormats(selectedFormats);
+  };
+
   useEffect(() => {
     let interval: NodeJS.Timeout;
     const timeout = setTimeout(() => {
@@ -88,25 +109,43 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
 
           {(!_props?.toolbar || _props?.toolbar?.bold) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.bold}
+              sx={
+                (_props?.toolbarClass?.item?.bold,
+                formats.indexOf("Bold") > -1 && selectedItemStyle)
+              }
               title='Bold'
-              handleClick={DOMEventHandlers.handleBold}>
+              handleClick={() => {
+                DOMEventHandlers.handleBold();
+                addFormat("Bold");
+              }}>
               <FormatBoldIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
           {(!_props?.toolbar || _props?.toolbar?.italic) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.italic}
+              sx={
+                (_props?.toolbarClass?.item?.italic,
+                formats.indexOf("Italic") > -1 && selectedItemStyle)
+              }
               title='Italic'
-              handleClick={DOMEventHandlers.handleItalic}>
+              handleClick={() => {
+                DOMEventHandlers.handleItalic();
+                addFormat("Italic");
+              }}>
               <FormatItalicIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
           {(!_props?.toolbar || _props?.toolbar?.underline) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.underline}
+              sx={
+                (_props?.toolbarClass?.item?.underline,
+                formats.indexOf("Underline") > -1 && selectedItemStyle)
+              }
               title='Underline'
-              handleClick={DOMEventHandlers.handleUnderline}>
+              handleClick={() => {
+                DOMEventHandlers.handleUnderline();
+                addFormat("Underline");
+              }}>
               <FormatUnderlinedIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
@@ -150,55 +189,96 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
 
           {(!_props?.toolbar || _props?.toolbar?.leftAlign) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.leftAlign}
+              sx={
+                (_props?.toolbarClass?.item?.leftAlign,
+                alignment === RowFlex.LEFT && selectedItemStyle)
+              }
               title='Left align'
-              handleClick={() => DOMEventHandlers.handleAlign(RowFlex.LEFT)}>
+              handleClick={() => {
+                DOMEventHandlers.handleAlign(RowFlex.LEFT);
+                setAlignment(RowFlex.LEFT);
+              }}>
               <FormatAlignLeftIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
           {(!_props?.toolbar || _props?.toolbar?.centerAlign) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.centerAlign}
+              sx={
+                (_props?.toolbarClass?.item?.centerAlign,
+                alignment === RowFlex.CENTER && selectedItemStyle)
+              }
               title='Center align'
-              handleClick={() => DOMEventHandlers.handleAlign(RowFlex.CENTER)}>
+              handleClick={() => {
+                DOMEventHandlers.handleAlign(RowFlex.CENTER);
+                setAlignment(RowFlex.CENTER);
+              }}>
               <FormatAlignCenterIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
           {(!_props?.toolbar || _props?.toolbar?.rightAlign) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.rightAlign}
+              sx={
+                (_props?.toolbarClass?.item?.rightAlign,
+                alignment === RowFlex.RIGHT && selectedItemStyle)
+              }
               title='Right align'
-              handleClick={() => DOMEventHandlers.handleAlign(RowFlex.RIGHT)}>
+              handleClick={() => {
+                DOMEventHandlers.handleAlign(RowFlex.RIGHT);
+                setAlignment(RowFlex.RIGHT);
+              }}>
               <FormatAlignRightIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
           {(!_props?.toolbar || _props?.toolbar?.justify) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.justify}
+              sx={
+                (_props?.toolbarClass?.item?.justify,
+                alignment === RowFlex.ALIGNMENT && selectedItemStyle)
+              }
               title='Justify'
-              handleClick={() =>
-                DOMEventHandlers.handleAlign(RowFlex.ALIGNMENT)
-              }>
+              handleClick={() => {
+                DOMEventHandlers.handleAlign(RowFlex.ALIGNMENT);
+                setAlignment(RowFlex.ALIGNMENT);
+              }}>
               <FormatAlignJustifyIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
+          <Divider
+            flexItem
+            orientation='vertical'
+            sx={{ mx: 0.5, my: 1 }}
+            style={{ marginLeft: -5, marginRight: 5 }}
+          />
+
           {(!_props?.toolbar || _props?.toolbar?.bulletList) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.bulletList}
+              sx={
+                (_props?.toolbarClass?.item?.bulletList,
+                listType === ListType.UL && selectedItemStyle)
+              }
               title='Bullet list'
-              handleClick={() =>
-                DOMEventHandlers.handleList(ListType.UL, ListStyle.DECIMAL)
-              }>
+              handleClick={() => {
+                DOMEventHandlers.handleList(ListType.UL, ListStyle.DECIMAL);
+                listType === ListType.UL
+                  ? setListType("")
+                  : setListType(ListType.UL);
+              }}>
               <FormatListBulletedIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
           {(!_props?.toolbar || _props?.toolbar?.numberedList) && (
             <ButtonWrapper
-              sx={_props?.toolbarClass?.item?.numberedList}
+              sx={
+                (_props?.toolbarClass?.item?.numberedList,
+                listType === ListType.OL && selectedItemStyle)
+              }
               title='Numbered list'
-              handleClick={() =>
-                DOMEventHandlers.handleList(ListType.OL, ListStyle.DECIMAL)
-              }>
+              handleClick={() => {
+                DOMEventHandlers.handleList(ListType.OL, ListStyle.DECIMAL);
+                listType === ListType.OL
+                  ? setListType("")
+                  : setListType(ListType.OL);
+              }}>
               <FormatListNumberedIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
           )}
