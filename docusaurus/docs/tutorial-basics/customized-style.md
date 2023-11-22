@@ -7,29 +7,28 @@ sidebar_position: 2
 Tailor the editor's user interface to align with the specific requirements of your application.
 
 ## Customize toolbar style
+
 You can adjust the style of the toolbar to meet your design needs. Create a configuration object as follows:
 
 ```javascript
 const toolbarClass = {
   container: {
-    backgroundColor: "red"
+    backgroundColor: "red",
   },
   primaryToolbar: {
-    justifyContent: "center"
-  }
-}
+    justifyContent: "center",
+  },
+};
 ```
+
 Now, integrate this style configuration into your `DocumentEditor`:
 
 ```javascript
-return (
-    <DocumentEditor 
-        toolbarClass={toolbarClass} 
-    />)
-
+return <DocumentEditor toolbarClass={toolbarClass} />;
 ```
 
 ![Customize toolbar style](../../static/img/customize-toolbar-style.png)
+
 ## Customize toolbar components style
 
 To fine-tune the style of individual toolbar components, define styles for items like undo, redo, and images. Here's an example configuration:
@@ -38,48 +37,70 @@ To fine-tune the style of individual toolbar components, define styles for items
 const toolbarClass = {
   item: {
     undo: {
-      border: 'red solid 2px',
-      background:'yellow'
+      border: "red solid 2px",
+      background: "yellow",
     },
     redo: {
-      border: 'black solid 3px',
-      background:'blue'
+      border: "black solid 3px",
+      background: "blue",
     },
     image: {
-      border: 'black solid 3px',
-      background:'blue'
-    }
-    
-  }
-}
+      border: "black solid 3px",
+      background: "blue",
+    },
+  },
+};
 ```
+
 Apply these styles to your `DocumentEditor`:
 
 ```javascript
-return (
-    <DocumentEditor 
-        toolbarClass={toolbarClass} 
-    />)
+return <DocumentEditor toolbarClass={toolbarClass} />;
 ```
+
 ![Customize toolbar components style](../../static/img/customize-toolbar-components-style.png)
+
+## Customize toolbar selected components color
+
+You can also customize the color of selected toolbar components. Here's an example configuration:
+
+```javascript
+const toolbarClass = {
+  item: {
+    selectedToolbarItemColor: {
+      color: "#1a73e8",
+    },
+  },
+};
+```
+
+Apply these styles to your `DocumentEditor`:
+
+```javascript
+return <DocumentEditor toolbarClass={toolbarClass} />;
+```
+
+![Customize toolbar selected components color](../../static/img/customize-toolbar-selected-components-color.png)
+
 ## Customize editor page
 
 You can also customize the appearance of the editor page. Define the styles for the editor main and margin areas:
+
 ```javascript
 const canvasClass = {
   editorMain: {
-    background:'antiquewhite'
+    background: "antiquewhite",
   },
-  margin: {}
-}
+  margin: {},
+};
 ```
+
 Incorporate these styles into your `DocumentEditor`:
+
 ```javascript
-return (
-    <DocumentEditor 
-        canvasClass={canvasClass} 
-    />)
+return <DocumentEditor canvasClass={canvasClass} />;
 ```
+
 ![Customize editor page](../../static/img/customize-editor-page.png)
 
 By following these steps, you can professionally customize the style of your editor to align with your application's requirements.
