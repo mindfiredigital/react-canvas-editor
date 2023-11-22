@@ -1,10 +1,9 @@
-
-import { DocumentEditor } from '../component';
-import React from 'react';
+import { DocumentEditor } from "../component";
+import React from "react";
 
 export default {
   component: DocumentEditor,
-  title: 'DocumentEditor',
+  title: "DocumentEditor",
 };
 
 // export const Default = {
@@ -16,15 +15,15 @@ const toolbarItem: any = {
   underline: true,
   undo: true,
   redo: true,
-  image: true
-}
+  image: true,
+};
 
 const toolbarClass: any = {
   container: {
     // backgroundColor: "red"
   },
   primaryToolbar: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
   item: {
     undo: {
@@ -50,51 +49,53 @@ const toolbarClass: any = {
     image: {
       // border: 'black solid 3px',
       // background:'blue'
-    }
-    ,fontType:{
+    },
+    fontType: {
       // background:'green'
-    }
-    ,table:{
+    },
+    table: {
       // background:'green'
-    }
-   ,fontColor:{
-    // background:'green'
-   }
-,highlight:{
-  // background:'green'
-}
-,fontSize:{
-  // background:'green'
-}
-,heading:{
-  // background:'green'
-}
-    
-  }
-}
+    },
+    fontColor: {
+      // background:'green'
+    },
+    highlight: {
+      // background:'green'
+    },
+    fontSize: {
+      // background:'green'
+    },
+    heading: {
+      // background:'green'
+    },
+    selectedToolbarItemColor: {
+      // color: "#1a73e8",
+    },
+  },
+};
 
 const canvasClass = {
   editorMain: {
     // background:'antiquewhite'
   },
-  margin: {}
-}
+  margin: {},
+};
 
 const handleChange = (data) => {
-  console.log('test ->',data);
-
-}
+  console.log("test ->", data);
+};
 
 const handleSelectedText = (text) => {
   console.log(text);
+};
 
-}
-
-export const test = () => <DocumentEditor 
-// toolbar={toolbarItem}
-toolbarClass={toolbarClass} 
-canvasClass={canvasClass} 
-onChange={handleChange} 
-onSelect={handleSelectedText}
-value="Hello world"
-/>
+export const test = () => (
+  <DocumentEditor
+    // toolbar={toolbarItem}
+    toolbarClass={toolbarClass}
+    canvasClass={canvasClass}
+    onChange={handleChange}
+    onSelect={handleSelectedText}
+    value='Hello world'
+  />
+);

@@ -186,9 +186,9 @@
     "143": {
       "js": [
         {
-          "file": "assets/js/fc51a3c2.d1b4a66a.js",
-          "hash": "296707c965b8b299",
-          "publicPath": "/react-canvas-editor/assets/js/fc51a3c2.d1b4a66a.js"
+          "file": "assets/js/fc51a3c2.bec753a4.js",
+          "hash": "f3b865b6f544c725",
+          "publicPath": "/react-canvas-editor/assets/js/fc51a3c2.bec753a4.js"
         }
       ]
     },
@@ -249,9 +249,9 @@
     "303": {
       "js": [
         {
-          "file": "assets/js/runtime~main.c4f1cafd.js",
-          "hash": "3a093493db73dff6",
-          "publicPath": "/react-canvas-editor/assets/js/runtime~main.c4f1cafd.js"
+          "file": "assets/js/runtime~main.5b27776c.js",
+          "hash": "fbe39410f4c9309a",
+          "publicPath": "/react-canvas-editor/assets/js/runtime~main.5b27776c.js"
         }
       ]
     },
@@ -375,9 +375,9 @@
     "909": {
       "js": [
         {
-          "file": "assets/js/6f41419f.01311c08.js",
-          "hash": "ce17a8d85b4e4e66",
-          "publicPath": "/react-canvas-editor/assets/js/6f41419f.01311c08.js"
+          "file": "assets/js/6f41419f.89a524f5.js",
+          "hash": "963c669300104e35",
+          "publicPath": "/react-canvas-editor/assets/js/6f41419f.89a524f5.js"
         }
       ]
     },
