@@ -3,48 +3,13 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/react-canvas-editor/__docusaurus/debug',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug', '9dd'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/config',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/config', '0cc'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/content',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/content', '56f'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/globalData',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/globalData', '4e5'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/metadata',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/metadata', '7ae'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/registry',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/registry', '411'),
-    exact: true
-  },
-  {
-    path: '/react-canvas-editor/__docusaurus/debug/routes',
-    component: ComponentCreator('/react-canvas-editor/__docusaurus/debug/routes', 'a3d'),
-    exact: true
-  },
-  {
     path: '/react-canvas-editor/markdown-page',
-    component: ComponentCreator('/react-canvas-editor/markdown-page', 'ef3'),
+    component: ComponentCreator('/react-canvas-editor/markdown-page', '0df'),
     exact: true
   },
   {
     path: '/react-canvas-editor/docs',
-    component: ComponentCreator('/react-canvas-editor/docs', 'd63'),
+    component: ComponentCreator('/react-canvas-editor/docs', '223'),
     routes: [
       {
         path: '/react-canvas-editor/docs/category/contribution-guide',
@@ -170,7 +135,7 @@ export default [
   },
   {
     path: '/react-canvas-editor/',
-    component: ComponentCreator('/react-canvas-editor/', '600'),
+    component: ComponentCreator('/react-canvas-editor/', '1b1'),
     exact: true
   },
   {
