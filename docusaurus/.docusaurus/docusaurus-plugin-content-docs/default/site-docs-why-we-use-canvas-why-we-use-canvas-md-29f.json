@@ -1,8 +1,8 @@
 {
   "unversionedId": "Why-we-use-canvas/Why-we-use-canvas",
   "id": "Why-we-use-canvas/Why-we-use-canvas",
-  "title": "Canvas vs HTML Editor",
-  "description": "Canvas is better suited for projects that require high levels of customization, interactivity, and performance, especially when developed by individuals with programming skills.",
+  "title": "Why Canvas Editor",
+  "description": "Canvas vs HTML Editor",
   "source": "@site/docs/Why-we-use-canvas/Why-we-use-canvas.md",
   "sourceDirName": "Why-we-use-canvas",
   "slug": "/Why-we-use-canvas/",
