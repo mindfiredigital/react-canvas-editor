@@ -25,9 +25,9 @@ The `@mindfiredigital/react-canvas-editor` is a tool that allows developers to i
 
 # Why canvas over HTML Editor
 
-The canvas element in HTML serves as a versatile space for drawing graphics using JavaScript, enabling the creation of dynamic, interactive, and visually engaging content on web pages. Within this context, a Canvas editor emerges as a powerful tool or application that harnesses the capabilities of the canvas element. This editor facilitates the creation, editing, and manipulation of graphics or drawings directly within a web browser.
+Canvas is an HTML element that provides a space on which you can draw graphics using JavaScript. It allows you to create dynamic, interactive, and visually appealing content on a web page. A Canvas editor is a tool or application that utilizes the canvas element to create, edit, and manipulate graphics or drawings within a web browser.
 
-The performance of a Canvas editor is greatly influenced by the precise optimizations implemented by software developers. Fine-tuning rendering processes, minimizing redundant computations, and leveraging the inherent capabilities of web browsers collectively contribute to achieving optimal performance for a canvas editor. In essence, the role of developers in crafting a high-performance canvas editor is pivotal, as their expertise directly impacts the fluidity and efficiency of the graphical editing experience on the web.
+Canvas editors can offer excellent performance, the specific optimizations implemented by developers play a crucial role. Fine-tuning rendering processes, minimizing unnecessary computations, and leveraging browser capabilities contribute to a high-performance canvas editor.
 
 To know more you can check the link
 [Canvas vs HTML Editor](https://mindfiredigital.github.io/react-canvas-editor/docs/Why-we-use-canvas/)
