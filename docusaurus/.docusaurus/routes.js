@@ -39,12 +39,12 @@ export default [
   },
   {
     path: '/react-canvas-editor/markdown-page',
-    component: ComponentCreator('/react-canvas-editor/markdown-page', 'ef3'),
+    component: ComponentCreator('/react-canvas-editor/markdown-page', '0df'),
     exact: true
   },
   {
     path: '/react-canvas-editor/docs',
-    component: ComponentCreator('/react-canvas-editor/docs', 'd63'),
+    component: ComponentCreator('/react-canvas-editor/docs', '223'),
     routes: [
       {
         path: '/react-canvas-editor/docs/category/contribution-guide',
@@ -170,7 +170,7 @@ export default [
   },
   {
     path: '/react-canvas-editor/',
-    component: ComponentCreator('/react-canvas-editor/', '600'),
+    component: ComponentCreator('/react-canvas-editor/', '1b1'),
     exact: true
   },
   {
