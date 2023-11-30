@@ -79,12 +79,12 @@
     />
     <link
       rel="preload"
-      href="/react-canvas-editor/assets/js/runtime~main.f8201c8d.js"
+      href="/react-canvas-editor/assets/js/runtime~main.5682530d.js"
       as="script"
     />
     <link
       rel="preload"
-      href="/react-canvas-editor/assets/js/main.546adc06.js"
+      href="/react-canvas-editor/assets/js/main.b8425199.js"
       as="script"
     />
   </head>
@@ -461,6 +461,30 @@
                             <th>HTML Editor</th>
                           </tr>
                           <tr>
+                            <td>Rendering</td>
+                            <td>
+                              Canvas provides low-level APIs and immediate mode
+                              rendering, enabling precise syncing of each stroke
+                              vector across iframes to achieve real-time
+                              collaborative effect.
+                            </td>
+                            <td>
+                              HTML updates are more granular and complex to
+                              synchronize.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Complexity</td>
+                            <td>
+                              Canvas data (stroke vectors) are simple to
+                              reproduce identically on separate canvases.
+                            </td>
+                            <td>
+                              HTML editor reconciliation is harder across
+                              multiple complex nested elements.
+                            </td>
+                          </tr>
+                          <tr>
                             <td>Dynamic Content and Interactivity</td>
                             <td>
                               Canvas is particularly powerful for creating
@@ -497,24 +521,6 @@
                             </td>
                           </tr>
                           <tr>
-                            <td>Performance</td>
-                            <td>
-                              Canvas can be more performant for certain
-                              graphics-intensive tasks, especially when dealing
-                              with a large number of elements or complex
-                              animations. This is because it allows for direct
-                              manipulation of pixels and can leverage hardware
-                              acceleration.
-                            </td>
-                            <td>
-                              HTML editors might introduce some overhead, as
-                              they often generate complex HTML and CSS
-                              structures to represent the content, which can
-                              impact performance, especially in
-                              resource-intensive applications.
-                            </td>
-                          </tr>
-                          <tr>
                             <td>Programmatic Control</td>
                             <td>
                               Canvas is manipulated through JavaScript, giving
@@ -533,19 +539,22 @@
                           <tr>
                             <td>Performance</td>
                             <td>
-                              Canvas can be more performant for certain
-                              graphics-intensive tasks, especially when dealing
-                              with a large number of elements or complex
-                              animations. This is because it allows for direct
-                              manipulation of pixels and can leverage hardware
-                              acceleration.
+                              Drawing on canvas is very lightweight allowing
+                              high frame rate interactive applications ideal for
+                              fast collaboration. Canvas can be more performant
+                              for certain graphics-intensive tasks, especially
+                              when dealing with a large number of elements or
+                              complex animations. This is because it allows for
+                              direct manipulation of pixels and can leverage
+                              hardware acceleration.
                             </td>
                             <td>
-                              HTML editors might introduce some overhead, as
-                              they often generate complex HTML and CSS
-                              structures to represent the content, which can
-                              impact performance, especially in
-                              resource-intensive applications.
+                              HTML editors have slower change rendering. HTML
+                              editors might introduce some overhead, as they
+                              often generate complex HTML and CSS structures to
+                              represent the content, which can impact
+                              performance, especially in resource-intensive
+                              applications.
                             </td>
                           </tr>
                           <tr>
@@ -567,6 +576,92 @@
                         </table>
                         <h2
                           class="anchor anchorWithStickyNavbar_LWe7"
+                          id="advantages-of-canvas-editor"
+                        >
+                          Advantages of Canvas Editor<a
+                            href="#advantages-of-canvas-editor"
+                            class="hash-link"
+                            aria-label="Direct link to Advantages of Canvas Editor"
+                            title="Direct link to Advantages of Canvas Editor"
+                            >​</a
+                          >
+                        </h2>
+                        <ul>
+                          <li>
+                            <p>
+                              <strong>Features</strong>: Canvas gives
+                              flexibility to build custom drawing and painting
+                              features beyond basic text/images offered in HTML
+                              editors. More creative tools and possibilities.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Real-time synchronization</strong>: Canvas
+                              state is very fast and lightweight to synchronize
+                              across users, enabling smoother real-time
+                              co-editing over sluggish HTML updates.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Responsiveness</strong>: Drawing and
+                              updating canvas elements has less overhead for
+                              snappier feedback compared to DOM manipulation.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Graphical freedom</strong>: Canvas gives
+                              greater pixel-level control for images, drawings,
+                              diagrams beyond basic image insertion.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Customizable UI</strong>: Canvas lets you
+                              build custom menus, toolbars, and inputs tailored
+                              to doc editing vs generic HTML editor chrome.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Expressiveness</strong>: New interactive
+                              content like animations, timelines, stylized text
+                              etc can enrich documents more readily in canvas.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Offline handling</strong>: Queue canvas
+                              operations while offline similar to input
+                              buffering for better disconnected support.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Cross-device testing</strong>: Canvas
+                              provides very consistent rendering across
+                              platforms, great for cross-device doc editing.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Accessibility</strong>: Canvas graphics
+                              can programmatically expose required semantics for
+                              screen-readers on drawings.
+                            </p>
+                          </li>
+                          <li>
+                            <p>
+                              <strong>Undo infrastructure</strong>: Canvas edits
+                              are simple to capture for smoother undo/redo than
+                              HTML parsing.
+                            </p>
+                          </li>
+                        </ul>
+                        <h2
+                          class="anchor anchorWithStickyNavbar_LWe7"
                           id="how-canvas-editor-perforance-is-better-than-html-editor"
                         >
                           How Canvas Editor Perforance is better than HTML
@@ -581,56 +676,64 @@
                         <ul>
                           <li>
                             <p>
-                              Efficient Rendering: Canvas provides a low-level
-                              drawing API, allowing developers to directly
-                              manipulate pixels. This fine-grained control can
-                              lead to more efficient rendering, especially when
-                              dealing with complex graphics or animations.
+                              <strong>Efficient Rendering</strong>: Canvas
+                              provides a low-level drawing API, allowing
+                              developers to directly manipulate pixels. This
+                              fine-grained control can lead to more efficient
+                              rendering, especially when dealing with complex
+                              graphics or animations.
                             </p>
                           </li>
                           <li>
                             <p>
-                              Hardware Acceleration: Modern browsers often
-                              utilize hardware acceleration for canvas
-                              rendering. This means that certain operations,
-                              such as drawing on a canvas, can be offloaded to
-                              the computer&#x27;s GPU (Graphics Processing
-                              Unit), leading to faster and smoother performance.
+                              <strong>Hardware Acceleration</strong>: Modern
+                              browsers often utilize hardware acceleration for
+                              canvas rendering. This means that certain
+                              operations, such as drawing on a canvas, can be
+                              offloaded to the computer&#x27;s GPU (Graphics
+                              Processing Unit), leading to faster and smoother
+                              performance.
                             </p>
                           </li>
                           <li>
                             <p>
-                              Optimized for Custom Graphics: When creating
-                              custom graphics or interactive visualizations,
-                              canvas allows developers to optimize rendering
-                              based on the specific requirements of the
-                              application. This can result in better performance
-                              compared to a more generic approach used by HTML
-                              editors.
+                              <strong>Optimized for Custom Graphics</strong>:
+                              When creating custom graphics or interactive
+                              visualizations, canvas allows developers to
+                              optimize rendering based on the specific
+                              requirements of the application. This can result
+                              in better performance compared to a more generic
+                              approach used by HTML editors.
                             </p>
                           </li>
                           <li>
                             <p>
-                              Direct Manipulation of Pixels: With canvas, you
-                              have direct control over each pixel on the canvas.
-                              This level of control can be crucial for certain
-                              performance-intensive applications, such as games
-                              or simulations, where fine-grained adjustments are
-                              necessary.
+                              <strong>Direct Manipulation of Pixels</strong>:
+                              With canvas, you have direct control over each
+                              pixel on the canvas. This level of control can be
+                              crucial for certain performance-intensive
+                              applications, such as games or simulations, where
+                              fine-grained adjustments are necessary.
                             </p>
                           </li>
                           <li>
                             <p>
-                              No Excess Markup: HTML editors often generate a
-                              significant amount of HTML markup to achieve a
-                              visually rich design. This additional markup can
-                              lead to increased page load times and, in some
-                              cases, impact performance. In contrast, canvas
-                              typically requires less code, reducing the overall
-                              file size and enhancing performance.
+                              <strong>No Excess Markup</strong>: HTML editors
+                              often generate a significant amount of HTML markup
+                              to achieve a visually rich design. This additional
+                              markup can lead to increased page load times and,
+                              in some cases, impact performance. In contrast,
+                              canvas typically requires less code, reducing the
+                              overall file size and enhancing performance.
                             </p>
                           </li>
                         </ul>
+                        <p>
+                          Canvas provides a more customizable, responsive and
+                          consistent foundation for building performant
+                          real-time collaborative rich text editors like Google
+                          Docs.
+                        </p>
                         <h2
                           class="anchor anchorWithStickyNavbar_LWe7"
                           id="conclusion"
@@ -648,6 +751,19 @@
                           benefits of using canvas editor are most evident in
                           scenarios where a high level of customization and
                           dynamic graphics are required.
+                        </p>
+                        <p>
+                          The performance of a Canvas editor is greatly
+                          influenced by the precise optimizations implemented by
+                          software developers. Fine-tuning rendering processes,
+                          minimizing redundant computations, and leveraging the
+                          inherent capabilities of web browsers collectively
+                          contribute to achieving optimal performance for a
+                          canvas editor. In essence, the role of developers in
+                          crafting a high-performance canvas editor is pivotal,
+                          as their expertise directly impacts the fluidity and
+                          efficiency of the graphical editing experience on the
+                          web.
                         </p>
                         <p>
                           Ultimately, the choice between canvas and a HTML
@@ -695,6 +811,13 @@
                       </li>
                       <li>
                         <a
+                          href="#advantages-of-canvas-editor"
+                          class="table-of-contents__link toc-highlight"
+                          >Advantages of Canvas Editor</a
+                        >
+                      </li>
+                      <li>
+                        <a
                           href="#how-canvas-editor-perforance-is-better-than-html-editor"
                           class="table-of-contents__link toc-highlight"
                           >How Canvas Editor Perforance is better than HTML
@@ -726,7 +849,7 @@
         </div>
       </footer>
     </div>
-    <script src="/react-canvas-editor/assets/js/runtime~main.f8201c8d.js"></script>
-    <script src="/react-canvas-editor/assets/js/main.546adc06.js"></script>
+    <script src="/react-canvas-editor/assets/js/runtime~main.5682530d.js"></script>
+    <script src="/react-canvas-editor/assets/js/main.b8425199.js"></script>
   </body>
 </html>
