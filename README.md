@@ -27,7 +27,17 @@ The `@mindfiredigital/react-canvas-editor` is a tool that allows developers to i
 
 The canvas element in HTML serves as a versatile space for drawing graphics using JavaScript, enabling the creation of dynamic, interactive, and visually engaging content on web pages. Within this context, a Canvas editor emerges as a powerful tool or application that harnesses the capabilities of the canvas element. This editor facilitates the creation, editing, and manipulation of graphics or drawings directly within a web browser.
 
-The performance of a Canvas editor is greatly influenced by the precise optimizations implemented by software developers. Fine-tuning rendering processes, minimizing redundant computations, and leveraging the inherent capabilities of web browsers collectively contribute to achieving optimal performance for a canvas editor. In essence, the role of developers in crafting a high-performance canvas editor is pivotal, as their expertise directly impacts the fluidity and efficiency of the graphical editing experience on the web.
+- **Fine-Grained Control**: Fine-Grained Control: Total freedom to manipulate pixels, dictate rendering, and create custom elements and interactivity beyond what HTML offers out of the box.
+
+- **Scalable Performance**: Blazing fast rendering and lightweight data synchronization fueled by the raw power of canvas APIs rather than heavy HTML DOM reconciliation.
+
+- **Easy Multiplayer Integration**: Canvas state using simple coordinate vectors flows seamlessly cross-device enabling effortless real-time collaborative editing at scale.
+
+- **Unleashed Creativity**: No limits enforced by page markup frees imagination to run wild. Build beyond editor chrome right on the infinite canvas with total creative liberty.
+
+- **Future Facing Setup**: Canvas as a technology continues rapid innovation, unlike stale HTML editors. What’s created today on canvas can easily harness tomorrow’s new features.
+
+- **Skill Transferability**: Canvas skills open doors across cutting edge domains like metaverse experiences, game dev, 3D, generative art, and other growth areas.
 
 To know more you can check the link
 [Canvas vs HTML Editor](https://mindfiredigital.github.io/react-canvas-editor/docs/Why-we-use-canvas/)
