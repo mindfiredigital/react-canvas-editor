@@ -249,9 +249,9 @@
     "303": {
       "js": [
         {
-          "file": "assets/js/runtime~main.67c8b1b3.js",
-          "hash": "1c935d77e0f9b225",
-          "publicPath": "/react-canvas-editor/assets/js/runtime~main.67c8b1b3.js"
+          "file": "assets/js/runtime~main.5682530d.js",
+          "hash": "eaf62a753ebc9932",
+          "publicPath": "/react-canvas-editor/assets/js/runtime~main.5682530d.js"
         }
       ]
     },
@@ -267,9 +267,9 @@
     "408": {
       "js": [
         {
-          "file": "assets/js/29fc1671.f32b57bb.js",
-          "hash": "7891c6b3f4b55aa3",
-          "publicPath": "/react-canvas-editor/assets/js/29fc1671.f32b57bb.js"
+          "file": "assets/js/29fc1671.b3382d83.js",
+          "hash": "9e5056e246e5c49b",
+          "publicPath": "/react-canvas-editor/assets/js/29fc1671.b3382d83.js"
         }
       ]
     },
