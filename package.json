@@ -104,6 +104,7 @@
     "@mindfiredigital/canvas-editor": "^1.0.5",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
+    "@r2wc/react-to-web-component": "^2.0.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@storybook/preset-scss": "^1.0.3",
     "axios": "^1.4.0",
