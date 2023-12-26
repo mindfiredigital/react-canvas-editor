@@ -6,4 +6,4 @@ export declare const canvasClass: {
 };
 export declare function handleChange(data: any): void;
 export declare function handleSelectedText(text: any): void;
-export declare const value = "Hello world";
+export declare const defaultText = "Hello world";

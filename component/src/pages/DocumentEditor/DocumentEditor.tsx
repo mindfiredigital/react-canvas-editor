@@ -4,6 +4,14 @@ import EditorToolbar from "../../components/EditorToolbar/EditorToolbar";
 import EditorFooter from "../../components/EditorFooter/EditorFooter";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import {
+  // toolbarItem
+  toolbarClass,
+  canvasClass,
+  handleChange,
+  handleSelectedText,
+  defaultText,
+} from "../../utils/document-editor-props";
 
 type DocumentEditorProps = {
   toolbar?: Record<string, any>;
@@ -15,12 +23,12 @@ type DocumentEditorProps = {
 };
 
 const DocumentEditor: FC<DocumentEditorProps> = ({
-  toolbar,
-  toolbar_class,
-  canvas_class,
-  on_change,
-  on_select,
-  value,
+  toolbar /*= toolbarItem*/,
+  toolbar_class = toolbarClass,
+  canvas_class = canvasClass,
+  on_change = handleChange,
+  on_select = handleSelectedText,
+  value = defaultText,
 }) => {
   // const defaultToolbarItem = {
   //   bold: true,
@@ -42,7 +50,7 @@ const DocumentEditor: FC<DocumentEditorProps> = ({
       display: "flex",
       flexDirection: "row",
       minHeight: "40px",
-      justifyContent: "left",
+      justifyContent: "center",
       alignItems: "center",
     },
   };
