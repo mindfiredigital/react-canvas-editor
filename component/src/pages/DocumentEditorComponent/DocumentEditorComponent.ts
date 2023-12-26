@@ -2,7 +2,7 @@ import React from "react";
 import r2wc from "@r2wc/react-to-web-component";
 import DocumentEditor from "../DocumentEditor";
 import {
-  value,
+  defaultText,
   toolbarClass,
   canvasClass,
   handleChange,
@@ -23,7 +23,7 @@ const WebApp = r2wc(DocumentEditor, {
 customElements.define("web-doc", WebApp);
 
 const DocumentEditorComponent = (props: {
-  text?: string | undefined;
+  value?: string | undefined;
   toolbar_Item?: object | undefined;
   toolbar_Class?: object | undefined;
   canvas_Class?: object | undefined;
@@ -43,7 +43,7 @@ const DocumentEditorComponent = (props: {
 
   setTimeout(() => {
     document.getElementById("de").innerHTML = `<web-doc 
-      value='${props ? (props.text ? props.text : value) : value}'
+      value='${props ? (props.value ? props.value : defaultText) : defaultText}'
       toolbar_class='${
         props
           ? props.toolbar_Class
@@ -63,7 +63,5 @@ const DocumentEditorComponent = (props: {
     />`;
     // toolbar='${props && props.toolbar_Item && JSON.stringify(props.toolbar_Item)}'
   }, 1000);
-
-  return <></>;
 };
 export default DocumentEditorComponent;

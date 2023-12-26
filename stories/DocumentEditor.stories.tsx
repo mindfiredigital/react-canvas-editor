@@ -1,12 +1,12 @@
 import { DocumentEditorComponent, DocumentEditor } from "../component";
 import React from "react";
 import {
-  toolbarItem,
+  // toolbarItem,
   canvasClass,
   handleChange,
   handleSelectedText,
   toolbarClass,
-  value,
+  defaultText,
 } from "../component/src/utils/document-editor-props";
 
 export default {
@@ -16,11 +16,21 @@ export default {
 
 DocumentEditorComponent({
   // toolbar_Item: toolbarItem,
-  text: value,
+  value: defaultText,
   toolbar_Class: toolbarClass,
   canvas_Class: canvasClass,
   handle_Change: handleChange,
   handle_SelectedText: handleSelectedText,
 });
 
-export const test = () => <div id='de'></div>;
+export const test = () => (
+  <div id='de'></div>
+  /* <DocumentEditor
+    // toolbar={toolbarItem}
+    toolbar_class={toolbarClass}
+    canvas_class={canvasClass}
+    on_change={handleChange}
+    on_select={handleSelectedText}
+    value={defaultText}
+  />*/
+);

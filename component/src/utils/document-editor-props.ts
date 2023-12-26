@@ -78,4 +78,4 @@ export function handleSelectedText(text) {
   console.log(`select->, ${text}`);
 }
 
-export const value = "Hello world";
+export const defaultText = "Hello world";
