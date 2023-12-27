@@ -42,7 +42,7 @@ const DocumentEditorComponent = (props: {
     : handleChange;
 
   setTimeout(() => {
-    document.getElementById("de").innerHTML = `<web-doc 
+    document.getElementById("document-editor").innerHTML = `<web-doc 
       value='${props ? (props.value ? props.value : defaultText) : defaultText}'
       toolbar_class='${
         props

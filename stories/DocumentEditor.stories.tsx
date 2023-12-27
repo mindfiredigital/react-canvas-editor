@@ -24,7 +24,7 @@ DocumentEditorComponent({
 });
 
 export const test = () => (
-  <div id='de'></div>
+  <div id='document-editor'></div>
   /* <DocumentEditor
     // toolbar={toolbarItem}
     toolbar_class={toolbarClass}
