@@ -1,4 +1,4 @@
-import { DocumentEditorComponent, DocumentEditor } from "../component";
+import { DocumentEditorWebComponent, DocumentEditor } from "../component";
 import React from "react";
 import {
   // toolbarItem,
@@ -14,7 +14,7 @@ export default {
   title: "DocumentEditor",
 };
 
-DocumentEditorComponent({
+DocumentEditorWebComponent({
   // toolbar_Item: toolbarItem,
   value: defaultText,
   toolbar_Class: toolbarClass,

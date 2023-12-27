@@ -22,7 +22,7 @@ const WebApp = r2wc(DocumentEditor, {
 
 customElements.define("web-doc", WebApp);
 
-const DocumentEditorComponent = (props: {
+const DocumentEditorWebComponent = (props: {
   value?: string | undefined;
   toolbar_Item?: object | undefined;
   toolbar_Class?: object | undefined;
@@ -64,4 +64,4 @@ const DocumentEditorComponent = (props: {
     // toolbar='${props && props.toolbar_Item && JSON.stringify(props.toolbar_Item)}'
   }, 1000);
 };
-export default DocumentEditorComponent;
+export default DocumentEditorWebComponent;

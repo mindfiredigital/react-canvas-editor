@@ -1,2 +1,2 @@
 export { default as DocumentEditor } from "./DocumentEditor";
-export { default as DocumentEditorComponent } from "./DocumentEditorComponent";
+export { default as DocumentEditorWebComponent } from "./DocumentEditorWebComponent";
