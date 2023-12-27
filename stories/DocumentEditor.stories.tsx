@@ -15,12 +15,12 @@ export default {
 };
 
 DocumentEditorWebComponent({
-  // toolbar_Item: toolbarItem,
+  // toolbar: toolbarItem,
+  toolbar_class: toolbarClass,
+  canvas_class: canvasClass,
+  on_change: handleChange,
+  on_select: handleSelectedText,
   value: defaultText,
-  toolbar_Class: toolbarClass,
-  canvas_Class: canvasClass,
-  handle_Change: handleChange,
-  handle_SelectedText: handleSelectedText,
 });
 
 export const test = () => (

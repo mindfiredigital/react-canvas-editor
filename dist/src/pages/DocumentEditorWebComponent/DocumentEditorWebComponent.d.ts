@@ -1,9 +1,9 @@
 declare const DocumentEditorWebComponent: (props: {
+    toolbar?: object | undefined;
+    toolbar_class?: object | undefined;
+    canvas_class?: object | undefined;
+    on_change?: Function | undefined;
+    on_select?: Function | undefined;
     value?: string | undefined;
-    toolbar_Item?: object | undefined;
-    toolbar_Class?: object | undefined;
-    canvas_Class?: object | undefined;
-    handle_Change?: Function | undefined;
-    handle_SelectedText?: Function | undefined;
 }) => void;
 export default DocumentEditorWebComponent;
