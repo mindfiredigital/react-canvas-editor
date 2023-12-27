@@ -1,4 +1,4 @@
-import { DocumentEditorComponent, DocumentEditor } from "../component";
+import { DocumentEditorWebComponent, DocumentEditor } from "../component";
 import React from "react";
 import {
   // toolbarItem,
@@ -14,17 +14,17 @@ export default {
   title: "DocumentEditor",
 };
 
-DocumentEditorComponent({
-  // toolbar_Item: toolbarItem,
+DocumentEditorWebComponent({
+  // toolbar: toolbarItem,
+  toolbar_class: toolbarClass,
+  canvas_class: canvasClass,
+  on_change: handleChange,
+  on_select: handleSelectedText,
   value: defaultText,
-  toolbar_Class: toolbarClass,
-  canvas_Class: canvasClass,
-  handle_Change: handleChange,
-  handle_SelectedText: handleSelectedText,
 });
 
 export const test = () => (
-  <div id='de'></div>
+  <div id='document-editor'></div>
   /* <DocumentEditor
     // toolbar={toolbarItem}
     toolbar_class={toolbarClass}

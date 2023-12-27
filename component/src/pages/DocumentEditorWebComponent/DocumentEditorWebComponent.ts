@@ -22,39 +22,39 @@ const WebApp = r2wc(DocumentEditor, {
 
 customElements.define("web-doc", WebApp);
 
-const DocumentEditorComponent = (props: {
+const DocumentEditorWebComponent = (props: {
+  toolbar?: object | undefined;
+  toolbar_class?: object | undefined;
+  canvas_class?: object | undefined;
+  on_change?: Function | undefined;
+  on_select?: Function | undefined;
   value?: string | undefined;
-  toolbar_Item?: object | undefined;
-  toolbar_Class?: object | undefined;
-  canvas_Class?: object | undefined;
-  handle_Change?: Function | undefined;
-  handle_SelectedText?: Function | undefined;
 }) => {
   window.handleChange = props
-    ? props.handle_Change
-      ? props.handle_Change
+    ? props.on_change
+      ? props.on_change
       : handleChange
     : handleChange;
   window.handleSelectedText = props
-    ? props.handle_SelectedText
-      ? props.handle_SelectedText
+    ? props.on_select
+      ? props.on_select
       : handleSelectedText
     : handleChange;
 
   setTimeout(() => {
-    document.getElementById("de").innerHTML = `<web-doc 
+    document.getElementById("document-editor").innerHTML = `<web-doc 
       value='${props ? (props.value ? props.value : defaultText) : defaultText}'
       toolbar_class='${
         props
-          ? props.toolbar_Class
-            ? JSON.stringify(props.toolbar_Class)
+          ? props.toolbar_class
+            ? JSON.stringify(props.toolbar_class)
             : JSON.stringify(toolbarClass)
           : JSON.stringify(toolbarClass)
       }' 
       canvas_class='${
         props
-          ? props.canvas_Class
-            ? JSON.stringify(props.canvas_Class)
+          ? props.canvas_class
+            ? JSON.stringify(props.canvas_class)
             : JSON.stringify(canvasClass)
           : JSON.stringify(canvasClass)
       }'
@@ -64,4 +64,4 @@ const DocumentEditorComponent = (props: {
     // toolbar='${props && props.toolbar_Item && JSON.stringify(props.toolbar_Item)}'
   }, 1000);
 };
-export default DocumentEditorComponent;
+export default DocumentEditorWebComponent;
