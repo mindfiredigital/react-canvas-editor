@@ -132,9 +132,9 @@
     "53": {
       "js": [
         {
-          "file": "assets/js/935f2afb.fedb31a2.js",
-          "hash": "45f67b6c6db9a42b",
-          "publicPath": "/react-canvas-editor/assets/js/935f2afb.fedb31a2.js"
+          "file": "assets/js/935f2afb.6eedc894.js",
+          "hash": "917a046bb26f365c",
+          "publicPath": "/react-canvas-editor/assets/js/935f2afb.6eedc894.js"
         }
       ]
     },
@@ -177,9 +177,9 @@
     "122": {
       "js": [
         {
-          "file": "assets/js/bed35dad.871afd3d.js",
-          "hash": "a67b0df57474fab8",
-          "publicPath": "/react-canvas-editor/assets/js/bed35dad.871afd3d.js"
+          "file": "assets/js/bed35dad.daac2264.js",
+          "hash": "b4e3ee9627a33987",
+          "publicPath": "/react-canvas-editor/assets/js/bed35dad.daac2264.js"
         }
       ]
     },
@@ -249,9 +249,9 @@
     "303": {
       "js": [
         {
-          "file": "assets/js/runtime~main.6f02bb77.js",
-          "hash": "d56541bd5b2d42ca",
-          "publicPath": "/react-canvas-editor/assets/js/runtime~main.6f02bb77.js"
+          "file": "assets/js/runtime~main.eca10291.js",
+          "hash": "ed39e7e55ef75e05",
+          "publicPath": "/react-canvas-editor/assets/js/runtime~main.eca10291.js"
         }
       ]
     },
@@ -339,9 +339,9 @@
     "746": {
       "js": [
         {
-          "file": "assets/js/90d9359e.7474be60.js",
-          "hash": "71f0eaba1675ee9c",
-          "publicPath": "/react-canvas-editor/assets/js/90d9359e.7474be60.js"
+          "file": "assets/js/90d9359e.9c4ecdab.js",
+          "hash": "e689c2fc7a3d7c21",
+          "publicPath": "/react-canvas-editor/assets/js/90d9359e.9c4ecdab.js"
         }
       ]
     },
@@ -402,9 +402,9 @@
     "934": {
       "js": [
         {
-          "file": "assets/js/e5701b7c.ee6e0018.js",
-          "hash": "f32c13549b26e633",
-          "publicPath": "/react-canvas-editor/assets/js/e5701b7c.ee6e0018.js"
+          "file": "assets/js/e5701b7c.2b3faf9a.js",
+          "hash": "f8421ff0e9aaa4d1",
+          "publicPath": "/react-canvas-editor/assets/js/e5701b7c.2b3faf9a.js"
         }
       ]
     },

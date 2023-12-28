@@ -183,7 +183,7 @@
     "references/dom-event": {
       "id": "references/dom-event",
       "title": "DOM Events",
-      "description": "| Event      |                 |",
+      "description": "| Event         |                                                                                |",
       "sidebar": "tutorialSidebar"
     },
     "references/toolbar-option": {

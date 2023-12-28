@@ -36,13 +36,16 @@ Mastering the handling of DOM events is crucial for effective React development.
 
 - **Web Component for JavaScript**
 
-  ```javascript
-  // In you html file add following code in a body tag where you want to use react canvas editor
+  ```html
+  <!-- In you html file add following code in a body tag where you want to use react canvas editor -->
   <body>
-    <div id='document-editor'></div>
-    <script type='module' src='/main.js'></script>
-  </body>;
+    <div id="document-editor"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+  ;
+  ```
 
+  ```javascript
   // In main.js file(i.e. used as a script in html file) add the following code
   const handleChange = (data) => {
     console.log("test ->", data);
@@ -83,13 +86,16 @@ Mastering the handling of DOM events is crucial for effective React development.
 
 - **Web Component for JavaScript**
 
-  ```javascript
-  // In you html file add following code in a body tag where you want to use react canvas editor
+  ```html
+  <!-- In you html file add following code in a body tag where you want to use react canvas editor -->
   <body>
-    <div id='document-editor'></div>
-    <script type='module' src='/main.js'></script>
-  </body>;
+    <div id="document-editor"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+  ;
+  ```
 
+  ```javascript
   // In main.js file(i.e. used as a script in html file) add the following code
   const handleSelectedText = (text) => {
     console.log(text);
