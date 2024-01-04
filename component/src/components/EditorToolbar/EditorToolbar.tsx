@@ -50,9 +50,10 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
   const [formats, setFormats] = useState<string[]>([]);
 
   const selectedItemStyle = {
-    color: _props.toolbarClass.selectedToolbarItemColor
-      ? _props.toolbarClass.selectedToolbarItemColor
-      : "#1a73e8",
+    color:
+      _props?.toolbarClass?.item?.selectedToolbarItemColor?.color !== undefined
+        ? _props?.toolbarClass?.item?.selectedToolbarItemColor?.color
+        : "#1a73e8",
   };
 
   const addFormat = (format) => {

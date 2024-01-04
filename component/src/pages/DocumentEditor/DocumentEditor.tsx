@@ -1,19 +1,35 @@
-import React, { useRef } from "react";
+import React, { FC, useRef } from "react";
 import CanvasEditor from "../../components/Editor/CanvasEditor";
 import EditorToolbar from "../../components/EditorToolbar/EditorToolbar";
 import EditorFooter from "../../components/EditorFooter/EditorFooter";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import {
+  // toolbarItem
+  toolbarClass,
+  canvasClass,
+  handleChange,
+  handleSelectedText,
+  defaultText,
+} from "../../utils/document-editor-props";
 
-const DocumentEditor = (
-  { toolbar,
-    toolbarClass,
-    canvasClass,
-    onChange,
-    onSelect,
-    value }: any
-) => {
+type DocumentEditorProps = {
+  toolbar?: Record<string, any>;
+  toolbar_class?: Record<string, any>;
+  canvas_class?: Record<string, any>;
+  on_change?: (data: string) => any;
+  on_select?: (text: string) => any;
+  value?: string;
+};
 
+const DocumentEditor: FC<DocumentEditorProps> = ({
+  toolbar /*= toolbarItem*/,
+  toolbar_class = toolbarClass,
+  canvas_class = canvasClass,
+  on_change = handleChange,
+  on_select = handleSelectedText,
+  value = defaultText,
+}) => {
   // const defaultToolbarItem = {
   //   bold: true,
   //   italic: true,
@@ -34,29 +50,48 @@ const DocumentEditor = (
       display: "flex",
       flexDirection: "row",
       minHeight: "40px",
-      justifyContent: "left",
-      alignItems: "center"
-    }
-  }
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  };
 
   // toolbar = toolbar && Object.keys(toolbar).length ? toolbar : defaultToolbarItem;
 
-  toolbarClass = toolbarClass && Object.keys(toolbarClass).length ? {
-    container: { ...defaultToolbarClass.container, ...toolbarClass?.container },
-    primaryToolbar: { ...defaultToolbarClass.primaryToolbar, ...toolbarClass?.primaryToolbar },
-    item: { ...toolbarClass?.item }
-  } : defaultToolbarClass;
+  const toolbarClass =
+    toolbar_class && Object.keys(toolbar_class).length
+      ? {
+          container: {
+            ...defaultToolbarClass.container,
+            ...toolbar_class?.container,
+          },
+          primaryToolbar: {
+            ...defaultToolbarClass.primaryToolbar,
+            ...toolbar_class?.primaryToolbar,
+          },
+          item: { ...toolbar_class?.item },
+        }
+      : defaultToolbarClass;
 
   const canvasRef = useRef(null);
   return (
     <Provider store={store}>
       <>
-        <EditorToolbar ref={canvasRef} toolbar={toolbar} toolbarClass={toolbarClass} />
-        <CanvasEditor ref={canvasRef} style={canvasClass} onChange={onChange} onSelect={onSelect} data={value} />
+        <EditorToolbar
+          ref={canvasRef}
+          toolbar={toolbar}
+          toolbarClass={toolbarClass}
+        />
+        <CanvasEditor
+          ref={canvasRef}
+          style={canvas_class}
+          onChange={on_change}
+          onSelect={on_select}
+          data={value}
+        />
         <EditorFooter />
       </>
     </Provider>
   );
-}
+};
 
 export default DocumentEditor;

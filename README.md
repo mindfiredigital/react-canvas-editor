@@ -86,11 +86,20 @@ npm install @mindfiredigital/react-canvas-editor
 
 - **Initialization**: Initialize the canvas document editor in your project, specifying the container element where the editor will be embedded.
 
+<table>
+  <tr>
+    <th>React Component</th>
+    <th>Web Component for React</th>
+    <th>Web Component for JavaScript</th>
+  </tr>
+  <tr>
+  <td>
+
 ```javascript
 import { DocumentEditor } from "@mindfiredigital/react-canvas-editor";
 import React from "react";
 
-export const test = () => {
+export const App = () => {
   const toolbarItem: any = {
     bold: true,
     italic: true,
@@ -111,24 +120,111 @@ export const test = () => {
   return (
     <DocumentEditor
       toolbar={toolbarItem}
-      canvasClass={canvasClass}
-      onChange={handleChange}
-      onSelect={handleSelectedText}
+      on_change={handleChange}
+      on_select={handleSelectedText}
       value='Hello world'
     />
   );
 };
 ```
 
+  </td>
+  <td>
+
+```javascript
+import { DocumentEditorWebComponent } from "@mindfiredigital/react-canvas-editor";
+
+const toolbarItem: any = {
+  bold: true,
+  italic: true,
+  underline: true,
+  undo: true,
+  redo: true,
+  image: true,
+};
+
+const handleChange = (data) => {
+  console.log("test ->", data);
+};
+
+const handleSelectedText = (text) => {
+  console.log(text);
+};
+
+const props = {
+  toolbar:toolbarItem
+  on_change:handleChange
+  on_select:handleSelectedText
+  value:'Hello world'
+};
+
+DocumentEditorWebComponent(props);
+
+export const App = () => <div id='document-editor'></div>;
+```
+
+  </td>
+  <td>
+
+```html
+<!-- In you html file add following code in a body tag where you want to use react canvas editor -->
+<body>
+  <div id="document-editor"></div>
+  <script type="module" src="/main.js"></script>
+</body>
+;
+```
+
+```javascript
+// In main.js file(i.e. used as a script in html file) add the following code
+import { DocumentEditorWebComponent } from "@mindfiredigital/react-canvas-editor";
+
+const toolbarItem = {
+  bold: true,
+  italic: true,
+  underline: true,
+  undo: true,
+  redo: true,
+  image: true,
+};
+
+function handleChange(data) {
+  console.log(`test1 -> ${data}`);
+}
+
+function handleSelectedText(text) {
+  console.log(`select1 ->, ${text}`);
+}
+
+DocumentEditorWebComponent({
+  toolbar:toolbarItem
+  on_change:handleChange
+  on_select:handleSelectedText
+  value:'Hello world'
+});
+```
+
+  </td>
+  </tr>
+</table>
 <br>
 
 - **Customization**: Customize the editor's UI and behavior to match your application's requirements.
+
+<table>
+  <tr>
+    <th>React Component</th>
+    <th>Web Component for React</th>
+    <th>Web Component for JavaScript</th>
+  </tr>
+  <tr>
+  <td>
 
 ```javascript
 import { DocumentEditor } from "@mindfiredigital/react-canvas-editor";
 import React from "react";
 
-export const test = () => {
+export const App = () => {
   const toolbarClass: any = {
     container: {
       // backgroundColor: "red"
@@ -192,15 +288,185 @@ export const test = () => {
     margin: {},
   };
 
-  return <DocumentEditor canvasClass={canvasClass} />;
+  return (
+    <DocumentEditor toolbar_class={toolbarClass} canvas_class={canvasClass} />
+  );
 };
 ```
+
+  </td>
+  <td>
+
+```javascript
+import { DocumentEditorWebComponent } from "@mindfiredigital/react-canvas-editor";
+
+const toolbarClass: any = {
+  container: {
+    // backgroundColor: "red"
+  },
+  primaryToolbar: {
+    justifyContent: "center",
+  },
+  item: {
+    undo: {
+      // border: 'red solid 2px',
+      // background:'yellow'
+    },
+    redo: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    bold: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    italic: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    underline: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    image: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    fontType: {
+      // background:'green'
+    },
+    table: {
+      // background:'green'
+    },
+    fontColor: {
+      // background:'green'
+    },
+    highlight: {
+      // background:'green'
+    },
+    fontSize: {
+      // background:'green'
+    },
+    heading: {
+      // background:'green'
+    },
+    selectedToolbarItemColor: {
+      // color: "#1a73e8",
+    },
+  },
+};
+
+const canvasClass = {
+  editorMain: {
+    // background:'antiquewhite'
+  },
+  margin: {},
+};
+
+const props = {
+  toolbar_class: toolbarClass,
+  canvas_class: canvasClass,
+};
+
+DocumentEditorWebComponent(props);
+
+export const App = () => <div id='document-editor'></div>;
+```
+
+  </td>
+  <td>
+
+```html
+<!-- In you html file add following code in a body tag where you want to use react canvas editor -->
+<body>
+  <div id="document-editor"></div>
+  <script type="module" src="/main.js"></script>
+</body>
+;
+```
+
+```javascript
+// In main.js file(i.e. used as a script in html file) add the following code
+import { DocumentEditorWebComponent } from "@mindfiredigital/react-canvas-editor";
+
+const toolbarClass: any = {
+  container: {
+    // backgroundColor: "red"
+  },
+  primaryToolbar: {
+    justifyContent: "center",
+  },
+  item: {
+    undo: {
+      // border: 'red solid 2px',
+      // background:'yellow'
+    },
+    redo: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    bold: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    italic: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    underline: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    image: {
+      // border: 'black solid 3px',
+      // background:'blue'
+    },
+    fontType: {
+      // background:'green'
+    },
+    table: {
+      // background:'green'
+    },
+    fontColor: {
+      // background:'green'
+    },
+    highlight: {
+      // background:'green'
+    },
+    fontSize: {
+      // background:'green'
+    },
+    heading: {
+      // background:'green'
+    },
+    selectedToolbarItemColor: {
+      // color: "#1a73e8",
+    },
+  },
+};
+
+const canvasClass = {
+  editorMain: {
+    // background:'antiquewhite'
+  },
+  margin: {},
+};
+
+DocumentEditorWebComponent({
+  toolbar_class: toolbarClass,
+  canvas_class: canvasClass,
+});
+```
+
+  </td>
+  </tr>
+</table>
 
 <br>
 
 - **DOM handlers**:
-  - **onChange**: The onchange event occurs when the value is changed.
-  - **onSelect**: The onSelect event occurs when the value is selected.
+  - **on_change**: The onchange event occurs when the value is changed.
+  - **on_select**: The onSelect event occurs when the value is selected.
   - **value**: The value attribute on an tag sets the value of the page.
 
 <br>

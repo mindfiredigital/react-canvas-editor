@@ -21,11 +21,36 @@ const toolbarClass = {
 };
 ```
 
-Now, integrate this style configuration into your `DocumentEditor`:
+Now, integrate this style configuration into your `DocumentEditor` or `DocumentEditorWebComponent`:
 
-```javascript
-return <DocumentEditor toolbarClass={toolbarClass} />;
-```
+- **React Component**
+
+  ```javascript
+  return <DocumentEditor toolbar_class={toolbarClass} />;
+  ```
+
+- **Web Component for React**
+
+  ```javascript
+  DocumentEditorWebComponent({ toolbar_class: toolbarClass });
+
+  return <div id='document-editor'></div>;
+  ```
+
+- **Web Component for JavaScript**
+
+  ```html
+  <!-- In you html file add following code in a body tag where you want to use react canvas editor -->
+  <body>
+    <div id="document-editor"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+  ```
+
+  ```javascript
+  // In main.js file(i.e. used as a script in html file) add the following code
+  DocumentEditorWebComponent({ toolbar_class: toolbarClass });
+  ```
 
 ![Customize toolbar style](../../static/img/customize-toolbar-style.png)
 
@@ -52,11 +77,37 @@ const toolbarClass = {
 };
 ```
 
-Apply these styles to your `DocumentEditor`:
+Apply these styles to your `DocumentEditor` or `DocumentEditorWebComponent`:
 
-```javascript
-return <DocumentEditor toolbarClass={toolbarClass} />;
-```
+- **React Component**
+
+  ```javascript
+  return <DocumentEditor toolbar_class={toolbarClass} />;
+  ```
+
+- **Web Component for React**
+
+  ```javascript
+  DocumentEditorWebComponent({ toolbar_class: toolbarItem });
+
+  export const App = () => <div id='document-editor'></div>;
+  ```
+
+- **Web Component for JavaScript**
+
+  ```html
+  <!-- In you html file add following code in a body tag where you want to use react canvas editor -->
+  <body>
+    <div id="document-editor"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+  ;
+  ```
+
+  ```javascript
+  // In main.js file(i.e. used as a script in html file) add the following code
+  DocumentEditorWebComponent({ toolbar_class: toolbarItem });
+  ```
 
 ![Customize toolbar components style](../../static/img/customize-toolbar-components-style.png)
 
@@ -74,11 +125,37 @@ const toolbarClass = {
 };
 ```
 
-Apply these styles to your `DocumentEditor`:
+Apply these styles to your `DocumentEditor` or `DocumentEditorWebComponent`:
 
-```javascript
-return <DocumentEditor toolbarClass={toolbarClass} />;
-```
+- **React Component**
+
+  ```javascript
+  return <DocumentEditor toolbar_class={toolbarClass} />;
+  ```
+
+- **Web Component for React**
+
+  ```javascript
+  DocumentEditorWebComponent({ toolbar_class: toolbarClass });
+
+  export const App = () => <div id='document-editor'></div>;
+  ```
+
+- **Web Component for JavaScript**
+
+  ```html
+  <!-- In you html file add following code in a body tag where you want to use react canvas editor -->
+  <body>
+    <div id="document-editor"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+  ;
+  ```
+
+  ```javascript
+  // In main.js file(i.e. used as a script in html file) add the following code
+  DocumentEditorWebComponent({ toolbar_class: toolbarClass });
+  ```
 
 ![Customize toolbar selected components color](../../static/img/customize-toolbar-selected-components-color.png)
 
@@ -95,11 +172,37 @@ const canvasClass = {
 };
 ```
 
-Incorporate these styles into your `DocumentEditor`:
+Incorporate these styles into your `DocumentEditor` or `DocumentEditorWebComponent`:
 
-```javascript
-return <DocumentEditor canvasClass={canvasClass} />;
-```
+- **React Component**
+
+  ```javascript
+  return <DocumentEditor canvas_class={canvasClass} />;
+  ```
+
+- **Web Component for React**
+
+  ```javascript
+  DocumentEditorWebComponent({ canvas_class: canvasClass });
+
+  export const App = () => <div id='document-editor'></div>;
+  ```
+
+- **Web Component for JavaScript**
+
+  ```html
+  <!-- In you html file add following code in a body tag where you want to use react canvas editor -->
+  <body>
+    <div id="document-editor"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+  ;
+  ```
+
+  ```javascript
+  // In main.js file(i.e. used as a script in html file) add the following code
+  DocumentEditorWebComponent({ canvas_class: canvasClass });
+  ```
 
 ![Customize editor page](../../static/img/customize-editor-page.png)
 
