@@ -30,7 +30,7 @@ import FontColorButton from "../FontColorButton/FontColorButton";
 import HighlightTextButton from "../HighlightTextButton/HighlightTextButton";
 import FontSizeButton from "../FontSizeButton/FontSizeButton";
 import HeadingButton from "../HeadingButton/HeadingButton";
-import { IRangeStyle } from "@mindfiredigital/canvas-editor/dist/src/editor/interface/Listener";
+import { IRangeStyle } from "@mindfiredigital/canvas-editor/dist/canvas-editor.es";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import ImageUploadButton from "../ImageUploadButton/ImageUploadButton";
 import Divider from "@mui/material/Divider";
@@ -112,7 +112,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.bold,
-                formats.indexOf("Bold") > -1 && selectedItemStyle)
+                  formats.indexOf("Bold") > -1 && selectedItemStyle)
               }
               title='Bold'
               handleClick={() => {
@@ -126,7 +126,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.italic,
-                formats.indexOf("Italic") > -1 && selectedItemStyle)
+                  formats.indexOf("Italic") > -1 && selectedItemStyle)
               }
               title='Italic'
               handleClick={() => {
@@ -140,7 +140,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.underline,
-                formats.indexOf("Underline") > -1 && selectedItemStyle)
+                  formats.indexOf("Underline") > -1 && selectedItemStyle)
               }
               title='Underline'
               handleClick={() => {
@@ -192,7 +192,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.leftAlign,
-                alignment === RowFlex.LEFT && selectedItemStyle)
+                  alignment === RowFlex.LEFT && selectedItemStyle)
               }
               title='Left align'
               handleClick={() => {
@@ -206,7 +206,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.centerAlign,
-                alignment === RowFlex.CENTER && selectedItemStyle)
+                  alignment === RowFlex.CENTER && selectedItemStyle)
               }
               title='Center align'
               handleClick={() => {
@@ -220,7 +220,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.rightAlign,
-                alignment === RowFlex.RIGHT && selectedItemStyle)
+                  alignment === RowFlex.RIGHT && selectedItemStyle)
               }
               title='Right align'
               handleClick={() => {
@@ -234,7 +234,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.justify,
-                alignment === RowFlex.ALIGNMENT && selectedItemStyle)
+                  alignment === RowFlex.ALIGNMENT && selectedItemStyle)
               }
               title='Justify'
               handleClick={() => {
@@ -255,7 +255,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.bulletList,
-                listType === ListType.UL && selectedItemStyle)
+                  listType === ListType.UL && selectedItemStyle)
               }
               title='Bullet list'
               handleClick={() => {
@@ -271,7 +271,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
             <ButtonWrapper
               sx={
                 (_props?.toolbarClass?.item?.numberedList,
-                listType === ListType.OL && selectedItemStyle)
+                  listType === ListType.OL && selectedItemStyle)
               }
               title='Numbered list'
               handleClick={() => {
