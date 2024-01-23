@@ -1,63 +1,31 @@
-export const buttons = [
-  "bold",
-  "strikethrough",
-  "underline",
-  "italic",
-  "|",
-  "superscript",
-  "subscript",
-  "|",
-  "ul",
-  "ol",
-  "outdent",
-  "indent",
-  "|",
-  "align",
-  "hr",
-  "|",
-  "font",
-  "fontsize",
-  "brush",
-  "paragraph",
-  "|",
-  "image",
-  "link",
-  "table",
-  "|",
-  "print",
-];
-
-export enum AI_PROMPTS {
-  REPHRASE = "Improve Writing",
-  CHANGE_TONE = "Change Tone",
-  GRAMMAR = "Fix Grammar",
-}
-
-export enum TONES {
-  PROFESSIONAL = "professional",
-  CASUAL = "casual",
-}
-
-export const AIPromptsOption = [
-  {
-    label: AI_PROMPTS.REPHRASE,
-    value: "rephrase",
-  },
-  {
-    label: AI_PROMPTS.GRAMMAR,
-    value: "grammar",
-  },
-  {
-    label: AI_PROMPTS.CHANGE_TONE,
-    value: "tone",
-    options: [...Object.values(TONES)],
-  },
-];
-
-export enum MSGSEVERITY {
-  SUCCESS = "success",
-  ERROR = "error",
-}
+// export const buttons = [
+//   "bold",
+//   "strikethrough",
+//   "underline",
+//   "italic",
+//   "|",
+//   "superscript",
+//   "subscript",
+//   "|",
+//   "ul",
+//   "ol",
+//   "outdent",
+//   "indent",
+//   "|",
+//   "align",
+//   "hr",
+//   "|",
+//   "font",
+//   "fontsize",
+//   "brush",
+//   "paragraph",
+//   "|",
+//   "image",
+//   "link",
+//   "table",
+//   "|",
+//   "print",
+// ];
 
 export enum FONTS {
   ARIAL = "Arial",
