@@ -8,7 +8,12 @@ import {
   handleChange,
   handleSelectedText,
 } from "../../utils/document-editor-props";
-
+declare global {
+  interface Window {
+    handleChange: any;
+    handleSelectedText: any;
+  }
+}
 const WebApp = r2wc(DocumentEditor, {
   props: {
     value: "string",
@@ -30,33 +35,24 @@ const DocumentEditorWebComponent = (props: {
   on_select?: Function | undefined;
   value?: string | undefined;
 }) => {
-  window.handleChange = props
-    ? props.on_change
-      ? props.on_change
-      : handleChange
-    : handleChange;
-  window.handleSelectedText = props
-    ? props.on_select
-      ? props.on_select
-      : handleSelectedText
-    : handleChange;
+
+  window.handleChange = !props || (props && !props.on_change) ? props.on_change : handleChange;
+  window.handleSelectedText = !props || (props && !props.on_select) ? props.on_select : handleSelectedText;
 
   setTimeout(() => {
     document.getElementById("document-editor").innerHTML = `<web-doc 
       value='${props ? (props.value ? props.value : defaultText) : defaultText}'
-      toolbar_class='${
-        props
-          ? props.toolbar_class
-            ? JSON.stringify(props.toolbar_class)
-            : JSON.stringify(toolbarClass)
+      toolbar_class='${props
+        ? props.toolbar_class
+          ? JSON.stringify(props.toolbar_class)
           : JSON.stringify(toolbarClass)
+        : JSON.stringify(toolbarClass)
       }' 
-      canvas_class='${
-        props
-          ? props.canvas_class
-            ? JSON.stringify(props.canvas_class)
-            : JSON.stringify(canvasClass)
+      canvas_class='${props
+        ? props.canvas_class
+          ? JSON.stringify(props.canvas_class)
           : JSON.stringify(canvasClass)
+        : JSON.stringify(canvasClass)
       }'
       on_change='handleChange'
       on_select='handleSelectedText'
