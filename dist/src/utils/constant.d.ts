@@ -1,26 +1,3 @@
-export declare const buttons: string[];
-export declare enum AI_PROMPTS {
-    REPHRASE = "Improve Writing",
-    CHANGE_TONE = "Change Tone",
-    GRAMMAR = "Fix Grammar"
-}
-export declare enum TONES {
-    PROFESSIONAL = "professional",
-    CASUAL = "casual"
-}
-export declare const AIPromptsOption: ({
-    label: AI_PROMPTS;
-    value: string;
-    options?: undefined;
-} | {
-    label: AI_PROMPTS;
-    value: string;
-    options: TONES[];
-})[];
-export declare enum MSGSEVERITY {
-    SUCCESS = "success",
-    ERROR = "error"
-}
 export declare enum FONTS {
     ARIAL = "Arial",
     CALIBRI = "Calibri",

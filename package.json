@@ -1,6 +1,6 @@
 {
   "name": "@mindfiredigital/react-canvas-editor",
-  "version": "1.0.11",
+  "version": "1.0.8",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -74,7 +74,6 @@
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "release-it": "^16.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -89,7 +88,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mindfiredigital/canvas-editor": "^1.0.5",
+    "@mindfiredigital/canvas-editor": "file:.yalc/@mindfiredigital/canvas-editor",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
     "@r2wc/react-to-web-component": "^2.0.3",
