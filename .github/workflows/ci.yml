@@ -28,11 +28,9 @@ jobs:
       - name: 'Build application'
         run: npm run build-lib
       
-      # - name: 'Restore changes in json'
-      #   run: |
-      #     git restore src/app/projects/assets/upcomingProjects.json
-      #     git restore src/app/projects/assets/projects.json
-      #     git restore package-lock.json
+      - name: 'Restore changes in json'
+        run: |
+          git restore package-lock.json
 
       # - name: 'Fetch branches'
       #   run: git fetch origin
