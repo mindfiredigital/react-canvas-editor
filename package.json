@@ -17,8 +17,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint-staged": "lint-staged",
-    "husky:provide": "npx husky add .husky/pre-commit 'npm run lint-staged'",
-    "release": "release-it"
+    "husky:provide": "npx husky add .husky/pre-commit 'npm run lint-staged'"
   },
   "eslintConfig": {
     "extends": [
@@ -74,7 +73,6 @@
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
-    "release-it": "^16.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^4.0.0",
@@ -103,33 +101,10 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release v${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "public": false
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "infile": "CHANGELOG.md",
-        "preset": {
-          "name": "conventionalcommits",
-          "types": [
-            {
-              "type": "feat",
-              "section": "Features"
-            },
-            {
-              "type": "fix",
-              "section": "Bug Fixes"
-            }
-          ]
-        }
-      }
-    }
+  "release": {
+    "repositoryUrl": "https://github.com/mindfiredigital/react-canvas-editor.git",
+    "branches": [
+      "feature/issue-49"
+    ]
   }
 }
