@@ -10,17 +10,3 @@ export const debounce = (cb: any, wait: number) => {
     }, wait);
   };
 };
-
-export const formatDate = (param: number | string) => {
-  const date = new Date(param);
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    // hour: "numeric",
-    // minute: "numeric",
-    // hour12: true, // Set to true for 12-hour format with AM/PM
-  };
-
-  return date.toLocaleString("en-US", options).replace("at", "");
-};

@@ -11,8 +11,13 @@
     "moduleResolution": "Node",
     "declaration": true,
     "declarationDir": "dist"
-
   },
-  "include": ["component","./component/src/declaration.d.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "component",
+    "./component/src/declaration.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
