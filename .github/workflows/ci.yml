@@ -1,0 +1,88 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: '@mindfiredigital/react-canvas-editor'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: read
+    steps:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 'Install dependencies'
+        run: npm install
+
+      - name: 'Build application'
+        run: npm run build-lib
+      
+      - name: 'Restore changes in json'
+        run: |
+          git restore package-lock.json
+
+      # - name: 'Fetch branches'
+      #   run: git fetch origin
+      
+      - name: 'Set Git user name and email'
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      # - name: 'Copy build artifacts to gh-pages branch'
+      #   run: |
+      #     mkdir /tmp/temp-directory
+      #     shopt -s dotglob
+      #     cp -r build/* /tmp/temp-directory/
+      #     shopt -u dotglob
+      #     git checkout gh-pages
+      #     rm -rf *
+      #     rm -rf .nojekyll
+      #     shopt -s dotglob
+      #     cp -r /tmp/temp-directory/* .
+      #     shopt -u dotglob
+      #     git add . -f 
+      #     git commit -m "Copy build artifacts from main to gh-pages branch"
+
+      # - name: Push to gh-pages
+      #   env:
+      #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     git push origin gh-pages
+
+      # - name: 'Switch back to main branch'
+      #   run: |
+      #     git checkout main 
+  create-github-release:
+    name: Create Github release document and publish to node
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    needs: build
+    steps: 
+      - name: Checkout code 
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Semantic Release and npm release
+        run: |
+          npm ci
+          npx semantic-release@22.0.0
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
