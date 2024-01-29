@@ -84,5 +84,5 @@ jobs:
           npm ci
           npx semantic-release@22.0.0
         env:
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
