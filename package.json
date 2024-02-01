@@ -17,7 +17,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint-staged": "lint-staged",
-    "husky:provide": "npx husky add .husky/pre-commit 'npm run lint-staged'"
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -69,7 +69,7 @@
     "eslint": "^8.42.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.7",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
