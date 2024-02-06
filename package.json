@@ -82,6 +82,7 @@
     "rollup-plugin-scss": "^4.0.0",
     "rollup-plugin-svg": "^2.0.0",
     "sass": "^1.68.0",
+    "semantic-release": "^23.0.0",
     "storybook": "^7.4.6"
   },
   "peerDependencies": {
@@ -108,7 +109,12 @@
   "release": {
     "repositoryUrl": "https://github.com/mindfiredigital/react-canvas-editor.git",
     "branches": [
-      "main"
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
     ]
   }
 }
