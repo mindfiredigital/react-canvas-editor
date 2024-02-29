@@ -103,21 +103,12 @@
     "typescript": "^4.9.5"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=20.0.0"
   },
   "release": {
     "repositoryUrl": "https://github.com/mindfiredigital/react-canvas-editor.git",
     "branches": [
-      "main",
-      "next",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "alpha",
-        "prerelease": true
-      }
+      "fix/issue-56"
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
