@@ -109,6 +109,11 @@
     "branches": [
       "fix/issue-56",
       "next"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm", { "pkgRoot": "./dist" }
     ]
   }
 }
