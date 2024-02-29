@@ -121,7 +121,7 @@
               "package.json",
               "README.md",
               "CHANGELOG.md",
-              "dist/**/*.{js}"
+              "dist"
            ],
            "message": "chore: Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
              }
