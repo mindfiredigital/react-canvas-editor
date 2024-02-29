@@ -113,7 +113,19 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/npm", { "pkgRoot": "./dist" }
+      "@semantic-release/npm", { "pkgRoot": "./dist" },
+      [
+        "@semantic-release/git",
+        {
+           "assets": [
+              "package.json",
+              "README.md",
+              "CHANGELOG.md",
+              "dist/**/*.{js}"
+           ],
+           "message": "chore: Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+             }
+     ]
     ]
   }
 }
