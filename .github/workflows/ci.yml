@@ -3,18 +3,18 @@ name: Deployment Workflow
 on:
   push:
     branches:
-      - main
+      - fix/issue-56
   workflow_dispatch:
 
 jobs:
   build:
-    name: '@mindfiredigital/react-canvas-editor'
+    name: "@mindfiredigital/react-canvas-editor"
     runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: read
     steps:
-      - name: 'Checkout repository'
+      - name: "Checkout repository"
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -22,20 +22,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: 'Install dependencies'
+      - name: "Install dependencies"
         run: npm install
 
-      - name: 'Build application'
+      - name: "Build application"
         run: npm run build-lib
-      
-      - name: 'Restore changes in json'
+
+      - name: "Restore changes in json"
         run: |
           git restore package-lock.json
 
       # - name: 'Fetch branches'
       #   run: git fetch origin
-      
-      - name: 'Set Git user name and email'
+
+      - name: "Set Git user name and email"
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
@@ -52,7 +52,7 @@ jobs:
       #     shopt -s dotglob
       #     cp -r /tmp/temp-directory/* .
       #     shopt -u dotglob
-      #     git add . -f 
+      #     git add . -f
       #     git commit -m "Copy build artifacts from main to gh-pages branch"
 
       # - name: Push to gh-pages
@@ -63,15 +63,15 @@ jobs:
 
       # - name: 'Switch back to main branch'
       #   run: |
-      #     git checkout main 
+      #     git checkout main
   create-github-release:
     name: Create Github release document and publish to node
     runs-on: ubuntu-latest
     permissions:
       contents: write
     needs: build
-    steps: 
-      - name: Checkout code 
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Node.js

@@ -5,9 +5,6 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "files": [
-    "dist"
-  ],
   "typings": "./dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
@@ -114,7 +111,7 @@
       {
         "name": "beta",
         "prerelease": true
-      }
+      },{"name": "alpha", "prerelease": true}
     ]
   }
 }
