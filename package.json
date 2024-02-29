@@ -109,14 +109,12 @@
     "repositoryUrl": "https://github.com/mindfiredigital/react-canvas-editor.git",
     "branches": [
       "fix/issue-56",
-      "next"],
+      "next"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
-      {
-        "pkgRoot": "./dist"
-      },
       [
         "@semantic-release/github",
         {
@@ -128,7 +126,14 @@
           ],
           "message": "chore: Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
-      ], "@semantic-release/git"
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": ["package.json", "CHANGELOG.md"],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
     ]
   }
 }
