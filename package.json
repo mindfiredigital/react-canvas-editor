@@ -108,7 +108,16 @@
   "release": {
     "repositoryUrl": "https://github.com/mindfiredigital/react-canvas-editor.git",
     "branches": [
-      "fix/issue-56"
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
