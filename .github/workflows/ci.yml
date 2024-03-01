@@ -25,6 +25,16 @@ jobs:
       - name: "Install dependencies"
         run: npm install
 
+      - name: "Remove old dist folder"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git status
+          ls
+          git rm -r dist
+          git commit -m "chore: remove dist"
+          git push
+
       - name: "Build application"
         run: npm run build-lib
 
@@ -36,16 +46,6 @@ jobs:
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
-
-      - name: "Remove old dist folder"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git status
-          ls
-          git rm -r dist
-          git commit -m "chore: remove dist"
-          git push
 
       - name: "Push the dist folder"
         env:
