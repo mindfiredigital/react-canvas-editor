@@ -44,6 +44,7 @@ jobs:
           git add dist -f
           git commit -m "chore: add dist folder"
           git push
+          git fetch origin
 
   create-github-release:
     name: Create Github release document and publish to node
@@ -68,10 +69,12 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Push the dist folder to branch"
+      - name: "Remove the dist folder to branch"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git status
+          ls
           git rm -r dist
           git commit -m "chore: remove dist"
           git push
