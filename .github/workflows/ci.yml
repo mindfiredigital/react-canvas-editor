@@ -8,13 +8,13 @@ on:
 
 jobs:
   build:
-    name: '@mindfiredigital/react-canvas-editor'
+    name: "@mindfiredigital/react-canvas-editor"
     runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: read
     steps:
-      - name: 'Checkout repository'
+      - name: "Checkout repository"
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -22,28 +22,47 @@ jobs:
         with:
           node-version: 20
 
-      - name: 'Install dependencies'
+      - name: "Install dependencies"
         run: npm install
 
-      - name: 'Build application'
-        run: npm run build-lib
-      
-      - name: 'Restore changes in json'
-        run: |
-          git restore package-lock.json
-      
-      - name: 'Set Git user name and email'
+      - name: "Set Git user name and email"
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
+
+      - name: "Remove old dist folder "
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git status
+          ls
+          git rm -r dist
+          git commit -m "chore: remove dist"
+          git push
+
+      - name: "Build application"
+        run: npm run build-lib
+
+      - name: "Restore changes in json"
+        run: |
+          git restore package-lock.json
+
+      - name: "Push the dist folder"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add dist -f
+          git commit -m "chore: add dist folder"
+          git push
+
   create-github-release:
     name: Create Github release document and publish to node
     runs-on: ubuntu-latest
     permissions:
       contents: write
     needs: build
-    steps: 
-      - name: Checkout code 
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -53,6 +72,8 @@ jobs:
 
       - name: Semantic Release and npm release
         run: |
+          git fetch origin
+          git pull origin main
           npm ci
           npx semantic-release@22.0.0
         env:
