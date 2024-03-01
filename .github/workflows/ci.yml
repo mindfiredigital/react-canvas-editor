@@ -3,7 +3,7 @@ name: Deployment Workflow
 on:
   push:
     branches:
-      - fix/issue-56
+      - main
   workflow_dispatch:
 
 jobs:
@@ -73,7 +73,7 @@ jobs:
       - name: Semantic Release and npm release
         run: |
           git fetch origin
-          git pull origin fix/issue-56
+          git pull origin main
           npm ci
           npx semantic-release@22.0.0
         env:
