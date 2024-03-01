@@ -113,11 +113,7 @@
     "repositoryUrl": "https://github.com/mindfiredigital/react-canvas-editor.git",
     "branches": [
       "main",
-      "next",
-      {
-        "name": "beta",
-        "prerelease": true
-      }
+      "next"
     ]
   },
   "config": {
