@@ -54,8 +54,6 @@ jobs:
           git add dist -f
           git commit -m "chore: add dist folder"
           git push
-          git fetch origin
-          git pull origin fix/issue-56
 
   create-github-release:
     name: Create Github release document and publish to node
@@ -74,6 +72,8 @@ jobs:
 
       - name: Semantic Release and npm release
         run: |
+          git fetch origin
+          git pull origin fix/issue-56
           npm ci
           npx semantic-release@22.0.0
         env:
