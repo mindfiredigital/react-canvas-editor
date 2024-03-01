@@ -30,7 +30,7 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
 
-      - name: "Remove old dist folder"
+      - name: "Remove old dist folder "
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
