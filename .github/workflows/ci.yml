@@ -25,6 +25,11 @@ jobs:
       - name: "Install dependencies"
         run: npm install
 
+      - name: "Set Git user name and email"
+        run: |
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "GitHub Actions"
+
       - name: "Remove old dist folder"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,11 +46,6 @@ jobs:
       - name: "Restore changes in json"
         run: |
           git restore package-lock.json
-
-      - name: "Set Git user name and email"
-        run: |
-          git config --local user.email "github-actions@github.com"
-          git config --local user.name "GitHub Actions"
 
       - name: "Push the dist folder"
         env:
