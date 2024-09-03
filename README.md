@@ -471,6 +471,8 @@ DocumentEditorWebComponent({
 
 <br>
 
+## Demo
+[React Canvas Editor](https://canvas-editor-htfx.vercel.app/)
 ## Contributing
 
 We welcome contributions from the community. If you'd like to contribute to the `react-document-editor` npm package, please follow our [Contributing Guidelines](CONTRIBUTING.md).
