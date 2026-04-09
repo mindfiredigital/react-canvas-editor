@@ -4,29 +4,34 @@ import Slider, { SliderThumb } from '@mui/material/Slider';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
 
-export const CustomSliderVertical = styled(Slider)(() => ({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const CustomSliderVertical: any = styled(Slider)(() => ({
     width: 1,
     padding: '0',
     color: "#0000004d",
     borderRadius: 0,
     border: "none",
+    pointerEvents: 'none',
     '& .MuiSlider-rail': {
         opacity: 1,
         backgroundColor: "#0000004d",
         left: "-2px",
-        transform: 'translateX(0%)'
+        transform: 'translateX(0%)',
+        pointerEvents: 'none',
     },
     '& .MuiSlider-track': {
         width: 1,
         left: -2,
         border: "none",
-        backgroundColor: "white"
+        backgroundColor: "white",
+        pointerEvents: 'none',
     },
     '& .MuiSlider-mark': {
         backgroundColor: "#0000004d",
         height: 1,
         width: 11,
-        left: -8
+        left: -8,
+        pointerEvents: 'none',
     },
     '& .MuiSlider-markLabel': {
         fontSize: 12,
@@ -35,46 +40,73 @@ export const CustomSliderVertical = styled(Slider)(() => ({
     },
     '& .MuiSlider-thumb': {
         backgroundColor: 'transparent',
+        pointerEvents: 'auto',
+        overflow: 'visible',
+        '& svg': {
+            pointerEvents: 'auto',
+            filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.15))',
+        },
         '&:hover': {
             backgroundColor: 'transparent',
+            boxShadow: "none"
+        },
+        '&.Mui-active': {
+            boxShadow: "none"
+        },
+        '&.Mui-focusVisible': {
             boxShadow: "none"
         },
     },
 }));
 
-export const CustomSliderHorizontal = styled(Slider)(() => ({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const CustomSliderHorizontal: any = styled(Slider)(() => ({
     height: 1,
     padding: '0',
     color: "#0000004d",
     borderRadius: 0,
     border: "none",
     top: 0,
+    pointerEvents: 'none',
     '& .MuiSlider-rail': {
         opacity: 1,
         backgroundColor: "#0000004d",
-        transform: 'translateY(0%)'
+        transform: 'translateY(0%)',
+        pointerEvents: 'none',
     },
     '& .MuiSlider-track': {
         height: 1,
         border: "none",
-        backgroundColor: "white"
+        backgroundColor: "white",
+        pointerEvents: 'none',
     },
     '& .MuiSlider-mark': {
         backgroundColor: "#0000004d",
         height: 11,
         width: 1,
-        top: -4
+        top: -4,
+        pointerEvents: 'none',
     },
     '& .MuiSlider-markLabel': {
-        fontSize: 12,
-        fontWeight: 'normal',
-        top: -27,
+        display: 'none',
     },
     '& .MuiSlider-thumb': {
         backgroundColor: 'transparent',
         top: 3,
+        pointerEvents: 'auto',
+        overflow: 'visible',
+        '& svg': {
+            pointerEvents: 'auto',
+            filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.15))',
+        },
         '&:hover': {
             backgroundColor: 'transparent',
+            boxShadow: "none"
+        },
+        '&.Mui-active': {
+            boxShadow: "none"
+        },
+        '&.Mui-focusVisible': {
             boxShadow: "none"
         },
     },
@@ -82,7 +114,7 @@ export const CustomSliderHorizontal = styled(Slider)(() => ({
 
 export const verticalMarks = new Array(12).fill(0).map((ob, i) => ({ value: -i * 96, label: i }));
 
-export const horizontalMarks = new Array(9).fill(0).map((ob, i) => ({ value: i * 96, label: i }));
+export const horizontalMarks = new Array(9).fill(0).map((ob, i) => ({ value: i * 96, label: undefined }));
 
 export function MarginRightArrow(props: any) {
     const { children, ...other } = props;
