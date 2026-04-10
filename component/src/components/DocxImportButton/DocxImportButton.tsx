@@ -4,6 +4,7 @@ import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
 import { htmlToElements } from "../../utils/html-to-elements";
 import { docxToElements } from "../../utils/docx-to-elements";
+import JSZip from "jszip";
 
 interface DocxImportButtonProps {
   style?: React.CSSProperties;
@@ -19,6 +20,44 @@ interface DocxImportButtonProps {
 const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
+
+  const logRawDocx = async (file: File) => {
+    try {
+      const arrayBuffer = await file.arrayBuffer();
+      console.log("[DocxImport] Raw ArrayBuffer byteLength:", arrayBuffer.byteLength);
+      const preview = Array.from(new Uint8Array(arrayBuffer).slice(0, 64));
+      console.log("[DocxImport] Raw bytes preview (first 64):", preview);
+      try {
+        const zip = await JSZip.loadAsync(arrayBuffer);
+        const entries = Object.keys(zip.files);
+        console.log("[DocxImport] ZIP entries:", entries);
+
+        const docXml = await zip.file("word/document.xml")?.async("text");
+        if (docXml) {
+          console.log("[DocxImport] word/document.xml (first 2000 chars):");
+          console.log(docXml.slice(0, 2000));
+        }
+
+        const numberingXml = await zip.file("word/numbering.xml")?.async("text");
+        if (numberingXml) {
+          console.log("[DocxImport] word/numbering.xml (first 2000 chars):");
+          console.log(numberingXml.slice(0, 2000));
+        }
+
+        const stylesXml = await zip.file("word/styles.xml")?.async("text");
+        if (stylesXml) {
+          console.log("[DocxImport] word/styles.xml (first 2000 chars):");
+          console.log(stylesXml.slice(0, 2000));
+        }
+      } catch (zipErr) {
+        console.warn("[DocxImport] Failed to unzip DOCX for readable XML:", zipErr);
+      }
+      return arrayBuffer;
+    } catch (err) {
+      console.warn("[DocxImport] Failed to read raw ArrayBuffer:", err);
+      return null;
+    }
+  };
 
   const handleFileInputChange = async (
     event: React.ChangeEvent<HTMLInputElement>
@@ -41,6 +80,7 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
 
     try {
       let elements: unknown[];
+      const rawBuffer = await logRawDocx(file);
 
       if (_props.onClientImport) {
         // Client-side import path — parse DOCX directly in the browser
@@ -63,7 +103,7 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
             console.warn(
               "[DocxImport] Server endpoint not found (404). Falling back to client-side import."
             );
-            const arrayBuffer = await file.arrayBuffer();
+            const arrayBuffer = rawBuffer ?? (await file.arrayBuffer());
             elements = await docxToElements(arrayBuffer);
             console.log(
               "[DocxImport] Client-side fallback parsed",
@@ -84,7 +124,7 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
         }
       } else {
         // Default client-side import when no backend is configured
-        const arrayBuffer = await file.arrayBuffer();
+        const arrayBuffer = rawBuffer ?? (await file.arrayBuffer());
         elements = await docxToElements(arrayBuffer);
         console.log("[DocxImport] Client-side default parsed", elements.length, "elements");
       }

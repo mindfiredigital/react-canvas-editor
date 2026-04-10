@@ -137,7 +137,7 @@ const CanvasEditor = forwardRef<HTMLDivElement, content>(function Editor(
   return (
     <div className="canvas-editor-main" style={_props?.style?.editorMain}>
       <VerticalRuler />
-      <div className="canvas-editor editor" ref={ref} style={_props?.style?.margin}>
+      <div id="canvas" className="canvas-editor editor" ref={ref} style={_props?.style?.margin}>
       </div>
     </div>
   );

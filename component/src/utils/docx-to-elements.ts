@@ -76,6 +76,11 @@ interface ParaFormat {
   listType: string | undefined; // 'ul' | 'ol'
   listStyle: string | undefined;
   indentLevel: number;
+  indentLeftTwips?: number;
+  indentHangingTwips?: number;
+  borderBetween?: string;
+  spacingBeforeTwips?: number;
+  spacingAfterTwips?: number;
 }
 
 interface StyleDef {
@@ -437,6 +442,34 @@ function parseParagraphProperties(
     }
   }
 
+  // Indentation
+  const indEl = wEl(pPr, 'ind');
+  if (indEl) {
+    const left = wAttr(indEl, 'left');
+    const hanging = wAttr(indEl, 'hanging');
+    if (left) fmt.indentLeftTwips = parseInt(left, 10);
+    if (hanging) fmt.indentHangingTwips = parseInt(hanging, 10);
+  }
+
+  // Paragraph border between (often used for dashed separators)
+  const pBdrEl = wEl(pPr, 'pBdr');
+  if (pBdrEl) {
+    const betweenEl = wEl(pBdrEl, 'between');
+    if (betweenEl) {
+      const val = wAttr(betweenEl, 'val');
+      if (val) fmt.borderBetween = val;
+    }
+  }
+
+  // Paragraph spacing (before/after)
+  const spacingEl = wEl(pPr, 'spacing');
+  if (spacingEl) {
+    const before = wAttr(spacingEl, 'before');
+    const after = wAttr(spacingEl, 'after');
+    if (before) fmt.spacingBeforeTwips = parseInt(before, 10);
+    if (after) fmt.spacingAfterTwips = parseInt(after, 10);
+  }
+
   return fmt;
 }
 
@@ -508,7 +541,7 @@ function emuToPx(emu: number): number {
 
 /** Twips → pixels (96 DPI, 1 twip = 1/1440 inch) */
 function twipsToPx(twips: number): number {
-  return Math.round(twips / 15);
+  return Math.round(twips / 15); // https://www.unitconverters.net/typography/twip-to-pixel-x.htm
 }
 
 function parseDrawing(
@@ -728,6 +761,86 @@ function processParagraph(
     }
   }
 
+  // If the paragraph is empty but has a "between" border, render a dashed line.
+  const hasVisibleContent = elements.some(
+    (e) => e.type === 'image' || (e.value && e.value !== '\n'),
+  );
+  if (!hasVisibleContent && paraFmt.borderBetween) {
+    const dashLine =
+      paraFmt.borderBetween === 'dashed'
+        ? '- '.repeat(50).trim()
+        : '—'.repeat(60);
+    elements.push({ value: dashLine });
+  }
+
+  // Normalize paragraph content:
+  // - Keep images on their own line for better layout.
+  // - Collapse excessive blank lines inside list items.
+  // - Trim trailing manual breaks (paragraph break is added below).
+  const normalized: EditorElement[] = [];
+
+  // If list formatting is present, inject a visible bullet for canvas editor
+  // (canvas listType is not always rendered inside table cells).
+  if (paraFmt.listType === 'ul') {
+    const indentTabs =
+      Math.max(0, Math.round(((paraFmt.indentLeftTwips ?? 0) / 720))) ||
+      (paraFmt.indentLevel ?? 0);
+    for (let i = 0; i < indentTabs; i++) {
+      normalized.push({ value: '\t' });
+    }
+    const firstTextEl = elements.find((e) => e.value && e.value !== '\n' && !e.type);
+    const bulletSize = firstTextEl?.size ?? 16;
+    const bullet: EditorElement = { value: '• ', size: bulletSize };
+    if (paraFmt.alignment) bullet.rowFlex = paraFmt.alignment;
+    if (paraFmt.listType) {
+      bullet.listType = paraFmt.listType;
+      bullet.listStyle = paraFmt.listStyle;
+    }
+    normalized.push(bullet);
+  }
+
+  for (let i = 0; i < elements.length; i++) {
+    const el = elements[i];
+
+    if (el.type === 'image') {
+      const prev = normalized[normalized.length - 1];
+      if (!prev || prev.value !== '\n' || prev.type) {
+        normalized.push({ value: '\n' });
+      }
+      normalized.push(el);
+      const next = elements[i + 1];
+      if (!next || next.value !== '\n' || next.type) {
+        normalized.push({ value: '\n' });
+      }
+      continue;
+    }
+
+    if (paraFmt.listType && el.value === '\n' && !el.type) {
+      const prev = normalized[normalized.length - 1];
+      if (prev && prev.value === '\n' && !prev.type) {
+        continue; // collapse consecutive blank lines inside list items
+      }
+    }
+
+    normalized.push(el);
+  }
+
+  while (normalized.length > 0 && normalized[normalized.length - 1].value === '\n' && !normalized[normalized.length - 1].type) {
+    normalized.pop();
+  }
+
+  // If paragraph is empty (no visible content), drop it unless it carries spacing or borders.
+  const hasNonEmpty = normalized.some((e) => e.type === 'image' || (e.value && e.value !== '\n'));
+  if (!hasNonEmpty && !paraFmt.borderBetween) {
+    const before = paraFmt.spacingBeforeTwips ?? 0;
+    const after = paraFmt.spacingAfterTwips ?? 0;
+    if (before === 0 && after === 0) {
+      return [];
+    }
+    const extraLines = Math.max(1, Math.round((before + after) / 240));
+    return Array.from({ length: extraLines }, () => ({ value: '\n' }));
+  }
+
   // End paragraph with newline — carry paragraph formatting so canvas editor picks it up
   const paraBreak: EditorElement = { value: '\n' };
   if (paraFmt.alignment) paraBreak.rowFlex = paraFmt.alignment;
@@ -736,9 +849,9 @@ function processParagraph(
     paraBreak.listType = paraFmt.listType;
     paraBreak.listStyle = paraFmt.listStyle;
   }
-  elements.push(paraBreak);
+  normalized.push(paraBreak);
 
-  return elements;
+  return normalized;
 }
 
 /* ------------------------------------------------------------------ */
@@ -1078,7 +1191,7 @@ function processTable(
   }
 
   // --- Parse table borders (direct on table, or from style) ---
-  let borders = parseTableBorders(tblPr);
+  const borders = parseTableBorders(tblPr);
   if (!borders.top && !borders.bottom && !borders.left && !borders.right && tableStyleDef) {
     // Try to get borders from table style — check tblPr within the style
     // (Style-level borders would need separate parsing; use fallback)
@@ -1090,7 +1203,8 @@ function processTable(
   const trList: EditorTableRow[] = [];
   const rows = wChildren(tblEl, 'tr');
 
-  const MAX_TABLE_HEIGHT = 856;
+  // Canvas editor page: height=1056, margins=200 BUFFER= 120 each side → content area = 736px
+  const MAX_TABLE_HEIGHT = 736;
   const maxLinesPerRow = Math.max(4, Math.floor(MAX_TABLE_HEIGHT / LINE_HEIGHT_PX));
 
   for (const tr of rows) {
@@ -1273,8 +1387,8 @@ function processTable(
         trList: currentRows,
         borderType: hasBorders ? 'all' : 'empty',
       });
-      // Force a hard page break between split tables.
-      tables.push({ value: '\n', type: 'pageBreak' });
+      // Avoid inserting a hard page break here; the editor paginates between tables.
+      // Adding a pageBreak can create an empty page between split tables.
       currentRows = [];
       currentHeight = 0;
     }
@@ -1311,16 +1425,22 @@ function processBody(
 ): EditorElement[] {
   const elements: EditorElement[] = [];
 
-  for (let i = 0; i < bodyEl.childNodes.length; i++) {
-    const child = bodyEl.childNodes[i];
-    if (child.nodeType !== Node.ELEMENT_NODE) continue;
-
+  for (const child of bodyEl.childNodes) {
+    if (child.nodeType !== Node.ELEMENT_NODE) {
+    continue;
+    }
+    
     const el = child as Element;
-
-    if (el.localName === 'p') {
-      elements.push(...processParagraph(el, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images));
-    } else if (el.localName === 'tbl') {
-      elements.push(...processTable(el, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images));
+    switch (el.localName) {
+      case 'p':
+        elements.push(...processParagraph(el, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images));
+        break;
+      case 'tbl':
+        elements.push(...processTable(el, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images));
+        break;
+      default:
+        // Ignore other body-level elements for now (e.g. sectPr)
+        break;
     }
   }
 
