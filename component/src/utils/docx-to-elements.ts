@@ -23,6 +23,7 @@ export interface EditorTableCell {
   borderBgBottom?: string;
   borderBgLeft?: string;
   borderBgRight?: string;
+  borderWidthTop?: number;
 }
 
 export interface EditorTableRow {
@@ -1086,13 +1087,19 @@ function parseBorderColor(borderEl: Element | null): string | null | undefined {
   if (!borderEl) return undefined;
   const val = wAttr(borderEl, 'val');
   if (val === 'nil' || val === 'none') return null; // explicitly no border
-  const sz = wAttr(borderEl, 'sz');
-  if (sz === '0') return null; // zero-width border
   const color = wAttr(borderEl, 'color');
   if (color && color !== 'auto') return `#${color}`;
   return undefined;
 }
 
+function parseBorderSize(borderEl: Element | null): number | undefined {
+  if (!borderEl) return undefined;
+
+  const sz: string | null  = wAttr(borderEl, 'sz');
+  if (sz === null) return undefined;
+  if (!isNaN(Number(sz))) return Number(sz);
+  return undefined;
+}
 /** Parse table-level borders from w:tblPr/w:tblBorders */
 function parseTableBorders(tblPr: Element | null): {
   top?: string; bottom?: string; left?: string; right?: string; insideH?: string; insideV?: string;
@@ -1107,6 +1114,7 @@ function parseTableBorders(tblPr: Element | null): {
     right: parseBorderColor(wEl(borders, 'right')) || parseBorderColor(wEl(borders, 'end')) || undefined,
     insideH: parseBorderColor(wEl(borders, 'insideH')) || undefined,
     insideV: parseBorderColor(wEl(borders, 'insideV')) || undefined,
+
   };
 }
 
@@ -1307,8 +1315,9 @@ function processTable(
         td.borderBgBottom = isLastRow ? (borders.bottom || defaultBorderColor) : (borders.insideH || defaultBorderColor);
         td.borderBgLeft = isFirstCol ? (borders.left || defaultBorderColor) : (borders.insideV || defaultBorderColor);
         td.borderBgRight = isLastCol ? (borders.right || defaultBorderColor) : (borders.insideV || defaultBorderColor);
+        
       }
-
+      
       // Parse cell-level border overrides (w:tcBorders) — null means explicitly no border
       if (tcPr) {
         const tcBorders = wEl(tcPr, 'tcBorders');
@@ -1317,6 +1326,8 @@ function processTable(
           const cellBottom = parseBorderColor(wEl(tcBorders, 'bottom'));
           const cellLeft = parseBorderColor(wEl(tcBorders, 'left')) ?? parseBorderColor(wEl(tcBorders, 'start'));
           const cellRight = parseBorderColor(wEl(tcBorders, 'right')) ?? parseBorderColor(wEl(tcBorders, 'end'));
+          td.borderWidthTop = parseBorderSize(wEl(tcBorders, 'top'));
+
           if (cellTop !== undefined) { if (cellTop === null) delete td.borderBgTop; else td.borderBgTop = cellTop; }
           if (cellBottom !== undefined) { if (cellBottom === null) delete td.borderBgBottom; else td.borderBgBottom = cellBottom; }
           if (cellLeft !== undefined) { if (cellLeft === null) delete td.borderBgLeft; else td.borderBgLeft = cellLeft; }
@@ -1405,7 +1416,7 @@ function processTable(
       borderType: hasBorders ? 'all' : 'empty',
     });
   }
-
+  console.log(tables);
   return tables;
 }
 
@@ -1537,7 +1548,7 @@ export async function docxToElements(arrayBuffer: ArrayBuffer): Promise<EditorEl
   if (!bodyEl) {
     throw new Error('Invalid DOCX: missing w:body');
   }
-
+  console.log(bodyEl);
   // 6. Process the body
   const raw = processBody(bodyEl, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images);
 

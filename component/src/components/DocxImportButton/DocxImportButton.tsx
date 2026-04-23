@@ -137,6 +137,7 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
           typeof structuredClone === "function"
             ? structuredClone(elements)
             : JSON.parse(JSON.stringify(elements));
+        console.log("[DocxImport] Cloned elements object (expandable):", cloned);
         DOMEventHandlers.setContent({ main: cloned });
 
         // Force non-lazy render for overflow:auto containers.

@@ -130,6 +130,7 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
               handleClick={() => {
                 DOMEventHandlers.handleBold();
                 addFormat("Bold");
+                console.log('Ielement', DOMEventHandlers.getContent())
               }}>
               <FormatBoldIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
