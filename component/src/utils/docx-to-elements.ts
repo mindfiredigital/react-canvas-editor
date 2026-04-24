@@ -14,6 +14,9 @@ import JSZip from 'jszip';
 /* ------------------------------------------------------------------ */
 
 export interface EditorTableCell {
+  borderWidthBottom?: number;
+  borderWidthLeft?: number;
+  borderWidthRight?: number;
   colspan: number;
   rowspan: number;
   value: EditorElement[];
@@ -1085,8 +1088,8 @@ function splitOversizedRow(
 /** Parse border color from a w:tblBorders child element. Returns null for val="nil" (explicit no border). */
 function parseBorderColor(borderEl: Element | null): string | null | undefined {
   if (!borderEl) return undefined;
-  const val = wAttr(borderEl, 'val');
-  if (val === 'nil' || val === 'none') return null; // explicitly no border
+  const sz: string | null  = wAttr(borderEl, 'sz');
+  if (sz === '0') return '#ffffff'; // explicitly no border
   const color = wAttr(borderEl, 'color');
   if (color && color !== 'auto') return `#${color}`;
   return undefined;
@@ -1097,7 +1100,7 @@ function parseBorderSize(borderEl: Element | null): number | undefined {
 
   const sz: string | null  = wAttr(borderEl, 'sz');
   if (sz === null) return undefined;
-  if (!isNaN(Number(sz))) return Number(sz);
+  if (!isNaN(Number(sz))) return Number(sz)/8; // sz is in eighths of a point
   return undefined;
 }
 /** Parse table-level borders from w:tblPr/w:tblBorders */
@@ -1327,6 +1330,9 @@ function processTable(
           const cellLeft = parseBorderColor(wEl(tcBorders, 'left')) ?? parseBorderColor(wEl(tcBorders, 'start'));
           const cellRight = parseBorderColor(wEl(tcBorders, 'right')) ?? parseBorderColor(wEl(tcBorders, 'end'));
           td.borderWidthTop = parseBorderSize(wEl(tcBorders, 'top'));
+          td.borderWidthBottom = parseBorderSize(wEl(tcBorders, 'bottom'));
+          td.borderWidthLeft = parseBorderSize(wEl(tcBorders, 'left')) ?? parseBorderSize(wEl(tcBorders, 'start'));
+          td.borderWidthRight = parseBorderSize(wEl(tcBorders, 'right')) ?? parseBorderSize(wEl(tcBorders, 'end'));
 
           if (cellTop !== undefined) { if (cellTop === null) delete td.borderBgTop; else td.borderBgTop = cellTop; }
           if (cellBottom !== undefined) { if (cellBottom === null) delete td.borderBgBottom; else td.borderBgBottom = cellBottom; }
