@@ -79,13 +79,15 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
     setLoading(true);
 
     try {
-      let elements: unknown[];
+      // `elements` may either be a flat IElement[] (legacy / HTML path)
+      // or the structured { header, main, footer } shape from docxToElements.
+      let elements: unknown;
       const rawBuffer = await logRawDocx(file);
 
       if (_props.onClientImport) {
         // Client-side import path — parse DOCX directly in the browser
         elements = await _props.onClientImport(file);
-        console.log("[DocxImport] Client-side parsed", elements.length, "elements");
+        console.log("[DocxImport] Client-side parsed", elements);
       } else if (_props.apiBaseUrl) {
         // Legacy fallback: upload to backend for LibreOffice conversion
         const baseUrl = _props.apiBaseUrl || "";
@@ -105,11 +107,7 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
             );
             const arrayBuffer = rawBuffer ?? (await file.arrayBuffer());
             elements = await docxToElements(arrayBuffer);
-            console.log(
-              "[DocxImport] Client-side fallback parsed",
-              elements.length,
-              "elements"
-            );
+            console.log("[DocxImport] Client-side fallback parsed", elements);
           } else {
             const errorData = await response.json().catch(() => null);
             throw new Error(
@@ -120,25 +118,35 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
           const result = await response.json();
           const html: string = result.data.html;
           elements = htmlToElements(html);
-          console.log("[DocxImport] Server-side parsed", elements.length, "elements from HTML");
+          console.log("[DocxImport] Server-side parsed elements from HTML", elements);
         }
       } else {
         // Default client-side import when no backend is configured
         const arrayBuffer = rawBuffer ?? (await file.arrayBuffer());
         elements = await docxToElements(arrayBuffer);
-        console.log("[DocxImport] Client-side default parsed", elements.length, "elements");
+        console.log("[DocxImport] Client-side default parsed", elements);
       }
 
-      if (elements.length > 0) {
-        console.log("[DocxImport] Full IElement[] data:", JSON.stringify(elements, null, 2));
-        console.log("[DocxImport] Raw elements object (expandable):", elements);
+      // Normalize to { header, main, footer }. Array-shaped results (legacy / HTML) → main only.
+      const payload = Array.isArray(elements)
+        ? { main: elements }
+        : (elements as { header?: unknown[]; main?: unknown[]; footer?: unknown[] });
+
+      const hasContent =
+        (payload.main?.length ?? 0) > 0 ||
+        (payload.header?.length ?? 0) > 0 ||
+        (payload.footer?.length ?? 0) > 0;
+
+      if (hasContent) {
+        console.log("[DocxImport] Full IElement data:", JSON.stringify(payload, null, 2));
+        console.log("[DocxImport] Raw elements object (expandable):", payload);
         // Deep clone to prevent internal computeRowList from mutating our objects
         const cloned =
           typeof structuredClone === "function"
-            ? structuredClone(elements)
-            : JSON.parse(JSON.stringify(elements));
+            ? structuredClone(payload)
+            : JSON.parse(JSON.stringify(payload));
         console.log("[DocxImport] Cloned elements object (expandable):", cloned);
-        DOMEventHandlers.setContent({ main: cloned });
+        DOMEventHandlers.setContent(cloned);
 
         // Force non-lazy render for overflow:auto containers.
         // Use requestAnimationFrame to ensure setContent's internal render
