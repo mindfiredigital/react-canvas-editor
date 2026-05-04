@@ -38,9 +38,12 @@ const ParagraphSpacingButton: React.FC<ParagraphSpacingButtonProps> = ({
     const a = parseFloat(after) || 0;
     if (b < 0 || a < 0) return;
     const instance: any = (DOMEventHandlers as any).getEditorInstance?.();
-    // canvas-editor exposes only row margin; approximate paragraph spacing via sum
-    const combined = (b + a) / 12 || 1;
-    instance?.command?.executeRowMargin?.(combined);
+    // pt → px (1pt = 4/3 px @ 96dpi)
+    const ptToPx = (pt: number) => (pt * 4) / 3;
+    instance?.command?.executeParagraphSpacing?.({
+      before: ptToPx(b),
+      after: ptToPx(a),
+    });
     setOpen(false);
   };
 
@@ -48,6 +51,7 @@ const ParagraphSpacingButton: React.FC<ParagraphSpacingButtonProps> = ({
     <Box sx={{ position: "relative", ...style }}>
       <Tooltip title="Paragraph spacing">
         <IconButton
+          onMouseDown={(e) => e.preventDefault()}
           onClick={() => setOpen((prev) => !prev)}
           sx={{ borderRadius: 0, padding: "6px" }}>
           <FormatIndentIncreaseIcon style={{ fontSize: "large" }} />

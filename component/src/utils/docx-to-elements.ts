@@ -54,8 +54,12 @@ export interface EditorElement {
   titleLevel?: string;
   listType?: string;
   listStyle?: string;
+  valueList?: EditorElement[];
   width?: number;
   height?: number;
+  rowMargin?: number;
+  paragraphSpacingBefore?: number;
+  paragraphSpacingAfter?: number;
   // Table fields
   trList?: EditorTableRow[];
   colgroup?: EditorColgroup[];
@@ -85,6 +89,8 @@ interface ParaFormat {
   borderBetween?: string;
   spacingBeforeTwips?: number;
   spacingAfterTwips?: number;
+  spacingLineTwips?: number;
+  spacingLineRule?: string; // 'auto' | 'exact' | 'atLeast'
 }
 
 interface StyleDef {
@@ -465,13 +471,17 @@ function parseParagraphProperties(
     }
   }
 
-  // Paragraph spacing (before/after)
+  // Paragraph spacing (before/after/line)
   const spacingEl = wEl(pPr, 'spacing');
   if (spacingEl) {
     const before = wAttr(spacingEl, 'before');
     const after = wAttr(spacingEl, 'after');
+    const line = wAttr(spacingEl, 'line');
+    const lineRule = wAttr(spacingEl, 'lineRule');
     if (before) fmt.spacingBeforeTwips = parseInt(before, 10);
     if (after) fmt.spacingAfterTwips = parseInt(after, 10);
+    if (line) fmt.spacingLineTwips = parseInt(line, 10);
+    if (lineRule) fmt.spacingLineRule = lineRule;
   }
 
   return fmt;
@@ -565,6 +575,27 @@ function parseDrawing(
     if (cy > 0) height = emuToPx(cy);
   }
 
+  // For wp:anchor (floating images), read horizontal positioning so we can
+  // preserve at least the row-flex (left/center/right) on the canvas.
+  // wp:anchor > wp:positionH > wp:align = "left" | "center" | "right"
+  let anchorAlign: 'left' | 'center' | 'right' | undefined;
+  const anchorEl = drawingEl.getElementsByTagNameNS(WP_NS, 'anchor')[0];
+  if (anchorEl) {
+    const posH = anchorEl.getElementsByTagNameNS(WP_NS, 'positionH')[0];
+    if (posH) {
+      const alignEl = posH.getElementsByTagNameNS(WP_NS, 'align')[0];
+      const alignText = alignEl?.textContent?.trim().toLowerCase();
+      if (alignText === 'left' || alignText === 'center' || alignText === 'right') {
+        anchorAlign = alignText;
+      } else {
+        // wp:posOffset (EMU) — derive coarse alignment from offset sign
+        const offEl = posH.getElementsByTagNameNS(WP_NS, 'posOffset')[0];
+        const off = offEl ? parseInt(offEl.textContent || '0', 10) : 0;
+        if (off > 0) anchorAlign = 'right';
+      }
+    }
+  }
+
   // Constrain to page width
   const MAX_WIDTH = 600;
   if (width > MAX_WIDTH) {
@@ -598,12 +629,14 @@ function parseDrawing(
   };
   const mime = mimeMap[ext] || 'image/png';
 
-  return {
+  const result: EditorElement = {
     value: `data:${mime};base64,${base64}`,
     type: 'image',
     width,
     height,
   };
+  if (anchorAlign) result.rowFlex = anchorAlign;
+  return result;
 }
 
 /* ------------------------------------------------------------------ */
@@ -649,13 +682,18 @@ function processRun(
 
     // Line break within a run
     if (localName === 'br') {
-      elements.push({ value: '\n' });
+      const br: EditorElement = { value: '\n' };
+      if (paraFmt.alignment) br.rowFlex = paraFmt.alignment;
+      elements.push(br);
     }
 
     // Drawing (image)
     if (localName === 'drawing') {
       const imgEl = parseDrawing(el, rels, images);
       if (imgEl) {
+        // Anchor-derived rowFlex (set by parseDrawing) wins over paragraph alignment;
+        // only fall back to paragraph alignment if image has none.
+        if (!imgEl.rowFlex && paraFmt.alignment) imgEl.rowFlex = paraFmt.alignment;
         elements.push(imgEl);
       }
     }
@@ -759,15 +797,49 @@ function processParagraph(
       }
 
       const linkRuns = wEls(el, 'r');
+      const inner: EditorElement[] = [];
       for (const linkRun of linkRuns) {
-        elements.push(...processRun(linkRun, docDefaults, styleRunFmt, paraFmt, url, rels, images));
+        // Pass undefined url to processRun — we group at the hyperlink level below.
+        inner.push(...processRun(linkRun, docDefaults, styleRunFmt, paraFmt, undefined, rels, images));
+      }
+
+      if (url && inner.some((e) => e.value && e.value !== '\n')) {
+        // Emit one grouped hyperlink element with valueList — canonical canvas-editor form.
+        // Strip per-char rowFlex/titleLevel/listType (these belong on paragraph break).
+        const valueList: EditorElement[] = [];
+        for (const c of inner) {
+          if (c.type === 'image') {
+            // Images inside hyperlinks: keep as-is, but emit alongside (not inside valueList).
+            elements.push(c);
+            continue;
+          }
+          delete c.type;
+          delete c.url;
+          delete c.rowFlex;
+          delete c.titleLevel;
+          delete c.listType;
+          delete c.listStyle;
+          valueList.push(c);
+        }
+        if (valueList.length > 0) {
+          const linkEl: EditorElement = {
+            type: 'hyperlink',
+            value: '',
+            url,
+            valueList,
+          };
+          if (paraFmt.alignment) linkEl.rowFlex = paraFmt.alignment;
+          elements.push(linkEl);
+        }
+      } else {
+        elements.push(...inner);
       }
     }
   }
 
   // If the paragraph is empty but has a "between" border, render a dashed line.
   const hasVisibleContent = elements.some(
-    (e) => e.type === 'image' || (e.value && e.value !== '\n'),
+    (e) => e.type === 'image' || e.type === 'hyperlink' || (e.value && e.value !== '\n'),
   );
   if (!hasVisibleContent && paraFmt.borderBetween) {
     const dashLine =
@@ -807,14 +879,25 @@ function processParagraph(
     const el = elements[i];
 
     if (el.type === 'image') {
+      // Carry image alignment (from wp:anchor positionH or paragraph w:jc) onto the
+      // image itself + its surrounding newlines so the canvas editor renders the
+      // image in the correct row-flex (left/center/right).
+      const imgAlign = el.rowFlex || paraFmt.alignment;
+      if (imgAlign && !el.rowFlex) el.rowFlex = imgAlign;
       const prev = normalized[normalized.length - 1];
       if (!prev || prev.value !== '\n' || prev.type) {
-        normalized.push({ value: '\n' });
+        const br: EditorElement = { value: '\n' };
+        if (imgAlign) br.rowFlex = imgAlign;
+        normalized.push(br);
+      } else if (imgAlign && !prev.rowFlex) {
+        prev.rowFlex = imgAlign;
       }
       normalized.push(el);
       const next = elements[i + 1];
       if (!next || next.value !== '\n' || next.type) {
-        normalized.push({ value: '\n' });
+        const br: EditorElement = { value: '\n' };
+        if (imgAlign) br.rowFlex = imgAlign;
+        normalized.push(br);
       }
       continue;
     }
@@ -833,16 +916,44 @@ function processParagraph(
     normalized.pop();
   }
 
+  // twips → px (1 twip = 1/20 pt; 1pt = 1.333px @ 96dpi → twips/15)
+  const twipsToPx = (t: number) => t / 15;
+
+  // Map docx line spacing to canvas-editor rowMargin multiplier.
+  // lineRule="auto": line/240 = multiplier (240=single, 360=1.5, 480=double).
+  // Default rowMargin in canvas-editor is 0.5 (=> single-line look).
+  // Scale: rowMargin = 0.5 * (line/240).
+  let lineRowMargin: number | undefined;
+  if (
+    paraFmt.spacingLineTwips &&
+    (!paraFmt.spacingLineRule || paraFmt.spacingLineRule === 'auto')
+  ) {
+    const mult = paraFmt.spacingLineTwips / 240;
+    if (mult > 0) lineRowMargin = 0.5 * mult;
+  }
+
+  const before = paraFmt.spacingBeforeTwips ?? 0;
+  const after = paraFmt.spacingAfterTwips ?? 0;
+
   // If paragraph is empty (no visible content), drop it unless it carries spacing or borders.
-  const hasNonEmpty = normalized.some((e) => e.type === 'image' || (e.value && e.value !== '\n'));
+  const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || (e.value && e.value !== '\n'));
   if (!hasNonEmpty && !paraFmt.borderBetween) {
-    const before = paraFmt.spacingBeforeTwips ?? 0;
-    const after = paraFmt.spacingAfterTwips ?? 0;
-    if (before === 0 && after === 0) {
+    if (before === 0 && after === 0 && !lineRowMargin) {
       return [];
     }
-    const extraLines = Math.max(1, Math.round((before + after) / 240));
-    return Array.from({ length: extraLines }, () => ({ value: '\n' }));
+    // Empty paragraph w/ spacing: emit a single break carrying the spacing
+    const blank: EditorElement = { value: '\n' };
+    if (before) blank.paragraphSpacingBefore = twipsToPx(before);
+    if (after) blank.paragraphSpacingAfter = twipsToPx(after);
+    if (lineRowMargin) blank.rowMargin = lineRowMargin;
+    return [blank];
+  }
+
+  // Apply line spacing (rowMargin) to every element of the paragraph
+  if (lineRowMargin) {
+    for (const e of normalized) {
+      if (e.rowMargin === undefined) e.rowMargin = lineRowMargin;
+    }
   }
 
   // End paragraph with newline — carry paragraph formatting so canvas editor picks it up
@@ -853,6 +964,11 @@ function processParagraph(
     paraBreak.listType = paraFmt.listType;
     paraBreak.listStyle = paraFmt.listStyle;
   }
+  if (lineRowMargin) paraBreak.rowMargin = lineRowMargin;
+  // Paragraph spacing: ZERO marker is the paragraph-START sentinel in canvas-editor,
+  // and `\n` is converted to ZERO at the *next* paragraph's start. So put both on this break.
+  if (before) paraBreak.paragraphSpacingBefore = twipsToPx(before);
+  if (after) paraBreak.paragraphSpacingAfter = twipsToPx(after);
   normalized.push(paraBreak);
 
   return normalized;
@@ -1142,7 +1258,31 @@ function processCellContent(
     if (childEl.localName === 'p') {
       cellElements.push(...processParagraph(childEl, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images));
     } else if (childEl.localName === 'tbl') {
-      cellElements.push(...processTable(childEl, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images));
+      // canvas-editor's click-to-position resolution does not descend into nested
+      // tables, so hyperlinks/images inside a nested table cell become unclickable.
+      // Flatten the nested table by inlining each cell's content, separated by a space.
+      const innerRows = wChildren(childEl, 'tr');
+      for (let r = 0; r < innerRows.length; r++) {
+        const innerCells = wChildren(innerRows[r], 'tc');
+        for (let c = 0; c < innerCells.length; c++) {
+          const inlineCell = processCellContent(
+            innerCells[c], docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images,
+          );
+          // Strip the cell's leading zero-width placeholder if present.
+          const cleaned = inlineCell.filter(
+            (e, idx) => !(idx === 0 && e.value === '​'),
+          );
+          // Drop trailing empty newlines so cells flow inline.
+          while (cleaned.length > 0 && cleaned[cleaned.length - 1].value === '\n' && !cleaned[cleaned.length - 1].type) {
+            cleaned.pop();
+          }
+          if (c > 0 && cleaned.length > 0) {
+            cellElements.push({ value: ' ' });
+          }
+          cellElements.push(...cleaned);
+        }
+        if (r < innerRows.length - 1) cellElements.push({ value: '\n' });
+      }
     }
   }
 
@@ -1504,11 +1644,17 @@ function cleanElements(elements: EditorElement[]): EditorElement[] {
 /*  Public API                                                         */
 /* ------------------------------------------------------------------ */
 
+export interface DocxImportResult {
+  header: EditorElement[];
+  main: EditorElement[];
+  footer: EditorElement[];
+}
+
 /**
  * Parses a .docx ArrayBuffer directly into IElement[] for the canvas editor.
  * No HTML intermediate — reads OpenXML directly.
  */
-export async function docxToElements(arrayBuffer: ArrayBuffer): Promise<EditorElement[]> {
+export async function docxToElements(arrayBuffer: ArrayBuffer): Promise<DocxImportResult> {
   const zip = await JSZip.loadAsync(arrayBuffer);
   const parser = new DOMParser();
 
@@ -1554,9 +1700,73 @@ export async function docxToElements(arrayBuffer: ArrayBuffer): Promise<EditorEl
   if (!bodyEl) {
     throw new Error('Invalid DOCX: missing w:body');
   }
-  console.log(bodyEl);
+
   // 6. Process the body
   const raw = processBody(bodyEl, docDefaults, paraDefaults, defaultParaStyleId, styles, numbering, rels, images);
 
-  return cleanElements(raw);
+  // 7. Header / footer extraction.
+  // header/footer XML parts are referenced via sectPr → w:headerReference / w:footerReference.
+  // Their root element (w:hdr / w:ftr) holds w:p / w:tbl children — same shape as w:body —
+  // so processBody works on them directly. Each part can have its own *.xml.rels for inline images.
+  const loadPart = async (
+    refTag: 'headerReference' | 'footerReference',
+    rootLocalName: 'hdr' | 'ftr',
+  ): Promise<EditorElement[]> => {
+    const refs = bodyEl.getElementsByTagNameNS(W_NS, refTag);
+    const collected: EditorElement[] = [];
+    const seen = new Set<string>();
+    for (let i = 0; i < refs.length; i++) {
+      const refEl = refs[i];
+      const rId = rAttr(refEl, 'id');
+      if (!rId) continue;
+      const rel = rels.get(rId);
+      if (!rel || !rel.target) continue;
+      if (seen.has(rel.target)) continue;
+      seen.add(rel.target);
+
+      const partPath = rel.target.startsWith('/')
+        ? rel.target.slice(1)
+        : `word/${rel.target}`;
+      const partXml = await zip.file(partPath)?.async('text');
+      if (!partXml) continue;
+
+      const partRelsPath = partPath.replace(/([^/]+)$/, '_rels/$1.rels');
+      const partRelsXml = await zip.file(partRelsPath)?.async('text');
+      const partRels = partRelsXml
+        ? parseRelationships(partRelsXml)
+        : new Map<string, { target: string; type: string }>();
+      const mergedRels = new Map(rels);
+      partRels.forEach((v, k) => mergedRels.set(k, v));
+
+      const partDoc = parser.parseFromString(partXml, 'text/xml');
+      const rootEl = partDoc.getElementsByTagNameNS(W_NS, rootLocalName)[0];
+      if (!rootEl) continue;
+
+      const parsed = processBody(
+        rootEl,
+        docDefaults,
+        paraDefaults,
+        defaultParaStyleId,
+        styles,
+        numbering,
+        mergedRels,
+        images,
+      );
+      collected.push(...parsed);
+      // Only honor first reference; skip alternates (default/even/first) to avoid duplication.
+      break;
+    }
+    return cleanElements(collected);
+  };
+
+  const [header, footer] = await Promise.all([
+    loadPart('headerReference', 'hdr'),
+    loadPart('footerReference', 'ftr'),
+  ]);
+
+  return {
+    header,
+    main: cleanElements(raw),
+    footer,
+  };
 }

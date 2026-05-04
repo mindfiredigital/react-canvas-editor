@@ -40,6 +40,7 @@ const LineSpacingButton: React.FC<LineSpacingButtonProps> = ({
     <Box sx={{ position: "relative", ...style }}>
       <Tooltip title="Line spacing">
         <IconButton
+          onMouseDown={(e) => e.preventDefault()}
           onClick={() => setOpen((prev) => !prev)}
           sx={{ borderRadius: 0, padding: "6px" }}>
           <FormatLineSpacingIcon style={{ fontSize: "large" }} />
