@@ -18,7 +18,7 @@ export default [
             }
         ],
         plugins: [
-            nodeResolve(),
+            nodeResolve({ browser: true, preferBuiltins: false }),
             external(),
             babel({
                 exclude: 'node_modules/**',

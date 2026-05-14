@@ -32,18 +32,21 @@ export function VerticalRuler() {
   const contentEnd = PAGE_H - bottomMargin;
 
   function startDrag(handle: 'top' | 'bottom', startClientY: number) {
-    const startMargin = handle === 'top'
-      ? marginsRef.current[0]
-      : marginsRef.current[1];
+    const startMargins = [...marginsRef.current];
+    const startMargin = handle === 'top' ? startMargins[0] : startMargins[1];
 
     function onMove(e: MouseEvent) {
       const dy = e.clientY - startClientY;
       const raw = startMargin + (handle === 'top' ? dy : -dy);
       const clamped = Math.round(Math.max(20, Math.min(450, raw)));
-      const next = [...marginsRef.current];
+      const next = [...startMargins];
       if (handle === 'top') next[0] = clamped;
       else next[1] = clamped;
-      DOMEventHandlers.setPaperMargins(next);
+      try {
+        DOMEventHandlers.setPaperMargins(next);
+      } catch {
+        /* editor not yet registered */
+      }
       dispatch(setDocumentMargins({ margins: next }));
     }
 
@@ -121,7 +124,7 @@ export function VerticalRuler() {
 
       {/* Top margin handle — right‑pointing triangle */}
       <div
-        onMouseDown={(e) => { e.preventDefault(); startDrag('top', e.clientY); }}
+        onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); startDrag('top', e.clientY); }}
         title="Top margin"
         style={{
           position: 'absolute',
@@ -130,7 +133,7 @@ export function VerticalRuler() {
           width: '100%',
           height: 12,
           cursor: 'row-resize',
-          zIndex: 2,
+          zIndex: 3,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'flex-end',
@@ -146,7 +149,7 @@ export function VerticalRuler() {
 
       {/* Bottom margin handle */}
       <div
-        onMouseDown={(e) => { e.preventDefault(); startDrag('bottom', e.clientY); }}
+        onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); startDrag('bottom', e.clientY); }}
         title="Bottom margin"
         style={{
           position: 'absolute',
@@ -155,7 +158,7 @@ export function VerticalRuler() {
           width: '100%',
           height: 12,
           cursor: 'row-resize',
-          zIndex: 2,
+          zIndex: 3,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'flex-end',

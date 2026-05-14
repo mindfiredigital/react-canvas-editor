@@ -916,36 +916,31 @@ function processParagraph(
     normalized.pop();
   }
 
-  // twips → px (1 twip = 1/20 pt; 1pt = 1.333px @ 96dpi → twips/15)
-  const twipsToPx = (t: number) => t / 15;
-
-  // Map docx line spacing to canvas-editor rowMargin multiplier.
-  // lineRule="auto": line/240 = multiplier (240=single, 360=1.5, 480=double).
-  // Default rowMargin in canvas-editor is 0.5 (=> single-line look).
-  // Scale: rowMargin = 0.5 * (line/240).
+  // Map docx line spacing to canvas-editor rowMargin (Google-Docs-style multiplier).
+  // lineRule="auto": line/240 = multiplier (240=single→1.0, 360=1.5, 480=double→2.0).
   let lineRowMargin: number | undefined;
   if (
     paraFmt.spacingLineTwips &&
     (!paraFmt.spacingLineRule || paraFmt.spacingLineRule === 'auto')
   ) {
     const mult = paraFmt.spacingLineTwips / 240;
-    if (mult > 0) lineRowMargin = 0.5 * mult;
+    if (mult > 0) lineRowMargin = mult;
   }
 
-  const before = paraFmt.spacingBeforeTwips ?? 0;
-  const after = paraFmt.spacingAfterTwips ?? 0;
+  // Paragraph before/after spacing intentionally NOT applied — it makes wrapped
+  // lines within a paragraph (line spacing only) feel tight while paragraph
+  // boundaries (line spacing + paraSpacing) get larger gaps. Uniform line
+  // spacing avoids the uneven look users notice when typing/pressing Enter.
 
-  // If paragraph is empty (no visible content), drop it unless it carries spacing or borders.
+  // If paragraph is empty (no visible content), drop it unless it carries borders.
   const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || (e.value && e.value !== '\n'));
   if (!hasNonEmpty && !paraFmt.borderBetween) {
-    if (before === 0 && after === 0 && !lineRowMargin) {
+    if (!lineRowMargin) {
       return [];
     }
-    // Empty paragraph w/ spacing: emit a single break carrying the spacing
+    // Empty paragraph w/ explicit line spacing: emit a single break carrying it
     const blank: EditorElement = { value: '\n' };
-    if (before) blank.paragraphSpacingBefore = twipsToPx(before);
-    if (after) blank.paragraphSpacingAfter = twipsToPx(after);
-    if (lineRowMargin) blank.rowMargin = lineRowMargin;
+    blank.rowMargin = lineRowMargin;
     return [blank];
   }
 
@@ -965,10 +960,6 @@ function processParagraph(
     paraBreak.listStyle = paraFmt.listStyle;
   }
   if (lineRowMargin) paraBreak.rowMargin = lineRowMargin;
-  // Paragraph spacing: ZERO marker is the paragraph-START sentinel in canvas-editor,
-  // and `\n` is converted to ZERO at the *next* paragraph's start. So put both on this break.
-  if (before) paraBreak.paragraphSpacingBefore = twipsToPx(before);
-  if (after) paraBreak.paragraphSpacingAfter = twipsToPx(after);
   normalized.push(paraBreak);
 
   return normalized;

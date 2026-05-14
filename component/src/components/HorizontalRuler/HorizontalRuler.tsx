@@ -7,9 +7,10 @@ import { setDocumentMargins } from '../../redux/documentReducer';
 
 const PAGE_W = 816;
 const DEFAULT_MARGINS = [100, 100, 120, 120]; // [top, bottom, left, right]
-const RULER_H = 24; // total ruler height in px
+const RULER_H = 24;
+const MIN_MARGIN = 20;
+const MAX_MARGIN = 380;
 
-// Tick marks: minor every 24 px (quarter‑inch at 96 dpi), major every 96 px (1 inch)
 function buildTicks() {
   const ticks: Array<{ x: number; major: boolean; label: string }> = [];
   for (let x = 0; x <= PAGE_W; x += 24) {
@@ -27,14 +28,11 @@ export function HorizontalRuler() {
   const marginsRef = useRef(margins);
   marginsRef.current = margins;
 
-  // Seed the Redux store with defaults so the ruler renders correctly on first load.
-  // Do NOT call DOMEventHandlers.setPaperMargins here — the editor is not yet
-  // registered at this point. The canvas uses its own built-in defaults.
   useEffect(() => {
     if (!doc.margins?.length) {
       dispatch(setDocumentMargins({ margins: DEFAULT_MARGINS }));
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const leftMargin = margins[2];
@@ -43,19 +41,27 @@ export function HorizontalRuler() {
   const contentEnd = PAGE_W - rightMargin;
 
   function startDrag(handle: 'left' | 'right', startClientX: number) {
-    const startMargin = handle === 'left'
-      ? marginsRef.current[2]
-      : marginsRef.current[3];
+    // Snapshot margins at drag start so onMove never reads stale Redux/ref state.
+    const startMargins = [...marginsRef.current];
+    const startMargin = handle === 'left' ? startMargins[2] : startMargins[3];
+
+    function applyMargins(next: number[]) {
+      try {
+        DOMEventHandlers.setPaperMargins(next);
+      } catch {
+        // editor not yet registered — silently ignore; redux still updates.
+      }
+      dispatch(setDocumentMargins({ margins: next }));
+    }
 
     function onMove(e: MouseEvent) {
       const dx = e.clientX - startClientX;
       const raw = startMargin + (handle === 'left' ? dx : -dx);
-      const clamped = Math.round(Math.max(20, Math.min(380, raw)));
-      const next = [...marginsRef.current];
+      const clamped = Math.round(Math.max(MIN_MARGIN, Math.min(MAX_MARGIN, raw)));
+      const next = [...startMargins];
       if (handle === 'left') next[2] = clamped;
       else next[3] = clamped;
-      DOMEventHandlers.setPaperMargins(next);
-      dispatch(setDocumentMargins({ margins: next }));
+      applyMargins(next);
     }
 
     function onUp() {
@@ -80,7 +86,6 @@ export function HorizontalRuler() {
         overflow: 'hidden',
       }}
     >
-      {/* Inner 816 px strip — aligns with the page via the same margin: auto centering */}
       <div
         style={{
           width: PAGE_W,
@@ -89,26 +94,22 @@ export function HorizontalRuler() {
           position: 'relative',
         }}
       >
-        {/* Left margin zone */}
         <div style={{
           position: 'absolute', left: 0, top: 0,
           width: contentStart, height: '100%',
           backgroundColor: '#dde1e7',
         }} />
-        {/* Content zone (white) */}
         <div style={{
           position: 'absolute', left: contentStart, top: 0,
           width: Math.max(0, contentEnd - contentStart), height: '100%',
           backgroundColor: '#ffffff',
         }} />
-        {/* Right margin zone */}
         <div style={{
           position: 'absolute', left: contentEnd, top: 0,
           width: PAGE_W - contentEnd, height: '100%',
           backgroundColor: '#dde1e7',
         }} />
 
-        {/* Tick marks via SVG */}
         <svg
           style={{
             position: 'absolute', inset: 0,
@@ -137,9 +138,8 @@ export function HorizontalRuler() {
           ))}
         </svg>
 
-        {/* Left margin handle — downward triangle sitting on top boundary */}
         <div
-          onMouseDown={(e) => { e.preventDefault(); startDrag('left', e.clientX); }}
+          onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); startDrag('left', e.clientX); }}
           title="Left margin"
           style={{
             position: 'absolute',
@@ -148,7 +148,7 @@ export function HorizontalRuler() {
             width: 12,
             height: '100%',
             cursor: 'col-resize',
-            zIndex: 2,
+            zIndex: 3,
             display: 'flex',
             alignItems: 'flex-end',
             justifyContent: 'center',
@@ -162,9 +162,8 @@ export function HorizontalRuler() {
           }} />
         </div>
 
-        {/* Right margin handle */}
         <div
-          onMouseDown={(e) => { e.preventDefault(); startDrag('right', e.clientX); }}
+          onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); startDrag('right', e.clientX); }}
           title="Right margin"
           style={{
             position: 'absolute',
@@ -173,7 +172,7 @@ export function HorizontalRuler() {
             width: 12,
             height: '100%',
             cursor: 'col-resize',
-            zIndex: 2,
+            zIndex: 3,
             display: 'flex',
             alignItems: 'flex-end',
             justifyContent: 'center',
