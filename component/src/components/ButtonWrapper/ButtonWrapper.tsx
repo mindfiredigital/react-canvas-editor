@@ -11,6 +11,7 @@ function ButtonWrapper(props: ButtonWrapperProps) {
         edge="start"
         aria-label={props.title}
         sx={{ mr: 1, borderRadius: 0, ...props.sx }}
+        onMouseDown={(e) => e.preventDefault()}
         onClick={props.handleClick}
       >
         {props.children}
