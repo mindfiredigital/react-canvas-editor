@@ -31,6 +31,7 @@ export interface EditorTableCell {
 
 export interface EditorTableRow {
   height: number;
+  minHeight?: number;
   tdList: EditorTableCell[];
 }
 
@@ -64,6 +65,10 @@ export interface EditorElement {
   trList?: EditorTableRow[];
   colgroup?: EditorColgroup[];
   borderType?: string;
+  pageBreakBorderTop?: string;
+  pageBreakBorderTopWidth?: number;
+  pageBreakBorderBottom?: string;
+  pageBreakBorderBottomWidth?: number;
 }
 
 interface RunFormat {
@@ -969,7 +974,18 @@ function processParagraph(
 /*  Process a table (w:tbl) — flatten to linear content                */
 /* ------------------------------------------------------------------ */
 
-const LINE_HEIGHT_PX = 22;
+// Matches canvas-editor's default rendered line height for size 11 text:
+// fontSize * defaultRowMargin (1.12) + small padding. Keeping this tight
+// prevents inflated row heights on import (which caused extra whitespace
+// inside cells and premature page breaks at the bottom of pages).
+const LINE_HEIGHT_PX = 20;
+// Matches canvas-editor's defaultTrMinHeight. Emitting this as both height
+// and minHeight on every row lets canvas-editor measure rendered cell
+// content and grow rows from there. Using a larger estimate (our previous
+// behavior) locked rows to that estimate and produced visible empty space
+// below text in cells like Experience.
+const MIN_ROW_HEIGHT = 40;
+const MIN_CELL_HEIGHT = 20;
 
 /**
  * Estimate line count for a cell's content at a given usable width.
@@ -1353,14 +1369,17 @@ function processTable(
     const cells = wChildren(tr, 'tc');
     const tdList: EditorTableCell[] = [];
 
-    // Parse row height if specified
+    // Read explicit <w:trHeight> if present. Used only as a starting value
+    // for the splitOversizedRow decision below; the row we emit to the
+    // editor always ships MIN_ROW_HEIGHT as height/minHeight so canvas-
+    // editor sizes rows from rendered cell content instead of an estimate.
     const trPr = wEl(tr, 'trPr');
-    let rowHeight = 40; // default min height
+    let rowHeight = MIN_ROW_HEIGHT;
     if (trPr) {
       const trHeightEl = wEl(trPr, 'trHeight');
       if (trHeightEl) {
         const hVal = wAttr(trHeightEl, 'val');
-        if (hVal) rowHeight = Math.max(twipsToPx(parseInt(hVal, 10)), 30);
+        if (hVal) rowHeight = Math.max(twipsToPx(parseInt(hVal, 10)), MIN_ROW_HEIGHT);
       }
     }
 
@@ -1508,18 +1527,110 @@ function processTable(
           currentLineWidth = charWidth; // wrap carry-over
         }
       }
-      // ~22px per line (accounts for line spacing), minimum 30px
-      const cellHeight = Math.max(30, lineCount * 22);
+      const cellHeight = Math.max(MIN_CELL_HEIGHT, lineCount * LINE_HEIGHT_PX);
       if (cellHeight > estimatedHeight) estimatedHeight = cellHeight;
     }
 
+    // Emit the floor height to canvas-editor instead of our estimate.
+    // Canvas-editor re-measures each row against its rendered cell content
+    // and expands as needed. Passing our inflated estimate locks rows to
+    // that height, leaving large empty gaps below the actual text (the
+    // "extra spacing" seen in the Experience cell and at page bottoms).
     if (estimatedHeight > MAX_TABLE_HEIGHT) {
+      // Splitting decision still uses the estimate, but each emitted row
+      // ships with the floor so canvas-editor sizes it from content.
       const splitRows = splitOversizedRow({ height: estimatedHeight, tdList }, colgroup, maxLinesPerRow);
-      for (const sr of splitRows) trList.push(sr);
+      for (const sr of splitRows) {
+        sr.height = MIN_ROW_HEIGHT;
+        sr.minHeight = MIN_ROW_HEIGHT;
+        trList.push(sr);
+      }
     } else {
-      trList.push({ height: estimatedHeight, tdList });
+      trList.push({ height: MIN_ROW_HEIGHT, minHeight: MIN_ROW_HEIGHT, tdList });
     }
   }
+
+  // Per-row fill-missing only: if any cell in a row declares a top or
+  // bottom border, copy it to the cells in the same row that have none.
+  // Never overrides authored borders, so Skills/Education thick (sz=18)
+  // dividers stay intact. Just closes nil-bottom asymmetries so the row
+  // bottom renders as a continuous line across all columns, matching
+  // Google Docs' page-end rendering of the same DOCX.
+  for (const row of trList) {
+    let fillBottomColor: string | undefined;
+    let fillBottomWidth: number | undefined;
+    let fillTopColor: string | undefined;
+    let fillTopWidth: number | undefined;
+    for (const td of row.tdList) {
+      if (td.borderBgBottom && fillBottomColor === undefined) {
+        fillBottomColor = td.borderBgBottom;
+        fillBottomWidth = td.borderWidthBottom;
+      }
+      if (td.borderBgTop && fillTopColor === undefined) {
+        fillTopColor = td.borderBgTop;
+        fillTopWidth = td.borderWidthTop;
+      }
+    }
+    for (const td of row.tdList) {
+      if (fillBottomColor && !td.borderBgBottom) {
+        td.borderBgBottom = fillBottomColor;
+        td.borderWidthBottom = fillBottomWidth;
+      }
+      if (fillTopColor && !td.borderBgTop) {
+        td.borderBgTop = fillTopColor;
+        td.borderWidthTop = fillTopWidth;
+      }
+    }
+  }
+
+  // Gap after section separators: when the previous row draws a visible
+  // bottom border (red sz>0), prepend a small blank line to each cell of
+  // the next row so the text doesn't sit flush against the divider —
+  // matches Google Docs spacing after section separators.
+  const isVisibleBorder = (color: string | undefined) =>
+    !!color && color.toLowerCase() !== '#ffffff' && color.toLowerCase() !== '#fff';
+  for (let r = 1; r < trList.length; r++) {
+    const prev = trList[r - 1];
+    const hasPrevBottom = prev.tdList.some(td => isVisibleBorder(td.borderBgBottom));
+    if (!hasPrevBottom) continue;
+    for (const td of trList[r].tdList) {
+      if (!td.value || td.value.length === 0) continue;
+      td.value.unshift({ value: '\n', size: 24 });
+    }
+  }
+
+  // Page-break border continuity: when the renderer paginates this table
+  // across page boundaries, it should paint the table's outer top/bottom
+  // border on each page (matching Google Docs). Cache color+width here so
+  // the renderer can apply it at every split point.
+  const tblBordersEl = tblPr ? wEl(tblPr, 'tblBorders') : null;
+  const pageBreakBorderTop = borders.top || borders.insideH;
+  const pageBreakBorderBottom = borders.bottom || borders.insideH;
+  const pageBreakBorderTopWidth = tblBordersEl
+    ? parseBorderSize(wEl(tblBordersEl, 'top')) ?? parseBorderSize(wEl(tblBordersEl, 'insideH'))
+    : undefined;
+  const pageBreakBorderBottomWidth = tblBordersEl
+    ? parseBorderSize(wEl(tblBordersEl, 'bottom')) ?? parseBorderSize(wEl(tblBordersEl, 'insideH'))
+    : undefined;
+
+  const buildTable = (rows: EditorTableRow[]): EditorElement => {
+    const t: EditorElement = {
+      value: '',
+      type: 'table',
+      colgroup: colgroup.length > 0 ? colgroup : [{ width: 200 }, { width: 200 }],
+      trList: rows,
+      borderType: hasBorders ? 'all' : 'empty',
+    };
+    if (pageBreakBorderTop) {
+      t.pageBreakBorderTop = pageBreakBorderTop;
+      if (pageBreakBorderTopWidth !== undefined) t.pageBreakBorderTopWidth = pageBreakBorderTopWidth;
+    }
+    if (pageBreakBorderBottom) {
+      t.pageBreakBorderBottom = pageBreakBorderBottom;
+      if (pageBreakBorderBottomWidth !== undefined) t.pageBreakBorderBottomWidth = pageBreakBorderBottomWidth;
+    }
+    return t;
+  };
 
   // Split large tables into multiple tables so pagination can occur between them.
   const tables: EditorElement[] = [];
@@ -1528,13 +1639,7 @@ function processTable(
 
   for (const row of trList) {
     if (currentRows.length > 0 && currentHeight + row.height > MAX_TABLE_HEIGHT) {
-      tables.push({
-        value: '',
-        type: 'table',
-        colgroup: colgroup.length > 0 ? colgroup : [{ width: 200 }, { width: 200 }],
-        trList: currentRows,
-        borderType: hasBorders ? 'all' : 'empty',
-      });
+      tables.push(buildTable(currentRows));
       // Avoid inserting a hard page break here; the editor paginates between tables.
       // Adding a pageBreak can create an empty page between split tables.
       currentRows = [];
@@ -1545,15 +1650,8 @@ function processTable(
   }
 
   if (currentRows.length > 0) {
-    tables.push({
-      value: '',
-      type: 'table',
-      colgroup: colgroup.length > 0 ? colgroup : [{ width: 200 }, { width: 200 }],
-      trList: currentRows,
-      borderType: hasBorders ? 'all' : 'empty',
-    });
+    tables.push(buildTable(currentRows));
   }
-  console.log(tables);
   return tables;
 }
 
