@@ -79,14 +79,16 @@
     "husky": "^9.0.10",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
-    "react": "^18.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^4.0.0",
     "rollup-plugin-svg": "^2.0.0",
     "sass": "^1.68.0",
     "semantic-release": "^23.0.0",
-    "storybook": "^7.4.6"
+    "storybook": "^7.4.6",
+    "@mindfiredigital/canvas-editor": "file:.yalc/@mindfiredigital/canvas-editor"
   },
   "peerDependencies": {
     "react": "^18.2.0"
@@ -94,12 +96,12 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mindfiredigital/canvas-editor": "^1.0.5",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
     "@r2wc/react-to-web-component": "^2.0.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@storybook/preset-scss": "^1.0.3",
+    "jszip": "^3.10.1",
     "react-color": "^2.19.3",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.12.0",
@@ -120,5 +122,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

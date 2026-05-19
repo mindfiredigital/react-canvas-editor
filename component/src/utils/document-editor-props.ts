@@ -70,12 +70,8 @@ export const canvasClass = {
   margin: {},
 };
 
-export function handleChange(data) {
-  console.log(`test -> ${data}`);
-}
+export function handleChange(_data) {}
 
-export function handleSelectedText(text) {
-  console.log(`select->, ${text}`);
-}
+export function handleSelectedText(_text) {}
 
 export const defaultText = "Hello world";

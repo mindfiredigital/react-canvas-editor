@@ -31,7 +31,22 @@ const HighlightTextButton: React.FC<{
           aria-describedby={id}
           sx={Object.assign({ mr: 1, borderRadius: 0 }, style)}
           onClick={handleClick}>
-          <ColorizeIcon style={{ fontSize: "large" }} />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}>
+            <ColorizeIcon style={{ fontSize: "large" }} />
+            <Box
+              sx={{
+                width: "1rem",
+                height: "3px",
+                marginTop: "1px",
+                backgroundColor: color || "transparent",
+              }}
+            />
+          </Box>
         </IconButton>
       </Tooltip>
       <ColorPalettes

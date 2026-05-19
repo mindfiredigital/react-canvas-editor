@@ -1,7 +1,7 @@
 import React, { FC, useRef } from "react";
 import CanvasEditor from "../../components/Editor/CanvasEditor";
 import EditorToolbar from "../../components/EditorToolbar/EditorToolbar";
-import EditorFooter from "../../components/EditorFooter/EditorFooter";
+import { HorizontalRuler } from "../../components/HorizontalRuler/HorizontalRuler";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
 import {
@@ -20,6 +20,8 @@ type DocumentEditorProps = {
   on_change?: (data: string) => any;
   on_select?: (text: string) => any;
   value?: string;
+  apiBaseUrl?: string;
+  onClientDocxImport?: (file: File) => Promise<unknown[]>;
 };
 
 const DocumentEditor: FC<DocumentEditorProps> = ({
@@ -29,6 +31,8 @@ const DocumentEditor: FC<DocumentEditorProps> = ({
   on_change = handleChange,
   on_select = handleSelectedText,
   value = defaultText,
+  apiBaseUrl,
+  onClientDocxImport,
 }) => {
   // const defaultToolbarItem = {
   //   bold: true,
@@ -73,6 +77,7 @@ const DocumentEditor: FC<DocumentEditorProps> = ({
       : defaultToolbarClass;
 
   const canvasRef = useRef(null);
+
   return (
     <Provider store={store}>
       <>
@@ -80,7 +85,10 @@ const DocumentEditor: FC<DocumentEditorProps> = ({
           ref={canvasRef}
           toolbar={toolbar}
           toolbarClass={toolbarClass}
+          apiBaseUrl={apiBaseUrl}
+          onClientDocxImport={onClientDocxImport}
         />
+        <HorizontalRuler />
         <CanvasEditor
           ref={canvasRef}
           style={canvas_class}
@@ -88,7 +96,6 @@ const DocumentEditor: FC<DocumentEditorProps> = ({
           onSelect={on_select}
           data={value}
         />
-        <EditorFooter />
       </>
     </Provider>
   );

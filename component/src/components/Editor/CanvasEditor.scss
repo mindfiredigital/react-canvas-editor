@@ -10,6 +10,7 @@
 }
 
 .canvas-editor-main {
-  padding: 70px 30px 80px;
+  padding: 0 30px 80px 36px; /* extra 36 px on left for the vertical ruler */
   margin: auto;
+  position: relative;
 }
