@@ -61,6 +61,7 @@ export interface EditorElement {
   rowMargin?: number;
   paragraphSpacingBefore?: number;
   paragraphSpacingAfter?: number;
+  dashArray?: number[];
   // Table fields
   trList?: EditorTableRow[];
   colgroup?: EditorColgroup[];
@@ -466,13 +467,17 @@ function parseParagraphProperties(
     if (hanging) fmt.indentHangingTwips = parseInt(hanging, 10);
   }
 
-  // Paragraph border between (often used for dashed separators)
+  // Paragraph border between (often used for dashed separators).
+  // Ignore "nil"/"none" which mean "no border" — Word emits these for
+  // every paragraph and treating them as a border yields spurious lines.
   const pBdrEl = wEl(pPr, 'pBdr');
   if (pBdrEl) {
     const betweenEl = wEl(pBdrEl, 'between');
     if (betweenEl) {
       const val = wAttr(betweenEl, 'val');
-      if (val) fmt.borderBetween = val;
+      // eslint-disable-next-line no-console
+      console.log('[docx][pBdr-between]', { val });
+      if (val && val !== 'nil' && val !== 'none') fmt.borderBetween = val;
     }
   }
 
@@ -525,7 +530,11 @@ function charToElement(char: string, fmt: RunFormat, para: Partial<ParaFormat>, 
   if (fmt.bold) el.bold = true;
   if (fmt.italic) el.italic = true;
   if (fmt.underline) el.underline = true;
-  if (fmt.strikeout) el.strikeout = true;
+  if (fmt.strikeout) {
+    el.strikeout = true;
+    // eslint-disable-next-line no-console
+    console.log('[docx][strikeout-set]', { char, fmt });
+  }
   if (fmt.color) el.color = fmt.color;
   if (fmt.highlight) el.highlight = fmt.highlight;
   if (fmt.font) el.font = fmt.font;
@@ -847,11 +856,44 @@ function processParagraph(
     (e) => e.type === 'image' || e.type === 'hyperlink' || (e.value && e.value !== '\n'),
   );
   if (!hasVisibleContent && paraFmt.borderBetween) {
-    const dashLine =
-      paraFmt.borderBetween === 'dashed'
-        ? '- '.repeat(50).trim()
-        : '—'.repeat(60);
-    elements.push({ value: dashLine });
+    // Use canvas-editor's native separator element — renders as a full-row
+    // horizontal rule that auto-fits the page width, never wraps.
+    const dashArray =
+      paraFmt.borderBetween === 'dashed' ? [3, 3] : [];
+    elements.push({ value: '\n', type: 'separator', dashArray });
+  }
+
+  // Collapse paragraphs whose entire visible content is a literal
+  // "- - - - -" separator. Word/Google pages are wider than canvas-editor
+  // so the original glyph count wraps to a second half-row. Replace with
+  // a native single-row separator element.
+  // Replace any contiguous run of literal "- " separator chars (≥30 dashes)
+  // anywhere in the paragraph with a native separator element. Word/Google
+  // pages are wider than canvas-editor, so the original glyph count wraps
+  // to a second half-row. Handles cases where the dashes share a paragraph
+  // with prior text + a line break (e.g. "Particulars: ... <br/>- - - ...").
+  if (hasVisibleContent) {
+    const isDashRunChar = (e: EditorElement) =>
+      !e.type && (e.value === '-' || e.value === ' ');
+    let i = 0;
+    while (i < elements.length) {
+      if (isDashRunChar(elements[i])) {
+        let j = i;
+        let dashes = 0;
+        while (j < elements.length && isDashRunChar(elements[j])) {
+          if (elements[j].value === '-') dashes++;
+          j++;
+        }
+        if (dashes >= 30) {
+          elements.splice(i, j - i, { value: '\n', type: 'separator', dashArray: [3, 3] });
+          i++;
+          continue;
+        }
+        i = j;
+      } else {
+        i++;
+      }
+    }
   }
 
   // Normalize paragraph content:
@@ -938,7 +980,7 @@ function processParagraph(
   // spacing avoids the uneven look users notice when typing/pressing Enter.
 
   // If paragraph is empty (no visible content), drop it unless it carries borders.
-  const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || (e.value && e.value !== '\n'));
+  const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || e.type === 'separator' || (e.value && e.value !== '\n'));
   if (!hasNonEmpty && !paraFmt.borderBetween) {
     if (!lineRowMargin) {
       return [];
@@ -1211,6 +1253,8 @@ function splitOversizedRow(
 /** Parse border color from a w:tblBorders child element. Returns null for val="nil" (explicit no border). */
 function parseBorderColor(borderEl: Element | null): string | null | undefined {
   if (!borderEl) return undefined;
+  const val = wAttr(borderEl, 'val');
+  if (val === 'nil' || val === 'none') return '#ffffff';
   const sz: string | null  = wAttr(borderEl, 'sz');
   if (sz === '0') return '#ffffff'; // explicitly no border
   const color = wAttr(borderEl, 'color');
