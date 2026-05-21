@@ -1222,7 +1222,12 @@ function splitOversizedRow(
           value: chunkContent,
         };
         if (tdList[ti].backgroundColor) td.backgroundColor = tdList[ti].backgroundColor;
-        if (tdList[ti].borderBgTop && ci === 0) td.borderBgTop = tdList[ti].borderBgTop;
+        if (ci === 0) {
+          if (tdList[ti].borderBgTop) td.borderBgTop = tdList[ti].borderBgTop;
+          if (tdList[ti].borderWidthTop) td.borderWidthTop = tdList[ti].borderWidthTop;
+        } else {
+          td.borderBgTop = '#ffffff';
+        }
         if (ci === chunks.length - 1) {
           if (tdList[ti].borderBgBottom) td.borderBgBottom = tdList[ti].borderBgBottom;
           if (tdList[ti].borderWidthBottom) td.borderWidthBottom = tdList[ti].borderWidthBottom;
@@ -1231,7 +1236,6 @@ function splitOversizedRow(
         }
         if (tdList[ti].borderBgLeft) td.borderBgLeft = tdList[ti].borderBgLeft;
         if (tdList[ti].borderBgRight) td.borderBgRight = tdList[ti].borderBgRight;
-        if (tdList[ti].borderWidthTop && ci === 0) td.borderWidthTop = tdList[ti].borderWidthTop;
         newTdList.push(td);
       } else if (ci === 0) {
         const nonTallTd = { ...tdList[ti], rowspan: 1 };
@@ -1247,6 +1251,7 @@ function splitOversizedRow(
         if (tdList[ti].backgroundColor) td.backgroundColor = tdList[ti].backgroundColor;
         if (tdList[ti].borderBgLeft) td.borderBgLeft = tdList[ti].borderBgLeft;
         if (tdList[ti].borderBgRight) td.borderBgRight = tdList[ti].borderBgRight;
+        td.borderBgTop = '#ffffff';
         td.borderBgBottom = '#ffffff';
         newTdList.push(td);
       }
@@ -1694,18 +1699,19 @@ function processTable(
   // border on each page (matching Google Docs). Cache color+width here so
   // the renderer can apply it at every split point.
   const tblBordersEl = tblPr ? wEl(tblPr, 'tblBorders') : null;
-  // Only use outer top/bottom as page-break borders when they differ from
-  // insideH. When all borders are the same color (generic "all borders" grid),
-  // insideH as a fallback would stamp black lines at every page-break inside
-  // the table, overriding any cell-level accent borders (e.g. red dividers).
-  const outerDiffersFromGrid = borders.top && borders.top !== borders.insideH;
-  const pageBreakBorderTop = outerDiffersFromGrid ? borders.top : undefined;
-  const pageBreakBorderBottom = outerDiffersFromGrid ? borders.bottom : undefined;
-  const pageBreakBorderTopWidth = outerDiffersFromGrid && tblBordersEl
-    ? parseBorderSize(wEl(tblBordersEl, 'top'))
+  // Prefer the accent color used by section-separator rows (e.g. #fa0001)
+  // over the generic tblBorders color so every page-break line matches the
+  // visual accent rather than the dull insideH/top fallback.
+  const accentBorderColor =
+    trList.flatMap(r => r.tdList).map(td => td.borderBgTop).find(c => c && c !== '#ffffff') ||
+    trList.flatMap(r => r.tdList).map(td => td.borderBgBottom).find(c => c && c !== '#ffffff');
+  const pageBreakBorderTop = accentBorderColor || borders.top || borders.insideH;
+  const pageBreakBorderBottom = accentBorderColor || borders.bottom || borders.insideH;
+  const pageBreakBorderTopWidth = tblBordersEl
+    ? parseBorderSize(wEl(tblBordersEl, 'top')) ?? parseBorderSize(wEl(tblBordersEl, 'insideH'))
     : undefined;
-  const pageBreakBorderBottomWidth = outerDiffersFromGrid && tblBordersEl
-    ? parseBorderSize(wEl(tblBordersEl, 'bottom'))
+  const pageBreakBorderBottomWidth = tblBordersEl
+    ? parseBorderSize(wEl(tblBordersEl, 'bottom')) ?? parseBorderSize(wEl(tblBordersEl, 'insideH'))
     : undefined;
 
   const buildTable = (rows: EditorTableRow[]): EditorElement => {
