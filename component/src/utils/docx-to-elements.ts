@@ -61,6 +61,7 @@ export interface EditorElement {
   rowMargin?: number;
   paragraphSpacingBefore?: number;
   paragraphSpacingAfter?: number;
+  dashArray?: number[];
   // Table fields
   trList?: EditorTableRow[];
   colgroup?: EditorColgroup[];
@@ -466,13 +467,17 @@ function parseParagraphProperties(
     if (hanging) fmt.indentHangingTwips = parseInt(hanging, 10);
   }
 
-  // Paragraph border between (often used for dashed separators)
+  // Paragraph border between (often used for dashed separators).
+  // Ignore "nil"/"none" which mean "no border" — Word emits these for
+  // every paragraph and treating them as a border yields spurious lines.
   const pBdrEl = wEl(pPr, 'pBdr');
   if (pBdrEl) {
     const betweenEl = wEl(pBdrEl, 'between');
     if (betweenEl) {
       const val = wAttr(betweenEl, 'val');
-      if (val) fmt.borderBetween = val;
+      // eslint-disable-next-line no-console
+      console.log('[docx][pBdr-between]', { val });
+      if (val && val !== 'nil' && val !== 'none') fmt.borderBetween = val;
     }
   }
 
@@ -525,7 +530,11 @@ function charToElement(char: string, fmt: RunFormat, para: Partial<ParaFormat>, 
   if (fmt.bold) el.bold = true;
   if (fmt.italic) el.italic = true;
   if (fmt.underline) el.underline = true;
-  if (fmt.strikeout) el.strikeout = true;
+  if (fmt.strikeout) {
+    el.strikeout = true;
+    // eslint-disable-next-line no-console
+    console.log('[docx][strikeout-set]', { char, fmt });
+  }
   if (fmt.color) el.color = fmt.color;
   if (fmt.highlight) el.highlight = fmt.highlight;
   if (fmt.font) el.font = fmt.font;
@@ -770,6 +779,7 @@ function processParagraph(
       paraFmt.listStyle = directParaFmt.listStyle;
     }
     if (directParaFmt.indentLevel !== undefined) paraFmt.indentLevel = directParaFmt.indentLevel;
+    if (directParaFmt.borderBetween) paraFmt.borderBetween = directParaFmt.borderBetween;
 
     // Paragraph-level rPr overrides style run format
     const pRPr = wEl(pPr, 'rPr');
@@ -847,11 +857,47 @@ function processParagraph(
     (e) => e.type === 'image' || e.type === 'hyperlink' || (e.value && e.value !== '\n'),
   );
   if (!hasVisibleContent && paraFmt.borderBetween) {
-    const dashLine =
-      paraFmt.borderBetween === 'dashed'
-        ? '- '.repeat(50).trim()
-        : '—'.repeat(60);
-    elements.push({ value: dashLine });
+    // Use canvas-editor's native separator element — renders as a full-row
+    // horizontal rule that auto-fits the page width, never wraps.
+
+    const dashArray =
+      paraFmt.borderBetween === 'dashed' ? [3, 3] : [];
+    elements.push({ value: '\n', type: 'separator', dashArray });
+  }
+
+  // Collapse paragraphs whose entire visible content is a literal
+  // "- - - - -" separator. Word/Google pages are wider than canvas-editor
+  // so the original glyph count wraps to a second half-row. Replace with
+  // a native single-row separator element.
+  // Replace any contiguous run of literal "- " separator chars (≥30 dashes)
+  // anywhere in the paragraph with a native separator element. Word/Google
+  // pages are wider than canvas-editor, so the original glyph count wraps
+  // to a second half-row. Handles cases where the dashes share a paragraph
+  // with prior text + a line break (e.g. "Particulars: ... <br/>- - - ...").
+
+
+  if (hasVisibleContent) {
+    const isDashRunChar = (e: EditorElement) =>
+      !e.type && (e.value === '-' || e.value === ' ');
+    let i = 0;
+    while (i < elements.length) {
+      if (isDashRunChar(elements[i])) {
+        let j = i;
+        let dashes = 0;
+        while (j < elements.length && isDashRunChar(elements[j])) {
+          if (elements[j].value === '-') dashes++;
+          j++;
+        }
+        if (dashes >= 30) {
+          elements.splice(i, j - i, { value: '\n', type: 'separator', dashArray: [3, 3] });
+          i++;
+          continue;
+        }
+        i = j;
+      } else {
+        i++;
+      }
+    }
   }
 
   // Normalize paragraph content:
@@ -938,7 +984,7 @@ function processParagraph(
   // spacing avoids the uneven look users notice when typing/pressing Enter.
 
   // If paragraph is empty (no visible content), drop it unless it carries borders.
-  const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || (e.value && e.value !== '\n'));
+  const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || e.type === 'separator' || (e.value && e.value !== '\n'));
   if (!hasNonEmpty && !paraFmt.borderBetween) {
     if (!lineRowMargin) {
       return [];
@@ -956,16 +1002,21 @@ function processParagraph(
     }
   }
 
-  // End paragraph with newline — carry paragraph formatting so canvas editor picks it up
-  const paraBreak: EditorElement = { value: '\n' };
-  if (paraFmt.alignment) paraBreak.rowFlex = paraFmt.alignment;
-  if (paraFmt.titleLevel) paraBreak.titleLevel = paraFmt.titleLevel;
-  if (paraFmt.listType) {
-    paraBreak.listType = paraFmt.listType;
-    paraBreak.listStyle = paraFmt.listStyle;
+  // The separator element already carries value:'\n' and terminates its own row —
+  // adding another paraBreak would create a spurious blank line below the rule.
+  const isSeparatorOnly = normalized.length === 1 && normalized[0].type === 'separator';
+  if (!isSeparatorOnly) {
+    // End paragraph with newline — carry paragraph formatting so canvas editor picks it up
+    const paraBreak: EditorElement = { value: '\n' };
+    if (paraFmt.alignment) paraBreak.rowFlex = paraFmt.alignment;
+    if (paraFmt.titleLevel) paraBreak.titleLevel = paraFmt.titleLevel;
+    if (paraFmt.listType) {
+      paraBreak.listType = paraFmt.listType;
+      paraBreak.listStyle = paraFmt.listStyle;
+    }
+    if (lineRowMargin) paraBreak.rowMargin = lineRowMargin;
+    normalized.push(paraBreak);
   }
-  if (lineRowMargin) paraBreak.rowMargin = lineRowMargin;
-  normalized.push(paraBreak);
 
   return normalized;
 }
@@ -1171,13 +1222,22 @@ function splitOversizedRow(
           value: chunkContent,
         };
         if (tdList[ti].backgroundColor) td.backgroundColor = tdList[ti].backgroundColor;
-        if (tdList[ti].borderBgTop) td.borderBgTop = tdList[ti].borderBgTop;
-        if (tdList[ti].borderBgBottom) td.borderBgBottom = tdList[ti].borderBgBottom;
+        if (tdList[ti].borderBgTop && ci === 0) td.borderBgTop = tdList[ti].borderBgTop;
+        if (ci === chunks.length - 1) {
+          if (tdList[ti].borderBgBottom) td.borderBgBottom = tdList[ti].borderBgBottom;
+          if (tdList[ti].borderWidthBottom) td.borderWidthBottom = tdList[ti].borderWidthBottom;
+        } else {
+          td.borderBgBottom = '#ffffff';
+        }
         if (tdList[ti].borderBgLeft) td.borderBgLeft = tdList[ti].borderBgLeft;
         if (tdList[ti].borderBgRight) td.borderBgRight = tdList[ti].borderBgRight;
+        if (tdList[ti].borderWidthTop && ci === 0) td.borderWidthTop = tdList[ti].borderWidthTop;
         newTdList.push(td);
       } else if (ci === 0) {
-        newTdList.push({ ...tdList[ti], rowspan: 1 });
+        const nonTallTd = { ...tdList[ti], rowspan: 1 };
+        nonTallTd.borderBgBottom = '#ffffff';
+        nonTallTd.borderWidthBottom = undefined;
+        newTdList.push(nonTallTd);
       } else {
         const td: EditorTableCell = {
           colspan: tdList[ti].colspan,
@@ -1187,6 +1247,7 @@ function splitOversizedRow(
         if (tdList[ti].backgroundColor) td.backgroundColor = tdList[ti].backgroundColor;
         if (tdList[ti].borderBgLeft) td.borderBgLeft = tdList[ti].borderBgLeft;
         if (tdList[ti].borderBgRight) td.borderBgRight = tdList[ti].borderBgRight;
+        td.borderBgBottom = '#ffffff';
         newTdList.push(td);
       }
     }
@@ -1211,6 +1272,8 @@ function splitOversizedRow(
 /** Parse border color from a w:tblBorders child element. Returns null for val="nil" (explicit no border). */
 function parseBorderColor(borderEl: Element | null): string | null | undefined {
   if (!borderEl) return undefined;
+  const val = wAttr(borderEl, 'val');
+  if (val === 'nil' || val === 'none') return '#ffffff';
   const sz: string | null  = wAttr(borderEl, 'sz');
   if (sz === '0') return '#ffffff'; // explicitly no border
   const color = wAttr(borderEl, 'color');
@@ -1488,6 +1551,33 @@ function processTable(
           if (cellBottom !== undefined) { if (cellBottom === null) delete td.borderBgBottom; else td.borderBgBottom = cellBottom; }
           if (cellLeft !== undefined) { if (cellLeft === null) delete td.borderBgLeft; else td.borderBgLeft = cellLeft; }
           if (cellRight !== undefined) { if (cellRight === null) delete td.borderBgRight; else td.borderBgRight = cellRight; }
+
+          // Strip "bottom-only" decorative borders. Cells that author the
+          // bottom border alone (top/left/right explicitly w:val="nil")
+          // produce broken partial strokes when neighbour cells in the
+          // same row have a different bottom width or none. Google Docs
+          // hides these; matched cells in this resume are the inter-bullet
+          // separators in the Recent Projects section. Cells with both top
+          // and bottom borders (e.g. section header rows) are unaffected.
+          const sideIsNil = (sideEl: Element | null) => {
+            if (!sideEl) return false;
+            const v = wAttr(sideEl, 'val');
+            return v === 'nil' || v === 'none';
+          };
+          const topNil = sideIsNil(wEl(tcBorders, 'top'));
+          const leftNil =
+            sideIsNil(wEl(tcBorders, 'left')) ||
+            sideIsNil(wEl(tcBorders, 'start'));
+          const rightNil =
+            sideIsNil(wEl(tcBorders, 'right')) ||
+            sideIsNil(wEl(tcBorders, 'end'));
+          const bottomSet =
+            !!wEl(tcBorders, 'bottom') &&
+            !sideIsNil(wEl(tcBorders, 'bottom'));
+          if (topNil && leftNil && rightNil && bottomSet) {
+            delete td.borderBgBottom;
+            td.borderWidthBottom = undefined;
+          }
         }
       }
 
@@ -1604,13 +1694,18 @@ function processTable(
   // border on each page (matching Google Docs). Cache color+width here so
   // the renderer can apply it at every split point.
   const tblBordersEl = tblPr ? wEl(tblPr, 'tblBorders') : null;
-  const pageBreakBorderTop = borders.top || borders.insideH;
-  const pageBreakBorderBottom = borders.bottom || borders.insideH;
-  const pageBreakBorderTopWidth = tblBordersEl
-    ? parseBorderSize(wEl(tblBordersEl, 'top')) ?? parseBorderSize(wEl(tblBordersEl, 'insideH'))
+  // Only use outer top/bottom as page-break borders when they differ from
+  // insideH. When all borders are the same color (generic "all borders" grid),
+  // insideH as a fallback would stamp black lines at every page-break inside
+  // the table, overriding any cell-level accent borders (e.g. red dividers).
+  const outerDiffersFromGrid = borders.top && borders.top !== borders.insideH;
+  const pageBreakBorderTop = outerDiffersFromGrid ? borders.top : undefined;
+  const pageBreakBorderBottom = outerDiffersFromGrid ? borders.bottom : undefined;
+  const pageBreakBorderTopWidth = outerDiffersFromGrid && tblBordersEl
+    ? parseBorderSize(wEl(tblBordersEl, 'top'))
     : undefined;
-  const pageBreakBorderBottomWidth = tblBordersEl
-    ? parseBorderSize(wEl(tblBordersEl, 'bottom')) ?? parseBorderSize(wEl(tblBordersEl, 'insideH'))
+  const pageBreakBorderBottomWidth = outerDiffersFromGrid && tblBordersEl
+    ? parseBorderSize(wEl(tblBordersEl, 'bottom'))
     : undefined;
 
   const buildTable = (rows: EditorTableRow[]): EditorElement => {
@@ -1785,6 +1880,7 @@ export async function docxToElements(arrayBuffer: ArrayBuffer): Promise<DocxImpo
   }
 
   const doc = parser.parseFromString(docXml, 'text/xml');
+  console.log('Parsed XML document', doc);
   const bodyEl = doc.getElementsByTagNameNS(W_NS, 'body')[0];
   if (!bodyEl) {
     throw new Error('Invalid DOCX: missing w:body');
