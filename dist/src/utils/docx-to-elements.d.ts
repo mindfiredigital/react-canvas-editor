@@ -15,6 +15,7 @@ export interface EditorTableCell {
 }
 export interface EditorTableRow {
     height: number;
+    minHeight?: number;
     tdList: EditorTableCell[];
 }
 export interface EditorColgroup {
@@ -42,9 +43,14 @@ export interface EditorElement {
     rowMargin?: number;
     paragraphSpacingBefore?: number;
     paragraphSpacingAfter?: number;
+    dashArray?: number[];
     trList?: EditorTableRow[];
     colgroup?: EditorColgroup[];
     borderType?: string;
+    pageBreakBorderTop?: string;
+    pageBreakBorderTopWidth?: number;
+    pageBreakBorderBottom?: string;
+    pageBreakBorderBottomWidth?: number;
 }
 export interface DocxImportResult {
     header: EditorElement[];
