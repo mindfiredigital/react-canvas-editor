@@ -39,10 +39,11 @@ const ColorPalette: React.FC<IColorPalette> = ({
   };
 
   const handleColor = (hexColor: string) => {
+    const isSame = hexColor === definedColor;
     if (feature === Color.HIGHLIGHT) {
-      DOMEventHandlers.highlightText(hexColor);
+      DOMEventHandlers.highlightText(isSame ? "" : hexColor);
     } else if (feature === Color.COLOR) {
-      DOMEventHandlers.setFontColor(hexColor);
+      DOMEventHandlers.setFontColor(isSame ? "" : hexColor);
     }
   };
 

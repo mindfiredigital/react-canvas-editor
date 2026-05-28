@@ -1,27 +1,141 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global theme — ignix-ui inspired indigo/violet palette.
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #ff0000;
-  --ifm-color-primary-dark: #e60000;
-  --ifm-color-primary-darker: #d90000;
-  --ifm-color-primary-darkest: #b30000;
-  --ifm-color-primary-light: #ff1a1a;
-  --ifm-color-primary-lighter: #ff2626;
-  --ifm-color-primary-lightest: #ff4d4d;
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
+
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', ui-monospace,
+    SFMono-Regular, Menlo, monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-h1-font-size: 2.75rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-code-font-size: 92%;
+  --ifm-code-background: rgba(99, 102, 241, 0.08);
+  --ifm-navbar-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  --ifm-navbar-height: 64px;
+  --ifm-global-radius: 10px;
+
+  --rce-bg-gradient: radial-gradient(
+      1200px 600px at 80% -10%,
+      rgba(129, 140, 248, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at -10% 110%,
+      rgba(168, 85, 247, 0.15),
+      transparent 60%
+    );
+  --rce-card-bg: #ffffff;
+  --rce-card-border: rgba(15, 23, 42, 0.08);
+  --rce-muted: #475569;
+  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.12);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #ff0000;
-  --ifm-color-primary-dark: #e60000;
-  --ifm-color-primary-darker: #d90000;
-  --ifm-color-primary-darkest: #b30000;
-  --ifm-color-primary-light: #ff1a1a;
-  --ifm-color-primary-lighter: #ff2626;
-  --ifm-color-primary-lightest: #ff4d4d;
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+
+  --ifm-background-color: #0b0d17;
+  --ifm-background-surface-color: #11131f;
+  --ifm-code-background: rgba(129, 140, 248, 0.14);
+
+  --rce-bg-gradient: radial-gradient(
+      1200px 600px at 80% -10%,
+      rgba(99, 102, 241, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at -10% 110%,
+      rgba(168, 85, 247, 0.18),
+      transparent 60%
+    );
+  --rce-card-bg: #14172298;
+  --rce-card-border: rgba(148, 163, 184, 0.14);
+  --rce-muted: #94a3b8;
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.2);
+}
+
+.navbar {
+  backdrop-filter: saturate(180%) blur(12px);
+  background-color: rgba(255, 255, 255, 0.72);
+}
+[data-theme='dark'] .navbar {
+  background-color: rgba(11, 13, 23, 0.72);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.header-github-link::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  display: flex;
+  background: currentColor;
+  mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297a12 12 0 0 0-3.79 23.39c.6.111.82-.26.82-.577v-2.234c-3.338.726-4.043-1.61-4.043-1.61-.547-1.387-1.336-1.756-1.336-1.756-1.092-.745.083-.73.083-.73 1.207.084 1.84 1.236 1.84 1.236 1.072 1.834 2.81 1.304 3.495.997.108-.776.42-1.305.764-1.605-2.665-.305-5.467-1.336-5.467-5.93 0-1.31.467-2.38 1.236-3.22-.124-.303-.535-1.527.117-3.18 0 0 1.008-.323 3.3 1.23a11.5 11.5 0 0 1 6.003 0c2.29-1.553 3.297-1.23 3.297-1.23.653 1.653.243 2.877.12 3.18.77.84 1.234 1.91 1.234 3.22 0 4.61-2.807 5.62-5.48 5.92.43.37.823 1.103.823 2.222v3.293c0 .32.218.694.825.576A12 12 0 0 0 12 .297'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: 0;
+  color: #fff;
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.5);
+}
+.button--primary:hover {
+  filter: brightness(1.05);
+  color: #fff;
+}
+
+.button--secondary {
+  background: transparent;
+  border: 1px solid var(--rce-card-border);
+  color: var(--ifm-font-color-base);
+}
+
+.menu__link--active {
+  background: linear-gradient(
+    90deg,
+    rgba(99, 102, 241, 0.12),
+    rgba(139, 92, 246, 0.06)
+  );
+}
+
+.hero__title {
+  letter-spacing: -0.02em;
+}
+
+pre {
+  border-radius: 12px;
+}
+
+.menu {
+  font-weight: 500;
+}
+
+div[class*='announcementBar'] {
+  font-size: 0.95rem;
+}
+div[class*='announcementBar'] a {
+  color: var(--ifm-color-primary-lighter);
+}
+
+table {
+  display: table;
+  width: 100%;
 }

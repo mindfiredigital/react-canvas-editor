@@ -11,90 +11,14 @@
           "className": "docs-version-current",
           "path": "/react-canvas-editor/docs",
           "tagsPath": "/react-canvas-editor/docs/tags",
+          "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs",
+          "editUrlLocalized": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/sidebars.js",
-          "contentPath": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/docs",
-          "contentPathLocalized": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/home/sanghamitrad/Documents/open-source/editor/react-canvas-editor/docusaurus/sidebars.js",
+          "contentPath": "/home/sanghamitrad/Documents/open-source/editor/react-canvas-editor/docusaurus/docs",
+          "contentPathLocalized": "/home/sanghamitrad/Documents/open-source/editor/react-canvas-editor/docusaurus/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
-            {
-              "unversionedId": "contributors/code-of-conduct",
-              "id": "contributors/code-of-conduct",
-              "title": "Code of conduct",
-              "description": "As contributors and maintainers of the React Document Editor package, we are dedicated to demonstrating respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
-              "source": "@site/docs/contributors/code-of-conduct.md",
-              "sourceDirName": "contributors",
-              "slug": "/contributors/code-of-conduct",
-              "permalink": "/react-canvas-editor/docs/contributors/code-of-conduct",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "How to Contribute",
-                "permalink": "/react-canvas-editor/docs/contributors/how-to-contribute"
-              },
-              "next": {
-                "title": "Release",
-                "permalink": "/react-canvas-editor/docs/category/release"
-              }
-            },
-            {
-              "unversionedId": "contributors/contributors",
-              "id": "contributors/contributors",
-              "title": "Contributors",
-              "description": "- Ashutosh Jena",
-              "source": "@site/docs/contributors/contributors.md",
-              "sourceDirName": "contributors",
-              "slug": "/contributors/",
-              "permalink": "/react-canvas-editor/docs/contributors/",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Contribution Guide",
-                "permalink": "/react-canvas-editor/docs/category/contribution-guide"
-              },
-              "next": {
-                "title": "How to Contribute",
-                "permalink": "/react-canvas-editor/docs/contributors/how-to-contribute"
-              }
-            },
-            {
-              "unversionedId": "contributors/how-to-contribute",
-              "id": "contributors/how-to-contribute",
-              "title": "How to Contribute",
-              "description": "We genuinely appreciate your interest in contributing to the React Document Editor project. Your invaluable contributions play a pivotal role in enhancing this project. Before you embark on your journey, please take a moment to familiarize yourself with the following guidelines:",
-              "source": "@site/docs/contributors/how-to-contribute.md",
-              "sourceDirName": "contributors",
-              "slug": "/contributors/how-to-contribute",
-              "permalink": "/react-canvas-editor/docs/contributors/how-to-contribute",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Contributors",
-                "permalink": "/react-canvas-editor/docs/contributors/"
-              },
-              "next": {
-                "title": "Code of conduct",
-                "permalink": "/react-canvas-editor/docs/contributors/code-of-conduct"
-              }
-            },
             {
               "unversionedId": "Get-started/Installation",
               "id": "Get-started/Installation",
@@ -105,6 +29,7 @@
               "slug": "/Get-started/Installation",
               "permalink": "/react-canvas-editor/docs/Get-started/Installation",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/Get-started/Installation.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -131,6 +56,7 @@
               "slug": "/Get-started/quickstart",
               "permalink": "/react-canvas-editor/docs/Get-started/quickstart",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/Get-started/quickstart.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -157,6 +83,7 @@
               "slug": "/references/dom-event",
               "permalink": "/react-canvas-editor/docs/references/dom-event",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/references/dom-event.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -183,6 +110,7 @@
               "slug": "/references/toolbar-option",
               "permalink": "/react-canvas-editor/docs/references/toolbar-option",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/references/toolbar-option.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -195,34 +123,8 @@
                 "permalink": "/react-canvas-editor/docs/references/dom-event"
               },
               "next": {
-                "title": "Contribution Guide",
-                "permalink": "/react-canvas-editor/docs/category/contribution-guide"
-              }
-            },
-            {
-              "unversionedId": "release/change-logs",
-              "id": "release/change-logs",
-              "title": "Change logs",
-              "description": "Version 1",
-              "source": "@site/docs/release/change-logs.md",
-              "sourceDirName": "release",
-              "slug": "/release/change-logs",
-              "permalink": "/react-canvas-editor/docs/release/change-logs",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
                 "title": "Release",
                 "permalink": "/react-canvas-editor/docs/category/release"
-              },
-              "next": {
-                "title": "Release notes",
-                "permalink": "/react-canvas-editor/docs/release/release-notes"
               }
             },
             {
@@ -235,13 +137,14 @@
               "slug": "/release/release-notes",
               "permalink": "/react-canvas-editor/docs/release/release-notes",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/release/release-notes.md",
               "tags": [],
               "version": "current",
               "frontMatter": {},
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Change logs",
-                "permalink": "/react-canvas-editor/docs/release/change-logs"
+                "title": "Release",
+                "permalink": "/react-canvas-editor/docs/category/release"
               }
             },
             {
@@ -254,6 +157,7 @@
               "slug": "/tutorial-basics/customized-style",
               "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-style",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/tutorial-basics/customized-style.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -280,6 +184,7 @@
               "slug": "/tutorial-basics/customized-tool",
               "permalink": "/react-canvas-editor/docs/tutorial-basics/customized-tool",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/tutorial-basics/customized-tool.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -306,6 +211,7 @@
               "slug": "/tutorial-basics/dom-handle",
               "permalink": "/react-canvas-editor/docs/tutorial-basics/dom-handle",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/tutorial-basics/dom-handle.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 3,
@@ -332,6 +238,7 @@
               "slug": "/what-is-document-editor",
               "permalink": "/react-canvas-editor/docs/what-is-document-editor",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/what-is-document-editor.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -354,6 +261,7 @@
               "slug": "/Why-we-use-canvas/",
               "permalink": "/react-canvas-editor/docs/Why-we-use-canvas/",
               "draft": false,
+              "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/Why-we-use-canvas/Why-we-use-canvas.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -464,39 +372,10 @@
               },
               {
                 "type": "category",
-                "label": "Contribution Guide",
-                "collapsible": true,
-                "collapsed": true,
-                "items": [
-                  {
-                    "type": "doc",
-                    "id": "contributors/contributors"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "contributors/how-to-contribute"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "contributors/code-of-conduct"
-                  }
-                ],
-                "link": {
-                  "type": "generated-index",
-                  "slug": "/category/contribution-guide",
-                  "permalink": "/react-canvas-editor/docs/category/contribution-guide"
-                }
-              },
-              {
-                "type": "category",
                 "label": "Release",
                 "collapsible": true,
                 "collapsed": true,
                 "items": [
-                  {
-                    "type": "doc",
-                    "id": "release/change-logs"
-                  },
                   {
                     "type": "doc",
                     "id": "release/release-notes"

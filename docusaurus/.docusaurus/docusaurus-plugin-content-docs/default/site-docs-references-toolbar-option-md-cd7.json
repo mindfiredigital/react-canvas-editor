@@ -8,6 +8,7 @@
   "slug": "/references/toolbar-option",
   "permalink": "/react-canvas-editor/docs/references/toolbar-option",
   "draft": false,
+  "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/references/toolbar-option.md",
   "tags": [],
   "version": "current",
   "sidebarPosition": 1,
@@ -20,7 +21,7 @@
     "permalink": "/react-canvas-editor/docs/references/dom-event"
   },
   "next": {
-    "title": "Contribution Guide",
-    "permalink": "/react-canvas-editor/docs/category/contribution-guide"
+    "title": "Release",
+    "permalink": "/react-canvas-editor/docs/category/release"
   }
 }

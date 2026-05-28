@@ -1,31 +1,119 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
- html[data-theme='light'] {
-  --background: #f0f2f4;
-}
-
-html[data-theme='dark'] {
-  --background: #242526;
-}
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.hero {
   position: relative;
+  padding: 6rem 0 5rem;
   overflow: hidden;
-  background: var(--background);
+  text-align: center;
+  background: var(--ifm-background-color);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  background: var(--rce-bg-gradient);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.buttons {
-  display: flex;
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+}
+
+.badge {
+  display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: var(--ifm-color-primary-dark);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme='dark'] .badge {
+  color: var(--ifm-color-primary-lighter);
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+
+.heroTitle {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: var(--rce-muted);
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 0.875rem;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.cta {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.installBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  background: var(--rce-card-bg);
+  border: 1px solid var(--rce-card-border);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.95rem;
+  box-shadow: 0 8px 24px -12px rgba(15, 23, 42, 0.15);
+}
+
+.installPrompt {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+.installCmd {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--ifm-font-color-base);
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 3.5rem 1rem 3rem;
+  }
+  .installBox {
+    font-size: 0.82rem;
+    padding: 0.6rem 0.9rem;
+  }
 }

@@ -101,43 +101,10 @@
       },
       {
         "type": "category",
-        "label": "Contribution Guide",
-        "collapsible": true,
-        "collapsed": true,
-        "items": [
-          {
-            "type": "link",
-            "label": "Contributors",
-            "href": "/react-canvas-editor/docs/contributors/",
-            "docId": "contributors/contributors"
-          },
-          {
-            "type": "link",
-            "label": "How to Contribute",
-            "href": "/react-canvas-editor/docs/contributors/how-to-contribute",
-            "docId": "contributors/how-to-contribute"
-          },
-          {
-            "type": "link",
-            "label": "Code of conduct",
-            "href": "/react-canvas-editor/docs/contributors/code-of-conduct",
-            "docId": "contributors/code-of-conduct"
-          }
-        ],
-        "href": "/react-canvas-editor/docs/category/contribution-guide"
-      },
-      {
-        "type": "category",
         "label": "Release",
         "collapsible": true,
         "collapsed": true,
         "items": [
-          {
-            "type": "link",
-            "label": "Change logs",
-            "href": "/react-canvas-editor/docs/release/change-logs",
-            "docId": "release/change-logs"
-          },
           {
             "type": "link",
             "label": "Release notes",
@@ -150,24 +117,6 @@
     ]
   },
   "docs": {
-    "contributors/code-of-conduct": {
-      "id": "contributors/code-of-conduct",
-      "title": "Code of conduct",
-      "description": "As contributors and maintainers of the React Document Editor package, we are dedicated to demonstrating respect to all individuals who contribute to this project. This respect encompasses actions such as posting issues, updating documentation, submitting pull requests, providing constructive feedback in comments, and engaging in any other project-related activities.",
-      "sidebar": "tutorialSidebar"
-    },
-    "contributors/contributors": {
-      "id": "contributors/contributors",
-      "title": "Contributors",
-      "description": "- Ashutosh Jena",
-      "sidebar": "tutorialSidebar"
-    },
-    "contributors/how-to-contribute": {
-      "id": "contributors/how-to-contribute",
-      "title": "How to Contribute",
-      "description": "We genuinely appreciate your interest in contributing to the React Document Editor project. Your invaluable contributions play a pivotal role in enhancing this project. Before you embark on your journey, please take a moment to familiarize yourself with the following guidelines:",
-      "sidebar": "tutorialSidebar"
-    },
     "Get-started/Installation": {
       "id": "Get-started/Installation",
       "title": "Installation",
@@ -190,12 +139,6 @@
       "id": "references/toolbar-option",
       "title": "Toolbar Options",
       "description": "| Option     |        Purpose         |",
-      "sidebar": "tutorialSidebar"
-    },
-    "release/change-logs": {
-      "id": "release/change-logs",
-      "title": "Change logs",
-      "description": "Version 1",
       "sidebar": "tutorialSidebar"
     },
     "release/release-notes": {

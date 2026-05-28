@@ -10,7 +10,7 @@ import terser from '@rollup/plugin-terser';
 export default [
     {
         input: 'component/index.ts',
-        external: [/node_module/, "react", "react-dom"],
+        external: ["react", "react-dom", "react/jsx-runtime"],
         output: [
             {
                 file: 'dist/index.js',
@@ -18,13 +18,13 @@ export default [
             }
         ],
         plugins: [
-            nodeResolve(),
+            nodeResolve({ browser: true, preferBuiltins: false }),
             external(),
             babel({
                 exclude: 'node_modules/**',
                 presets: ['@babel/preset-react']
             }),
-            typescript({ tsconfig: './tsconfig.json' }),
+            typescript({ tsconfig: './tsconfig.json', declarationDir: '.', rootDir: './component' }),
             commonjs(),
             scss({
                 insert: true
