@@ -8,12 +8,13 @@
   "slug": "/release/release-notes",
   "permalink": "/react-canvas-editor/docs/release/release-notes",
   "draft": false,
+  "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/docs/release/release-notes.md",
   "tags": [],
   "version": "current",
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Change logs",
-    "permalink": "/react-canvas-editor/docs/release/change-logs"
+    "title": "Release",
+    "permalink": "/react-canvas-editor/docs/category/release"
   }
 }

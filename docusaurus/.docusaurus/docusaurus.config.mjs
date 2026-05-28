@@ -4,8 +4,8 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "React Document Editor",
-  "tagline": "Experience powerful document creation with our React-based editor. Craft and manage multi-page documents effortlessly",
+  "title": "React Canvas Editor",
+  "tagline": "A powerful, customizable React-based document editor for crafting and managing multi-page documents with ease.",
   "favicon": "img/mindfire.ico",
   "url": "https://mindfiredigital.github.io",
   "baseUrl": "/react-canvas-editor/",
@@ -26,37 +26,61 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/sidebars.js"
+          "sidebarPath": "/home/sanghamitrad/Documents/open-source/editor/react-canvas-editor/docusaurus/sidebars.js",
+          "editUrl": "https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/"
         },
         "theme": {
-          "customCss": "/Users/vershalatandon/Documents/Projects/ReactProjects/CanvasReactDoc/react-canvas-editor/docusaurus/src/css/custom.css"
+          "customCss": "/home/sanghamitrad/Documents/open-source/editor/react-canvas-editor/docusaurus/src/css/custom.css"
         }
       }
     ]
   ],
   "themeConfig": {
     "image": "img/docusaurus-social-card.jpg",
+    "colorMode": {
+      "defaultMode": "light",
+      "respectPrefersColorScheme": true,
+      "disableSwitch": false
+    },
+    "announcementBar": {
+      "id": "npm_release",
+      "content": "🎉 <b>v1.3.0</b> of <code>@mindfiredigital/canvas-editor</code> is live on npm — <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.npmjs.com/package/@mindfiredigital/canvas-editor\">view package</a>",
+      "backgroundColor": "#1a1b2e",
+      "textColor": "#ffffff",
+      "isCloseable": true
+    },
     "navbar": {
-      "title": "",
+      "title": "React Canvas Editor",
       "logo": {
-        "alt": "My Site Logo",
+        "alt": "React Canvas Editor",
         "src": "img/logo.webp"
       },
       "items": [
         {
           "to": "/",
           "label": "Home",
-          "position": "right"
+          "position": "left"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "position": "right",
-          "label": "Tutorials"
+          "position": "left",
+          "label": "Docs"
         },
         {
-          "href": "https://github.com/mindfiredigital/react-canvas-editor.git",
-          "label": "GitHub",
+          "to": "/docs/Get-started/quickstart",
+          "label": "Quick Start",
+          "position": "left"
+        },
+        {
+          "href": "https://www.npmjs.com/package/@mindfiredigital/canvas-editor",
+          "label": "npm",
+          "position": "right"
+        },
+        {
+          "href": "https://github.com/mindfiredigital/react-canvas-editor",
+          "className": "header-github-link",
+          "aria-label": "GitHub repository",
           "position": "right"
         }
       ],
@@ -64,8 +88,60 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "links": [],
-      "copyright": "Copyright © 2023 Mindfire Digital LLP"
+      "links": [
+        {
+          "title": "Docs",
+          "items": [
+            {
+              "label": "Introduction",
+              "to": "/docs/what-is-document-editor"
+            },
+            {
+              "label": "Installation",
+              "to": "/docs/Get-started/Installation"
+            },
+            {
+              "label": "Quick Start",
+              "to": "/docs/Get-started/quickstart"
+            },
+            {
+              "label": "API Reference",
+              "to": "/docs/references/dom-event"
+            }
+          ]
+        },
+        {
+          "title": "Community",
+          "items": [
+            {
+              "label": "GitHub",
+              "href": "https://github.com/mindfiredigital/react-canvas-editor"
+            },
+            {
+              "label": "npm",
+              "href": "https://www.npmjs.com/package/@mindfiredigital/canvas-editor"
+            },
+            {
+              "label": "Issues",
+              "href": "https://github.com/mindfiredigital/react-canvas-editor/issues"
+            }
+          ]
+        },
+        {
+          "title": "More",
+          "items": [
+            {
+              "label": "Release Notes",
+              "to": "/docs/release/release-notes"
+            },
+            {
+              "label": "Report an Issue",
+              "href": "https://github.com/mindfiredigital/react-canvas-editor/issues"
+            }
+          ]
+        }
+      ],
+      "copyright": "Copyright © 2026 Mindfire Digital LLP. Built with Docusaurus."
     },
     "prism": {
       "theme": {
@@ -259,7 +335,11 @@ export default {
           }
         ]
       },
-      "additionalLanguages": [],
+      "additionalLanguages": [
+        "bash",
+        "tsx",
+        "jsx"
+      ],
       "magicComments": [
         {
           "className": "theme-code-block-highlighted-line",
@@ -270,11 +350,6 @@ export default {
           }
         }
       ]
-    },
-    "colorMode": {
-      "defaultMode": "light",
-      "disableSwitch": false,
-      "respectPrefersColorScheme": false
     },
     "docs": {
       "versionPersistence": "localStorage",

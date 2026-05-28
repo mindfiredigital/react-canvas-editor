@@ -6,6 +6,8 @@ type DocumentEditorProps = {
     on_change?: (data: string) => any;
     on_select?: (text: string) => any;
     value?: string;
+    apiBaseUrl?: string;
+    onClientDocxImport?: (file: File) => Promise<unknown[]>;
 };
 declare const DocumentEditor: FC<DocumentEditorProps>;
 export default DocumentEditor;

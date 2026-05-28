@@ -1,4 +1,4 @@
-<h1 align="center">React Document Editor </h1><br><br>
+<h1 align="center">React Canvas Editor </h1><br><br>
 <p align="center">
 <a href="https://www.npmjs.com/package/@mindfiredigital/react-canvas-editor"><img src="https://img.shields.io/npm/v/@mindfiredigital/react-canvas-editor.svg?sanitize=true" alt="Version"></a>
 <a href="https://www.npmjs.com/package/@mindfiredigital/react-canvas-editor"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs"></a>
@@ -18,7 +18,6 @@ The `@mindfiredigital/react-canvas-editor` is a tool that allows developers to i
 - [Features](#features)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
 - [License](#license)
 
 <br>

@@ -25,7 +25,9 @@ const WebApp = r2wc(DocumentEditor, {
   },
 });
 
-customElements.define("web-doc", WebApp);
+if (!customElements.get("web-doc")) {
+  customElements.define("web-doc", WebApp);
+}
 
 const DocumentEditorWebComponent = (props: {
   toolbar?: object | undefined;
@@ -36,11 +38,13 @@ const DocumentEditorWebComponent = (props: {
   value?: string | undefined;
 }) => {
 
-  window.handleChange = !props || (props && !props.on_change) ? props.on_change : handleChange;
-  window.handleSelectedText = !props || (props && !props.on_select) ? props.on_select : handleSelectedText;
+  window.handleChange = props?.on_change ?? handleChange;
+  window.handleSelectedText = props?.on_select ?? handleSelectedText;
 
   setTimeout(() => {
-    document.getElementById("document-editor").innerHTML = `<web-doc 
+    const container = document.getElementById("document-editor");
+    if (!container) return;
+    container.innerHTML = `<web-doc
       value='${props ? (props.value ? props.value : defaultText) : defaultText}'
       toolbar_class='${props
         ? props.toolbar_class

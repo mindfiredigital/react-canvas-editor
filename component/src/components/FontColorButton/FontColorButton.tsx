@@ -30,7 +30,22 @@ const FontColorButton: React.FC<{
           aria-describedby={id}
           sx={Object.assign({ mr: 1, borderRadius: 0 }, style)}
           onClick={handleClick}>
-          <FormatColorTextIcon style={{ fontSize: "large" }} />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}>
+            <FormatColorTextIcon style={{ fontSize: "large" }} />
+            <Box
+              sx={{
+                width: "1rem",
+                height: "3px",
+                marginTop: "1px",
+                backgroundColor: textColor || "transparent",
+              }}
+            />
+          </Box>
         </IconButton>
       </Tooltip>
       <ColorPalettes

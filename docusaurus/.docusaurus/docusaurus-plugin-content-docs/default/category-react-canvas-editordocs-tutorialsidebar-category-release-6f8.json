@@ -4,12 +4,12 @@
   "permalink": "/react-canvas-editor/docs/category/release",
   "navigation": {
     "previous": {
-      "title": "Code of conduct",
-      "permalink": "/react-canvas-editor/docs/contributors/code-of-conduct"
+      "title": "Toolbar Options",
+      "permalink": "/react-canvas-editor/docs/references/toolbar-option"
     },
     "next": {
-      "title": "Change logs",
-      "permalink": "/react-canvas-editor/docs/release/change-logs"
+      "title": "Release notes",
+      "permalink": "/react-canvas-editor/docs/release/release-notes"
     }
   }
 }
