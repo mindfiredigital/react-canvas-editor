@@ -147,7 +147,6 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
               title='Bold'
               handleClick={() => {
                 DOMEventHandlers.handleBold();
-                console.log('Ielement', DOMEventHandlers.getContent());
               }}>
               <FormatBoldIcon style={{ fontSize: "large" }} />
             </ButtonWrapper>
@@ -336,7 +335,10 @@ const EditorToolbar = forwardRef<HTMLDivElement, content>(function Toolbar(
 
           {(!_props?.toolbar || _props?.toolbar?.fontType) && (
             <FontDropdown
-              {...({ style: _props?.toolbarClass?.item?.fontType } as any)}
+              {...({
+                style: _props?.toolbarClass?.item?.fontType,
+                font: contentStyles?.font,
+              } as any)}
             />
           )}
           <Divider
