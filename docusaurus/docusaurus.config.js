@@ -1,32 +1,23 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'React Document Editor',
-  tagline: 'Experience powerful document creation with our React-based editor. Craft and manage multi-page documents effortlessly',
+  title: 'React Canvas Editor',
+  tagline:
+    'A powerful, customizable React-based document editor for crafting and managing multi-page documents with ease.',
   favicon: 'img/mindfire.ico',
 
-  // Set the production url of your site here
   url: 'https://mindfiredigital.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/react-canvas-editor',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'mindfiredigital', // Usually your GitHub org/user name.
-  projectName: 'react-canvas-editor', // Usually your repo name.
+  organizationName: 'mindfiredigital',
+  projectName: 'react-canvas-editor',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -39,8 +30,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/mindfiredigital/react-canvas-editor/tree/main/docusaurus/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -52,37 +43,97 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: 'light',
+        respectPrefersColorScheme: true,
+      },
+      announcementBar: {
+        id: 'npm_release',
+        content:
+          '🎉 <b>v1.3.0</b> of <code>@mindfiredigital/canvas-editor</code> is live on npm — <a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/@mindfiredigital/canvas-editor">view package</a>',
+        backgroundColor: '#1a1b2e',
+        textColor: '#ffffff',
+        isCloseable: true,
+      },
       navbar: {
-        title: '',
+        title: 'React Canvas Editor',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'React Canvas Editor',
           src: 'img/logo.webp',
         },
         items: [
-          {to: '/', label: 'Home', position: 'right'},
+          {to: '/', label: 'Home', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'right',
-            label: 'Tutorials',
+            position: 'left',
+            label: 'Docs',
           },
           {
-            href: 'https://github.com/mindfiredigital/react-canvas-editor.git',
-            label: 'GitHub',
+            to: '/docs/Get-started/quickstart',
+            label: 'Quick Start',
+            position: 'left',
+          },
+          {
+            href: 'https://www.npmjs.com/package/@mindfiredigital/canvas-editor',
+            label: 'npm',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/mindfiredigital/react-canvas-editor',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
             position: 'right',
           },
         ],
       },
       footer: {
         style: 'dark',
-        links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} Mindfire Digital LLP`,
+        links: [
+          {
+            title: 'Docs',
+            items: [
+              {label: 'Introduction', to: '/docs/what-is-document-editor'},
+              {label: 'Installation', to: '/docs/Get-started/Installation'},
+              {label: 'Quick Start', to: '/docs/Get-started/quickstart'},
+              {label: 'API Reference', to: '/docs/references/dom-event'},
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/mindfiredigital/react-canvas-editor',
+              },
+              {
+                label: 'npm',
+                href: 'https://www.npmjs.com/package/@mindfiredigital/canvas-editor',
+              },
+              {
+                label: 'Issues',
+                href: 'https://github.com/mindfiredigital/react-canvas-editor/issues',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {label: 'Release Notes', to: '/docs/release/release-notes'},
+              {
+                label: 'Report an Issue',
+                href: 'https://github.com/mindfiredigital/react-canvas-editor/issues',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Mindfire Digital LLP. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['bash', 'tsx', 'jsx'],
       },
     }),
 };

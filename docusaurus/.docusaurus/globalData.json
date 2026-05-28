@@ -11,21 +11,6 @@
           "mainDocId": "what-is-document-editor",
           "docs": [
             {
-              "id": "contributors/code-of-conduct",
-              "path": "/react-canvas-editor/docs/contributors/code-of-conduct",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "contributors/contributors",
-              "path": "/react-canvas-editor/docs/contributors/",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "contributors/how-to-contribute",
-              "path": "/react-canvas-editor/docs/contributors/how-to-contribute",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "Get-started/Installation",
               "path": "/react-canvas-editor/docs/Get-started/Installation",
               "sidebar": "tutorialSidebar"
@@ -43,11 +28,6 @@
             {
               "id": "references/toolbar-option",
               "path": "/react-canvas-editor/docs/references/toolbar-option",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "release/change-logs",
-              "path": "/react-canvas-editor/docs/release/change-logs",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -98,11 +78,6 @@
             {
               "id": "/category/references",
               "path": "/react-canvas-editor/docs/category/references",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/contribution-guide",
-              "path": "/react-canvas-editor/docs/category/contribution-guide",
               "sidebar": "tutorialSidebar"
             },
             {

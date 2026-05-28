@@ -55,6 +55,8 @@ export interface EditorElement {
   titleLevel?: string;
   listType?: string;
   listStyle?: string;
+  listId?: string;
+  listIndentWidth?: number;
   valueList?: EditorElement[];
   width?: number;
   height?: number;
@@ -89,6 +91,7 @@ interface ParaFormat {
   titleLevel: string | undefined;
   listType: string | undefined; // 'ul' | 'ol'
   listStyle: string | undefined;
+  numId?: number;
   indentLevel: number;
   indentLeftTwips?: number;
   indentHangingTwips?: number;
@@ -443,6 +446,7 @@ function parseParagraphProperties(
     fmt.indentLevel = ilvl;
 
     if (numId > 0) {
+      fmt.numId = numId;
       const absId = numbering.numIdToAbstract.get(numId);
       const absDef = absId !== undefined ? numbering.abstractNums.get(absId) : undefined;
       const level = absDef?.levels.get(ilvl);
@@ -475,8 +479,6 @@ function parseParagraphProperties(
     const betweenEl = wEl(pBdrEl, 'between');
     if (betweenEl) {
       const val = wAttr(betweenEl, 'val');
-      // eslint-disable-next-line no-console
-      console.log('[docx][pBdr-between]', { val });
       if (val && val !== 'nil' && val !== 'none') fmt.borderBetween = val;
     }
   }
@@ -532,8 +534,6 @@ function charToElement(char: string, fmt: RunFormat, para: Partial<ParaFormat>, 
   if (fmt.underline) el.underline = true;
   if (fmt.strikeout) {
     el.strikeout = true;
-    // eslint-disable-next-line no-console
-    console.log('[docx][strikeout-set]', { char, fmt });
   }
   if (fmt.color) el.color = fmt.color;
   if (fmt.highlight) el.highlight = fmt.highlight;
@@ -553,6 +553,10 @@ function charToElement(char: string, fmt: RunFormat, para: Partial<ParaFormat>, 
   if (para.listType) {
     el.listType = para.listType;
     el.listStyle = para.listStyle;
+    if (para.numId !== undefined) {
+      const ilvl = para.indentLevel ?? 0;
+      el.listId = `list-${para.numId}-${ilvl}`;
+    }
   }
 
   return el;
@@ -778,7 +782,9 @@ function processParagraph(
       paraFmt.listType = directParaFmt.listType;
       paraFmt.listStyle = directParaFmt.listStyle;
     }
+    if (directParaFmt.numId !== undefined) paraFmt.numId = directParaFmt.numId;
     if (directParaFmt.indentLevel !== undefined) paraFmt.indentLevel = directParaFmt.indentLevel;
+    if (directParaFmt.indentHangingTwips !== undefined) paraFmt.indentHangingTwips = directParaFmt.indentHangingTwips;
     if (directParaFmt.borderBetween) paraFmt.borderBetween = directParaFmt.borderBetween;
 
     // Paragraph-level rPr overrides style run format
@@ -906,24 +912,21 @@ function processParagraph(
   // - Trim trailing manual breaks (paragraph break is added below).
   const normalized: EditorElement[] = [];
 
-  // If list formatting is present, inject a visible bullet for canvas editor
-  // (canvas listType is not always rendered inside table cells).
-  if (paraFmt.listType === 'ul') {
-    const indentTabs =
-      Math.max(0, Math.round(((paraFmt.indentLeftTwips ?? 0) / 720))) ||
-      (paraFmt.indentLevel ?? 0);
-    for (let i = 0; i < indentTabs; i++) {
-      normalized.push({ value: '\t' });
-    }
-    const firstTextEl = elements.find((e) => e.value && e.value !== '\n' && !e.type);
-    const bulletSize = firstTextEl?.size ?? 16;
-    const bullet: EditorElement = { value: '• ', size: bulletSize };
-    if (paraFmt.alignment) bullet.rowFlex = paraFmt.alignment;
-    if (paraFmt.listType) {
-      bullet.listType = paraFmt.listType;
-      bullet.listStyle = paraFmt.listStyle;
-    }
-    normalized.push(bullet);
+  // For list items, inject a ZERO marker ('\n' → ZERO after canvas-editor normalisation)
+  // so canvas-editor's native ListParticle.drawListStyle renders the bullet symbol and
+  // applies the hanging-indent offsetX automatically (works for both main content and
+  // table cells because computeRowList calls computeListStyle on each cell's elementList).
+  if (paraFmt.listType) {
+    const listId = paraFmt.numId !== undefined
+      ? `list-${paraFmt.numId}-${paraFmt.indentLevel ?? 0}`
+      : undefined;
+    const listMarker: EditorElement = {
+      value: '\n',
+      listType: paraFmt.listType,
+      listStyle: paraFmt.listStyle,
+    };
+    if (listId) listMarker.listId = listId;
+    normalized.push(listMarker);
   }
 
   for (let i = 0; i < elements.length; i++) {
@@ -984,7 +987,8 @@ function processParagraph(
   // spacing avoids the uneven look users notice when typing/pressing Enter.
 
   // If paragraph is empty (no visible content), drop it unless it carries borders.
-  const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || e.type === 'separator' || (e.value && e.value !== '\n'));
+  // List markers (listId set) count as non-empty so empty bullet items still render.
+  const hasNonEmpty = normalized.some((e) => e.type === 'image' || e.type === 'hyperlink' || e.type === 'separator' || (e.value && e.value !== '\n') || !!e.listId);
   if (!hasNonEmpty && !paraFmt.borderBetween) {
     if (!lineRowMargin) {
       return [];
@@ -1006,16 +1010,18 @@ function processParagraph(
   // adding another paraBreak would create a spurious blank line below the rule.
   const isSeparatorOnly = normalized.length === 1 && normalized[0].type === 'separator';
   if (!isSeparatorOnly) {
-    // End paragraph with newline — carry paragraph formatting so canvas editor picks it up
-    const paraBreak: EditorElement = { value: '\n' };
-    if (paraFmt.alignment) paraBreak.rowFlex = paraFmt.alignment;
-    if (paraFmt.titleLevel) paraBreak.titleLevel = paraFmt.titleLevel;
     if (paraFmt.listType) {
-      paraBreak.listType = paraFmt.listType;
-      paraBreak.listStyle = paraFmt.listStyle;
+      // List items: no trailing paraBreak — the next item's leading ZERO marker (or the
+      // listId→undefined transition for the following non-list element) causes the row break.
+      // Adding a trailing '\n' here would create an extra blank row between list items.
+    } else {
+      // End paragraph with newline — carry paragraph formatting so canvas editor picks it up
+      const paraBreak: EditorElement = { value: '\n' };
+      if (paraFmt.alignment) paraBreak.rowFlex = paraFmt.alignment;
+      if (paraFmt.titleLevel) paraBreak.titleLevel = paraFmt.titleLevel;
+      if (lineRowMargin) paraBreak.rowMargin = lineRowMargin;
+      normalized.push(paraBreak);
     }
-    if (lineRowMargin) paraBreak.rowMargin = lineRowMargin;
-    normalized.push(paraBreak);
   }
 
   return normalized;
@@ -1687,10 +1693,11 @@ function processTable(
   for (let r = 1; r < trList.length; r++) {
     const prev = trList[r - 1];
     const hasPrevBottom = prev.tdList.some(td => isVisibleBorder(td.borderBgBottom));
-    if (!hasPrevBottom) continue;
+    const hasOwnTop = trList[r].tdList.some(td => isVisibleBorder(td.borderBgTop));
+    if (!hasPrevBottom && !hasOwnTop) continue;
     for (const td of trList[r].tdList) {
       if (!td.value || td.value.length === 0) continue;
-      td.value.unshift({ value: '\n', size: 24 });
+      td.value.unshift({ value: '\n', size: 20 });
     }
   }
 
@@ -1803,7 +1810,8 @@ function cleanElements(elements: EditorElement[]): EditorElement[] {
   let lastWasNewline = true;
 
   for (const el of elements) {
-    if (el.value === '\n' && !el.type) {
+    if (el.value === '\n' && !el.type && !el.listId) {
+      // Non-list newlines: collapse consecutive duplicates
       if (lastWasNewline) continue;
       lastWasNewline = true;
       result.push(el);
@@ -1886,7 +1894,6 @@ export async function docxToElements(arrayBuffer: ArrayBuffer): Promise<DocxImpo
   }
 
   const doc = parser.parseFromString(docXml, 'text/xml');
-  console.log('Parsed XML document', doc);
   const bodyEl = doc.getElementsByTagNameNS(W_NS, 'body')[0];
   if (!bodyEl) {
     throw new Error('Invalid DOCX: missing w:body');
