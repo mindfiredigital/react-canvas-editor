@@ -37,6 +37,8 @@ export interface EditorElement {
     titleLevel?: string;
     listType?: string;
     listStyle?: string;
+    listId?: string;
+    listIndentWidth?: number;
     valueList?: EditorElement[];
     width?: number;
     height?: number;

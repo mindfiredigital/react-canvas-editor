@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
@@ -7,7 +7,17 @@ import { FONTS } from "../../utils/constant";
 import { Tooltip } from "@mui/material";
 
 export default function FontDropdown(_props: any) {
-  const [font, setFont] = useState("Arial");
+  const fontList = Object.values(FONTS) as string[];
+  const initial =
+    _props?.font && fontList.includes(_props.font) ? _props.font : "Arial";
+  const [font, setFont] = useState<string>(initial);
+
+  useEffect(() => {
+    const next = _props?.font;
+    if (next && fontList.includes(next) && next !== font) {
+      setFont(next);
+    }
+  }, [_props?.font]);
 
   const handleChange = (event: SelectChangeEvent) => {
     setFont(event.target.value);

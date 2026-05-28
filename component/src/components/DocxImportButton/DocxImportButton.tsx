@@ -4,7 +4,6 @@ import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { DOMEventHandlers } from "@mindfiredigital/canvas-editor";
 import { htmlToElements } from "../../utils/html-to-elements";
 import { docxToElements } from "../../utils/docx-to-elements";
-import JSZip from "jszip";
 
 interface DocxImportButtonProps {
   style?: React.CSSProperties;
@@ -21,40 +20,10 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
 
-  const logRawDocx = async (file: File) => {
+  const readArrayBuffer = async (file: File) => {
     try {
-      const arrayBuffer = await file.arrayBuffer();
-      console.log("[DocxImport] Raw ArrayBuffer byteLength:", arrayBuffer.byteLength);
-      const preview = Array.from(new Uint8Array(arrayBuffer).slice(0, 64));
-      console.log("[DocxImport] Raw bytes preview (first 64):", preview);
-      try {
-        const zip = await JSZip.loadAsync(arrayBuffer);
-        const entries = Object.keys(zip.files);
-        console.log("[DocxImport] ZIP entries:", entries);
-
-        const docXml = await zip.file("word/document.xml")?.async("text");
-        if (docXml) {
-          console.log("[DocxImport] word/document.xml (first 2000 chars):");
-          console.log(docXml.slice(0, 2000));
-        }
-
-        const numberingXml = await zip.file("word/numbering.xml")?.async("text");
-        if (numberingXml) {
-          console.log("[DocxImport] word/numbering.xml (first 2000 chars):");
-          console.log(numberingXml.slice(0, 2000));
-        }
-
-        const stylesXml = await zip.file("word/styles.xml")?.async("text");
-        if (stylesXml) {
-          console.log("[DocxImport] word/styles.xml (first 2000 chars):");
-          console.log(stylesXml.slice(0, 2000));
-        }
-      } catch (zipErr) {
-        console.warn("[DocxImport] Failed to unzip DOCX for readable XML:", zipErr);
-      }
-      return arrayBuffer;
-    } catch (err) {
-      console.warn("[DocxImport] Failed to read raw ArrayBuffer:", err);
+      return await file.arrayBuffer();
+    } catch {
       return null;
     }
   };
@@ -82,12 +51,10 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
       // `elements` may either be a flat IElement[] (legacy / HTML path)
       // or the structured { header, main, footer } shape from docxToElements.
       let elements: unknown;
-      const rawBuffer = await logRawDocx(file);
+      const rawBuffer = await readArrayBuffer(file);
 
       if (_props.onClientImport) {
-        // Client-side import path — parse DOCX directly in the browser
         elements = await _props.onClientImport(file);
-        console.log("[DocxImport] Client-side parsed", elements);
       } else if (_props.apiBaseUrl) {
         // Legacy fallback: upload to backend for LibreOffice conversion
         const baseUrl = _props.apiBaseUrl || "";
@@ -102,12 +69,8 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
 
         if (!response.ok) {
           if (response.status === 404) {
-            console.warn(
-              "[DocxImport] Server endpoint not found (404). Falling back to client-side import."
-            );
             const arrayBuffer = rawBuffer ?? (await file.arrayBuffer());
             elements = await docxToElements(arrayBuffer);
-            console.log("[DocxImport] Client-side fallback parsed", elements);
           } else {
             const errorData = await response.json().catch(() => null);
             throw new Error(
@@ -118,13 +81,10 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
           const result = await response.json();
           const html: string = result.data.html;
           elements = htmlToElements(html);
-          console.log("[DocxImport] Server-side parsed elements from HTML", elements);
         }
       } else {
-        // Default client-side import when no backend is configured
         const arrayBuffer = rawBuffer ?? (await file.arrayBuffer());
         elements = await docxToElements(arrayBuffer);
-        console.log("[DocxImport] Client-side default parsed", elements);
       }
 
       // Normalize to { header, main, footer }. Array-shaped results (legacy / HTML) → main only.
@@ -138,14 +98,11 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
         (payload.footer?.length ?? 0) > 0;
 
       if (hasContent) {
-        console.log("[DocxImport] Full IElement data:", JSON.stringify(payload, null, 2));
-        console.log("[DocxImport] Raw elements object (expandable):", payload);
         // Deep clone to prevent internal computeRowList from mutating our objects
         const cloned =
           typeof structuredClone === "function"
             ? structuredClone(payload)
             : JSON.parse(JSON.stringify(payload));
-        console.log("[DocxImport] Cloned elements object (expandable):", cloned);
         DOMEventHandlers.setContent(cloned);
 
         // Force non-lazy render for overflow:auto containers.
@@ -162,7 +119,6 @@ const DocxImportButton: React.FC<DocxImportButtonProps> = (_props) => {
         });
       }
     } catch (error) {
-      console.error("[DocxImport] Failed to import DOCX:", error);
       alert(
         error instanceof Error
           ? `Import failed: ${error.message}`
